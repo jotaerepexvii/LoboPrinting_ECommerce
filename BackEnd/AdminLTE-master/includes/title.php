@@ -1,1 +1,1 @@
-<title>Lobo Printing | Tablero</title>
+<title>Lobo Printing | Dashboard</title>
