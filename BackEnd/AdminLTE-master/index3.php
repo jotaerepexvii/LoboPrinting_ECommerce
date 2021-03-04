@@ -21,7 +21,6 @@
 
   Apply one or more of the following classes to to the body tag
   to get the desired effect
-
   * sidebar-collapse
   * sidebar-mini
 -->
