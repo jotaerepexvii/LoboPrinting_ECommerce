@@ -42,6 +42,8 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
+      
+
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
@@ -50,6 +52,7 @@
           <a href="#" class="d-block">Juan Del Town</a>
         </div>
       </div>
+
 
       <!-- SidebarSearch Form 
       <div class="form-inline">
@@ -714,8 +717,10 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Lobo Printing</h1>
+              <h1 class="m-0">Lobo Printing</h1>
+            </ul>
           </div><!-- /.col -->
+
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
