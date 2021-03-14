@@ -21,7 +21,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
 
-                <li class="nav-header"></li>
+                <li class="nav-item menu-open">
                     <li class="nav-item">
                     <a href="./index3.php" class="nav-link">
                         <i class="nav-icon fas fa-home"></i>
@@ -41,32 +41,32 @@
                     </a>
                     </li>
                     <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="./usuarios.php" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>Usuarios</p>
                     </a>
                     </li>
+                </li>
                 <li class="nav-item menu-open">
-                
-                <li class="nav-header">Reportes</li>
-                    <li class="nav-item">
-                    <a href="iframe.html" class="nav-link">
-                        <i class="nav-icon fas fa-chart-line"></i>
-                        <p>Ventas</p>
-                    </a>
-                    </li>
-                    <li class="nav-item">
-                    <a href="https://adminlte.io/docs/3.1/" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>Inventario</p>
-                    </a>
-                    </li>
-                    <li class="nav-item">
-                    <a href="https://adminlte.io/docs/3.1/" class="nav-link">
-                        <i class="nav-icon fas fa-hand-holding-usd"></i>
-                        <p>Ganancias</p>
-                    </a>
-                    </li>
+                    <li class="nav-header">Reportes</li>
+                        <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-chart-line"></i>
+                            <p>Ventas</p>
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-table"></i>
+                            <p>Inventario</p>
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-hand-holding-usd"></i>
+                            <p>Ganancias</p>
+                        </a>
+                        </li>
                 <li class="nav-item menu-open">
             </ul>
         </nav>

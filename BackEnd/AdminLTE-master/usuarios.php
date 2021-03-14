@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-  <title>Lobo Printing | Administradores</title>
+  
+  <title>Lobo Printing | Usuarios</title>
   <link rel="icon"  href="dist/img/lobo.ico" type="icon" sizes="16x16">
-
-
+  
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
@@ -54,14 +53,14 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-              <h1 class="m-0">Administradores</h1>
+              <h1 class="m-0">Usuarios</h1>
             </ul>
           </div><!-- /.col -->
 
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index3.php">Tablero Administrativo</a></li>
-              <li class="breadcrumb-item active">Administradores</li>
+              <li class="breadcrumb-item active">Usuarios</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -75,7 +74,7 @@
 
         <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Administradores de Lobo Printing</h3>
+                <h3 class="card-title">Usuarios de Lobo Printing</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -92,30 +91,30 @@
                   <tbody>
                     <tr>
                       <td>1</td>
-                      <td>Juan</td>
-                      <td>Del Town Pérez</td>
-                      <td>juan.deltown@upr.edu</td>
+                      <td>Pablito</td>
+                      <td>Del City Pérez</td>
+                      <td>pablito.delcity@upr.edu</td>
                       <td>Activo</td>
                     </tr>
                     <tr>
                       <td>2</td>
-                      <td>Juan</td>
-                      <td>Del Town Pérez</td>
-                      <td>juan.deltown@upr.edu</td>
+                      <td>Pablito</td>
+                      <td>Del City Pérez</td>
+                      <td>pablito.delcity@upr.edu</td>
                       <td>Activo</td>
                     </tr>
                     <tr>
                       <td>3</td>
-                      <td>Juan</td>
-                      <td>Del Town Pérez</td>
-                      <td>juan.deltown@upr.edu</td>
+                      <td>Pablito</td>
+                      <td>Del City Pérez</td>
+                      <td>pablito.delcity@upr.edu</td>
                       <td>Activo</td>
                     </tr>
                     <tr>
                       <td>4</td>
-                      <td>Juan</td>
-                      <td>Del Town Pérez</td>
-                      <td>juan.deltown@upr.edu</td>
+                      <td>Pablito</td>
+                      <td>Del City Pérez</td>
+                      <td>pablito.delcity@upr.edu</td>
                       <td>Activo</td>
                     </tr>
                   </tbody>
