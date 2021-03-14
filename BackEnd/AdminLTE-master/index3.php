@@ -94,23 +94,23 @@
               </li>
             <li class="nav-item menu-open">
           
-            <li class="nav-header">Opciones</li>
+            <li class="nav-header">Reportes</li>
               <li class="nav-item">
                 <a href="iframe.html" class="nav-link">
                   <i class="nav-icon fas fa-ellipsis-h"></i>
-                  <p>Productos</p>
+                  <p>Ventas</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="https://adminlte.io/docs/3.1/" class="nav-link">
                   <i class="nav-icon fas fa-file"></i>
-                  <p>Administradores</p>
+                  <p>Ganancias</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="https://adminlte.io/docs/3.1/" class="nav-link">
                   <i class="nav-icon fas fa-file"></i>
-                  <p>Usuarios</p>
+                  <p>Inventorio</p>
                 </a>
               </li>
             <li class="nav-item menu-open">
