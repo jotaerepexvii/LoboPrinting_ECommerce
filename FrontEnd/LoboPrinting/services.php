@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Tmart-Minimalist eCommerce HTML5 Template</title>
+    <title>Servicios | Lobo Printing</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -38,7 +38,7 @@
     <div class="wrapper fixed__footer">  
         <!-- *********************************************************************************** -->
         <?php
-            include 'phpInludes/header.php';
+            include 'phpIncludes/header.php';
         ?>
         <!-- *********************************************************************************** --> 
         <div class="body__overlay"></div>
@@ -137,7 +137,7 @@
             </div>
             <!-- End Cart Panel -->
         </div>
-        <!-- Start Offset Wrapper -->
+        <!-- End Offset Wrapper -->
 
         <!-- SERVICES AREA START -->
         <section class="htc__blog__area bg__white pb--130">

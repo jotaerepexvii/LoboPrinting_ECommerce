@@ -24,7 +24,13 @@
                                     <li><a href="bound.php">Encuadernados</a></li>
                                 </ul>
                             </li>
-                        <li class="drop"><a href="products.php">Productos</a></li>
+                            <li class="drop"><a href="products.php">Productos</a>
+                                <ul class="dropdown">
+                                    <li><a href="copies.php">Efectos escolares</a></li>
+                                    <li><a href="photos.php">Memorabilia</a></li>
+                                    <li><a href="bound.php">Camisas</a></li>
+                                </ul>
+                            </li>
                             <li class="drop"><a href="about_us.php">Sobre Nosotros</a></li>
                             <li class="drop"><a href="contact_us.php">Contáctanos</a></li>
                         </ul>
