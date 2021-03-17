@@ -42,7 +42,7 @@
 
     <!-- Sidebar -->
     <?php
-	  include './includes/sidebar.php';
+	  include './phpIncludes/sidebar.php';
     ?>
     <!-- /.sidebar -->
   </aside>
@@ -148,7 +148,7 @@
 
   <!-- Main Footer -->
     <?php
-      include './includes/footer.php';
+      include './phpIncludes/footer.php';
     ?>
 </div>
 <!-- ./wrapper -->

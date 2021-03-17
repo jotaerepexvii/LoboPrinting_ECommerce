@@ -33,7 +33,7 @@
   
   <!-- Main Sidebar Container -->
   <?php
-	  include './includes/sidebar.php';
+	  include './phpIncludes/sidebar.php';
   ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -293,7 +293,7 @@
 
   <!-- Main Footer -->
     <?php
-      include './includes/footer.php';
+      include './phpIncludes/footer.php';
     ?>
 </div>
 <!-- ./wrapper -->

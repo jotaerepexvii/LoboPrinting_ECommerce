@@ -26,10 +26,11 @@
                             </li>
                         <li class="drop"><a href="products.php">Productos</a></li>
                             <li class="drop"><a href="about_us.php">Sobre Nosotros</a></li>
-                            <li class="drop"><a href="contact_us.php">Contactanos</a></li>
+                            <li class="drop"><a href="contact_us.php">Contáctanos</a></li>
                         </ul>
                     </nav>
                     <!-- MENU END -->
+                    
                     <!-- MOBILE MENU START -->
                     <div class="mobile-menu clearfix visible-xs visible-sm">
                         <nav id="mobile_dropdown">
@@ -44,7 +45,7 @@
                                 </li>
                                 <li><a href="products.php">Productos</a></li>
                                 <li><a href="about_us.php">Sobre Nosotros</a></li>
-                                <li><a href="contact_us.php">Contactanos</a></li>
+                                <li><a href="contact_us.php">Contáctanos</a></li>
                             </ul>
                         </nav>
                     </div>

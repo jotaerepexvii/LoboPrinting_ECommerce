@@ -38,13 +38,14 @@
     <div class="wrapper fixed__footer">  
         <!-- *********************************************************************************** -->
         <?php
-            include 'php/header.php';
+            include 'phpInludes/header.php';
         ?>
         <!-- *********************************************************************************** --> 
         <div class="body__overlay"></div>
+
         <!-- Start Offset Wrapper -->
         <div class="offset__wrapper">
-            <!-- Start Offset MEnu -->
+            <!-- Start Offset Menu -->
             <div class="offsetmenu">
                 <div class="offsetmenu__inner">
                     <div class="offsetmenu__close__btn">
@@ -84,7 +85,8 @@
                     </div>
                 </div>
             </div>
-            <!-- End Offset MEnu -->
+            <!-- End Offset Menu -->
+
             <!-- Start Cart Panel -->
             <div class="shopping__cart">
                 <div class="shopping__cart__inner">
@@ -136,6 +138,7 @@
             <!-- End Cart Panel -->
         </div>
         <!-- Start Offset Wrapper -->
+
         <!-- SERVICES AREA START -->
         <section class="htc__blog__area bg__white pb--130">
             <div class="container">
@@ -203,7 +206,7 @@
         
         <!-- *********************************************************************************** -->
         <?php
-            include 'php/footer.php';
+            include 'phpIncludes/footer.php';
         ?>
         <!-- *********************************************************************************** -->
         
