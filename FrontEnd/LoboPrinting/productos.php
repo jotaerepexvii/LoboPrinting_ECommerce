@@ -192,7 +192,7 @@
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="clothes.php">Ropa</a></p>
+                                            <p class="blog__des"><a href="ropa.php">Ropa</a></p>
                                         </div>
                                     </div>
                                 </div>
