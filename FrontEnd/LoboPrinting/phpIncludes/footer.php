@@ -27,6 +27,7 @@
                                     </div>
                                 <div class="address-text">
                                         <p>Carr. 653 Km. 0.8 <br> Sector Las Dunas, Arecibo</p>
+                                        <!--try to link location to another page that shows a map-->
                                     </div>
                                 </li>
                                 <li>
