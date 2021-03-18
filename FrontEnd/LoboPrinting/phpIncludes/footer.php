@@ -18,7 +18,7 @@
                 <!-- SINGLE FOOTER WIDGET START -->
                 <div class="col-md-3 col-lg-6 col-sm-6 smt-30 xmt-30">
                     <div class="ft__widget">
-                        <h2 class="ft__title">Infomation</h2>
+                        <h2 class="ft__title">Infomación</h2>
                         <div class="footer-address">
                             <ul>
                                 <li>
@@ -26,7 +26,7 @@
                                         <i class="zmdi zmdi-pin"></i>
                                     </div>
                                 <div class="address-text">
-                                        <p>194 Main Rd T, FS Rayed <br> VIC 3057, USA</p>
+                                        <p>Carr. 653 Km. 0.8 <br> Sector Las Dunas, Arecibo</p>
                                     </div>
                                 </li>
                                 <li>
@@ -42,7 +42,7 @@
                                         <i class="zmdi zmdi-phone-in-talk"></i>
                                     </div>
                                     <div class="address-text">
-                                        <p>+012 345 678 102 </p>
+                                        <p>787 815 0000 Ext. ####</p>
                                     </div>
                                 </li>
                             </ul>

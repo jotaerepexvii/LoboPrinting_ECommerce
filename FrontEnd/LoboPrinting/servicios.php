@@ -149,13 +149,13 @@
                             <div class="blog foo">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="blog-details.html">
+                                        <a href="copias.php">
                                             <img src="images/services/copies.jpg" alt="blog images">
                                         </a>
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="blog-details.html">COPIAS</a></p>
+                                            <p class="blog__des"><a href="copias.php">COPIAS</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -167,37 +167,39 @@
                             <div class="blog foo">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="blog-details.html">
+                                        <a href="fotos.php">
                                             <img src="images/services/photo.jpg" alt="blog images">
                                         </a>
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="blog-details.html">FOTOS</a></p>
+                                            <p class="blog__des"><a href="fotos.php">FOTOS</a></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- SERVICE END -->
+
                         <!-- SERVICE START -->
                         <div class="col-md-4 col-lg-4 hidden-sm col-xs-12">
                             <div class="blog foo">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="blog-details.html">
+                                        <a href="encuadernado.php">
                                             <img src="images/services/bound.jpg" alt="blog images">
                                         </a>
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="blog-details.html">ENCUDERNADO</a></p>
+                                            <p class="blog__des"><a href="encuadernado.php">ENCUDERNADO</a></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- SERVICE END -->
+
                     </div>
                 </div>
             </div>

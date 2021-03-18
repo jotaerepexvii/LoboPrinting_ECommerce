@@ -17,18 +17,18 @@
                     <nav class="mainmenu__nav hidden-xs hidden-sm">
                         <ul class="main__menu">
                             <li class="drop"><a href="index.php">Inicio</a></li>
-                            <li class="drop"><a href="services.php">Servicios</a>
+                            <li class="drop"><a href="servicios.php">Servicios</a>
                                 <ul class="dropdown">
-                                    <li><a href="copies.php">Copias</a></li>
-                                    <li><a href="photos.php">Fotos</a></li>
-                                    <li><a href="bound.php">Encuadernados</a></li>
+                                    <li><a href="copias.php">Copias</a></li>
+                                    <li><a href="fotos.php">Fotos</a></li>
+                                    <li><a href="encuadernado.php">Encuadernados</a></li>
                                 </ul>
                             </li>
                             <li class="drop"><a href="products.php">Productos</a>
                                 <ul class="dropdown">
-                                    <li><a href="copies.php">Efectos escolares</a></li>
-                                    <li><a href="photos.php">Memorabilia</a></li>
-                                    <li><a href="bound.php">Camisas</a></li>
+                                    <li><a href="efectos_escolares.php">Efectos escolares</a></li>
+                                    <li><a href="memorabilia.php">Memorabilia</a></li>
+                                    <li><a href="ropa.php">Ropa</a></li>
                                 </ul>
                             </li>
                             <li class="drop"><a href="about_us.php">Sobre Nosotros</a></li>
@@ -44,12 +44,12 @@
                                 <li><a href="index.php">Inicio</a></li>
                                 <li><a href="services.php">Servicios</a>
                                     <ul>
-                                        <li><a href="copies.php">Copias</a></li>
-                                        <li><a href="photos.php">Fotos</a></li>
-                                        <li><a href="bound.phpl">Encuadernados</a></li>
+                                        <li><a href="copias.php">Copias</a></li>
+                                        <li><a href="fotos.php">Fotos</a></li>
+                                        <li><a href="encuadernado.php">Encuadernados</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="products.php">Productos</a></li>
+                                <li><a href="productos.php">Productos</a></li>
                                 <li><a href="about_us.php">Sobre Nosotros</a></li>
                                 <li><a href="contact_us.php">Contáctanos</a></li>
                             </ul>
