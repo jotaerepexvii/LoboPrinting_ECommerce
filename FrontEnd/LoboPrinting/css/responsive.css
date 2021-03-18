@@ -57,8 +57,9 @@
         width: 53%;
     }
     .blog__hover__action p.blog__des {
+        /*font servicios & productos hover action*/
         font-size: 18px;
-        margin-bottom: 5px;
+        margin-bottom: 0px;
     }
 }
 /* Normal desktop :992px. */

@@ -192,7 +192,7 @@
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="encuadernado.php">ENCUDERNADO</a></p>
+                                            <p class="blog__des"><a href="encuadernado.php">ENCUADERNADO</a></p>
                                         </div>
                                     </div>
                                 </div>

@@ -24,7 +24,7 @@
                                     <li><a href="encuadernado.php">Encuadernados</a></li>
                                 </ul>
                             </li>
-                            <li class="drop"><a href="products.php">Productos</a>
+                            <li class="drop"><a href="productos.php">Productos</a>
                                 <ul class="dropdown">
                                     <li><a href="efectos_escolares.php">Efectos escolares</a></li>
                                     <li><a href="memorabilia.php">Memorabilia</a></li>
