@@ -1136,14 +1136,14 @@ h3.widget-title-modal {
     width: 100%;
     position: absolute;
     transition: all 0.5s ease 0s;
-    /*background-color: rgba(41, 41, 41, 0.2);*/
+    background-color: rgba(41, 41, 41, 0.2);
 }
 .blog__thumb {
     position: relative;
 }
 .blog__thumb:hover {
     position: relative;
-    filter: blur(4px);
+    filter: blur(2px);
 }
 .blog__post__time {
     left: 20px;
