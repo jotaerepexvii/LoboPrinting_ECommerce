@@ -175,12 +175,7 @@
             </div>
         </div>
 
-        <div class="only-banner ptb--100 bg__white">
-            <div class="container">
-                <div class="only-banner-img">
-                    <a href="shop-sidebar.html">123</a>
-                </div>
-            </div>
+        <div class="categories-slider-area bg__white">
         </div>
 
         <!-- Start Feature Product -->
