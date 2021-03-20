@@ -213,19 +213,16 @@
                     <div class="col-md-3">
                         <div class="product-categories-all">
                             <div class="product-categories-title">
-                                <h3>Jewelry & watches</h3>
+                                <h3>Productos</h3>
                             </div>
                             <div class="product-categories-menu">
                                 <ul>
-                                    <li><a href="#">awesome Rings</a></li>
-                                    <li><a href="#">Hot Earrings</a></li>
-                                    <li><a href="#">Jewelry Sets</a></li>
-                                    <li><a href="#">Beads Jewelry</a></li>
-                                    <li><a href="#">Men's Watches</a></li>
-                                    <li><a href="#">Women’s Watches</a></li>
-                                    <li><a href="#">Popular Bracelets</a></li>
-                                    <li><a href="#"> Pendant Necklaces</a></li>
-                                    <li><a href="#">Children's Watches</a></li>
+                                    <li><a href="#">Lápices, Bolígrafos y Marcadores</a></li>
+                                    <li><a href="#">Carpetas y Cartapacios</a></li>
+                                    <li><a href="#">Libretas</a></li>
+                                    <li><a href="#">Papel y Etiquetas</a></li>
+                                    <li><a href="#">Otros Equipos</a></li>
+                                    <li><a href="#">??? ???</a></li>
                                 </ul>
                             </div>
                         </div>
