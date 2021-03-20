@@ -213,7 +213,7 @@
                     <div class="col-md-3">
                         <div class="product-categories-all">
                             <div class="product-categories-title">
-                                <h3>Productos</h3>
+                                <h3><a href="productos.php">Productos</a></h3>
                             </div>
                             <div class="product-categories-menu">
                                 <ul>
