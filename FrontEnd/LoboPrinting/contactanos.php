@@ -170,7 +170,7 @@
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="copias.php">COPIAS</a></p>
+                                            <p class="blog__des"><a href="copias.php">ALGO</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -188,7 +188,7 @@
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="fotos.php">FOTOS</a></p>
+                                            <p class="blog__des"><a href="fotos.php">ALGO</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -206,7 +206,7 @@
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="encuadernado.php">ENCUADERNADO</a></p>
+                                            <p class="blog__des"><a href="encuadernado.php">ALGO</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -299,7 +299,6 @@
         </section>
         <!-- End Our Store Area -->
         <!-- SERVICES AREA END -->
-        
         <!-- *********************************************************************************** -->
         <?php
             include 'phpIncludes/footer.php';
