@@ -10,7 +10,6 @@
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    
 
     <!-- All css files are included here. -->
     <!-- Bootstrap fremwork main css -->
@@ -55,7 +54,7 @@
                             <nav class="mainmenu__nav hidden-xs hidden-sm">
                                 <ul class="main__menu">
                                     <li class="drop"><a href="index.php">Inicio</a></li>
-                                    <li class="drop"><a href="contact_us.php">Contáctanos</a></li>
+                                    <li class="drop"><a href="contactanos.php">Contáctanos</a></li>
                                 </ul>
                             </nav>
                             <!-- MENU END -->
@@ -98,12 +97,11 @@
                 <div class="row align-items-center">
                     <div class="blog__wrap clearfix mt--60 xmt-30">
                         <div class="container">
-                            <div class="row">
+                            <div class="row"> <!--space between header and form-->
                                 <div class="col-md-6 col-md-offset-3"> 
                                     <ul class="login__register__menu" role="tablist">
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-md-6 col-md-offset-3">
                                     <ul class="login__register__menu" role="tablist">
@@ -161,7 +159,7 @@
     </div>
     <!-- Body main wrapper end -->
     
-<!-- Placed js at the end of the document so the pages load faster -->
+    <!--Placed js at the end of the document so the pages load faster -->
 
     <!-- jquery latest version -->
     <script src="js/vendor/jquery-1.12.0.min.js"></script>

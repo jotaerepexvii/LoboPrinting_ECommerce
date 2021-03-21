@@ -31,8 +31,8 @@
                                     <li><a href="ropa.php">Ropa</a></li>
                                 </ul>
                             </li>
-                            <li class="drop"><a href="about_us.php">Sobre Nosotros</a></li>
-                            <li class="drop"><a href="contact_us.php">Contáctanos</a></li>
+                            <li class="drop"><a href="sobre_nosotros.php">Sobre Nosotros</a></li>
+                            <li class="drop"><a href="contactanos.php">Contáctanos</a></li>
                         </ul>
                     </nav>
                     <!-- MENU END -->
@@ -50,8 +50,8 @@
                                     </ul>
                                 </li>
                                 <li><a href="productos.php">Productos</a></li>
-                                <li><a href="about_us.php">Sobre Nosotros</a></li>
-                                <li><a href="contact_us.php">Contáctanos</a></li>
+                                <li><a href="sobre_nosotros.php">Sobre Nosotros</a></li>
+                                <li><a href="contactanos.php">Contáctanos</a></li>
                             </ul>
                         </nav>
                     </div>
