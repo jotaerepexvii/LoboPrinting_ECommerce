@@ -10,7 +10,6 @@
     <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    
 
     <!-- All css files are included here. -->
     <!-- Bootstrap fremwork main css -->
@@ -73,20 +72,15 @@
                         <h4 class="offset__title">Follow Us On Social</h4>
                         <ul class="off__soaial__link">
                             <li><a class="bg--twitter" href="#"  title="Twitter"><i class="zmdi zmdi-twitter"></i></a></li>
-                            
                             <li><a class="bg--instagram" href="#" title="Instagram"><i class="zmdi zmdi-instagram"></i></a></li>
-
                             <li><a class="bg--facebook" href="#" title="Facebook"><i class="zmdi zmdi-facebook"></i></a></li>
-
                             <li><a class="bg--googleplus" href="#" title="Google Plus"><i class="zmdi zmdi-google-plus"></i></a></li>
-
                             <li><a class="bg--google" href="#" title="Google"><i class="zmdi zmdi-google"></i></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <!-- End Offset Menu -->
-
             <!-- Start Cart Panel -->
             <div class="shopping__cart">
                 <div class="shopping__cart__inner">
@@ -148,9 +142,9 @@
                                 <div class="bradcaump__inner text-center">
                                     <h2 class="bradcaump-title">Contacto</h2>
                                     <nav class="bradcaump-inner">
-                                    <a class="breadcrumb-item" href="index.html">Inicio</a>
-                                    <span class="brd-separetor">/</span>
-                                    <span class="breadcrumb-item active">Contacto</span>
+                                        <a class="breadcrumb-item" href="index.php">Inicio</a>
+                                        <span class="brd-separetor">/</span>
+                                        <span class="breadcrumb-item active">Contacto</span>
                                     </nav>
                                 </div>
                             </div>
@@ -201,7 +195,6 @@
                             </div>
                         </div>
                         <!-- SERVICE END -->
-
                         <!-- SERVICE START -->
                         <div class="col-md-4 col-lg-4 hidden-sm col-xs-12">
                             <div class="blog foo">
@@ -220,24 +213,91 @@
                             </div>
                         </div>
                         <!-- SERVICE END -->
-                        <div class="offset__sosial__share">
-                            <h4 class="offset__title">Follow Us On Social</h4>
-                            <ul class="off__soaial__link">
-                                <li><a class="bg--twitter" href="#"  title="Twitter"><i class="zmdi zmdi-twitter"></i></a></li>
-                                
-                                <li><a class="bg--instagram" href="#" title="Instagram"><i class="zmdi zmdi-instagram"></i></a></li>
-
-                                <li><a class="bg--facebook" href="#" title="Facebook"><i class="zmdi zmdi-facebook"></i></a></li>
-
-                                <li><a class="bg--googleplus" href="#" title="Google Plus"><i class="zmdi zmdi-google-plus"></i></a></li>
-
-                                <li><a class="bg--google" href="#" title="Google"><i class="zmdi zmdi-google"></i></a></li>
-                            </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Start Choose Us Area -->
+        <section class="htc__choose__us__ares bg__white">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                        <div class="video__wrap bg--3" data--black__overlay="5">
+                            <div class="video__inner">
+                                <a class="video__trigger video-popup" href="https://www.youtube.com/watch?v=cDDWvj_q-o8">
+                                    <i class="zmdi zmdi-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                        <div class="htc__choose__wrap bg__cat--4">
+                            <h2 class="choose__title">Why Choose Us?</h2>
+                            <div class="choose__container">
+                                <div class="single__chooose">
+                                    <div class="choose__us">
+                                        <div class="choose__icon">
+                                            <span class="ti-heart"></span>
+                                        </div>
+                                        <div class="choose__details">
+                                            <h4>Free Gift Box</h4>
+                                            <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
+                                        </div>
+                                    </div>
+                                    <div class="choose__us">
+                                        <div class="choose__icon">
+                                            <span class="ti-truck"></span>
+                                        </div>
+                                        <div class="choose__details">
+                                            <h4>Free Delivery</h4>
+                                            <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single__chooose">
+                                    <div class="choose__us">
+                                        <div class="choose__icon">
+                                            <span class="ti-reload"></span>
+                                        </div>
+                                        <div class="choose__details">
+                                            <h4>Money Back</h4>
+                                            <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
+                                        </div>
+                                    </div>
+                                    <div class="choose__us">
+                                        <div class="choose__icon">
+                                            <span class="ti-time"></span>
+                                        </div>
+                                        <div class="choose__details">
+                                            <h4>Support 24/7</h4>
+                                            <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- End Choose Us Area -->
+        <!-- Start Our Store Area -->
+        <section class="htc__store__area ptb--120 bg__white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section__title section__title--2 text-center">
+                            <h2 class="title__line">Welcome To Tmart Store</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore gna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
+                        </div>
+                        <div class="store__btn">
+                            <a href="contactanos.php">contact us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Our Store Area -->
         <!-- SERVICES AREA END -->
         
         <!-- *********************************************************************************** -->
@@ -245,7 +305,6 @@
             include 'phpIncludes/footer.php';
         ?>
         <!-- *********************************************************************************** -->
-        
     </div>
     <!-- Body main wrapper end -->
     
@@ -264,5 +323,4 @@
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="js/main.js"></script>
 </body>
-
 </html>
