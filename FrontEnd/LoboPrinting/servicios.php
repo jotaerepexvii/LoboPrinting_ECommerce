@@ -70,7 +70,7 @@
                         <li><a href="#"><img src="images/sidebar-img/8.jpg" alt="sidebar images"></a></li>
                     </ul>
                     <div class="offset__sosial__share">
-                        <h4 class="offset__title">Follow Us On Social</h4>
+                        <h4 class="offset__title">Siguenos</h4>
                         <ul class="off__soaial__link">
                             <li><a class="bg--twitter" href="#"  title="Twitter"><i class="zmdi zmdi-twitter"></i></a></li>
                             
