@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Inicio | Lobo Printing</title>
+    <title>Efectos Escolares | Lobo Printing</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -784,7 +784,7 @@
 
         <!-- Start Blog Area -->
         <!-- End Blog Area -->
-        
+
         <!-- Start Footer Area -->
         <?php
             include 'phpIncludes/footer.php';
