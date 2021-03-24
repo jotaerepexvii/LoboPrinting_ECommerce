@@ -142,11 +142,11 @@
         <section class="htc__product__area shop__page ptb--10 bg__white">
             <div class="container">
                 <div class="htc__product__container">
-                    <!-- Start Product MEnu -->
+                    <!-- Start Product Menu -->
                     <div class="row">
                         <div class="col-md-12">
                             <div class="filter__menu__container">
-                                <div class="product__menu">
+                                <div class="product_categories_menu">
                                     <button>TODO</button>
                                     <button>ESCOLAR</button>
                                     <button>LABORATORIO</button>
@@ -158,7 +158,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- End Product MEnu -->
+                    <!-- End Product Menu -->
                     <div class="row">
                         <div class="product__list another-product-style">
                             <?php
@@ -194,7 +194,6 @@
                                 mysqli_close($dbc);
                             ?>
                             <!-- Start Single Product -->
-
                             <!-- End Single Product -->        
                         </div>
                     </div>
