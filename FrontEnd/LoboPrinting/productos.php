@@ -138,74 +138,70 @@
             <!-- End Cart Panel -->
         </div>
         <!-- End Offset Wrapper -->
-
-        <!-- SERVICES AREA START -->
-        <section class="htc__blog__area bg__white pb--130">
+        <!-- Start Our Product Area -->
+        <section class="htc__product__area shop__page ptb--10 bg__white">
             <div class="container">
-                <div class="row">
-                    <div class="blog__wrap clearfix mt--60 xmt-30">
-                        <!-- SERVICE START -->
-                        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-                            <div class="blog foo">
-                                <div class="blog__inner">
-                                    <div class="blog__thumb">
-                                        <a href="schoolSupply.php">
-                                            <img src="images/services/blank.jpg" alt="Efectos escolares image">
-                                        </a>
-                                    </div>
-                                    <div class="blog__hover__info">
-                                        <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="schoolSupply.php">Efectos Escolares</a></p>
-                                        </div>
-                                    </div>
+                <div class="htc__product__container">
+                    <!-- Start Product MEnu -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="filter__menu__container">
+                                <div class="product__menu">
+                                    <button>TODO</button>
+                                    <button>ESCOLAR</button>
+                                    <button>LABORATORIO</button>
+                                    <button>MEMORABILIA</button>
+                                </div>
+                                <div class="filter__box">
+                                    <a class="filter__menu" href="#">filter</a>
                                 </div>
                             </div>
                         </div>
-                        <!-- SERVICE END -->
-                        <!-- SERVICE START -->
-                        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-                            <div class="blog foo">
-                                <div class="blog__inner">
-                                    <div class="blog__thumb">
-                                        <a href="memorabilia.php">
-                                            <img src="images/services/blank.jpg" alt="memorabilia images">
-                                        </a>
-                                    </div>
-                                    <div class="blog__hover__info">
-                                        <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="memorabilia.php">Memorabilia</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- SERVICE END -->
+                    </div>
+                    <!-- End Product MEnu -->
+                    <div class="row">
+                        <div class="product__list another-product-style">
+                            <?php
+                                $query = "SELECT *
+                                            FROM Product";
+                                if($r = mysqli_query($dbc, $query))//Save & Validate Query Result
+                                {
+                                    while($row=mysqli_fetch_array($r))//Present Products
+                                    {
+                                        print "
+                                            <div class='col-md-3 single__pro col-lg-3 cat--1 col-sm-4 col-xs-12'>
+                                                <div class='product foo'>
+                                                    <div class='product__inner'>
+                                                        <div class='pro__thumb'>
+                                                            <a href='#'>
+                                                                <img src='images/product/1.png' alt='product images'>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class='product__details'>
+                                                        <h2><a href='product-details.html'>$row[name] $row[description]</a></h2>
+                                                        <ul class='product__price'>
+                                                            <li class='price'>$$row[price]</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ";
+                                    }
+                                }
+                                else
+                                    print'<p style="color:red">NO SE PUEDE MOSTRAR RECORD PORQUE:'.mysqli_error($dbc).'.</P>';
+                                mysqli_close($dbc);
+                            ?>
+                            <!-- Start Single Product -->
 
-                        <!-- SERVICE START -->
-                        <div class="col-md-4 col-lg-4 hidden-sm col-xs-12">
-                            <div class="blog foo">
-                                <div class="blog__inner">
-                                    <div class="blog__thumb">
-                                        <a href="camisas.php">
-                                            <img src="images/services/blank.jpg" alt="camisas images">
-                                        </a>
-                                    </div>
-                                    <div class="blog__hover__info">
-                                        <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="ropa.php">Ropa</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <!-- End Single Product -->        
                         </div>
-                        <!-- SERVICE END -->
-                        
                     </div>
                 </div>
             </div>
         </section>
-        <!-- SERVICES AREA END -->
-        
+        <!-- End Our Product Area -->
         <!-- *********************************************************************************** -->
         <?php
             include 'phpIncludes/footer.php';

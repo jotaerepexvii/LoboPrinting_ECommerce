@@ -1,3 +1,8 @@
+<!-- *********************************************************************************** -->
+<?php
+    include 'phpIncludes/connection.php';
+?>
+<!-- *********************************************************************************** -->
 <!-- HEADER STYLE START -->
 <header id="header" class="htc-header header--3 bg__white">
      <!-- MAINMENU AREA START -->
