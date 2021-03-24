@@ -146,11 +146,13 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="filter__menu__container">
-                                <div class="product_categories_menu">
-                                    <button>TODO</button>
-                                    <button>ESCOLAR</button>
-                                    <button>LABORATORIO</button>
-                                    <button>MEMORABILIA</button>
+                                <div class="product-style-tab">
+                                    <div class="product-tab-list">
+                                        <button>TODO</button>
+                                        <button>ESCOLAR</button>
+                                        <button>LABORATORIO</button>
+                                        <button>MEMORABILIA</button>
+                                    </div>
                                 </div>
                                 <div class="filter__box">
                                     <a class="filter__menu" href="#">filter</a>

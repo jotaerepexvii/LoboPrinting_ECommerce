@@ -169,7 +169,7 @@
 
         <!--banner-->
 
-        <div class="categories-slider-area bg__white">
+        <div class="">
             <div class="only-banner ptb--100 bg__white">
                 <div class="container">
                     <div class="only-banner-img">
@@ -213,7 +213,7 @@
             <div class="container">
                 <div class="row">
                     <!--Sidebar-->
-                    <div class="col-md">
+                    <div class="col-md-12">
                         <div class="product-style-tab">
                             <div class="product-tab-list">
                                 <!-- Nav tabs -->
