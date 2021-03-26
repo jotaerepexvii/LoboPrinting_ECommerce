@@ -148,10 +148,12 @@
                             <div class="filter__menu__container">
                                 <div class="product-style-tab">
                                     <div class="product-tab-list">
-                                        <button>TODO</button>
-                                        <button>ESCOLAR</button>
-                                        <button>LABORATORIO</button>
-                                        <button>MEMORABILIA</button>
+                                        <form action="productos.php" method="post" enctype="multipart/form-data">
+                                            <button type="submit" name="todo">TODO</button>
+                                            <button type="submit" name="escolar">ESCOLAR</button>
+                                            <button type="submit" name="laboratorio">LABORATORIO</button>
+                                            <button type="submit" name="memorabilia">MEMORABILIA</button>
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="filter__box">
@@ -164,8 +166,31 @@
                     <div class="row">
                         <div class="product__list another-product-style">
                             <?php
-                                $query = "SELECT *
+                                if(isset($_POST['todo']))
+                                {
+                                     $query = "SELECT *
                                             FROM Product";
+                                } elseif(isset($_POST['escolar']))
+                                {
+                                    $query = "SELECT *
+                                        FROM Product p, Category c
+                                        WHERE p.product_id = c.product_id AND category_id = 1";
+                                } elseif(isset($_POST['laboratorio']))
+                                {
+                                    $query = "SELECT *
+                                        FROM Product p, Category c
+                                        WHERE p.product_id = c.product_id AND category_id = 2";
+                                } elseif(isset($_POST['memorabilia']))
+                                {
+                                    $query = "SELECT *
+                                        FROM Product p, Category c
+                                        WHERE p.product_id = c.product_id AND category_id = 3";
+                                } else
+                                {
+                                    $query = "SELECT *
+                                            FROM Product";
+                                }
+                                
                                 if($r = mysqli_query($dbc, $query))//Save & Validate Query Result
                                 {
                                     while($row=mysqli_fetch_array($r))//Present Products
