@@ -148,7 +148,7 @@
                             <div class="filter__menu__container">
                                 <div class="product-style-tab">
                                     <div class="product-tab-list">
-                                        <form action="productos.php" method="post" enctype="multipart/form-data">
+                                        <form class="tab-style" action="productos.php" method="post" enctype="multipart/form-data">
                                             <button type="submit" name="todo">TODO</button>
                                             <button type="submit" name="escolar">ESCOLAR</button>
                                             <button type="submit" name="laboratorio">LABORATORIO</button>
@@ -201,7 +201,7 @@
                                                     <div class='product__inner'>
                                                         <div class='pro__thumb'>
                                                             <a href='#'>
-                                                                <img src='images/product/1.png' alt='product images'>
+                                                                <img src='images/lobo_products/$row[image]' alt='product images'>
                                                             </a>
                                                         </div>
                                                     </div>

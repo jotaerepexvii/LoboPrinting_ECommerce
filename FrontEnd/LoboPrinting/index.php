@@ -216,12 +216,12 @@
                     <div class="col-md-12">
                         <div class="product-style-tab">
                             <div class="product-tab-list">
-                                <!-- Nav tabs -->
+                                <!-- Nav tabs --
                                 <ul class="tab-style" role="tablist">
                                     <li class="active">
                                         <a href="#home1" data-toggle="tab">
                                             <div class="tab-menu-text">
-                                                <h4>Lo último </h4>
+                                                <h4 type="submit" name="Lo-ultimo">Lo último</h4>
                                             </div>
                                         </a>
                                     </li>
@@ -233,63 +233,59 @@
                                         </a>
                                     </li>
                                 </ul>
+                                -->
+                                <form class="tab-style" action="productos.php" method="post" enctype="multipart/form-data">
+                                    <button type="submit" name="lo-ultimo">Lo último</button>
+                                    <button type="submit" name="mas-vendido">Mas Vendido</button>
+                                </form>
                             </div>
                             <div class="tab-content another-product-style jump">
                                 <div class="tab-pane active" id="home1">
                                     <div class="row">
                                         <div class=""> <!--class name for carrousel: product-slider-active owl-carousel -->
-                                            
-                                            <div class="col-md-4 single__pro col-lg-4 cat--1 col-sm-4 col-xs-12">
-                                                <div class="product">
-                                                    <div class="product__inner">
-                                                        <div class="pro__thumb">
-                                                            <a href="#">
-                                                                <img src="images/product/1.png" alt="product images">
-                                                            </a>
-                                                        </div>
-                                                        <div class="product__hover__info">
-                                                            <ul class="product__action">
-                                                                <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                                <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
-                                                                <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__details">
-                                                        <h2><a href="product-details.html">Simple Black Clock</a></h2>
-                                                        <ul class="product__price">
-                                                            <li class="old__price">$16.00</li>
-                                                            <li class="new__price">$10.00</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-4 single__pro col-lg-4 cat--1 col-sm-4 col-xs-12">
-                                                <div class="product">
-                                                    <div class="product__inner">
-                                                        <div class="pro__thumb">
-                                                            <a href="#">
-                                                                <img src="images/product/2.png" alt="product images">
-                                                            </a>
-                                                        </div>
-                                                        <div class="product__hover__info">
-                                                            <ul class="product__action">
-                                                                <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                                <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
-                                                                <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__details">
-                                                        <h2><a href="product-details.html">Simple Black Clock</a></h2>
-                                                        <ul class="product__price">
-                                                            <li class="old__price">$16.00</li>
-                                                            <li class="new__price">$10.00</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <?php
+                                                if(isset($_POST['lo-ultimo']))
+                                                {
+                                                    $query = "SELECT *
+                                                            FROM Product";
+                                                } elseif(isset($_POST['mas-vendido']))
+                                                {
+                                                    $query = "SELECT MAX (sold) FROM Product";
+                                                } else
+                                                {
+                                                    $query = "SELECT *
+                                                            FROM Product";
+                                                }
+                                                
+                                                if($r = mysqli_query($dbc, $query))//Save & Validate Query Result
+                                                {
+                                                    while($row=mysqli_fetch_array($r))//Present Products
+                                                    {
+                                                        print "
+                                                            <div class='col-md-4 single__pro col-lg-4 cat--1 col-sm-4 col-xs-12'>
+                                                                <div class='product'>
+                                                                    <div class='product__inner'>
+                                                                        <div class='pro__thumb'>
+                                                                            <a href='#'>
+                                                                                <img src='images/lobo_products/$row[image]' alt='product images'>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class='product__details'>
+                                                                        <h2><a href='product-details.html'>$row[name] $row[description]</a></h2>
+                                                                        <ul class='product__price'>
+                                                                            <li class='price'>$$row[price]</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        ";
+                                                    }
+                                                }
+                                                else
+                                                    print'<p style="color:red">NO SE PUEDE MOSTRAR RECORD PORQUE:'.mysqli_error($dbc).'.</P>';
+                                                mysqli_close($dbc);
+                                            ?>
 
                                             <div class="col-md-4 single__pro col-lg-4 cat--1 col-sm-4 col-xs-12">
                                                 <div class="product">
