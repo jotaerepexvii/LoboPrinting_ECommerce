@@ -242,7 +242,7 @@
                             <div class="tab-content another-product-style jump">
                                 <div class="tab-pane active" id="home1">
                                     <div class="row">
-                                        <div class=""> <!--class name for carrousel: product-slider-active owl-carousel -->
+                                        <div class="product__list another-product-style"> <!--class name for carrousel: product-slider-active owl-carousel -->
                                             <?php
                                                 if(isset($_POST['lo-ultimo']))
                                                 {
@@ -250,11 +250,10 @@
                                                             FROM Product";
                                                 } elseif(isset($_POST['mas-vendido']))
                                                 {
-                                                    $query = "SELECT MAX (sold) FROM Product";
+                                                    $query = "SELECT MAX (sold) FROM Product limit 3";
                                                 } else
                                                 {
-                                                    $query = "SELECT *
-                                                            FROM Product";
+                                                    $query = "SELECT * FROM Product limit 3";
                                                 }
                                                 
                                                 if($r = mysqli_query($dbc, $query))//Save & Validate Query Result
@@ -286,7 +285,7 @@
                                                     print'<p style="color:red">NO SE PUEDE MOSTRAR RECORD PORQUE:'.mysqli_error($dbc).'.</P>';
                                                 mysqli_close($dbc);
                                             ?>
-
+                                            <!--
                                             <div class="col-md-4 single__pro col-lg-4 cat--1 col-sm-4 col-xs-12">
                                                 <div class="product">
                                                     <div class="product__inner">
@@ -312,7 +311,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-
+                                            -->
                                         </div>
                                     </div>
                                 </div>
