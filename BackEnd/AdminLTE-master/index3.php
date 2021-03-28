@@ -89,7 +89,7 @@
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">Mas Información <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="productos.php" class="small-box-footer">Mas Información <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -162,7 +162,7 @@
           <div class="card">
 
               <div class="card-header border-0">
-                <h3 class="card-title">Ultimos Productos Vendidos</h3>
+                <h3 class="card-title">Últimos Productos Vendidos</h3>
                 <div class="card-tools">
                   <a href="#" class="btn btn-tool btn-sm">
                     <i class="fas fa-download"></i>
@@ -192,16 +192,11 @@
                           print "
                             <tr>
                                 <td>
-                                <img src= 'dist/img/default-150x150.png' alt='Product 1' class='img-circle img-size-32 mr-2'>
+                                <img src= '../../FrontEnd/LoboPrinting/images/lobo_products/$row[image]' alt='$row[image]' class='img-circle img-size-32 mr-2'>
                                 $row[name] $row[description]
                                 </td>
                                 <td>$$row[price]</td>
-                                <td>
-                                <small class='text-success mr-1'>
-                                    <i class='fas fa-arrow-up'></i>
-                                    12%
-                                </small>
-                                $row[sold] Vendidos
+                                <td>$row[sold] Vendidos
                                 </td>
                                 <td>
                                 <a href='#' class='text-muted'>
@@ -216,6 +211,10 @@
                           print'<p style="color:red">NO SE PUEDE MOSTRAR RECORD PORQUE:'.mysqli_error($dbc).'.</P>';
                       mysqli_close($dbc);
                     ?>
+                      <!--<small class='text-success mr-1'>
+                          <i class='fas fa-arrow-up'></i>12%
+                      </small>*/
+                      -->
                   </tbody>
                 </table>
               </div>

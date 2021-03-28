@@ -73,13 +73,13 @@
                                         <th>Artículo</th>
                                         <th>Precio</th>
                                         <th>Cantidad Disponible</th>
-                                        <th>???</th>
+                                        <th>Cantidad Vendida</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
                                         $query = "SELECT *
-                                            FROM Product";
+                                            FROM Product limit 25";
                                     
                                         if($r = mysqli_query($dbc, $query))//Save & Validate Query Result
                                         {
@@ -91,7 +91,7 @@
                                                         <td>$row[name] $row[description]</td>
                                                         <td>$$row[price]</td>
                                                         <td>$row[in_stock]</td>
-                                                        <td>-</td>
+                                                        <td>$row[sold]</td>
                                                     </tr>
                                                 ";
                                             }
@@ -107,7 +107,7 @@
                                         <th>Artículo</th>
                                         <th>Precio</th>
                                         <th>Cantidad Disponible</th>
-                                        <th>???</th>
+                                        <th>Cantidad Vendida</th>
                                     </tr>
                                 </tfoot>
                             </table>

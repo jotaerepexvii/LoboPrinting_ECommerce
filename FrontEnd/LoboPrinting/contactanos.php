@@ -287,8 +287,11 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="section__title section__title--2 text-center">
-                            <h2 class="title__line">Welcome To Tmart Store</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore gna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
+                            <h2 class="title__line">Nuestra Localización</h2>
+                            <p>Estamos ubicados en la UPR de Arecibo, al lado de la Imprenta</p>
+                            <p style="margin-top:50px">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d91.23057741011395!2d-66.74104644861691!3d18.469782034393475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses-419!2spr!4v1616961756794!5m2!1ses-419!2spr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </p>
                         </div>
                     </div>
                 </div>

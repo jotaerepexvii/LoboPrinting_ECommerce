@@ -16,7 +16,7 @@
                 </div>
                 <!-- SINGLE FOOTER WIDGET END -->
                 <!-- SINGLE FOOTER WIDGET START -->
-                <div class="col-md-3 col-lg-6 col-sm-6 smt-30 xmt-30">
+                <div class="col-md-3 col-lg-6 col-sm-6">
                     <div class="ft__widget">
                         <h2 class="ft__title">Infomación</h2>
                         <div class="footer-address">
@@ -55,6 +55,8 @@
                             <li><a href="#"><i class="zmdi zmdi-google-plus"></i></a></li>
                         </ul>
                     </div>
+                </div>
+                <div class="col-md-3 col-lg-6 col-sm-6">
                 </div>
                 <!-- SINGLE FOOTER WIDGET END -->
             </div>

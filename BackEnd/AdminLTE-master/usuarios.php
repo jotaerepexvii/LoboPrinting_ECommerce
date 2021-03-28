@@ -89,34 +89,27 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Pablito</td>
-                      <td>Del City Pérez</td>
-                      <td>pablito.delcity@upr.edu</td>
-                      <td>Activo</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Pablito</td>
-                      <td>Del City Pérez</td>
-                      <td>pablito.delcity@upr.edu</td>
-                      <td>Activo</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Pablito</td>
-                      <td>Del City Pérez</td>
-                      <td>pablito.delcity@upr.edu</td>
-                      <td>Activo</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Pablito</td>
-                      <td>Del City Pérez</td>
-                      <td>pablito.delcity@upr.edu</td>
-                      <td>Activo</td>
-                    </tr>
+                    <?php
+                      $query = "SELECT * FROM Users limit 35";                                
+                      if($r = mysqli_query($dbc, $query))//Save & Validate Query Result
+                      {
+                        while($row=mysqli_fetch_array($r))//Present Products
+                        {
+                          print "
+                          <tr>
+                            <td>$row[user_id]</td>
+                            <td>$row[name]</td>
+                            <td>$row[lastname]</td>
+                            <td>$row[email]</td>
+                            <td>$row[student]</td>
+                          </tr>
+                            ";
+                        }
+                      }
+                      else
+                          print'<p style="color:red">NO SE PUEDE MOSTRAR RECORD PORQUE:'.mysqli_error($dbc).'.</P>';
+                      mysqli_close($dbc);
+                    ?>
                   </tbody>
                   <tfoot>
                     <tr>
