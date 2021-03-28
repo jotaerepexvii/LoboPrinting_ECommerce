@@ -133,26 +133,22 @@
         </div>
         <!-- End Offset Wrapper -->
         <!-- Start Bradcaump area -->
-        <div class="container">
-            <div class="ht__bradcaump__area">
-                <div class="ht__bradcaump__wrap">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <div class="bradcaump__inner text-center">
-                                    <h2 class="bradcaump-title">Contacto</h2>
-                                    <nav class="bradcaump-inner">
-                                        <a class="breadcrumb-item" href="index.php">Inicio</a>
-                                        <span class="brd-separetor">/</span>
-                                        <span class="breadcrumb-item active">Contacto</span>
-                                    </nav>
-                                </div>
-                            </div>
+        <section class="htc__blog__area bg__white pb--130">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="bradcaump__inner text-center">
+                            <h2 style="margin-top:100px" class="bradcaump-title">Contacto</h2>
+                            <nav class="bradcaump-inner">
+                                <a class="breadcrumb-item" href="index.php">Inicio</a>
+                                <span class="brd-separetor">/</span>
+                                <span class="breadcrumb-item active">Contacto</span>
+                            </nav>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         <!-- End Bradcaump area --> 
         <!-- SERVICES AREA START -->
         <section class="htc__blog__area bg__white pb--130">
@@ -221,62 +217,6 @@
         <section class="htc__choose__us__ares bg__white">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                        <div class="video__wrap bg--3" data--black__overlay="5">
-                            <div class="video__inner">
-                                <a class="video__trigger video-popup" href="https://www.youtube.com/watch?v=cDDWvj_q-o8">
-                                    <i class="zmdi zmdi-play"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                        <div class="htc__choose__wrap bg__cat--4">
-                            <h2 class="choose__title">Why Choose Us?</h2>
-                            <div class="choose__container">
-                                <div class="single__chooose">
-                                    <div class="choose__us">
-                                        <div class="choose__icon">
-                                            <span class="ti-heart"></span>
-                                        </div>
-                                        <div class="choose__details">
-                                            <h4>Free Gift Box</h4>
-                                            <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
-                                        </div>
-                                    </div>
-                                    <div class="choose__us">
-                                        <div class="choose__icon">
-                                            <span class="ti-truck"></span>
-                                        </div>
-                                        <div class="choose__details">
-                                            <h4>Free Delivery</h4>
-                                            <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="single__chooose">
-                                    <div class="choose__us">
-                                        <div class="choose__icon">
-                                            <span class="ti-reload"></span>
-                                        </div>
-                                        <div class="choose__details">
-                                            <h4>Money Back</h4>
-                                            <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
-                                        </div>
-                                    </div>
-                                    <div class="choose__us">
-                                        <div class="choose__icon">
-                                            <span class="ti-time"></span>
-                                        </div>
-                                        <div class="choose__details">
-                                            <h4>Support 24/7</h4>
-                                            <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>

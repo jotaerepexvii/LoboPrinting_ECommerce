@@ -5,7 +5,7 @@
 <!-- *********************************************************************************** -->
 <!-- HEADER STYLE START -->
 <header id="header" class="htc-header header--3 bg__white">
-     <!-- MAINMENU AREA START -->
+    <!-- MAINMENU AREA START -->
     <div id="sticky-header-with-topbar" class="mainmenu__area sticky__header" style="background: gold;">
         <div class="container">
             <div class="row">
