@@ -66,7 +66,23 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
+                <h3>  <!-- articulos vendidos query-->
+                  <?php
+                    $result = mysqli_query($dbc, 'SELECT SUM(sold) AS totalSold FROM Product'); 
+                    $row = mysqli_fetch_assoc($result); 
+                    $sum = $row['totalSold'];
+                    echo $sum
+                  ?>
+                    <!-- ALTERNATIVE QUERY
+                    $query = "SELECT * FROM Product";
+                    $query_run = mysqli_query($dbc, $query);
+                    $qty = 0;
+                    while ($num = mysqli_fetch_assoc ($query_run)) {
+                        $qty += $num['sold'];
+                    }
+                    echo $qty;
+                    -->
+                </h3>
 
                 <p>Artículos Vendidos</p>
               </div>
@@ -81,9 +97,17 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                <p>??? ??? ???</p>
+                <?php
+                  $result = mysqli_query($dbc, 'SELECT SUM(student) AS totalStudents FROM Users'); 
+                  $row = mysqli_fetch_assoc($result); 
+                  $sum = $row['totalStudents'];
+                    print "<h3>$sum</h3>";
+                  if ($sum == 1){
+                    print "<p>Estudiante Registrado </p>";
+                  }else{
+                    print "<p>Estudiantes Registrados </p>";
+                  }
+                ?>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -96,14 +120,23 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
-
-                <p>Usuarios Registrados</p>
+                <h3>
+                  <?php
+                    $result = mysqli_query($dbc, 'SELECT COUNT(*) AS totalUsers FROM Users'); 
+                    $row = mysqli_fetch_assoc($result); 
+                    $sum = $row['totalUsers'];
+                      print "<h3>$sum</h3>";
+                    if ($sum == 1){
+                      print "<p>Usuario Registrado </p>";
+                    }else{
+                      print "<p>Usuarios Registrados </p>";
+                    }
+                  ?>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer">Mas Información <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="usuarios.php" class="small-box-footer">Mas Información <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -111,7 +144,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+                <h3>???</h3>
 
                 <p>Visitas</p>
               </div>
@@ -142,92 +175,47 @@
               <div class="card-body table-responsive p-0">
                 <table class="table table-striped table-valign-middle">
                   <thead>
-                  <tr>
-                    <th>Producto</th>
-                    <th>Precio</th>
-                    <th>Ventas</th>
-                    <th>More</th>
-                  </tr>
+                    <tr>
+                      <th>Producto</th>
+                      <th>Precio</th>
+                      <th>Ventas</th>
+                      <th>More</th>
+                    </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>
-                      <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                      Sharpie Pen Pair [Thin Black]
-                    </td>
-                    <td>$1.99</td>
-                    <td>
-                      <small class="text-success mr-1">
-                        <i class="fas fa-arrow-up"></i>
-                        12%
-                      </small>
-                      13 Vendidos
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fas fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                      Lion Eraser
-                    </td>
-                    <td>$0.99</td>
-                    <td>
-                      <small class="text-warning mr-1">
-                        <i class="fas fa-arrow-down"></i>
-                        0.5%
-                      </small>
-                      15 Vendidos
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fas fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                      3D Printed Keychain BIOL
-                      <span class="badge bg-danger">NEW</span>
-                    </td>
-                    <td>$3.00</td>
-                    <td>
-                      <small class="text-danger mr-1">
-                        <i class="fas fa-arrow-down"></i>
-                        3%
-                      </small>
-                      198 Sold
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fas fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                      3D Printed Keychain CCOM
-                      <span class="badge bg-danger">NEW</span>
-                    </td>
-                    <td>$3.00</td>
-                    <td>
-                      <small class="text-success mr-1">
-                        <i class="fas fa-arrow-up"></i>
-                        63%
-                      </small>
-                      22 Vendidos
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fas fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
+                    <?php
+                      $query = "SELECT * FROM Product limit 8";                                
+                      if($r = mysqli_query($dbc, $query))//Save & Validate Query Result
+                      {
+                        while($row=mysqli_fetch_array($r))//Present Products
+                        {
+                          print "
+                            <tr>
+                                <td>
+                                <img src= 'dist/img/default-150x150.png' alt='Product 1' class='img-circle img-size-32 mr-2'>
+                                $row[name] $row[description]
+                                </td>
+                                <td>$$row[price]</td>
+                                <td>
+                                <small class='text-success mr-1'>
+                                    <i class='fas fa-arrow-up'></i>
+                                    12%
+                                </small>
+                                $row[sold] Vendidos
+                                </td>
+                                <td>
+                                <a href='#' class='text-muted'>
+                                    <i class='fas fa-search'></i>
+                                </a>
+                                </td>
+                            </tr>
+                            ";
+                        }
+                      }
+                      else
+                          print'<p style="color:red">NO SE PUEDE MOSTRAR RECORD PORQUE:'.mysqli_error($dbc).'.</P>';
+                      mysqli_close($dbc);
+                    ?>
                   </tbody>
                 </table>
               </div>
