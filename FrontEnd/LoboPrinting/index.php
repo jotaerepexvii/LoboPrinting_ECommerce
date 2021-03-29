@@ -234,9 +234,17 @@
                                     </li>
                                 </ul>
                                 -->
-                                <form class="tab-style" action="productos.php" method="post" enctype="multipart/form-data">
-                                    <button type="submit" name="lo-ultimo">Lo último</button>
-                                    <button type="submit" name="mas-vendido">Mas Vendido</button>
+                                <form class="tab-style" action="index.php" method="post" enctype="multipart/form-data">
+                                    <button type="submit" name="lo-ultimo">
+                                        <div class="tab-menu-text">
+                                            <h4>Lo último</h4>
+                                        </div>
+                                    </button>
+                                    <button type="submit" name="mas-vendido">
+                                        <div class="tab-menu-text">
+                                            <h4>Mas Vendido</h4>
+                                        </div>
+                                   </button>
                                 </form>
                             </div>
                             <div class="tab-content another-product-style jump">
@@ -246,13 +254,12 @@
                                             <?php
                                                 if(isset($_POST['lo-ultimo']))
                                                 {
-                                                    $query = "SELECT *
-                                                            FROM Product";
-                                                } elseif(isset($_POST['mas-vendido']))
-                                                {
-                                                    $query = "SELECT MAX (sold) FROM Product limit 3";
-                                                } else
-                                                {
+                                                    $query = "SELECT * FROM Product 
+                                                              ORDER BY date DESC limit 3";
+                                                } elseif(isset($_POST['mas-vendido'])) {
+                                                    $query = "SELECT * FROM Product
+                                                              ORDER BY sold DESC limit 3";
+                                                } else {
                                                     $query = "SELECT * FROM Product limit 3";
                                                 }
                                                 
