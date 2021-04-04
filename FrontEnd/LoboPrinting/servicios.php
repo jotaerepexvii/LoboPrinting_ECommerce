@@ -139,6 +139,25 @@
         </div>
         <!-- End Offset Wrapper -->
 
+        <!-- Start Bradcaump area -->
+        <section class="htc__blog__area bg__white pb--130">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="bradcaump__inner text-center">
+                            <h2 style="margin-top:120px" class="bradcaump-title">Servicios</h2>
+                            <nav class="bradcaump-inner">
+                                <a class="breadcrumb-item" href="index.php">Inicio</a>
+                                <span class="brd-separetor">/</span>
+                                <span class="breadcrumb-item active">Servicios</span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Bradcaump area --> 
+
         <!-- SERVICES AREA START -->
         <section class="htc__blog__area bg__white pb--130">
             <div class="container">

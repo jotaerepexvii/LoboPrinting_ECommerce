@@ -138,6 +138,26 @@
             <!-- End Cart Panel -->
         </div>
         <!-- End Offset Wrapper -->
+    
+        <!-- Start Bradcaump area -->
+        <section class="htc__blog__area bg__white pb--130">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="bradcaump__inner text-center">
+                            <h2 style="margin-top:120px" class="bradcaump-title">Productos</h2>
+                            <nav class="bradcaump-inner">
+                                <a class="breadcrumb-item" href="index.php">Inicio</a>
+                                <span class="brd-separetor">/</span>
+                                <span class="breadcrumb-item active">Productos</span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Bradcaump area -->
+    
         <!-- Start Our Product Area -->
         <section class="htc__product__area shop__page ptb--10 bg__white">
             <div class="container">
@@ -145,19 +165,15 @@
                     <!-- Start Product Menu -->
                     <div class="row">
                         <div class="col-md-12">
+                            <hr>
                             <div class="filter__menu__container">
-                                <div class="product-style-tab">
-                                    <div class="product-tab-list">
-                                        <form class="tab-style" action="productos.php" method="post" enctype="multipart/form-data">
-                                            <button type="submit" name="todo">TODO</button>
-                                            <button type="submit" name="escolar">ESCOLAR</button>
-                                            <button type="submit" name="laboratorio">LABORATORIO</button>
-                                            <button type="submit" name="memorabilia">MEMORABILIA</button>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="filter__box">
-                                    <a class="filter__menu" href="#">filter</a>
+                                <div class="product-tab-list-btn">
+                                    <form class="tab-style" action="productos.php" method="post" enctype="multipart/form-data">
+                                        <button type="submit" name="todo">TODO</button>
+                                        <button type="submit" name="escolar">ESCOLAR</button>
+                                        <button type="submit" name="laboratorio">LABORATORIO</button>
+                                        <button type="submit" name="memorabilia">MEMORABILIA</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -196,7 +212,7 @@
                                     while($row=mysqli_fetch_array($r))//Present Products
                                     {
                                         print "
-                                            <div class='col-md-3 single__pro col-lg-3 cat--1 col-sm-4 col-xs-12'>
+                                            <div class='col-md-3 single__pro col-lg-3 cat--1 col-sm-4 col-xs-12' style='margin-bottom:100px;'>
                                                 <div class='product foo'>
                                                     <div class='product__inner'>
                                                         <div class='pro__thumb'>

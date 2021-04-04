@@ -425,8 +425,6 @@
         </section>
         <!-- End Our Team Area -->
     
-    
-
         <!-- Start brand Area -->
         <div class="htc__brand__area bg__white ptb--120">
             <div class="container">

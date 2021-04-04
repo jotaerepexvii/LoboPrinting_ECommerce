@@ -586,10 +586,27 @@
 .banner-img > img {
     width: 100%;
 }
+
+/*
 .tab-style.product-tab-list-btn {
     display: inline-block;
     float: left;
 }
+*/
+
+.tab-style.product-tab-list-btn {
+    text-align: center;
+    background: transparent none repeat scroll 0 0;
+    border: 0 none;
+    color: #666666;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 0 20px;
+    text-transform: uppercase;
+    transition: all 0.4s ease 0s;
+}
+
 .all-product-btn {
     text-align: right;
 }
