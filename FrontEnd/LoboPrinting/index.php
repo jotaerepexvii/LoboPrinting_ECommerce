@@ -157,7 +157,7 @@
                             <li class="total__price">$130.00</li>
                         </ul>
                         <ul class="shopping__btn">
-                            <li><a href="cart.html">View Cart</a></li>
+                            <li><a href="cart.php">View Cart</a></li>
                             <li class="shp__checkout"><a href="checkout.html">Checkout</a></li>
                         </ul>
                     </div>
@@ -304,7 +304,7 @@
                                                         <div class="product__hover__info">
                                                             <ul class="product__action">
                                                                 <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                                <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
+                                                                <li><a title="Add TO Cart" href="cart.php"><span class="ti-shopping-cart"></span></a></li>
                                                                 <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
                                                             </ul>
                                                         </div>
@@ -336,7 +336,7 @@
                                                         <div class="product__hover__info">
                                                             <ul class="product__action">
                                                                 <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                                <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
+                                                                <li><a title="Add TO Cart" href="cart.php"><span class="ti-shopping-cart"></span></a></li>
                                                                 <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
                                                             </ul>
                                                         </div>
@@ -361,7 +361,7 @@
                                                         <div class="product__hover__info">
                                                             <ul class="product__action">
                                                                 <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                                <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
+                                                                <li><a title="Add TO Cart" href="cart.php"><span class="ti-shopping-cart"></span></a></li>
                                                                 <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
                                                             </ul>
                                                         </div>
@@ -386,7 +386,7 @@
                                                         <div class="product__hover__info">
                                                             <ul class="product__action">
                                                                 <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                                <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
+                                                                <li><a title="Add TO Cart" href="cart.php"><span class="ti-shopping-cart"></span></a></li>
                                                                 <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
                                                             </ul>
                                                         </div>
@@ -411,7 +411,7 @@
                                                         <div class="product__hover__info">
                                                             <ul class="product__action">
                                                                 <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                                <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
+                                                                <li><a title="Add TO Cart" href="cart.php"><span class="ti-shopping-cart"></span></a></li>
                                                                 <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
                                                             </ul>
                                                         </div>
@@ -436,7 +436,7 @@
                                                         <div class="product__hover__info">
                                                             <ul class="product__action">
                                                                 <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                                <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
+                                                                <li><a title="Add TO Cart" href="cart.php"><span class="ti-shopping-cart"></span></a></li>
                                                                 <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
                                                             </ul>
                                                         </div>
@@ -467,7 +467,7 @@
                                                         <div class="product__hover__info">
                                                             <ul class="product__action">
                                                                 <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                                <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
+                                                                <li><a title="Add TO Cart" href="cart.php"><span class="ti-shopping-cart"></span></a></li>
                                                                 <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
                                                             </ul>
                                                         </div>
@@ -492,7 +492,7 @@
                                                         <div class="product__hover__info">
                                                             <ul class="product__action">
                                                                 <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                                <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
+                                                                <li><a title="Add TO Cart" href="cart.php"><span class="ti-shopping-cart"></span></a></li>
                                                                 <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
                                                             </ul>
                                                         </div>
@@ -517,7 +517,7 @@
                                                         <div class="product__hover__info">
                                                             <ul class="product__action">
                                                                 <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                                <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
+                                                                <li><a title="Add TO Cart" href="cart.php"><span class="ti-shopping-cart"></span></a></li>
                                                                 <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
                                                             </ul>
                                                         </div>
@@ -542,7 +542,7 @@
                                                         <div class="product__hover__info">
                                                             <ul class="product__action">
                                                                 <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                                <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
+                                                                <li><a title="Add TO Cart" href="cart.php"><span class="ti-shopping-cart"></span></a></li>
                                                                 <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
                                                             </ul>
                                                         </div>
@@ -567,7 +567,7 @@
                                                         <div class="product__hover__info">
                                                             <ul class="product__action">
                                                                 <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                                <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
+                                                                <li><a title="Add TO Cart" href="cart.php"><span class="ti-shopping-cart"></span></a></li>
                                                                 <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
                                                             </ul>
                                                         </div>
@@ -598,7 +598,7 @@
                                                         <div class="product__hover__info">
                                                             <ul class="product__action">
                                                                 <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                                <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
+                                                                <li><a title="Add TO Cart" href="cart.php"><span class="ti-shopping-cart"></span></a></li>
                                                                 <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
                                                             </ul>
                                                         </div>
@@ -623,7 +623,7 @@
                                                         <div class="product__hover__info">
                                                             <ul class="product__action">
                                                                 <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                                <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
+                                                                <li><a title="Add TO Cart" href="cart.php"><span class="ti-shopping-cart"></span></a></li>
                                                                 <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
                                                             </ul>
                                                         </div>
@@ -648,7 +648,7 @@
                                                         <div class="product__hover__info">
                                                             <ul class="product__action">
                                                                 <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                                <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
+                                                                <li><a title="Add TO Cart" href="cart.php"><span class="ti-shopping-cart"></span></a></li>
                                                                 <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
                                                             </ul>
                                                         </div>
@@ -673,7 +673,7 @@
                                                         <div class="product__hover__info">
                                                             <ul class="product__action">
                                                                 <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                                <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
+                                                                <li><a title="Add TO Cart" href="cart.php"><span class="ti-shopping-cart"></span></a></li>
                                                                 <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
                                                             </ul>
                                                         </div>
@@ -698,7 +698,7 @@
                                                         <div class="product__hover__info">
                                                             <ul class="product__action">
                                                                 <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                                <li><a title="Add TO Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
+                                                                <li><a title="Add TO Cart" href="cart.php"><span class="ti-shopping-cart"></span></a></li>
                                                                 <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
                                                             </ul>
                                                         </div>
@@ -722,13 +722,71 @@
             </div>
         </section>
         <!-- End Our Product Area -->
-        <div class="only-banner ptb--100 bg__white">
-            <div class="container">
-                <div class="only-banner-img">
-                    <a href="shop-sidebar.html"><img src="images/new-product/6.jpg" alt="new product"></a>
+
+        <section class="htc__choose__us__ares bg__white">
+            <div class="container-fluid">
+                <div class="row" style="margin-top: 100px; margin-bottom: 100px">
+                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                        <div class="video__wrap bg--3" data--black__overlay="5">
+                            <div class="video__inner">
+                                <a class="video__trigger video-popup" href="https://www.youtube.com/watch?v=cDDWvj_q-o8">
+                                    <i class="zmdi zmdi-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                        <div class="htc__choose__wrap bg__cat--4">
+                            <h2 class="choose__title">Nuestra Tienda</h2>
+                            <div class="choose__container">
+                                <div class="single__chooose">
+                                    <div class="choose__us">
+                                        <div class="choose__icon">
+                                            <span class="ti-credit-card"></span>
+                                        </div>
+                                        <div class="choose__details">
+                                            <h4>Método De Pago</h4>
+                                            <p>Contamos con ATH Móvil</p>
+                                        </div>
+                                    </div>
+                                    <div class="choose__us">
+                                        <div class="choose__icon">
+                                            <span class="ti-truck"></span>
+                                        </div>
+                                        <div class="choose__details">
+                                            <h4>Envío</h4>
+                                            <p>Envío disponible a todo Puerto Rico</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single__chooose">
+                                    <div class="choose__us">
+                                        <div class="choose__icon">
+                                            <span class="ti-reload"></span>
+                                        </div>
+                                        <div class="choose__details">
+                                            <h4>Devoluciones</h4>
+                                            <p>Lorem ipsum dolor sit amet sed do. </p>
+                                        </div>
+                                    </div>
+                                    <div class="choose__us">
+                                        <div class="choose__icon">
+                                            <span class="ti-help-alt"></span>
+                                        </div>
+                                        <div class="choose__details">
+                                            <h4>¿Dudas?</h4>
+                                            <a href="contactanos.php">Contáctanos</a>
+                                            <p>Disponibles lunes a viernes de 8am a 5pm.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+
         <!-- Start Our Product Area -->
         <!-- End Our Product Area -->
 

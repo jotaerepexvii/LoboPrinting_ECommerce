@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Single Product | Lobo Printing</title>
+    <title>Detalles Del Producto | Lobo Printing</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -157,7 +157,7 @@
                             <li class="total__price">$130.00</li>
                         </ul>
                         <ul class="shopping__btn">
-                            <li><a href="cart.html">View Cart</a></li>
+                            <li><a href="cart.php">View Cart</a></li>
                             <li class="shp__checkout"><a href="checkout.html">Checkout</a></li>
                         </ul>
                     </div>
@@ -225,21 +225,27 @@
                                                                                 </div>
                                                                                 <div class='choose__us'>
                                                                                     <div class='choose__icon'>
-                                                                                        <span class='ti-truck'></span>
+                                                                                        <span class='ti-credit-card'></span>
                                                                                     </div>
                                                                                     <div class='choose__details'>
-                                                                                        <h4>Free Delivery</h4>
+                                                                                        <h4>Método De Pago</h4>
                                                                                         <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class='choose__us'>
                                                                                     <div class='choose__icon'>
-                                                                                        <span class='ti-heart'></span>
+                                                                                        <span class='ti-truck'></span>
                                                                                     </div>
                                                                                     <div class='choose__details'>
-                                                                                        <h4>Free Gift Box</h4>
-                                                                                        <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
+                                                                                        <h4>Envío</h4>
+                                                                                        <p>Envío disponible a Puerto Rico</p>
                                                                                     </div>
+                                                                                </div>
+                                                                                <div class='product_count'>
+                                                                                    <input type='text' name='qty' id='sst' maxlength='12' value='' title='Quantity:' class='input-text qty'>
+                                                                                        <button name='qty-up' class='increase items-count' type='submit'><i class='lnr lnr-chevron-up'></i></button>
+                                                                                        <button name='qty-down' class='reduced items-count' type='submit'><i class='lnr lnr-chevron-down'></i></button>
+                                                                                    </input>
                                                                                 </div>
                                                                                 <div class='choose__us'>
                                                                                     <div class='choose__icon'>
@@ -464,7 +470,7 @@
                                     </div>
                                 </div>
                                 <div class="addtocart-btn">
-                                    <a href="#">Add to cart</a>
+                                    <a href="cart.php">Add to cart</a>
                                 </div>
                             </div><!-- .product-info -->
                         </div><!-- .modal-product -->

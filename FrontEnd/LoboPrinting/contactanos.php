@@ -124,7 +124,7 @@
                         <li class="total__price">$130.00</li>
                     </ul>
                     <ul class="shopping__btn">
-                        <li><a href="cart.html">View Cart</a></li>
+                        <li><a href="cart.php">View Cart</a></li>
                         <li class="shp__checkout"><a href="checkout.html">Checkout</a></li>
                     </ul>
                 </div>
@@ -163,6 +163,7 @@
                                         <a href="blank.php">
                                             <img src="images/services/blank.jpg" alt="blog images">
                                         </a>
+                                        
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
@@ -199,6 +200,7 @@
                                         <a href="encuadernado.php">
                                             <img src="images/services/blank.jpg" alt="blog images">
                                         </a>
+                                        <span class="ti-help-alt"></span>
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
