@@ -170,9 +170,10 @@
         <!--banner-->
 
         <div class="">
-            <div class="only-banner ptb--100 bg__white">
+            <div class="only-banner bg__white ptb--80">
                 <div class="container">
                     <div class="only-banner-img">
+                        <!--<iframe id="4a0334d9-fce9-4ce5-83e4-6128d371e9ee" src="https://www.vectary.com/viewer/v1/?model=4a0334d9-fce9-4ce5-83e4-6128d371e9ee&env=teufelsbergground2" frameborder="0" width="100%" height="480"></iframe>-->
                         <a href="shop-sidebar.html"><img src="images/new-product/3.jpg" alt="new product"></a>
                     </div>
                 </div>
@@ -269,33 +270,6 @@
                                                     print'<p style="color:red">NO SE PUEDE MOSTRAR RECORD PORQUE:'.mysqli_error($dbc).'.</P>';
                                                 mysqli_close($dbc);
                                             ?>
-                                            <!--
-                                            <div class="col-md-4 single__pro col-lg-4 cat--1 col-sm-4 col-xs-12">
-                                                <div class="product">
-                                                    <div class="product__inner">
-                                                        <div class="pro__thumb">
-                                                            <a href="#">
-                                                                <img src="images/product/3.png" alt="product images">
-                                                            </a>
-                                                        </div>
-                                                        <div class="product__hover__info">
-                                                            <ul class="product__action">
-                                                                <li><a data-toggle="modal" data-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                                <li><a title="Add TO Cart" href="cart.php"><span class="ti-shopping-cart"></span></a></li>
-                                                                <li><a title="Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product__details">
-                                                        <h2><a href="product-details.html">Simple Black Clock</a></h2>
-                                                        <ul class="product__price">
-                                                            <li class="old__price">$16.00</li>
-                                                            <li class="new__price">$10.00</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            -->
                                         </div>
                                     </div>
                                 </div>
@@ -784,7 +758,7 @@
                     <div class="blog__wrap clearfix mt--60 xmt-30">
                         <!-- Start Single Blog -->
                         <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-                            <div class="blog foo">
+                            <div class="blog">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
                                         <a href="blog-details.html">
@@ -811,7 +785,7 @@
                         <!-- End Single Blog -->
                         <!-- Start Single Blog -->
                         <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-                            <div class="blog foo">
+                            <div class="blog">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
                                         <a href="blog-details.html">
@@ -838,7 +812,7 @@
                         <!-- End Single Blog -->
                         <!-- Start Single Blog -->
                         <div class="col-md-4 col-lg-4 hidden-sm col-xs-12">
-                            <div class="blog foo">
+                            <div class="blog">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
                                         <a href="blog-details.html">
