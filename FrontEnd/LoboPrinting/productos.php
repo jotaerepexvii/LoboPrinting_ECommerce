@@ -80,17 +80,17 @@
                             <div class="filter__menu__container">
                                 <div class="product-tab-list2">
                                     <form action="productos.php" method="post" enctype="multipart/form-data">
-                                        <button type="submit" name="todo">TODO</button>
-                                        <button type="submit" name="escolar">ESCOLAR</button>
-                                        <button type="submit" name="laboratorio">LABORATORIO</button>
-                                        <button type="submit" name="memorabilia">MEMORABILIA</button>
+                                        <button type="submit" name="todo">Todo</button>
+                                        <button type="submit" name="escolar">Escolar</button>
+                                        <button type="submit" name="laboratorio">Laboratorio</button>
+                                        <button type="submit" name="memorabilia">Memorabilia</button>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="product-tab-list2">
-                                <button class="filter__menu float-left-style" href="#">filter</button>
+                                <button class="filter__menu float-left-style" href="#">Filtros</button>
                             </div>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                                                 <li><a href="#priceasc">Precio: Ascendente</a></li>
                                                 <li><a href="#pricedes">Precio: Descendente</a></li>
                                                 <li><a href="#newest">Lo Mas Reciente</a></li>
-                                                <li><a href="#oldest">Lo Menos Reciente</a></li>
+                                                <li><a href="#oldest">Lo Mas Antiguo</a></li>
                                             </ul>
                                         </div>
                                     </div>
