@@ -1,0 +1,20 @@
+FRONT END
+    > servicios.php
+        - en servicios colocar el nombre del servicio debajo de la imagen y
+            quitarle el hover que muestra el nombre del servicio
+
+    > contactanos.php
+        - cambiar 'contactanos.php' a 'contacto.php'?
+        - igual que con servicios, colocar el nombre de los cuadros amarillos debajo de estos
+            y quitarle el hover del nombre
+        - tratar de colocar el mapa un poco mas ancho (800px esta bien) y poder centralizarlo luego de 'ensancharlo'
+        - los cuadros amarillos
+            +uno puede ser de número de telefono, email y dirección postal
+
+    > phpInclude/ footer.php
+        - quitar logo de TMART, poner el provisional de LOBO PRINTING
+        - ver que mas se puede añadir al footer
+        - cambiar el rights reserved
+
+    > realizar page nuevo (user.php) que muestre los detalles del usuario (y que los pueda editar?) y eso
+
