@@ -1,8 +1,8 @@
-<!-- *********************************************************************************** -->
+<!-- Start PHP CONNECTION -->
 <?php
     include 'phpIncludes/connection.php';
 ?>
-<!-- *********************************************************************************** -->
+<!-- End PHP CONNECTION -->
 <!-- HEADER STYLE START -->
 <header id="header" class="htc-header header--3 bg__white">
     <!-- MAINMENU AREA START -->
@@ -41,7 +41,6 @@
                         </ul>
                     </nav>
                     <!-- MENU END -->
-                    
                     <!-- MOBILE MENU START -->
                     <div class="mobile-menu clearfix visible-xs visible-sm">
                         <nav id="mobile_dropdown">
