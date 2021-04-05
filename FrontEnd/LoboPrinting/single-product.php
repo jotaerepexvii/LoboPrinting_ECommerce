@@ -124,7 +124,7 @@
                                                                                     <form id='myform' method='POST' action='#'>
                                                                                         <div class='product-quantity'>
                                                                                             <div class='cart-plus-minus'>
-                                                                                                <input class='cart-plus-minus-box' type='text' name='qtybutton' value='2'>
+                                                                                                <input class='cart-plus-minus-box' type='text' name='qtybutton' value='1'>
                                                                                             </div>
                                                                                         </div>
                                                                                     </form>
