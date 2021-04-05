@@ -31,9 +31,9 @@
                             </li>
                             <li class="drop"><a href="productos.php">Productos</a>
                                 <ul class="dropdown">
-                                    <li><a href="efectos_escolares.php">Efectos escolares</a></li>
-                                    <li><a href="memorabilia.php">Memorabilia</a></li>
-                                    <li><a href="ropa.php">Ropa</a></li>
+                                    <li><a href="#">Escolar</a></li>
+                                    <li><a href="#">Laboratorio</a></li>
+                                    <li><a href="#">Memorabilia</a></li>
                                 </ul>
                             </li>
                             <li class="drop"><a href="sobre-nosotros.php">Sobre Nosotros</a></li>
