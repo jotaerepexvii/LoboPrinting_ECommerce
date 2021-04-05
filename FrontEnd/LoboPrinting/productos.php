@@ -36,19 +36,16 @@
 <body>
     <!-- BODY MAIN WRAPPER START -->
     <div class="wrapper fixed__footer">  
-        <!-- *********************************************************************************** -->
-        <?php
-            include 'phpIncludes/header.php';
-        ?>
-        <!-- *********************************************************************************** --> 
+        <!-- Start Header -->
+            <?php
+                include 'phpIncludes/header.php';
+            ?>
+        <!-- End Header -->
         <div class="body__overlay"></div>
-
         <!-- Start Offset Wrapper -->
-            <!-- *********************************************************************************** -->
             <?php
                 include 'phpIncludes/offset-wrapper.php';
             ?>
-            <!-- *********************************************************************************** -->
         <!-- End Offset Wrapper -->
     
         <!-- Start Bradcaump area -->

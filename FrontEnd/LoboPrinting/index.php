@@ -41,20 +41,16 @@
     <!-- BODY MAIN WRAPPER START -->
     <div class="wrapper fixed__footer">
         
-        <!-- *********************************************************************************** -->
+        <!-- Start Header -->
         <?php
             include 'phpIncludes/header.php';
         ?>
-        <!-- *********************************************************************************** -->
-        
+        <!-- End Header -->
         <div class="body__overlay"></div>
-
         <!-- Start Offset Wrapper -->
-            <!-- *********************************************************************************** -->
-            <?php
-                include 'phpIncludes/offset-wrapper.php';
-            ?>
-            <!-- *********************************************************************************** -->
+        <?php
+            include 'phpIncludes/offset-wrapper.php';
+        ?>
         <!-- End Offset Wrapper -->
 
         <!--banner-->
@@ -69,29 +65,6 @@
             </div>
         </div>
         <!--end banner-->
-        <!-- Start Feature Product -->
-        <section class="categories-slider-area bg__white">
-            <div class="container">
-                <div class="row">
-                    <!-- Start Left Feature -->
-                    <div class="col-md-9 col-lg-9 col-sm-8 col-xs-12 float-left-style">
-                        <!-- Start Slider Area -->
-                        <div class="slider__container slider--one">
-                            <div class="slider__activation__wrap owl-carousel owl-theme">
-                                <!-- Start Single Slide -->
-                                <!-- End Single Slide -->
-
-                                <!-- Start Single Slide -->
-                                <!-- End Single Slide -->
-                            </div>
-                        </div>
-                        <!-- Start Slider Area -->
-                    </div>
-                    <!-- End Left Feature -->
-                </div>
-            </div>
-        </section>
-        <!-- End Feature Product -->
 
         <!-- Start Our Product Area -->
         <section class="htc__product__area bg__white ptb--90">
@@ -124,7 +97,6 @@
                                                 } else {
                                                     $query = "SELECT * FROM Product limit 3";
                                                 }
-                                                
                                                 if($r = mysqli_query($dbc, $query))//Save & Validate Query Result
                                                 {
                                                     while($row=mysqli_fetch_array($r))//Present Products
@@ -164,7 +136,7 @@
             </div>
         </section>
         <!-- End Our Product Area -->
-
+        
         <section class="htc__choose__us__ares bg__white ptb--100">
             <div class="container-fluid">
                 <div class="row">
@@ -227,12 +199,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Start Our Product Area -->
-        <!-- End Our Product Area -->
-
-        <!-- Start Our Product Area -->
-        <!-- End Our Product Area -->
 
         <!-- Start Blog Area -->
         <section class="htc__blog__area bg__white pb--130">

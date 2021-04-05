@@ -42,21 +42,17 @@
     <div class="wrapper fixed__footer">
         
         <!-- Header Star-->
-            <!-- *********************************************************************************** -->
-            <?php
-                include 'phpIncludes/header.php';
-            ?>
-            <!-- *********************************************************************************** -->
+        <?php
+            include 'phpIncludes/header.php';
+        ?>
         <!-- Header End-->
 
         <div class="body__overlay"></div>
 
         <!-- Start Offset Wrapper -->
-            <!-- *********************************************************************************** -->
-            <?php
-                include 'phpIncludes/offset-wrapper.php';
-            ?>
-            <!-- *********************************************************************************** -->
+        <?php
+            include 'phpIncludes/offset-wrapper.php';
+        ?>
         <!-- End Offset Wrapper -->
 
         <!-- Start Feature Product -->

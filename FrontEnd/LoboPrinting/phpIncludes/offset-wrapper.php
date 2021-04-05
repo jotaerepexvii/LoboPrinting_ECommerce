@@ -18,6 +18,7 @@
         </div>
     </div>
     <!-- End Search Popap -->
+    
     <!-- Start Offset MEnu -->
     <div class="offsetmenu">
         <div class="offsetmenu__inner">
@@ -59,6 +60,7 @@
         </div>
     </div>
     <!-- End Offset MEnu -->
+
     <!-- Start Cart Panel -->
     <div class="container">
         <div class="shopping__cart">

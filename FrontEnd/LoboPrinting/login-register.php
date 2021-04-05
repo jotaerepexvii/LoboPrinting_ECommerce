@@ -86,11 +86,6 @@
 
         <div class="body__overlay"></div>
 
-        <!-- Start Offset Wrapper -->
-        <div class="offset__wrapper">
-            <!-- Start Offset Menu -->
-            <!-- End Offset Wrapper -->
-
         <!-- SERVICES AREA START -->
         <section class="htc__blog__area bg__white pb--130">
             <div class="container">
