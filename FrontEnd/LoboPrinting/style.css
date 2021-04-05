@@ -494,6 +494,30 @@
     border-width: 2px 1px 1px;
     padding: 14px 20px 10px;
 }
+.product-tab-list2 button { /*botones de productos y etc*/
+    text-align: center;
+    background: transparent none repeat scroll 0 0;
+    border: 0 none;
+    color: #666666;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 0 20px;
+    text-transform: uppercase;
+    transition: all 0.4s ease 0s;
+}
+.product-tab-list2 button:hover { /*botones de productos y etc*/
+    text-align: center;
+    background: transparent none repeat scroll 0 0;
+    border: 0 none;
+    color: #ff4136;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 0 20px;
+    text-transform: uppercase;
+    transition: all 0.4s ease 0s;
+}
 .product-slider-active .col-lg-4,
 .product-slider-active .col-sm-4,
 .product-slider-active .col-md-4,
