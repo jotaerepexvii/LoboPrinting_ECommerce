@@ -107,8 +107,8 @@
                                         <div class="single__filter">
                                             <h2>Ordenar Por</h2>
                                             <ul class="filter__list">
-                                                <li><a href="#a-z">A-Z</a></li>
-                                                <li><a href="#z-a">Z-A</a></li>
+                                                <li><a href="#a-z">Alfabeto: A-Z</a></li>
+                                                <li><a href="#z-a">Alfabeto: Z-A</a></li>
                                                 <li><a href="#priceasc">Precio: Ascendente</a></li>
                                                 <li><a href="#pricedes">Precio: Descendente</a></li>
                                                 <li><a href="#newest">Lo Mas Reciente</a></li>
