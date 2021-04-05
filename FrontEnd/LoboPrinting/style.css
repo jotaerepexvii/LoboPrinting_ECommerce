@@ -2031,17 +2031,17 @@ product__style--7
     right: -100%;
     top: 0;
     transition: all 0.25s ease 0s;
-    width: 500px;
+    width: 400px;
     z-index: 99999;
 }
 .filter__cart__inner {
     height: 100%;
-    padding: 130px 50px 60px;
+    padding: 120px 25px 60px 50px;
 }
 .filter__menu__close__btn {
     background-color: #fff;
     left: 0;
-    padding: 50px 50px 24px;
+    padding: 50px 50px 25px;
     position: absolute;
     right: 0;
     top: 0;

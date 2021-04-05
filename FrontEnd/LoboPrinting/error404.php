@@ -40,55 +40,12 @@
 
     <!-- BODY MAIN WRAPPER START -->
     <div class="wrapper fixed__footer">
-        <!-- HEADER STYLE START -->
-    <header id="header" class="htc-header header--3 bg__white">
-        <!-- MAINMENU AREA START -->
-        <div id="sticky-header-with-topbar" class="mainmenu__area sticky__header" style="background: gold;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3">
-                        <div class="logo">
-                            <a href="index.php">
-                                <img src="images/logo/logo.png" alt="logo">
-                            </a>
-                        </div>
-                    </div>
-                    <!-- MAINMENU ARES START -->
-                    <div class="col-md-8 col-lg-8 col-sm-6 col-xs-6">
-                        <!-- MENU START
-                        <nav class="mainmenu__nav hidden-xs hidden-sm">
-                            <ul class="main__menu">
-                                <li class="drop"><a href="index.php">Volver al Inicio</a></li>
-                            </ul>
-                        </nav>
-                        -- MENU END -->
-                        
-                        <!-- MOBILE MENU START -->
-                        <div class="mobile-menu clearfix visible-xs visible-sm">
-                            <nav id="mobile_dropdown">
-                                <ul>
-                                    <li><a href="index.php">Inicio</a></li>
-                                    <li><a href="services.php">Servicios</a>
-                                        <ul>
-                                            <li><a href="copias.php">Copias</a></li>
-                                            <li><a href="fotos.php">Fotos</a></li>
-                                            <li><a href="encuadernado.php">Encuadernados</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="productos.php">Productos</a></li>
-                                    <li><a href="about_us.php">Sobre Nosotros</a></li>
-                                    <li><a href="contact_us.php">Contáctanos</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <!-- MOBILE MENU END -->
-                    </div>
-                    <!-- MAINMENU ARES END -->
-                </div>
-            </div>
-        </div>
-        <!-- MAINMENU AREA END -->
-    </header>
+    <!-- HEADER STYLE START -->
+        <!-- *********************************************************************************** -->
+        <?php
+        include 'phpIncludes/header.php';
+        ?>
+        <!-- *********************************************************************************** --> 
     <!-- HEADER STYLE END -->
         <div class="only-banner ptb--100 bg__white">
             <div class="container">

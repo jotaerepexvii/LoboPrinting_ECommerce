@@ -60,7 +60,7 @@
         <!-- End Offset Wrapper -->
         
         <!-- Start Bradcaump area -->
-        <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(images/bg/2.jpg) no-repeat scroll center center / cover ;">
+        <div class="ht__bradcaump__area">
             <div class="ht__bradcaump__wrap">
                 <div class="container">
                     <div class="row">
@@ -80,7 +80,7 @@
         </div>
         <!-- End Bradcaump area -->
         <!-- cart-main-area start -->
-        <div class="cart-main-area ptb--120 bg__white">
+        <div class="cart-main-area ptb--100 bg__white">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -123,12 +123,14 @@
                                         <input type="submit" value="Update Cart" />
                                         <a href="#">Continue Shopping</a>
                                     </div>
+                                    <!--
                                     <div class="coupon">
                                         <h3>Coupon</h3>
                                         <p>Enter your coupon code if you have one.</p>
                                         <input type="text" placeholder="Coupon code" />
                                         <input type="submit" value="Apply Coupon" />
                                     </div>
+                                    -->
                                 </div>
                                 <div class="col-md-4 col-sm-5 col-xs-12">
                                     <div class="cart_totals">
