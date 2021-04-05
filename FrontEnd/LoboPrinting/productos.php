@@ -164,7 +164,9 @@
                 <div class="htc__product__container">
                     <!-- Start Product Menu -->
                     <div class="row">
-                        <hr>
+                        <div class="col-md-12">
+                            <hr>
+                        </div>  
                         <div class="col-md-9">
                             <div class="filter__menu__container">
                                 <div class="product-tab-list2">
@@ -178,8 +180,8 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <div class="product-tab-list2" style="right:0;">
-                                <button class="filter__menu" href="#">filter</button>
+                            <div class="product-tab-list2">
+                                <button class="filter__menu float-left-style" href="#">filter</button>
                             </div>
                         </div>
                     </div>
@@ -202,39 +204,6 @@
                                                 <li><a href="#pricedes">Precio: Descendente</a></li>
                                                 <li><a href="#newest">Lo Mas Reciente</a></li>
                                                 <li><a href="#oldest">Lo Menos Reciente</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="single__filter">
-                                            <h2>Size</h2>
-                                            <ul class="filter__list">
-                                                <li><a href="#xxl">XXL</a></li>
-                                                <li><a href="#xl">XL</a></li>
-                                                <li><a href="#x">X</a></li>
-                                                <li><a href="#l">L</a></li>
-                                                <li><a href="#m">M</a></li>
-                                                <li><a href="#s">S</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="single__filter">
-                                            <h2>Tags</h2>
-                                            <ul class="filter__list">
-                                                <li><a href="#">All</a></li>
-                                                <li><a href="#">Accessories</a></li>
-                                                <li><a href="#">Bags</a></li>
-                                                <li><a href="#">Chair</a></li>
-                                                <li><a href="#">Decoration</a></li>
-                                                <li><a href="#">Fashion</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="single__filter">
-                                            <h2>Price</h2>
-                                            <ul class="filter__list">
-                                                <li><a href="#">$0.00 - $50.00</a></li>
-                                                <li><a href="#">$50.00 - $100.00</a></li>
-                                                <li><a href="#">$100.00 - $150.00</a></li>
-                                                <li><a href="#">$150.00 - $200.00</a></li>
-                                                <li><a href="#">$300.00 - $500.00</a></li>
-                                                <li><a href="#">$500.00 - $700.00</a></li>
                                             </ul>
                                         </div>
                                     </div>

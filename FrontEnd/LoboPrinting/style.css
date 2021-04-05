@@ -2640,12 +2640,14 @@ select.select-color {
     display: flex;
 }
 .cart-plus-minus-box {
-    border: 0 none;
+    border: 3px;
+    border-color: #666666;
     max-width: 82px;
     padding-left: 25px;
     padding-right: 24px;
 }
 .cart-plus-minus {
+
     position: relative;
 }
 .dec.qtybutton {
@@ -4202,3 +4204,6 @@ a.shipping-calculator-button:hover {
     outline: -webkit-focus-ring-color auto 0px;
 }
 
+.float-right-style {
+    float: left;
+}

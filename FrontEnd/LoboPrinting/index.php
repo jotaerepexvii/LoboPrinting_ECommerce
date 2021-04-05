@@ -214,38 +214,15 @@
                 <div class="row">
                     <!--Sidebar-->
                     <div class="col-md-12">
+                        <hr>
                         <div class="product-style-tab">
-                            <div class="product-tab-list">
-                                <!-- Nav tabs --
-                                <ul class="tab-style" role="tablist">
-                                    <li class="active">
-                                        <a href="#home1" data-toggle="tab">
-                                            <div class="tab-menu-text">
-                                                <h4 type="submit" name="Lo-ultimo">Lo último</h4>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#home2" data-toggle="tab">
-                                            <div class="tab-menu-text">
-                                                <h4>Mas Vendido</h4>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                                -->
-                                <form class="tab-style" action="index.php" method="post" enctype="multipart/form-data">
-                                    <button type="submit" name="lo-ultimo">
-                                        <div class="tab-menu-text">
-                                            <h4>Lo último</h4>
-                                        </div>
-                                    </button>
-                                    <button type="submit" name="mas-vendido">
-                                        <div class="tab-menu-text">
-                                            <h4>Mas Vendido</h4>
-                                        </div>
-                                   </button>
-                                </form>
+                            <div class="filter__menu__container">
+                                <div class="product-tab-list2">
+                                    <form action="index.php" method="post" enctype="multipart/form-data">
+                                        <button type="submit" name="lo-ultimo">Lo último</button>
+                                        <button type="submit" name="mas-vendido">Mas Vendido</button>
+                                    </form>
+                                </div>
                             </div>
                             <div class="tab-content another-product-style jump">
                                 <div class="tab-pane active" id="home1">

@@ -64,7 +64,7 @@
 
         <!-- Start Our Product Area -->
         <section class="htc__product__area bg__white">
-            <div class="container" style="margin-top:75px">
+            <div class="container">
                 <div class="row">
                     <!--Sidebar-->
                     <div class="col-md-12">
@@ -75,80 +75,82 @@
                                         <div class="product__list another-product-style"> <!--class name for carrousel: product-slider-active owl-carousel -->
                                         <?php
                                             $query = "SELECT * FROM Product 
-                                                        ORDER BY date DESC limit 1";
+                                                        ORDER BY price ASC limit 1";
                                             
                                             if($r = mysqli_query($dbc, $query))//Save & Validate Query Result
                                             {
                                                 while($row=mysqli_fetch_array($r))//Present Products
                                                 {
                                                     print "
-                                                        <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
-                                                            <div class='product'>
-                                                                <div class='product__inner'>
-                                                                    <div class='pro__thumb'>
-                                                                        <a href='#'>
-                                                                            <img src='images/lobo_products/$row[image]' alt='product images'>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                        </div>
-                                                        <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
-                                                            <div class='product'>
-                                                                <div class='product__inner'>
-                                                                    <div class='htc__choose__wrap bg__cat--4'>
-                                                                        <h2 class='choose__title'>$row[name] $row[description]</h2>
-                                                                        <h2 class='choose__title' style='color:red;margin-top:20px'>$ $row[price] c/u</h2>
-                                                                        <div class='choose__container'>
-                                                                            <div class='single__chooose'>
-                                                                                <div class='choose__us'>
-                                                                                    <div class='choose__icon'>
-                                                                                        <span class='ti-shopping-cart'></span>
-                                                                                    </div>
-                                                                                    <div class='choose__details'>
-                                                                                        <a href='#'><h4>Añadir al Carrito</h4></a>
-                                                                                        <p></p>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class='choose__us'>
-                                                                                    <div class='choose__icon'>
-                                                                                        <span class='ti-credit-card'></span>
-                                                                                    </div>
-                                                                                    <div class='choose__details'>
-                                                                                        <h4>Método De Pago</h4>
-                                                                                        <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class='choose__us'>
-                                                                                    <div class='choose__icon'>
-                                                                                        <span class='ti-truck'></span>
-                                                                                    </div>
-                                                                                    <div class='choose__details'>
-                                                                                        <h4>Envío</h4>
-                                                                                        <p>Envío disponible a Puerto Rico</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class='product_count'>
-                                                                                    <input type='text' name='qty' id='sst' maxlength='12' value='' title='Quantity:' class='input-text qty'>
-                                                                                        <button name='qty-up' class='increase items-count' type='submit'><i class='lnr lnr-chevron-up'></i></button>
-                                                                                        <button name='qty-down' class='reduced items-count' type='submit'><i class='lnr lnr-chevron-down'></i></button>
-                                                                                    </input>
-                                                                                </div>
-                                                                                <div class='choose__us'>
-                                                                                    <div class='choose__icon'>
-                                                                                        <span class='ti-heart'></span>
-                                                                                    </div>
-                                                                                    <div class='choose__details'>
-                                                                                        <h4>Free Gift Box</h4>
-                                                                                        <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
-                                                                                    </div>
-                                                                                </div>
+                                                        <div class='container'>
+                                                            <div class='row'>
+                                                                <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
+                                                                    <div class='product'>
+                                                                        <div class='product__inner'>
+                                                                            <div class='pro__thumb'>
+                                                                                <a href='#'>
+                                                                                    <img src='images/lobo_products/$row[image]' alt='product images'>
+                                                                                </a>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12' style='margin-top:70px;'>
+                                                                    <div class='htc__product__details__inner'>
+                                                                        <div class='pro__detl__title'>
+                                                                            <h2>$row[name] $row[description]</h2>
+                                                                        </div>
+                                                                        <div class='pro__dtl__rating'>
+                                                                            <ul class='pro__rating'>
+                                                                                <li><span class='ti-star'></span></li>
+                                                                                <li><span class='ti-star'></span></li>
+                                                                                <li><span class='ti-star'></span></li>
+                                                                                <li><span class='ti-star'></span></li>
+                                                                                <li><span class='ti-star'></span></li>
+                                                                            </ul>
+                                                                            <span class='rat__qun'>(Based on 0 Ratings)</span>
+                                                                        </div>
+                                                                        <div class='pro__details'>
+                                                                            <p>Lorem ipsum dolor sit amet consectetu adipisicing elit sed do eiusmod tempor incididunt ut labore</p>
+                                                                            <p>Lorem ipsum dolor sit amet consectetu adipisicing elit sed do eiusmod tempor incididunt ut labore</p>
+                                                                        </div>
+                                                                    <div class='htc__product__details__inner'>    
+                                                                        <ul class='pro__dtl__prize' >
+                                                                            <li>$ $row[price] c/u</li>
+                                                                        </ul>
+                                                                        <div class='product-action-wrap'>
+                                                                            <div class='prodict-statas'><span>Quantity </span></div>
+                                                                                <div class='product-quantity'>
+                                                                                    <form id='myform' method='POST' action='#'>
+                                                                                        <div class='product-quantity'>
+                                                                                            <div class='cart-plus-minus'>
+                                                                                                <input class='cart-plus-minus-box' type='text' name='qtybutton' value='2'>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <ul class='pro__dtl__btn'>
+                                                                            <li class='buy__now__btn'><a href='#'>buy now</a></li>
+                                                                            <li><a href='#'><span class='ti-heart'></span></a></li>
+                                                                            <li><a href='#'><span class='ti-email'></span></a></li>
+                                                                        </ul>
+
+                                                                        <div class='pro__social__share'>
+                                                                            <h2>Share </h2>
+                                                                            <ul class='pro__soaial__link'>
+                                                                                <li><a href='#'><i class='zmdi zmdi-twitter'></i></a></li>
+                                                                                <li><a href='#'><i class='zmdi zmdi-instagram'></i></a></li>
+                                                                                <li><a href='#'><i class='zmdi zmdi-facebook'></i></a></li>
+                                                                            </ul>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
+                                                            <hr style='margin-top:100px;'>
                                                         </div>
                                                     ";
                                                 }
@@ -162,7 +164,6 @@
                                 </div>
                             </div>
                         </div>
-                        <hr style="margin-top:100px;margin-bottom:100px">
                     </div>
                 </div>
             </div>
