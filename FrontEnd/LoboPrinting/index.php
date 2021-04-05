@@ -776,7 +776,6 @@
                                         <div class="choose__details">
                                             <h4>¿Dudas?</h4>
                                             <a href="contactanos.php">Contáctanos</a>
-                                            <p>Disponibles lunes a viernes de 8am a 5pm.</p>
                                         </div>
                                     </div>
                                 </div>
