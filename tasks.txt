@@ -18,3 +18,4 @@ FRONT END
 
     > realizar page nuevo (user.php) que muestre los detalles del usuario (y que los pueda editar?) y eso
 
+BACK END
