@@ -83,12 +83,9 @@
                                         <a href="blank.php">
                                             <img src="images/services/blank.jpg" alt="blog images">
                                         </a>
-                                        
                                     </div>
-                                    <div class="blog__hover__info">
-                                        <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="copias.php">ALGO</a></p>
-                                        </div>
+                                    <div class="description">
+                                        <h4>Número Telefónico</h4>
                                     </div>
                                 </div>
                             </div>
@@ -103,10 +100,8 @@
                                             <img src="images/services/blank.jpg" alt="blog images">
                                         </a>
                                     </div>
-                                    <div class="blog__hover__info">
-                                        <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="fotos.php">ALGO</a></p>
-                                        </div>
+                                    <div class="description">
+                                        <h4>Ubicación</h4>
                                     </div>
                                 </div>
                             </div>
@@ -121,10 +116,8 @@
                                             <img src="images/services/blank.jpg" alt="blog images">
                                         </a>
                                     </div>
-                                    <div class="blog__hover__info">
-                                        <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="encuadernado.php">ALGO</a></p>
-                                        </div>
+                                    <div class="description">
+                                        <h4>E-mail</h4>
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +132,7 @@
         
         <!-- End Choose Us Area -->
         <!-- Start Our Store Area -->
-        <section class="htc__store__area ptb--120 bg__white">
+        <section class="htc__store__area ptb--100 bg__white">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

@@ -59,7 +59,7 @@
                 <div class="container">
                     <div class="only-banner-img">
                         <!--<iframe id="4a0334d9-fce9-4ce5-83e4-6128d371e9ee" src="https://www.vectary.com/viewer/v1/?model=4a0334d9-fce9-4ce5-83e4-6128d371e9ee&env=teufelsbergground2" frameborder="0" width="100%" height="480"></iframe>-->
-                        <a href="shop-sidebar.html"><img src="images/new-product/3.jpg" alt="new product"></a>
+                        <a><img src="images/new-product/3.jpg" alt="new product"></a>
                     </div>
                 </div>
             </div>
@@ -132,7 +132,6 @@
                                 </div>
                             </div>
                         </div>
-                        <hr style="margin: top 50px;">
                     </div>
                 </div>
             </div>
@@ -208,7 +207,7 @@
         </section>
 
         <!-- Start Blog Area -->
-        <section class="htc__blog__area bg__white pb--130">
+        <section class="htc__blog__area bg__white pt--50 pb--130">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">

@@ -53,7 +53,7 @@
         <!-- End Offset Wrapper -->
         <!-- Start Bradcaump area -->
         <div class="ht__bradcaump__area">
-            <div class="ht__bradcaump__wrap">
+            <div class="ht__bradcaump__wrap ptb--80">
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12">
@@ -130,7 +130,7 @@
         </div>
         <!-- End Testimonial Area -->
         <!-- Start Our Store Area -->
-        <section class="htc__store__area ptb--120 bg__white">
+        <section class="htc__store__area bg__white ptb--100">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

@@ -1172,6 +1172,13 @@ h3.widget-title-modal {
 .blog__inner {
     position: relative;
 }
+.blog__inner .description h4{
+    text-align: center;
+    color: #505050;
+    font-size: 22px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
 .blog__hover__info { /*changed*/
     bottom: 0;
     left: 0;
@@ -1188,7 +1195,7 @@ h3.widget-title-modal {
 }
 .blog__thumb:hover {
     position: relative;
-    filter: blur(2px);
+    filter: blur(1px);
 }
 .blog__post__time {
     left: 20px;
