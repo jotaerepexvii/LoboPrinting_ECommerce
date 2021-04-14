@@ -118,7 +118,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <ul class='pro__dtl__btn'>
-                                                                    <li class='buy__now__btn'><a href='#'>buy now</a></li>
+                                                                    <li class='buy__now__btn'><a href='checkout.php'>buy now</a></li>
                                                                     <li><a href='#'><span class='ti-heart'></span></a></li>
                                                                     <li><a href='#'><span class='ti-email'></span></a></li>
                                                                 </ul>

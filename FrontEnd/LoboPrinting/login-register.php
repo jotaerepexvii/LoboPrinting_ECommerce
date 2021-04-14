@@ -32,12 +32,40 @@
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
-<body>
+<body>    
+    <?php
+        $dbc = @mysqli_connect('136.145.29.193','brytacmo','brytacmo840$cuta','brytacmo_db')
+            OR die('No se pudo conectar a la base de datos'.mysqli_connect_error());
+        
+        session_start();
+   
+        if(isset($_POST['login']))
+        {
+            // username and password sent from form 
+            $email = filter_input(INPUT_POST, 'email');
+            $password = filter_input(INPUT_POST, 'password');
+
+            $query = "SELECT user_id FROM Users WHERE email = '$email' and password = '$password'";
+            $r = mysqli_query($dbc, $query);
+            $row=mysqli_fetch_array($r);
+
+            $count = mysqli_num_rows($r);
+            // If result matched $myusername and $mypassword, table row must be 1 row
+            if($count == 1)
+            {
+                $_SESSION['login'] = $row['user_id'];
+                header('location:index.php');
+            }
+            else
+            {
+                echo "Your Login Name or Password is invalid";
+            }
+        }
+    ?>
     <!-- BODY MAIN WRAPPER START -->
     <div class="wrapper fixed__footer">  
         <!-- HEADER STYLE START -->
         <header id="header" class="htc-header header--3 bg__white">
-            <!-- MAINMENU AREA START -->
             <div id="sticky-header-with-topbar" class="mainmenu__area sticky__header" style="background: gold;">
                 <div class="container">
                     <div class="row">
@@ -48,44 +76,12 @@
                                 </a>
                             </div>
                         </div>
-                        <!-- MAINMENU ARES START -->
-                        <div class="col-md-8 col-lg-8 col-sm-6 col-xs-6">
-                            <!-- MENU START -->
-                            <nav class="mainmenu__nav hidden-xs hidden-sm">
-                                <ul class="main__menu">
-                                    <li class="drop"><a href="index.php">Inicio</a></li>
-                                    <li class="drop"><a href="contactanos.php">Contáctanos</a></li>
-                                </ul>
-                            </nav>
-                            <!-- MENU END -->
-                            
-                            <!-- MOBILE MENU START -->
-                            <div class="mobile-menu clearfix visible-xs visible-sm">
-                                <nav id="mobile_dropdown">
-                                    <ul>
-                                        <li><a href="index.php">Inicio</a></li>
-                                        <li><a href="contact_us.php">Contáctanos</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                            <!-- MOBILE MENU END -->
-                        </div>
-                        <!-- MAINMENU ARES END -->
-                        <div class="col-md-2 col-sm-4 col-xs-3">  
-                            <ul class="menu-extra">
-                                <li><a href="login-register.php"><span class="ti-user"></span></a></li>
-                            </ul>
-                        </div>
                     </div>
-                    <div class="mobile-menu-area"></div>
                 </div>
             </div>
-            <!-- MAINMENU AREA END -->
         </header>
         <!-- HEADER STYLE END -->
-
         <div class="body__overlay"></div>
-
         <!-- SERVICES AREA START -->
         <section class="htc__blog__area bg__white pb--130">
             <div class="container">
@@ -94,7 +90,7 @@
                         <div class="container">
                             <div class="row"> <!--space between header and form-->
                                 <div class="col-md-6 col-md-offset-3"> 
-                                    <ul class="login__register__menu" role="tablist">
+                                    <ul class="login__register__menu" role="tablist"></ul>
                                 </div>
                             </div>
                             <div class="row">
@@ -112,17 +108,17 @@
                                         <!-- Start Single Content -->
                                         <div id="login" role="tabpanel" class="single__tabs__panel tab-pane fade in active">
                                             <form class="login" method="post">
-                                                <input type="text" placeholder="Nombre de Usuario*">
-                                                <input type="password" placeholder="Contraseña*">
+                                                <input name="email" type="text" placeholder="Nombre de Usuario*">
+                                                <input name="password" type="password" placeholder="Contraseña*">
+                                                
+                                                <div class="tabs__checkbox">
+                                                    <span class="forget"><a href="#">¿Olvidó su contraseña?</a></span>
+                                                </div>
+                                                <div class="htc__login__btn mt--30">
+                                                    <button name="login">Accesar</button>
+                                                </div>
+                                                
                                             </form>
-                                            <div class="tabs__checkbox">
-                                                <input type="checkbox">
-                                                <span> Recordar datos</span>
-                                                <span class="forget"><a href="#">¿Olvidó su contraseña?</a></span>
-                                            </div>
-                                            <div class="htc__login__btn mt--30">
-                                                <a href="#">Accesar</a>
-                                            </div>
                                         </div>
                                         <!-- End Single Content -->
                                         <!-- Start Single Content -->
