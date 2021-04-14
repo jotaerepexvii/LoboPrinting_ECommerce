@@ -55,7 +55,7 @@
 
         <!--banner-->
         <div class="">
-            <div class="only-banner bg__white ptb--90">
+            <div class="only-banner bg__white ptb--100">
                 <div class="container">
                     <div class="only-banner-img">
                         <!--<iframe id="4a0334d9-fce9-4ce5-83e4-6128d371e9ee" src="https://www.vectary.com/viewer/v1/?model=4a0334d9-fce9-4ce5-83e4-6128d371e9ee&env=teufelsbergground2" frameborder="0" width="100%" height="480"></iframe>-->
@@ -67,7 +67,7 @@
         <!--end banner-->
 
         <!-- Start Our Product Area -->
-        <section class="htc__product__area bg__white ptb--90">
+        <section class="htc__product__area bg__white ptb--50">
             <div class="container">
                 <div class="row">
                     <!--Sidebar-->
@@ -103,15 +103,15 @@
                                                     {
                                                         print "
                                                             <div class='col-md-4 single__pro col-lg-4 cat--1 col-sm-4 col-xs-12'>
-                                                                <div class='product foo'>
+                                                                <div class='product'>
                                                                     <div class='product__inner'>
                                                                         <div class='pro__thumb'>
                                                                             <a href='#'>
-                                                                                <img src='images/lobo_products/$row[image]' alt='product images'>
+                                                                                <img src='images/lobo_products/$row[image]' alt='$row[name]$row[description]'>
                                                                             </a>
                                                                         </div>
                                                                     </div>
-                                                                    <div class='product__details'>
+                                                                    <div class='product__details foo'>
                                                                         <h2><a href='product-details.html'>$row[name] $row[description]</a></h2>
                                                                         <ul class='product__price'>
                                                                             <li class='price'>$$row[price]</li>
@@ -206,8 +206,8 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="section__title section__title--2 text-center">
-                            <h2 class="title__line">Latest News</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod temp incididunt ut labore et dolore magna aliqua. </p>
+                            <h2 class="title__line">Últimas Noticias</h2>
+                            <p>Las últimas noticias de Lobo Printing</p>
                         </div>
                     </div>
                 </div>

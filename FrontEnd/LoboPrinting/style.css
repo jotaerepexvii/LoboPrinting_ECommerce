@@ -147,6 +147,11 @@
 .product__inner {
     position: relative;
 }
+.product__inner:hover {
+    border-radius: 8px;
+    border: 1px solid #d6d6d6;
+    opacity: 0.8;
+}
 .product__action {
     display: flex;
     height: 48px;

@@ -8,7 +8,7 @@
                     <div class="ft__widget">
                         <div class="ft__logo">
                             <a href="index.php">
-                                <img src="images/logo/logo.png" alt="footer logo">
+                                <img src="images/logo/lp4.png" alt="footer logo">
                             </a>
                         </div>
                         
