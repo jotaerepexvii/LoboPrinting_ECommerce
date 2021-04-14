@@ -200,7 +200,11 @@
                                         <div class="choose__details">
                                             <h4>¿Dudas?</h4>
                                             <p>Para mas información </p>
-                                            <a href="contactanos.php">contáctanos</a>
+                                            <div >
+                                                <a class="red-font" href="contactanos.php">
+                                                    contáctanos
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
