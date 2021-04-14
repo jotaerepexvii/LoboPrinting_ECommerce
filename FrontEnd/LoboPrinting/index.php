@@ -73,7 +73,7 @@
                     <!--Sidebar-->
                     <div class="col-md-12">
                         <hr>
-                        <div class="product-style-tab">
+                        <div class="product-style-tab pb--50">
                             <div class="filter__menu__container">
                                 <div class="product-tab-list2">
                                     <form action="index.php" method="post" enctype="multipart/form-data">
@@ -95,7 +95,8 @@
                                                     $query = "SELECT * FROM Product
                                                               ORDER BY sold DESC limit 3";
                                                 } else {
-                                                    $query = "SELECT * FROM Product limit 3";
+                                                    $query = "SELECT * FROM Product 
+                                                              ORDER BY in_stock DESC limit 3";
                                                 }
                                                 if($r = mysqli_query($dbc, $query))//Save & Validate Query Result
                                                 {
@@ -131,6 +132,7 @@
                                 </div>
                             </div>
                         </div>
+                        <hr style="margin: top 50px;">
                     </div>
                 </div>
             </div>
@@ -143,7 +145,7 @@
                     <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                         <div class="video__wrap bg--3" data--black__overlay="5">
                             <div class="video__inner">
-                                <a class="video__trigger video-popup" href="https://www.youtube.com/watch?v=cDDWvj_q-o8">
+                                <a class="video__trigger video-popup">
                                     <i class="zmdi zmdi-play"></i>
                                 </a>
                             </div>
@@ -160,7 +162,7 @@
                                         </div>
                                         <div class="choose__details">
                                             <h4>Método De Pago</h4>
-                                            <p>Contamos con ATH Móvil</p>
+                                            <p>Contamos con ATH Móvil como metodo de pago</p>
                                         </div>
                                     </div>
                                     <div class="choose__us">
@@ -169,7 +171,7 @@
                                         </div>
                                         <div class="choose__details">
                                             <h4>Envío</h4>
-                                            <p>Envío disponible a todo Puerto Rico</p>
+                                            <p>Envío de memorabilia disponible a todo Puerto Rico</p>
                                         </div>
                                     </div>
                                 </div>
@@ -189,7 +191,12 @@
                                         </div>
                                         <div class="choose__details">
                                             <h4>¿Dudas?</h4>
-                                            <a href="contactanos.php">Contáctanos</a>
+                                            <p>Para mas información </p>
+                                            <div >
+                                                <a class="red-font" href="contactanos.php">
+                                                contáctanos
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -230,7 +237,7 @@
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="blog-details.html">Lorem ipsum dolor sit consectetu.</a></p>
+                                            <p class="blog__des"><a href="blog-details.html">Lobo printing estrena su nuevo webpage.</a></p>
                                             <div class="blog__btn">
                                                 <a class="read__more__btn" href="blog-details.html">read more</a>
                                             </div>

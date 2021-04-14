@@ -29,7 +29,6 @@
     <!-- User style -->
     <link rel="stylesheet" href="css/custom.css">
 
-
     <!-- Modernizr JS -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
@@ -167,11 +166,11 @@
                                 <div class="single__chooose">
                                     <div class="choose__us">
                                         <div class="choose__icon">
-                                            <span class="ti-heart"></span>
+                                            <span class="ti-credit-card"></span>
                                         </div>
                                         <div class="choose__details">
-                                            <h4>Free Gift Box</h4>
-                                            <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
+                                            <h4>Método De Pago</h4>
+                                            <p>Contamos con ATH Móvil como metodo de pago</p>
                                         </div>
                                     </div>
                                     <div class="choose__us">
@@ -179,8 +178,8 @@
                                             <span class="ti-truck"></span>
                                         </div>
                                         <div class="choose__details">
-                                            <h4>Free Delivery</h4>
-                                            <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
+                                            <h4>Envío</h4>
+                                            <p>Envío de memorabilia disponible a todo Puerto Rico</p>
                                         </div>
                                     </div>
                                 </div>
@@ -190,17 +189,18 @@
                                             <span class="ti-reload"></span>
                                         </div>
                                         <div class="choose__details">
-                                            <h4>Money Back</h4>
+                                            <h4>Devoluciones</h4>
                                             <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
                                         </div>
                                     </div>
                                     <div class="choose__us">
                                         <div class="choose__icon">
-                                            <span class="ti-time"></span>
+                                            <span class="ti-help-alt"></span>
                                         </div>
                                         <div class="choose__details">
-                                            <h4>Support 24/7</h4>
-                                            <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
+                                            <h4>¿Dudas?</h4>
+                                            <p>Para mas información </p>
+                                            <a href="contactanos.php">contáctanos</a>
                                         </div>
                                     </div>
                                 </div>
@@ -299,7 +299,7 @@
         </section>
         <!-- End Our Team Area -->
     
-        <!-- Start brand Area -->
+        <!-- Start brand Area --
         <div class="htc__brand__area bg__white ptb--120">
             <div class="container">
                 <div class="row">
@@ -325,7 +325,8 @@
                 </div>
             </div>
         </div>
-        <!-- End brand Area -->
+        !-- End brand Area -->
+
         <!-- Start Footer Area -->
         <?php
             include 'phpIncludes/footer.php';

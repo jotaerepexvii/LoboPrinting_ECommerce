@@ -1859,6 +1859,12 @@ product__style--7
     margin-bottom: 9px;
     text-transform: capitalize;
 }
+.choose__details .red-font {
+    color: #aa453f;
+}
+.choose__details .red-font:hover {
+    color: #ff4136;
+}
 .choose__container .single__chooose + .single__chooose {
     margin-left: 80px;
 }
