@@ -16,6 +16,9 @@ FRONT END
         - ver que mas se puede añadir al footer
         - cambiar el rights reserved
 
+    >checkout.php
+        - everything
+
     > realizar page nuevo (user.php) que muestre los detalles del usuario (y que los pueda editar?) y eso
 
 BACK END
