@@ -12,7 +12,7 @@ FRONT END
             +uno puede ser de número de telefono, email y dirección postal
 
     > phpInclude/ footer.php
-        - quitar logo de TMART, poner el provisional de LOBO PRINTING
+        - DONE quitar logo de TMART, poner el provisional de LOBO PRINTING
         - ver que mas se puede añadir al footer
         - cambiar el rights reserved
 
