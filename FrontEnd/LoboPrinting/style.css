@@ -826,10 +826,9 @@
     font-size: 18px;
     text-transform: capitalize;
 }
-.breadcrumb-item .content {
-    color: #343434;
+.breadcrumb-item-cont { /*asdfghjkl*/
+    color: #686868;
     font-size: 18px;
-    text-transform: capitalize;
 }
 .breadcrumb-item.active {
     color: #343434;
@@ -4110,9 +4109,10 @@ a.shipping-calculator-button:hover {
     font-size: 28px;
     font-weight: 500;
     letter-spacing: 1px;
-    line-height: 22px;
-    margin: 0 0 35px;
-    padding-bottom: 20px;
+    /*line-height: 22px;
+    margin: 0 0 0px;*/
+    padding-bottom: 0px;
+    padding-top: 30px;
     text-transform: uppercase;
 }
 .portfolio-description > p {
@@ -4121,7 +4121,6 @@ a.shipping-calculator-button:hover {
 .portfolio-info ul li {
     color: #666;
     padding: 5px 0;
-    text-transform: capitalize;
 }
 .portfolio-info ul li span {
     color: #444;
@@ -4130,6 +4129,11 @@ a.shipping-calculator-button:hover {
 }
 .portfolio-info ul li a {
     color: #666;
+    text-align: right;
+}
+.portfolio-info ul li a .email {
+    color: #666;
+    text-transform: lowercase;
 }
 .portfolio-social ul {
     border-bottom: 1px solid #e5e5e5;
