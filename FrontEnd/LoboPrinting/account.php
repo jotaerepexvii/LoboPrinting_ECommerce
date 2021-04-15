@@ -71,8 +71,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="portfolio-description mrg-sm">
-                            <h2>Perfil</h2>
+                        <div class="portfolio-description">
                             <?php
                                 $query = "SELECT *
                                             FROM Users U, Address A, Payment_method P
@@ -81,46 +80,39 @@
                                                 AND P.user_id={$_SESSION['login']}";
                                 $r = mysqli_query($dbc,$query);//Make the Query
                                 $row = mysqli_fetch_array($r);//Save Query Result
-                            
+
                                 print "
+                                    <h2>Perfil</h2>
                                     <div class='portfolio-info'>
                                         <ul>
-                                            <li><span class='breadcrumb-item active'>ID: $row[user_id]</span></li>
-                                            <li><span class='breadcrumb-item active'>NAME: $row[name] $row[lastname]</span></li>
-                                            <li><span class='breadcrumb-item active'>EMAIL: $row[email]</span></li>
-                                            <li><span class='breadcrumb-item active'>PHONE: $row[phone]</span></li>
-                                            <li><span class='breadcrumb-item active'>STUDENT: $row[student]</span></li>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
+                                            <li><span>ID:</span><a>$row[user_id]</a></li>
+                                            <li><span>NAME:</span><a>$row[name] $row[lastname]</a></li>
+                                            <li><span>EMAIL:</span><a class='email'>$row[email]</a></li>
+                                            <li><span>PHONE:</span><a>$row[phone]</a></li>
+                                            <li><span>STUDENT:</span><a>$row[student]</a></li>
                                         </ul>
                                     </div>
                                     <h2>Address</h2>
                                     <div class='portfolio-info'>
                                         <ul>
-                                            <li><span class='breadcrumb-item active'>ADDRESS 1: $row[address_1]</span></li>
-                                            <li><span class='breadcrumb-item active'>ADDRESS 2: $row[address_2]</span></li>
-                                            <li><span class='breadcrumb-item active'>ZIP CODE: $row[zip_code]</span></li>
-                                            <li><span class='breadcrumb-item active'>CITY: $row[city]</span></li>
-                                            <li><span class='breadcrumb-item active'>STATE: $row[state]</span></li>
-                                            <li></li>
-                                            <li></li>
-                                            <li></li>
+                                            <li><span>ADDRESS 1:</span><a>$row[address_1]</a></li>
+                                            <li><span>ADDRESS 2:</span><a>$row[address_2]</a></li>
+                                            <li><span>ZIP CODE:</span><a>$row[zip_code]</a></li>
+                                            <li><span>CITY:</span><a>$row[city]</a></li>
+                                            <li><span>STATE:</span><a>$row[state]</a></li>
                                         </ul>
                                     </div>
                                     <h2>Payment Method</h2>
                                     <div class='portfolio-info'>
                                         <ul>
-                                            <li><span class='breadcrumb-item active'>CARD NAME: $row[card_name]</span></li>
-                                            <li><span class='breadcrumb-item active'>NUMBER: $row[card_number]</span></li>
-                                            <li><span class='breadcrumb-item active'>EXP DATE: $row[exp_month]/$row[exp_year]</span></li>
-                                            <li><span class='breadcrumb-item active'>CCV: $row[ccv]</span></li>
+                                            <li><span>CARD NAME:</span><a>$row[card_name]<a/></li>
+                                            <li><span>NUMBER:</span><a>$row[card_number]</a></li>
+                                            <li><span>EXP DATE:</span><a>$row[exp_month]/$row[exp_year]</a></li>
+                                            <li><span>CCV:</span><a>$row[ccv]</a></li>
                                         </ul>
                                     </div>
-                                    ";
+                                ";
                             ?>
-                            
-                            
                         </div>
                     </div>
                     <div class="col-md-6">
