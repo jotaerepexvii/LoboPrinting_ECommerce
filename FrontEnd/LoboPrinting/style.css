@@ -825,7 +825,11 @@
     color: #343434;
     font-size: 18px;
     text-transform: capitalize;
-    
+}
+.breadcrumb-item .content {
+    color: #343434;
+    font-size: 18px;
+    text-transform: capitalize;
 }
 .breadcrumb-item.active {
     color: #343434;
