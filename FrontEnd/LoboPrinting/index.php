@@ -161,7 +161,7 @@
                                         </div>
                                         <div class="choose__details">
                                             <h4>Método De Pago</h4>
-                                            <p>Contamos con ATH Móvil como metodo de pago</p>
+                                            <p>Contamos con ATH Móvil</p>
                                         </div>
                                     </div>
                                     <div class="choose__us">
@@ -181,7 +181,7 @@
                                         </div>
                                         <div class="choose__details">
                                             <h4>Devoluciones</h4>
-                                            <p>Lorem ipsum dolor sit amet sed do. </p>
+                                            <p>Lorem ipsum </p>
                                         </div>
                                     </div>
                                     <div class="choose__us">

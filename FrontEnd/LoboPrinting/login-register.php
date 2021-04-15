@@ -114,7 +114,7 @@
                                                 <div class="tabs__checkbox">
                                                     <span class="forget"><a href="#">¿Olvidó su contraseña?</a></span>
                                                 </div>
-                                                <div class="htc__login__btn mt--30">
+                                                <div class="htc__login__btn">
                                                     <button name="login">Accesar</button>
                                                 </div>
                                                 
@@ -133,7 +133,7 @@
                                                 <span>Recordar datos</span>
                                             </div>
                                             <div class="htc__login__btn">
-                                                <a href="#">Registrarse</a>
+                                                <button href="#">Registrarse</button>
                                             </div>
                                         </div>
                                         <!-- End Single Content -->

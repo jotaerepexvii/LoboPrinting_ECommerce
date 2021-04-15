@@ -20,7 +20,7 @@ FRONT END
         - everything
 
     >login-register.php
-        - boton de acceder
+        - DONE boton de acceder
 
     > realizar page nuevo (user.php) que muestre los detalles del usuario (y que los pueda editar?) y eso
 

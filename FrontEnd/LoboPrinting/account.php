@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Tmart-Minimalist eCommerce HTML5 Template</title>
+    <title>Mi Cuenta</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -50,24 +50,22 @@
         <!-- End Offset Wrapper -->
     
         <!-- Start Bradcaump area -->
-        <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(images/bg/2.jpg) no-repeat scroll center center / cover ;">
-            <div class="ht__bradcaump__wrap">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="bradcaump__inner text-center">
-                                <h2 class="bradcaump-title">My Account</h2>
-                                <nav class="bradcaump-inner">
-                                  <a class="breadcrumb-item" href="index.php">Inicio</a>
-                                  <span class="brd-separetor">/</span>
-                                  <span class="breadcrumb-item active">single portfolio</span>
-                                </nav>
-                            </div>
+        <section class="htc__blog__area bg__white pt--80 pb--50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="bradcaump__inner text-center">
+                            <h2  class="bradcaump-title">Mi Cuenta</h2>
+                            <nav class="bradcaump-inner">
+                                <a class="breadcrumb-item" href="index.php">Inicio</a>
+                                <span class="brd-separetor">/</span>
+                                <span class="breadcrumb-item active">Mi Cuenta</span>
+                            </nav>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         <!-- End Bradcaump area -->
         <div class="single-portfolio-area bg__white ptb--100">
             <div class="container">
