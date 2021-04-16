@@ -50,7 +50,7 @@
         <!-- End Offset Wrapper -->
     
         <!-- Start Bradcaump area -->
-        <section class="htc__blog__area bg__white pt--80 pb--50">
+        <section class="htc__blog__area bg__white pt--90">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
@@ -84,33 +84,67 @@
                                 print "
                                     <h2>Perfil</h2>
                                     <div class='portfolio-info'>
-                                        <ul>
-                                            <li><span>ID:</span><a>$row[user_id]</a></li>
-                                            <li><span>NAME:</span><a>$row[name] $row[lastname]</a></li>
-                                            <li><span>EMAIL:</span><a class='email'>$row[email]</a></li>
-                                            <li><span>PHONE:</span><a>$row[phone]</a></li>
-                                            <li><span>STUDENT:</span><a>$row[student]</a></li>
-                                            <li><span>STUDENT:</span><input value='$row[student]'></input></li>
+                                        <div class='col-md-3'>
+                                            <ul>
+                                                <li><span class='bld'>ID</span></li>
+                                                <li><span class='bld'>Name</span></li>
+                                                <li><span class='bld'>Last Name</span></li>
+                                                <li><span class='bld'>Email</span></li>
+                                                <li><span class='bld'>Phone</span></li>
+                                                <li><span class='bld'>Student</span></li>
                                             </ul>
+                                        </div>
+                                        <div class='col-md-9'>
+                                            <ul>
+                                                <li><span>$row[user_id]</span></li>
+                                                <li><span>$row[name]</span></li>
+                                                <li><span>$row[lastname]</span></li>
+                                                <li><span class='lowercase'>$row[email]</span></li>
+                                                <li><span>$row[phone]</span></li>
+                                                <li><input value='$row[student]'></input></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                     <h2>Address</h2>
                                     <div class='portfolio-info'>
-                                        <ul>
-                                            <li><span>ADDRESS 1:</span><a>$row[address_1]</a></li>
-                                            <li><span>ADDRESS 2:</span><a>$row[address_2]</a></li>
-                                            <li><span>ZIP CODE:</span><a>$row[zip_code]</a></li>
-                                            <li><span>CITY:</span><a>$row[city]</a></li>
-                                            <li><span>STATE:</span><a>$row[state]</a></li>
-                                        </ul>
+                                        <div class='col-md-3'>
+                                            <ul>
+                                                <li><span class='bld'>ADDRESS 1</span></li>
+                                                <li><span class='bld'>ADDRESS 2</span></li>
+                                                <li><span class='bld'>ZIP CODE</span></li>
+                                                <li><span class='bld'>CITY</span></li>
+                                                <li><span class='bld'>STATE</span></li>
+                                            </ul>
+                                        </div>
+                                        <div class='col-md-9'>
+                                            <ul>
+                                                <li><span class='capitalize'>$row[address_1]</span></li>
+                                                <li><span>$row[address_2]</span></li>
+                                                <li><span>$row[zip_code]</span></li>
+                                                <li><span>$row[city]</span></li>
+                                                <li><span>$row[state]</span></li>
+                                            </ul>
+                                        </div>
                                     </div>
+                                    
                                     <h2>Payment Method</h2>
                                     <div class='portfolio-info'>
-                                        <ul>
-                                            <li><span>CARD NAME:</span><a>$row[card_name]<a/></li>
-                                            <li><span>NUMBER:</span><a>$row[card_number]</a></li>
-                                            <li><span>EXP DATE:</span><a>$row[exp_month]/$row[exp_year]</a></li>
-                                            <li><span>CCV:</span><a>$row[ccv]</a></li>
-                                        </ul>
+                                        <div class='col-md-3'>
+                                            <ul>
+                                                <li><span class='bld'>CARD NAME</span></li>
+                                                <li><span class='bld'>NUMBER</span></li>
+                                                <li><span class='bld'>EXP DATE</span></li>
+                                                <li><span class='bld'>CCV</span></li>
+                                            </ul>
+                                        </div>
+                                        <div class='col-md-9'>
+                                            <ul>
+                                                <li><span class='uppercase'>$row[card_name]</span></li>
+                                                <li><span>$row[card_number]</span></li>
+                                                <li><span>$row[exp_month]/$row[exp_year]</span></li>
+                                                <li><span>$row[ccv]</span></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 ";
                             ?>

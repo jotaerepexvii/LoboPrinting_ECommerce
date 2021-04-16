@@ -4124,29 +4124,36 @@ a.shipping-calculator-button:hover {
     letter-spacing: 1px;
     /*line-height: 22px;
     margin: 0 0 0px;*/
-    padding-bottom: 0px;
+    padding-bottom: 5px;
     padding-top: 30px;
     text-transform: uppercase;
 }
 .portfolio-description > p {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+}
+.portfolio-info ul {
+    margin-bottom: 50px;
 }
 .portfolio-info ul li {
     color: #666;
-    padding: 5px 0;
+    padding: 6px 0;
 }
 .portfolio-info ul li span {
-    color: #444;
-    font-weight: 600;
     margin-right: 10px;
 }
-.portfolio-info ul li a {
-    color: #666;
-    text-align: right;
+.portfolio-info ul li span.bld {
+    color: #444;
+    font-weight: 500;
+    text-transform: uppercase;
 }
-.portfolio-info ul li a .email {
-    color: #666;
+.portfolio-info ul li span.lowercase {
     text-transform: lowercase;
+}
+.portfolio-info ul li span.capitalize {
+    text-transform: capitalize;
+}
+.portfolio-info ul li span.uppercase {
+    text-transform: uppercase;
 }
 .portfolio-social ul {
     border-bottom: 1px solid #e5e5e5;

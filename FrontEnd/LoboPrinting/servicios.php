@@ -48,7 +48,7 @@
         <!-- End Offset Wrapper -->
 
         <!-- Start Bradcaump area -->
-        <section class="htc__blog__area bg__white pt--80 pb--50">
+        <section class="htc__blog__area bg__white pt--90 pb--50">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
