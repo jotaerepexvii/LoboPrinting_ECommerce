@@ -4161,11 +4161,18 @@ a.shipping-calculator-button:hover {
     border-radius: 0px;
     padding-left: 5px;
 }
+.portfolio-info ul li span input:disabled{
+    background-color: #ffffff;
+}
 .portfolio-info ul li span input.wide75{
     width: 75%;
 }
 .portfolio-info ul li span input:focus{
     border-bottom: 1px solid #ff4136;
+    padding-left: 5px;
+}
+.portfolio-info ul li span input:hover{
+    border-bottom: 1px solid #e5e5e5;
     padding-left: 5px;
 }
 .portfolio-social ul {

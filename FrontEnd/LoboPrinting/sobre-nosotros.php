@@ -56,13 +56,15 @@
         <!-- End Bradcaump area --> 
 
         <!-- Start Testimonial Area -->
-        <div class="htc__testimonial__area ptb--120" style="background: rgba(0, 0, 0, 0) url(images/bg/4.jpg) no-repeat scroll center center / cover ;" data--black__overlay="6">
+        <div class="htc__testimonial__area ptb--130" style="background: rgba(0, 0, 0, 0) url(images/bg/4.jpg) no-repeat scroll center center / cover ;" data--black__overlay="5">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <div class="testimonial__wrap owl-carousel owl-theme clearfix">
                             <!-- Start Single Testimonial -->
                             <div class="testimonial">
+                                <div class="testimonial__thumb">
+                                </div>
                                 <div class="testimonial__details">
                                     <div class="test__info">
                                         <h2>Sobre Nosotros</h2>

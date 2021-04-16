@@ -192,6 +192,7 @@
                 </div>
             </div>
         </section>
+        
         <section class="htc__blog__area bg__white ptb--80">
         </section>
         <!-- End Our Product Area -->

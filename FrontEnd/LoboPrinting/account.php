@@ -96,7 +96,7 @@
                                         </div>
                                         <div class='col-md-9'>
                                             <ul>
-                                                <li><span><input value='$row[user_id]'></input></span></li>
+                                                <li><span><input value='$row[user_id]' disabled></input></span></li>
                                                 <li><span><input value='$row[name]'></input></span></li>
                                                 <li><span><input value='$row[lastname]'></input></span></li>
                                                 <li><span class='lowercase'><input class='wide75' value='$row[email]'></input></span></li>

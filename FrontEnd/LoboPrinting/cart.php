@@ -60,7 +60,7 @@
         <!-- End Offset Wrapper -->
         
         <!-- Start Bradcaump area -->
-        <section class="htc__blog__area bg__white pt--80 pb--50">
+        <section class="htc__blog__area bg__white pt--90 pb--40">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
@@ -88,16 +88,16 @@
                                     <thead>
                                         <tr>
                                             <th class="product-thumbnail">Image</th>
-                                            <th class="product-name">Product</th>
-                                            <th class="product-price">Price</th>
-                                            <th class="product-quantity">Quantity</th>
+                                            <th class="product-name">Producto</th>
+                                            <th class="product-price">Precio</th>
+                                            <th class="product-quantity">Cantidad</th>
                                             <th class="product-subtotal">Total</th>
-                                            <th class="product-remove">Remove</th>
+                                            <th class="product-remove">Remover</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="product-thumbnail"><a href="#"><img src="images/product/4.png" alt="product img" /></a></td>
+                                            <td class="product-thumbnail"><a href="#"><img src="images/lobo_products/papermate-pinkPearl.jpg" alt="product img" /></a></td>
                                             <td class="product-name"><a href="#">Vestibulum suscipit</a></td>
                                             <td class="product-price"><span class="amount">£165.00</span></td>
                                             <td class="product-quantity"><input type="number" value="1" /></td>
@@ -118,8 +118,8 @@
                             <div class="row">
                                 <div class="col-md-8 col-sm-7 col-xs-12">
                                     <div class="buttons-cart">
-                                        <input type="submit" value="Update Cart" />
-                                        <a href="#">Continue Shopping</a>
+                                        <input type="submit" value="Actualizar Carrito" />
+                                        <a href="productos.php">Continuar Comprando</a>
                                     </div>
                                     <!--
                                     <div class="coupon">
@@ -132,7 +132,6 @@
                                 </div>
                                 <div class="col-md-4 col-sm-5 col-xs-12">
                                     <div class="cart_totals">
-                                        <h2>Cart Totals</h2>
                                         <table>
                                             <tbody>
                                                 <tr class="cart-subtotal">
@@ -169,7 +168,7 @@
                                             </tbody>
                                         </table>
                                         <div class="wc-proceed-to-checkout">
-                                            <a href="checkout.html">Proceed to Checkout</a>
+                                            <a href="checkout.php">Proceed to Checkout</a>
                                         </div>
                                     </div>
                                 </div>

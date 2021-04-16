@@ -53,12 +53,12 @@
         <!-- End Offset Wrapper -->
 
         <!-- Start Bradcaump area -->
-        <section class="htc__blog__area bg__white pb--130">
+        <section class="htc__blog__area bg__white ptb--90">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="bradcaump__inner text-center">
-                            <h2 style="margin-top:125px" class="bradcaump-title">Contacto</h2>
+                            <h2 class="bradcaump-title">Contacto</h2>
                             <nav class="bradcaump-inner">
                                 <a class="breadcrumb-item" href="index.php">Inicio</a>
                                 <span class="brd-separetor">/</span>
@@ -84,7 +84,7 @@
                                             <img src="images/services/blank.jpg" alt="blog images">
                                         </a>
                                     </div>
-                                    <div class="description">
+                                    <div class="description foo">
                                         <h4>Número Telefónico</h4>
                                     </div>
                                 </div>
@@ -100,7 +100,7 @@
                                             <img src="images/services/blank.jpg" alt="blog images">
                                         </a>
                                     </div>
-                                    <div class="description">
+                                    <div class="description foo">
                                         <h4>Ubicación</h4>
                                     </div>
                                 </div>
@@ -116,7 +116,7 @@
                                             <img src="images/services/blank.jpg" alt="blog images">
                                         </a>
                                     </div>
-                                    <div class="description">
+                                    <div class="description foo">
                                         <h4>E-mail</h4>
                                     </div>
                                 </div>
