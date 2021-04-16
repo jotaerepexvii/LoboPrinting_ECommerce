@@ -96,12 +96,12 @@
                                         </div>
                                         <div class='col-md-9'>
                                             <ul>
-                                                <li><span>$row[user_id]</span></li>
-                                                <li><span>$row[name]</span></li>
-                                                <li><span>$row[lastname]</span></li>
-                                                <li><span class='lowercase'>$row[email]</span></li>
-                                                <li><span>$row[phone]</span></li>
-                                                <li><input value='$row[student]'></input></li>
+                                                <li><span><input value='$row[user_id]'></input></span></li>
+                                                <li><span><input value='$row[name]'></input></span></li>
+                                                <li><span><input value='$row[lastname]'></input></span></li>
+                                                <li><span class='lowercase'><input class='wide75' value='$row[email]'></input></span></li>
+                                                <li><span><input value='$row[phone]'></input></span></li>
+                                                <li><span><input value='$row[student]'></input></span></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -118,11 +118,11 @@
                                         </div>
                                         <div class='col-md-9'>
                                             <ul>
-                                                <li><span class='capitalize'>$row[address_1]</span></li>
-                                                <li><span>$row[address_2]</span></li>
-                                                <li><span>$row[zip_code]</span></li>
-                                                <li><span>$row[city]</span></li>
-                                                <li><span>$row[state]</span></li>
+                                                <li><span class='capitalize'><input value='$row[address_1]'></input></span></li>
+                                                <li><span><input value='$row[address_2]'></input></span></li>
+                                                <li><span><input value='$row[zip_code]'></input></span></li>
+                                                <li><span><input value='$row[city]'></input></span></li>
+                                                <li><span><input value='$row[state]'></input></span></li>
                                             </ul>
                                         </div>
                                     </div>
