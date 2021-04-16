@@ -74,8 +74,8 @@
                     <!-- Start Product Menu -->
                     <div class="row">
                         <div class="col-md-12">
-                            <hr>
-                        </div>  
+                                <hr>
+                            </div> 
                         <div class="col-md-9">
                             <div class="filter__menu__container">
                                 <div class="product-tab-list2">
@@ -93,6 +93,9 @@
                                 <button class="filter__menu float-left-style" href="#">Filtros</button>
                             </div>
                         </div>
+                        <div class="col-md-12">
+                            <hr>
+                        </div> 
                     </div>
                     <!-- Start Filter Menu -->
                     <div class="filter__wrap">
@@ -156,20 +159,22 @@
                                     while($row=mysqli_fetch_array($r))//Present Products
                                     {
                                         print "
-                                            <div class='col-md-3 single__pro col-lg-3 cat--1 col-sm-4 col-xs-12' style='margin-bottom:100px;'>
-                                                <div class='product foo'>
-                                                    <div class='product__inner'>
-                                                        <div class='pro__thumb'>
-                                                            <a href='single-product.php?product_id={$row['product_id']}'>
-                                                                <img src='images/lobo_products/$row[image]' alt='product images'>
-                                                            </a>
+                                            <div class=''>
+                                                <div class='col-md-3 single__pro col-lg-3 cat--1 col-sm-4 col-xs-12'>
+                                                    <div class='product foo'>
+                                                        <div class='product__inner'>
+                                                            <div class='pro__thumb'>
+                                                                <a href='single-product.php?product_id={$row['product_id']}'>
+                                                                    <img src='images/lobo_products/$row[image]' alt='product images'>
+                                                                </a>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class='product__details'>
-                                                        <h2><a href='single-product.php?product_id={$row['product_id']}'>$row[name]<br/>$row[description]</a></h2>
-                                                        <ul class='product__price'>
-                                                            <li class='price'>$$row[price]</li>
-                                                        </ul>
+                                                        <div class='product__details'>
+                                                            <h2><a href='single-product.php?product_id={$row['product_id']}'>$row[name]<br/>$row[description]</a></h2>
+                                                            <ul class='product__price'>
+                                                                <li class='price'>$$row[price]</li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -186,6 +191,8 @@
                     </div>
                 </div>
             </div>
+        </section>
+        <section class="htc__blog__area bg__white ptb--80">
         </section>
         <!-- End Our Product Area -->
         <!-- *********************************************************************************** -->

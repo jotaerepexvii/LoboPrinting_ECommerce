@@ -126,7 +126,6 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    
                                     <h2>Payment Method</h2>
                                     <div class='portfolio-info'>
                                         <div class='col-md-3'>
@@ -139,10 +138,10 @@
                                         </div>
                                         <div class='col-md-9'>
                                             <ul>
-                                                <li><span class='uppercase'>$row[card_name]</span></li>
-                                                <li><span>$row[card_number]</span></li>
-                                                <li><span>$row[exp_month]/$row[exp_year]</span></li>
-                                                <li><span>$row[ccv]</span></li>
+                                                <li><span class='uppercase'><input value='$row[card_name]'></input></span></li>
+                                                <li><span><input value='$row[card_number]'></input></span></li>
+                                                <li><span><input value='$row[exp_month]/$row[exp_year]'></input></span></li>
+                                                <li><span><input value='$row[ccv]'</input></span></li>
                                             </ul>
                                         </div>
                                     </div>
