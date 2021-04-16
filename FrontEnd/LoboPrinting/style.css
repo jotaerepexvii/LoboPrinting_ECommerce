@@ -4155,6 +4155,19 @@ a.shipping-calculator-button:hover {
 .portfolio-info ul li span.uppercase {
     text-transform: uppercase;
 }
+.portfolio-info ul li span input{
+    width: 50%;
+    border: none;
+    border-radius: 0px;
+    padding-left: 5px;
+}
+.portfolio-info ul li span input.wide75{
+    width: 75%;
+}
+.portfolio-info ul li span input:focus{
+    border-bottom: 1px solid #ff4136;
+    padding-left: 5px;
+}
 .portfolio-social ul {
     border-bottom: 1px solid #e5e5e5;
     border-top: 1px solid #e5e5e5;
@@ -4165,6 +4178,7 @@ a.shipping-calculator-button:hover {
     display: inline-block;
     margin-right: 20px;
 }
+
 .portfolio-social ul li a {
     color: #666;
     font-size: 18px;
@@ -4250,7 +4264,6 @@ a.shipping-calculator-button:hover {
 :focus {
     outline: -webkit-focus-ring-color auto 0px;
 }
-
 .float-right-style {
     float: left;
 }
