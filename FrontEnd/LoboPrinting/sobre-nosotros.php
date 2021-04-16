@@ -51,25 +51,8 @@
                 include 'phpIncludes/offset-wrapper.php';
             ?>
         <!-- End Offset Wrapper -->
+        
         <!-- Start Bradcaump area -->
-        <div class="ht__bradcaump__area">
-            <div class="ht__bradcaump__wrap ptb--80">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="bradcaump__inner text-center">
-                                <h2 class="bradcaump-title">Sobre Nosotros</h2>
-                                <nav class="bradcaump-inner">
-                                  <a class="breadcrumb-item" href="index.html">Inicio</a>
-                                  <span class="brd-separetor">/</span>
-                                  <span class="breadcrumb-item active">Sobre Nosotros</span>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- End Bradcaump area --> 
 
         <!-- Start Testimonial Area -->
@@ -80,15 +63,12 @@
                         <div class="testimonial__wrap owl-carousel owl-theme clearfix">
                             <!-- Start Single Testimonial -->
                             <div class="testimonial">
-                                <div class="testimonial__thumb">
-                                    <img src="images/test/client/1.png" alt="testimonial images">
-                                </div>
                                 <div class="testimonial__details">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod teincidi dunt ut labore et dolore gna aliqua. Ut enim ad minim veniam,</p>
                                     <div class="test__info">
-                                        <span><a href="#">Robiul siddikee</a></span>
-                                        <span> - </span>
-                                        <span>Customer</span>
+                                        <h2>Sobre Nosotros</h2>
+                                        <span><a href="index.php">Inicio</a></span>
+                                        <span> / </span>
+                                        <span>Sobre Nosotros</span>
                                     </div>
                                 </div>
                             </div> 

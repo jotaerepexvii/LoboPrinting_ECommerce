@@ -90,7 +90,8 @@
                                             <li><span>EMAIL:</span><a class='email'>$row[email]</a></li>
                                             <li><span>PHONE:</span><a>$row[phone]</a></li>
                                             <li><span>STUDENT:</span><a>$row[student]</a></li>
-                                        </ul>
+                                            <li><span>STUDENT:</span><input value='$row[student]'></input></li>
+                                            </ul>
                                     </div>
                                     <h2>Address</h2>
                                     <div class='portfolio-info'>

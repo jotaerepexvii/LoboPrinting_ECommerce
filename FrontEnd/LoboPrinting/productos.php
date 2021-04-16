@@ -49,7 +49,7 @@
         <!-- End Offset Wrapper -->
     
         <!-- Start Bradcaump area -->
-        <section class="htc__blog__area bg__white pt--80 pb--50">
+        <section class="htc__blog__area bg__white pt--90 pb--70">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
@@ -111,8 +111,8 @@
                                                 <li><a href="#z-a">Alfabeto: Z-A</a></li>
                                                 <li><a href="#priceasc">Precio: Ascendente</a></li>
                                                 <li><a href="#pricedes">Precio: Descendente</a></li>
-                                                <li><a href="#newest">Lo Mas Reciente</a></li>
-                                                <li><a href="#oldest">Lo Mas Antiguo</a></li>
+                                                <li><a href="#newest">Lo Más Reciente</a></li>
+                                                <li><a href="#oldest">Lo Más Antiguo</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -166,7 +166,7 @@
                                                         </div>
                                                     </div>
                                                     <div class='product__details'>
-                                                        <h2><a href='single-product.php?product_id={$row['product_id']}'>$row[name] $row[description]</a></h2>
+                                                        <h2><a href='single-product.php?product_id={$row['product_id']}'>$row[name]<br/>$row[description]</a></h2>
                                                         <ul class='product__price'>
                                                             <li class='price'>$$row[price]</li>
                                                         </ul>
@@ -212,5 +212,4 @@
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="js/main.js"></script>
 </body>
-
 </html>
