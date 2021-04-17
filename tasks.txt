@@ -1,5 +1,4 @@
 FRONT END
-
     > contactanos.php
         - cambiar 'contactanos.php' a 'contacto.php'?
         - tratar de colocar el mapa un poco mas ancho (800px esta bien) y poder centralizarlo luego de 'ensancharlo'
@@ -19,4 +18,3 @@ FRONT END
     > realizar page nuevo (user.php) que muestre los detalles del usuario (y que los pueda editar?) y eso
 
 BACK END
-    
