@@ -72,7 +72,7 @@
                         <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3">
                             <div class="logo">
                                 <a href="index.php">
-                                    <img src="images/logo/logo.png" alt="logo">
+                                    <img src="images/logo/lp4.png" alt="logo">
                                 </a>
                             </div>
                         </div>
@@ -117,7 +117,6 @@
                                                 <div class="htc__login__btn">
                                                     <button name="login">Accesar</button>
                                                 </div>
-                                                
                                             </form>
                                         </div>
                                         <!-- End Single Content -->

@@ -62,12 +62,19 @@
                     <!-- MOBILE MENU END -->
                 </div>
                 <!-- MAINMENU ARES END -->
-                <div class="col-md-2 col-sm-4 col-xs-3">  
-                    <ul class="menu-extra">
-                        <li><a href="account.php"><span class="ti-user"></span></a></li>
-                        <li><a href="cart.php"><span class="ti-shopping-cart"></span></li>
-                        <li class="toggle__menu hidden-xs hidden-sm"><span class="ti-menu"></span></li>
-                    </ul>
+                <div class="col-md-2 col-sm-4 col-xs-3"> 
+                    <nav class="mainmenu__nav hidden-xs hidden-sm">
+                        <ul class="main__menu"> 
+                            <li class="drop"><a href="#"><span class="ti-user"></span></a>
+                                <ul class="dropdown">
+                                    <li><a href="account.php">Cuenta del Usuario</a></li>
+                                    <li><a href="login-register.php">Iniciar Sección</a></li>
+                                    <li><a href="login-register.php">Crea Una Cuenta</a></li>
+                                </ul>
+                            </li>
+                            <li class="drop"><a href="cart.php"><span class="ti-shopping-cart"></span></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
             <div class="mobile-menu-area"></div>

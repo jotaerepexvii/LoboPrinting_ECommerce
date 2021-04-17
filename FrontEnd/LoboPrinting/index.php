@@ -67,7 +67,7 @@
         <!--end banner-->
 
         <!-- Start Our Product Area -->
-        <section class="htc__product__area bg__white ptb--50">
+        <section class="htc__product__area bg__white">
             <div class="container">
                 <div class="row">
                     <!--Sidebar-->
