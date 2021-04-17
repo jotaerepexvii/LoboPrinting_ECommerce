@@ -697,7 +697,7 @@
 }
 .htc__login__register__wrap {
     margin: 0 auto;
-    max-width: 370px;
+    max-width: 420px;
 }
 .login input {
     -moz-border-bottom-colors: none;
@@ -720,12 +720,18 @@
     margin-bottom: 20px;
     margin-top: 40px;
 }
-.tabs__checkbox span.forget a {
-    float: right;
+.tabs__checkbox span.forget__bold {
+    float: left;
     color: #ff4136;
-    font-size: 12px;
+    font-size: 15px;
+    font-weight: 600;
 }
-.tabs__checkbox label {
+.tabs__checkbox span.forget a {
+    color: #ff4136;
+    font-size: 15px;
+    float: right;
+}
+.tabs__checkbox label.forget {
     bottom: 2px;
     color: #999;
     font-size: 15px;
@@ -756,8 +762,12 @@
     background-color: transparent;
     text-transform: uppercase;
     margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .htc__login__btn {
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
 }
 .login input:last-child {

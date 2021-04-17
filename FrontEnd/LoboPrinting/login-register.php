@@ -36,9 +36,10 @@
     <?php
         $dbc = @mysqli_connect('136.145.29.193','brytacmo','brytacmo840$cuta','brytacmo_db')
             OR die('No se pudo conectar a la base de datos'.mysqli_connect_error());
-        echo "Probando 12";
+        //echo "Probando 12";
         session_start();
-   
+        $login_err = '';
+        $email = '';
         if(isset($_POST['login']))
         {
             // username and password sent from form 
@@ -47,10 +48,11 @@
 
             $query = "SELECT user_id FROM Users WHERE email = '$email' and password = '$password'";
             $r = mysqli_query($dbc, $query);
-            $row=mysqli_fetch_array($r);
+            $row = mysqli_fetch_array($r);
 
             $count = mysqli_num_rows($r);
             // If result matched $myusername and $mypassword, table row must be 1 row
+            
             if($count == 1)
             {
                 $_SESSION['login'] = $row['user_id'];
@@ -58,10 +60,25 @@
             }
             else
             {
-                echo "Your Login Name or Password is invalid";
+                if((!empty($email)) && (!empty($password)))
+                {
+                    $login_err = 'Credenciales Incorrectas';
+                    $email = '';
+                }
+                else if(empty($email) && !empty($password))
+                {
+                    $login_err = 'Inserte Email';
+                }
+                else if(!empty($email) && empty($password))
+                {
+                    $login_err = 'Inserte Contraseña';
+                }
+                else if(empty($email) && empty($password))
+                {
+                    $login_err = 'Inserte Datos';
+                }
             }
         }
-        echo "Probando 12";
     ?>
     <!-- BODY MAIN WRAPPER START -->
     <div class="wrapper fixed__footer">  
@@ -109,17 +126,18 @@
                                         <!-- Start Single Content -->
                                         <div id="login" role="tabpanel" class="single__tabs__panel tab-pane fade in active">
                                             <form class="login" method="post">
-                                                <input name="email" type="text" placeholder="Nombre de Usuario*">
-                                                <input name="password" type="password" placeholder="Contraseña*">
-                                                
+                                                <input name="email" type="text" placeholder="Nombre de Usuario" value="<?php echo $email; ?>"> 
+                                                <input name="password" type="password" placeholder="Contraseña">
                                                 <div class="tabs__checkbox">
                                                     <span class="forget"><a href="#">¿Olvidó su contraseña?</a></span>
+                                                    <span class="forget__bold"><?php echo $login_err; ?></span>
                                                 </div>
                                                 <div class="htc__login__btn">
                                                     <button name="login">Accesar</button>
                                                 </div>
                                             </form>
                                         </div>
+                                        
                                         <!-- End Single Content -->
                                         <!-- Start Single Content -->
                                         <div id="register" role="tabpanel" class="single__tabs__panel tab-pane fade">

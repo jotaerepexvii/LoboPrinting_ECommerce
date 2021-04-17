@@ -14,6 +14,7 @@ FRONT END
 
     >login-register.php
         - 'Your Password is incorrect' ponerlo lindo
+        - dividir login-register en 2?
 
     > realizar page nuevo (user.php) que muestre los detalles del usuario (y que los pueda editar?) y eso
 
