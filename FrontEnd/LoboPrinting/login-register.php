@@ -36,7 +36,7 @@
     <?php
         $dbc = @mysqli_connect('136.145.29.193','brytacmo','brytacmo840$cuta','brytacmo_db')
             OR die('No se pudo conectar a la base de datos'.mysqli_connect_error());
-        
+        echo "Probando 12";
         session_start();
    
         if(isset($_POST['login']))
@@ -61,6 +61,7 @@
                 echo "Your Login Name or Password is invalid";
             }
         }
+        echo "Probando 12";
     ?>
     <!-- BODY MAIN WRAPPER START -->
     <div class="wrapper fixed__footer">  
