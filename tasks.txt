@@ -1,6 +1,5 @@
 FRONT END
     > contactanos.php
-        - cambiar 'contactanos.php' a 'contacto.php'?
         - tratar de colocar el mapa un poco mas ancho (800px esta bien) y poder centralizarlo luego de 'ensancharlo'
         -  los cuadros amarillos
             +uno puede ser de número de telefono, email y dirección postal
@@ -13,7 +12,6 @@ FRONT END
         - everything
 
     >login-register.php
-        - 'Your Password is incorrect' ponerlo lindo
         - dividir login-register en 2?
 
     > realizar page nuevo (user.php) que muestre los detalles del usuario (y que los pueda editar?) y eso
