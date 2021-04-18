@@ -68,6 +68,9 @@
                             <li class="drop"><a href="#"><span class="ti-user"></span></a>
                                 <ul class="dropdown">
                                     <li><a href="account.php">Cuenta del Usuario</a></li>
+                                    <?php
+                                        //echo $count;
+                                    ?>
                                     <li><a href="login-register.php">Iniciar Sección</a></li>
                                     <li><a href="login-register.php">Crea Una Cuenta</a></li>
                                 </ul>
