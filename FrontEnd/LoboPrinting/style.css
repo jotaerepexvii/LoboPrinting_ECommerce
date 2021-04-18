@@ -727,9 +727,10 @@
     font-weight: 600;
 }
 .tabs__checkbox span.forget a {
-    color: #ff4136;
+    color: #666;
     font-size: 15px;
     float: right;
+    text-decoration: underline;
 }
 .tabs__checkbox label.forget {
     bottom: 2px;
