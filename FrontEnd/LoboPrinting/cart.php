@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="images/lobo.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     
 
@@ -139,7 +139,7 @@
                                                     <td><span class="amount">£215.00</span></td>
                                                 </tr>
                                                 <tr class="shipping">
-                                                    <th>Shipping</th>
+                                                    <th>Envío</th>
                                                     <td>
                                                         <ul id="shipping_method">
                                                             <li>
@@ -168,7 +168,7 @@
                                             </tbody>
                                         </table>
                                         <div class="wc-proceed-to-checkout">
-                                            <a href="checkout.php">Proceed to Checkout</a>
+                                            <a href="checkout.php">Checkout</a>
                                         </div>
                                     </div>
                                 </div>

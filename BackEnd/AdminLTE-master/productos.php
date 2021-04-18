@@ -26,7 +26,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.php" class="brand-link">
+            <a href="index.php" class="brand-link">
                 <img src="dist/img/lobo.ico" alt="Lobo Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Menu</span>
             </a>
@@ -48,7 +48,7 @@
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="index3.php">Tablero Administrativo</a></li>
+                                <li class="breadcrumb-item"><a href="index.php">Tablero Administrativo</a></li>
                                 <li class="breadcrumb-item active">Productos</li>
                             </ol>
                         </div><!-- /.col -->
