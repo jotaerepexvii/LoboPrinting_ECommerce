@@ -200,7 +200,7 @@
                                 <td>$row[sold] Vendidos
                                 </td>
                                 <td>
-                                <a href='#' class='text-muted'>
+                                <a href='detallesProducto.php?product_id={$row['product_id']}' class='text-muted'>
                                     <i class='fas fa-search'></i>
                                 </a>
                                 </td>
