@@ -117,6 +117,10 @@
                                                 <li><a href="#newest">Lo Más Reciente</a></li>
                                                 <li><a href="#oldest">Lo Más Antiguo</a></li>
                                             </ul>
+                                            <h2 style="margin-top: 30px;">Cantidad</h2>
+                                            <ul class="filter__list">
+                                                <li><a href="#a-z">Articulos Por Pagina</a></li>
+                                            </ul>
                                         </div>
                                     </div>
                                     <!-- End Single Content -->
@@ -151,7 +155,7 @@
                                 } else
                                 {
                                     $query = "SELECT *
-                                            FROM Product";
+                                            FROM Product limit 40";
                                 }
                                 
                                 if($r = mysqli_query($dbc, $query))//Save & Validate Query Result

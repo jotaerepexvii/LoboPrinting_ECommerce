@@ -107,13 +107,13 @@
                                                                 <div class='product'>
                                                                     <div class='product__inner'>
                                                                         <div class='pro__thumb'>
-                                                                            <a href='#'>
+                                                                            <a href='single-product.php?product_id={$row['product_id']}'>
                                                                                 <img src='images/lobo_products/$row[image]' alt='$row[name]$row[description]'>
                                                                             </a>
                                                                         </div>
                                                                     </div>
                                                                     <div class='product__details foo'>
-                                                                        <h2><a href='product-details.html'>$row[name] $row[description]</a></h2>
+                                                                        <h2><a href='single-product.php?product_id={$row['product_id']}'>$row[name] $row[description]</a></h2>
                                                                         <ul class='product__price'>
                                                                             <li class='price'>$$row[price]</li>
                                                                         </ul>
