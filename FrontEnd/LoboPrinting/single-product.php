@@ -128,9 +128,9 @@
                                                 </div>
                                                 <hr style='margin-top:100px;'>
                                             </div>
-                                        ";
-                                        mysqli_close($dbc);
-                                    ?>                                           
+                                            ";
+                                            mysqli_close($dbc);
+                                        ?>                                           
                                         </div>
                                     </div>
                                 </div>

@@ -72,8 +72,8 @@
                                         <th>Id</th>
                                         <th>Artículo</th>
                                         <th>Precio</th>
-                                        <th>Cantidad Disponible</th>
-                                        <th>Cantidad Vendida</th>
+                                        <th>Unidades Disponibles</th>
+                                        <th>Unidades Vendidas</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -88,7 +88,7 @@
                                                 print "
                                                     <tr>
                                                         <td>$row[product_id]</td>
-                                                        <td>$row[name] $row[description]</td>
+                                                        <td><a href='detallesProducto.php?product_id={$row['product_id']}'>$row[name] $row[description]<a></td>
                                                         <td>$$row[price]</td>
                                                         <td>$row[in_stock]</td>
                                                         <td>$row[sold]</td>
@@ -106,8 +106,8 @@
                                         <th>Id</th>
                                         <th>Artículo</th>
                                         <th>Precio</th>
-                                        <th>Cantidad Disponible</th>
-                                        <th>Cantidad Vendida</th>
+                                        <th>Unidades Disponibles</th>
+                                        <th>Unidades Vendidas</th>
                                     </tr>
                                 </tfoot>
                             </table>
