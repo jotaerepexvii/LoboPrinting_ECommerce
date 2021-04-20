@@ -28,17 +28,33 @@
 
                 <li class="nav-item menu-open">
                     <li class="nav-item">
-                    <a href="./index.php" class="nav-link">
-                        <i class="nav-icon fas fa-home"></i>
-                        <p>Inicio</p>
-                    </a>
+                        <a href="./index.php" class="nav-link">
+                            <i class="nav-icon fas fa-home"></i>
+                            <p>Inicio</p>
+                        </a>
                     </li>
+
                     <li class="nav-item">
-                    <a href="./productos.php" class="nav-link">
-                        <i class="nav-icon fas fa-shopping-cart"></i>
-                        <p>Productos</p>
-                    </a>
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-shopping-cart"></i>
+                            <p>Productos<i class="right fas fa-angle-left"></i></p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="./productos.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Ver Todo</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./productos.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Añadir Producto</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
+
                     <li class="nav-item">
                     <a href="./administradores.php" class="nav-link">
                         <i class="nav-icon fas fa-user"></i>
@@ -72,7 +88,9 @@
                             <p>Ganancias</p>
                         </a>
                         </li>
-                <li class="nav-item menu-open">
+                    </li>
+                </li>
+
             </ul>
         </nav>
     </div>
