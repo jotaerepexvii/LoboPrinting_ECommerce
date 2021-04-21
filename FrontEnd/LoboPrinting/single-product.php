@@ -147,12 +147,11 @@
                     <div class="col-xs-12">
                         <div class="section__title section__title--2 text-center">
                             <h2 class="title__line">Productos Relacionados</h2>
-                            <p></p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="blog__wrap clearfix mt--60 xmt-30">
+                    <div class="blog__wrap clearfix mt--100 xmt-30">
                         <!-- Start Single Blog -->
                         <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
                             <div class="blog ">
