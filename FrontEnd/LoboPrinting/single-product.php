@@ -140,7 +140,8 @@
         </section>
         <!-- End Our Product Area -->
 
-        <!-- Start Blog Area -->
+
+        <!-- Start Blog Area --
         <section class="htc__blog__area bg__white pb--130">
             <div class="container">
                 <div class="row">
@@ -152,7 +153,7 @@
                 </div>
                 <div class="row">
                     <div class="blog__wrap clearfix mt--100 xmt-30">
-                        <!-- Start Single Blog -->
+                        < -- Start Single Blog ->
                         <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
                             <div class="blog ">
                                 <div class="blog__inner">
@@ -178,8 +179,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- End Single Blog -->
-                        <!-- Start Single Blog -->
+                        < -- End Single Blog ->
+                        < -- Start Single Blog ->
                         <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
                             <div class="blog ">
                                 <div class="blog__inner">
@@ -205,8 +206,8 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- End Single Blog -->
-                        <!-- Start Single Blog -->
+                        < -- End Single Blog ->
+                        < -- Start Single Blog ->
                         <div class="col-md-4 col-lg-4 hidden-sm col-xs-12">
                             <div class="blog ">
                                 <div class="blog__inner">
@@ -236,12 +237,14 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- End Single Blog -->
+                        < -- End Single Blog ->
                     </div>
                 </div>
             </div>
         </section>
-        <!-- End Blog Area -->
+        < -- End Blog Area -->
+        
+
         <!-- Start Footer Area -->
         <?php
             include 'phpIncludes/footer.php';

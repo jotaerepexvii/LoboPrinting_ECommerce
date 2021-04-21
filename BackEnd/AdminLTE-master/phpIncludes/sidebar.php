@@ -43,7 +43,7 @@
                             <li class="nav-item">
                                 <a href="./productos.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Ver Todo</p>
+                                <p>Ver Productos</p>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -56,17 +56,47 @@
                     </li>
 
                     <li class="nav-item">
-                    <a href="./administradores.php" class="nav-link">
-                        <i class="nav-icon fas fa-user"></i>
-                        <p>Administradores</p>
-                    </a>
+                        <a href="./administradores.php" class="nav-link">
+                            <i class="nav-icon fas fa-user"></i>
+                            <p>Administradores<i class="right fas fa-angle-left"></i></p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="./productos.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Ver Todos</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./productos.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Editar Administradores</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
+
                     <li class="nav-item">
-                    <a href="./usuarios.php" class="nav-link">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>Usuarios</p>
-                    </a>
+                        <a href="./usuarios.php" class="nav-link">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>Usuarios<i class="right fas fa-angle-left"></i></p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="./productos.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Ver Todos</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./productos.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Editar Usuario</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
+
                 </li>
                 <li class="nav-item menu-open">
                     <li class="nav-header">Reportes</li>
