@@ -4129,7 +4129,7 @@ a.shipping-calculator-button:hover {
 }
 .portfolio-description h2 {
     border-bottom: 1px solid #e5e5e5;
-    color: #303030;
+    /*color: #303030;*/
     font-size: 28px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -4186,7 +4186,8 @@ a.shipping-calculator-button:hover {
     border-bottom: 1px solid #ff4136;
 }
 .portfolio-info ul li span input:hover{
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #a8a8a8;
+    background-color: rgb(236, 236, 236);
     padding-left: 5px;
 }
 .portfolio-social ul {
@@ -4287,4 +4288,21 @@ a.shipping-calculator-button:hover {
 }
 .float-right-style {
     float: left;
+}
+
+/*hr margins*/
+hr.p-tb-60{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+hr.p-tb-80{
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+hr.p-t-80{
+    margin-top: 80px;
+}
+hr.p-tb-100{
+    margin-top: 100px;
+    margin-bottom: 100px;
 }

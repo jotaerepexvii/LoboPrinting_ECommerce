@@ -91,8 +91,8 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12' style='margin-top:70px;'>
-                                                            <div class='htc__product__details__inner'>
+                                                        <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
+                                                            <div class='htc__product__details__inner pt--70'>
                                                                 <div class='pro__detl__title'>
                                                                     <h2>$row[name] $row[description]</h2>
                                                                 </div>
@@ -124,7 +124,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <hr style='margin-top:100px;'>
+                                                <hr class='p-t-80'>
                                             </div>
                                             ";
                                             mysqli_close($dbc);
