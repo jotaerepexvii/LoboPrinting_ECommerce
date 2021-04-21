@@ -142,10 +142,10 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                        <div class="video__wrap bg--3" data--black__overlay="5">
+                        <div class="video__wrap bg--3" data--black__overlay="3">
                             <div class="video__inner">
-                                <a class="video__trigger video-popup">
-                                    <i class="zmdi zmdi-play"></i>
+                                <a class="video__trigger">
+                                    <i class=""></i>
                                 </a>
                             </div>
                         </div>
