@@ -73,11 +73,11 @@
                     <div class="col-md-6">
                         <div class="portfolio-description">
                             <?php
+                                error_reporting(E_ERROR | E_PARSE);
+                            
                                 $query = "SELECT *
-                                            FROM Users U, Address A, Payment_method P
-                                            WHERE U.user_id={$_SESSION['login']} 
-                                                AND A.user_id={$_SESSION['login']} 
-                                                AND P.user_id={$_SESSION['login']}";
+                                            FROM Users
+                                            WHERE user_id={$_SESSION['login']}";
                                 $r = mysqli_query($dbc,$query);//Make the Query
                                 $row = mysqli_fetch_array($r);//Save Query Result
 
@@ -105,6 +105,15 @@
                                             </ul>
                                         </div>
                                     </div>
+                                ";
+                            
+                                $query1 = "SELECT *
+                                            FROM Address
+                                            WHERE user_id={$_SESSION['login']}";
+                                $r1 = mysqli_query($dbc,$query1);//Make the Query
+                                $row1 = mysqli_fetch_array($r1);//Save Query Result
+                            
+                                print "
                                     <h2>Address</h2>
                                     <div class='portfolio-info'>
                                         <div class='col-md-3'>
@@ -118,14 +127,23 @@
                                         </div>
                                         <div class='col-md-9'>
                                             <ul>
-                                                <li><span class='capitalize'><input value='$row[address_1]'></input></span></li>
-                                                <li><span><input value='$row[address_2]'></input></span></li>
-                                                <li><span><input value='$row[zip_code]'></input></span></li>
-                                                <li><span><input value='$row[city]'></input></span></li>
-                                                <li><span><input value='$row[state]'></input></span></li>
+                                                <li><span class='capitalize'><input value='$row1[address_1]'></input></span></li>
+                                                <li><span><input value='$row1[address_2]'></input></span></li>
+                                                <li><span><input value='$row1[zip_code]'></input></span></li>
+                                                <li><span><input value='$row1[city]'></input></span></li>
+                                                <li><span><input value='$row1[state]'></input></span></li>
                                             </ul>
                                         </div>
                                     </div>
+                                ";
+                            
+                                $query2 = "SELECT *
+                                            FROM Address
+                                            WHERE user_id={$_SESSION['login']}";
+                                $r2 = mysqli_query($dbc,$query2);//Make the Query
+                                $row2 = mysqli_fetch_array($r2);//Save Query Result    
+                            
+                                print "
                                     <h2>Payment Method</h2>
                                     <div class='portfolio-info'>
                                         <div class='col-md-3'>
@@ -138,10 +156,10 @@
                                         </div>
                                         <div class='col-md-9'>
                                             <ul>
-                                                <li><span class='uppercase'><input value='$row[card_name]'></input></span></li>
-                                                <li><span><input value='$row[card_number]'></input></span></li>
-                                                <li><span><input value='$row[exp_month]/$row[exp_year]'></input></span></li>
-                                                <li><span><input value='$row[ccv]'</input></span></li>
+                                                <li><span class='uppercase'><input value='$row2[card_name]'></input></span></li>
+                                                <li><span><input value='$row2[card_number]'></input></span></li>
+                                                <li><span><input value='$row2[exp_month]/$row2[exp_year]'></input></span></li>
+                                                <li><span><input value='$row2[ccv]'</input></span></li>
                                             </ul>
                                         </div>
                                     </div>
