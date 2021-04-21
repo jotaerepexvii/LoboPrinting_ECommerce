@@ -8,7 +8,7 @@
                     <div class="ft__widget">
                         <div class="ft__logo">
                             <a href="index.php">
-                                <img src="images/logo/lp4.png" alt="footer logo">
+                                <img src="images/logo/lobo_printing.svg" alt="footer logo">
                             </a>
                         </div>
                         
@@ -67,7 +67,7 @@
                 <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                     <div class="copyright__inner">
                         <div class="copyright">
-                            <p>© 2017 <a href="https://freethemescloud.com/">Free themes Cloud</a>
+                            <p>© 2021 <a href="https://freethemescloud.com/">Lobo Printing</a>
                             All Right Reserved.</p>
                         </div>
                     </div>

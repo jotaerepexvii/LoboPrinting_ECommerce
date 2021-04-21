@@ -16,6 +16,10 @@ FRONT END
 
     > realizar page nuevo (user.php) que muestre los detalles del usuario (y que los pueda editar?) y eso
 
+    > sobre-nosotros.php
+        - en seccion de 'Nuestra Tienda' añadir 'Esclusividad - los productos memorabilia se consiguen solo en blabla...'
+            - y hacer seccion full width para evitar discrepancia con el pedazo del video
+
 BACK END
     > detalleProducto.php
         - bregar con la imagen del producto

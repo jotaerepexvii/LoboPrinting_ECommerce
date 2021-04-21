@@ -141,7 +141,7 @@
         <section class="htc__choose__us__ares bg__white ptb--100">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                    <div class="col-md-6">
                         <div class="video__wrap bg--3" data--black__overlay="3">
                             <div class="video__inner">
                                 <a class="video__trigger">
@@ -150,7 +150,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                    <div class="col-md-6">
                         <div class="htc__choose__wrap bg__cat--4">
                             <h2 class="choose__title">Nuestra Tienda</h2>
                             <div class="choose__container">

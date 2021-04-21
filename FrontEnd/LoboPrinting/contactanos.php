@@ -80,13 +80,19 @@
                             <div class="blog foo">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="blank.php">
-                                            <img src="images/services/blank.jpg" alt="blog images">
+                                        <a href="#" class="blog__blur">
+                                            <img src="images/services/phone.svg" alt="blog images">
                                         </a>
+                                        <div class="blog__hover__info">
+                                            <div class="blog__hover__action">
+                                                <p class="blog__des">787 - 000 - 0000</p>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="description foo">
                                         <h4>Número Telefónico</h4>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -96,9 +102,14 @@
                             <div class="blog foo">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="fotos.php">
-                                            <img src="images/services/blank.jpg" alt="blog images">
+                                        <a href="https://goo.gl/maps/gaXPoNbvLJqKzq7dA" target="_blank"  class="blog__blur">
+                                            <img src="images/services/location.svg" alt="blog images">
                                         </a>
+                                        <div class="blog__hover__info">
+                                            <div class="blog__hover__action">
+                                                <p class="blog__des">Carr 653 Km 0.8<br> Sector Las Dunas, Arecibo</p>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="description foo">
                                         <h4>Ubicación</h4>
@@ -112,9 +123,14 @@
                             <div class="blog foo">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="encuadernado.php">
-                                            <img src="images/services/blank.jpg" alt="blog images">
+                                        <a href="email.php"  class="blog__blur">
+                                            <img src="images/services/mail.svg" alt="blog images">
                                         </a>
+                                        <div class="blog__hover__info">
+                                            <div class="blog__hover__action">
+                                                <p class="blog__des">lobo.printing@upr.edu</p>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="description foo">
                                         <h4>E-mail</h4>
@@ -124,7 +140,6 @@
                         </div>
                         <!-- SERVICE END -->
                     </div>
-                    
                 </div>
             </div>
         </section>
@@ -140,7 +155,7 @@
                             <h2 class="title__line">Nuestra Localización</h2>
                             <p>Estamos ubicados en la UPR de Arecibo, al lado de la Imprenta de la Universidad</p>
                             <p style="margin-top:50px;">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3784.331576354662!2d-66.7447586!3d18.4686341!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c02e71441a83073%3A0xf81fe612f4f1f3f7!2sUniversidad%20de%20Puerto%20Rico%20-%20Recinto%20de%20Arecibo!5e0!3m2!1ses-419!2spr!4v1617561692001!5m2!1ses-419!2spr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7568.699108933881!2d-66.7439321!3d18.4678191!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf81fe612f4f1f3f7!2sUniversidad%20de%20Puerto%20Rico%20-%20Recinto%20de%20Arecibo!5e0!3m2!1ses-419!2spr!4v1619030795396!5m2!1ses-419!2spr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                             </p>
                         </div>
                     </div>

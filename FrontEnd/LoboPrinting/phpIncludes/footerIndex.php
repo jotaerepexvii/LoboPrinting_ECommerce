@@ -7,7 +7,7 @@
                     <div class="ft__widget">
                         <div class="ft__logo">
                             <a href="index.php">
-                                <img src="images/logo/logo.png" alt="footer logo">
+                                <img src="images/logo/lobo_printing.svg" alt="footer logo">
                             </a>
                         </div>
                         <div class="footer-address">

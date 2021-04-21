@@ -1181,7 +1181,6 @@ h3.widget-title-modal {
 /*------------------------------
   09. Blog Area
 --------------------------------*/
-
 .blog__thumb a img {
     width: 100%;
 }
@@ -1209,9 +1208,9 @@ h3.widget-title-modal {
 .blog__thumb {
     position: relative;
 }
-.blog__thumb:hover {
+.blog__blur:hover {
     position: relative;
-    filter: blur(1px);
+    filter: blur(2px);
 }
 .blog__post__time {
     left: 20px;
@@ -1268,6 +1267,7 @@ h3.widget-title-modal {
     font-weight: 500;
     line-height: 28px;
     margin-bottom: 7px;
+    color: #fff;
 }
 .read__more__btn {
     font-size: 14px;
@@ -4171,11 +4171,14 @@ a.shipping-calculator-button:hover {
     border-radius: 0px;
     padding-left: 5px;
 }
-.portfolio-info ul li span input:disabled{
-    background-color: #ffffff;
-}
 .portfolio-info ul li span input.wide75{
     width: 75%;
+}
+.portfolio-info ul li span input.wide100{
+    width: 100%;
+}
+.portfolio-info ul li span input:disabled{
+    background-color: #ffffff;
 }
 .portfolio-info ul li span input:focus{
     border-bottom: 1px solid #ff4136;

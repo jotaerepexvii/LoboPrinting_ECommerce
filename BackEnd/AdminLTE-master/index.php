@@ -42,7 +42,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-              <h1 class="m-0">Página Administrativa</h1>
+              <h1 class="m-0">Inicio</h1>
             </ul>
           </div><!-- /.col -->
 
@@ -62,8 +62,8 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
+          <!--box 1-->
           <div class="col-lg-3 col-6">
-            <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
                 <h3>  <!-- articulos vendidos query-->
@@ -73,17 +73,7 @@
                     $sum = $row['totalSold'];
                     echo $sum
                   ?>
-                    <!-- ALTERNATIVE QUERY
-                    $query = "SELECT * FROM Product";
-                    $query_run = mysqli_query($dbc, $query);
-                    $qty = 0;
-                    while ($num = mysqli_fetch_assoc ($query_run)) {
-                        $qty += $num['sold'];
-                    }
-                    echo $qty;
-                    -->
                 </h3>
-
                 <p>Artículos Vendidos</p>
               </div>
               <div class="icon">
@@ -92,9 +82,28 @@
               <a href="productos.php" class="small-box-footer">Mas Información <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <!-- ./col -->
+          <!--box 2-->
           <div class="col-lg-3 col-6">
-            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>
+                  <?php
+                    $result = mysqli_query($dbc, 'SELECT SUM(in_stock) AS totalStock FROM Product'); 
+                    $row = mysqli_fetch_assoc($result); 
+                    $sum = $row['totalStock'];
+                    echo $sum
+                  ?>
+                </h3>
+                <p>Artículos En Inventario</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-grid"></i>
+              </div>
+              <a href="productos.php" class="small-box-footer">Mas Información <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!--box 3-->
+          <div class="col-lg-3 col-6">
             <div class="small-box bg-success">
               <div class="inner">
                 <?php
@@ -112,15 +121,13 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">Mas Información <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="usuarios.php" class="small-box-footer">Mas Información <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <!-- ./col -->
+          <!--box 4-->
           <div class="col-lg-3 col-6">
-            <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>
                   <?php
                     $result = mysqli_query($dbc, 'SELECT COUNT(*) AS totalUsers FROM Users'); 
                     $row = mysqli_fetch_assoc($result); 
@@ -139,28 +146,13 @@
               <a href="usuarios.php" class="small-box-footer">Mas Información <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>???</h3>
-
-                <p>Visitas</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-eye"></i>
-              </div>
-              <a href="#" class="small-box-footer">Mas Información <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
+          
         </div>
+
         <!-- /.row -->
         <div class="row">
           <div class="col">
-          <div class="card">
-
+            <div class="card">
               <div class="card-header border-0">
                 <h3 class="card-title">Productos Más Vendidos</h3>
                 <div class="card-tools">
@@ -219,7 +211,6 @@
                   </tbody>
                 </table>
               </div>
-              
             </div>
 
             <div class="card">
@@ -243,16 +234,13 @@
                   </p>
                 </div>
                 <!-- /.d-flex -->
-
                 <div class="position-relative mb-4">
                   <canvas id="visitors-chart" height="200"></canvas>
                 </div>
-
                 <div class="d-flex flex-row justify-content-end">
                   <span class="mr-2">
                     <i class="fas fa-square text-primary"></i> This Week
                   </span>
-
                   <span>
                     <i class="fas fa-square text-gray"></i> Last Week
                   </span>
@@ -260,8 +248,6 @@
               </div>
             </div>
             <!-- /.card -->
-
-            
             <!-- /.card -->
           </div>
         </div>

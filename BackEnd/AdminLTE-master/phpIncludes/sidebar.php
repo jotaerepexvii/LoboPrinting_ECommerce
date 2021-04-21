@@ -36,19 +36,25 @@
 
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-shopping-cart"></i>
+                            <i class="nav-icon fas fa-box-open"></i>
                             <p>Productos<i class="right fas fa-angle-left"></i></p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="./productos.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Ver Productos</p>
+                                <i class="far fa nav-icon"></i>
+                                <p>Inventario de Productos</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="./productos.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="far fa nav-icon"></i>
+                                <p>Productos Vendidos</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./nuevoProducto.php" class="nav-link">
+                                <i class="fas fa nav-icon"></i>
                                 <p>Añadir Producto</p>
                                 </a>
                             </li>
@@ -63,13 +69,13 @@
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="./productos.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="far fa nav-icon"></i>
                                 <p>Ver Todos</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="./productos.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="far fa nav-icon"></i>
                                 <p>Editar Administradores</p>
                                 </a>
                             </li>
@@ -84,13 +90,13 @@
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="./productos.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="far fa nav-icon"></i>
                                 <p>Ver Todos</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="./productos.php" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
+                                <i class="far fa nav-icon"></i>
                                 <p>Editar Usuario</p>
                                 </a>
                             </li>

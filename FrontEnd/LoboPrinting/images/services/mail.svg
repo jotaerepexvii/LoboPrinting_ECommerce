@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FCC425;}
+	.st1{fill:#B6C4CD;stroke:#9CAEB8;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+	.st2{fill:#B6C4CD;stroke:#9CAEB8;stroke-width:14;stroke-linejoin:round;}
+	.st3{fill:#D3DEE2;stroke:#6F7C82;stroke-width:14;stroke-linejoin:round;}
+	.st4{fill:none;stroke:#6F7C82;stroke-width:14;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+<g id="Back">
+	<rect class="st0" width="500" height="500"/>
+</g>
+<g id="Icon">
+	<path class="st1" d="M88.2,100h324c18.1,0,32.8,14.7,32.8,32.8v234c0,18.3-14.9,33.2-33.2,33.2l0,0H88.2
+		C69.9,400,55,385.1,55,366.8l0,0V133.2C55,114.9,69.9,100,88.2,100z"/>
+	<path class="st2" d="M61.9,392.2L250,237.7l188.1,154.5"/>
+	<path class="st3" d="M61.9,105L250,265l188.1-160"/>
+	<path class="st4" d="M85.7,100h326.5c18.1,0,32.8,14.7,32.8,32.8v236.5c0,16.9-13.7,30.7-30.7,30.7l0,0H85.7
+		c-17,0-30.7-13.7-30.7-30.7l0,0V130.6C55,113.7,68.7,100,85.7,100z"/>
+</g>
+</svg>
