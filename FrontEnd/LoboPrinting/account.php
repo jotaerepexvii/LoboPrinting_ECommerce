@@ -158,7 +158,14 @@
                                             <ul>
                                                 <li><span class='uppercase'><input value='$row2[card_name]'></input></span></li>
                                                 <li><span><input value='$row2[card_number]'></input></span></li>
-                                                <li><span><input value='$row2[exp_month]'></input><input value='$row2[exp_year]'></input></span></li>
+                                                <div class='col-md-12'>
+                                                    <div class='col-lg-6'>
+                                                        <li><span><input value='$row2[exp_month]'>Month</input></span></li>
+                                                    </div>
+                                                    <div class='col-lg-6'>
+                                                        <li><span><input value='$row2[exp_year]'>Year</input></span></li>
+                                                    </div>
+                                                </div>
                                                 <li><span><input value='$row2[ccv]'</input></span></li>
                                             </ul>
                                         </div>
