@@ -158,7 +158,7 @@
                                             <ul>
                                                 <li><span class='uppercase'><input value='$row2[card_name]'></input></span></li>
                                                 <li><span><input value='$row2[card_number]'></input></span></li>
-                                                <li><span><input value='$row2[exp_month]/$row2[exp_year]'></input></span></li>
+                                                <li><span><input value='$row2[exp_month]'></input><input value='$row2[exp_year]'></input></span></li>
                                                 <li><span><input value='$row2[ccv]'</input></span></li>
                                             </ul>
                                         </div>
