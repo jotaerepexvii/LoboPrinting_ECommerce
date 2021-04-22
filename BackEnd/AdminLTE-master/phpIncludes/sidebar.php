@@ -68,15 +68,15 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="./productos.php" class="nav-link">
+                                <a href="./administradores.php" class="nav-link">
                                 <i class="far fa nav-icon"></i>
                                 <p>Ver Todos</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./productos.php" class="nav-link">
+                                <a href="./administradores.php" class="nav-link">
                                 <i class="far fa nav-icon"></i>
-                                <p>Editar Administradores</p>
+                                <p>Añadir Administradores</p>
                                 </a>
                             </li>
                         </ul>

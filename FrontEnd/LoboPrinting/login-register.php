@@ -7,11 +7,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <!-- Place favicon.ico in the root directory -->
     <link rel="shortcut icon" type="image/x-icon" href="images/lobo.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-    <!-- All css files are included here. -->
+    <!--css files included here. -->
     <!-- Bootstrap fremwork main css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Owl Carousel main css -->
@@ -25,21 +24,17 @@
     <link rel="stylesheet" href="style.css">
     <!-- Responsive css -->
     <link rel="stylesheet" href="css/responsive.css">
-    <!-- User style -->
+    <!-- custom style -->
     <link rel="stylesheet" href="css/custom.css">
-    
+
     <!-- Modernizr JS -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
 <body>    
     <?php
-        $dbc = @mysqli_connect('136.145.29.193','brytacmo','brytacmo840$cuta','brytacmo_db')
-            OR die('No se pudo conectar a la base de datos'.mysqli_connect_error());
-        //echo "Probando 12";
-        session_start();
-        $login_err = '';
-        $email = '';
+        include 'phpIncludes/connection.php';
+        $login_err = $register_err = $email = '';
         if(isset($_POST['login']))
         {
             // username and password sent from form 
@@ -73,13 +68,59 @@
                 {
                     $login_err = 'Inserte Contraseña';
                 }
-                else if(empty($email) && empty($password))
+                else
                 {
                     $login_err = 'Inserte Datos';
                 }
             }
         }
-        //include('header.php');
+        else if(isset($_POST['register']))
+            {
+                $register_err ='';
+            if(empty($_POST['name']) || empty($_POST['lastname']) || empty($_POST['password']) 
+                || empty($_POST['password2']) || empty($_POST['email']) || empty($_POST['user_id']))
+            {
+                $register_err ='<p class="msg_error">Todos los campos son Obligatorios</p>';
+            }
+            else
+            {
+                $nombre = $_POST['name'];
+                $apellidos = $_POST['lastname'];
+                $usuario = $_POST['password'];
+                $password = $_POST['password2'];
+                $password2 = $_POST['email'];
+                $tipoCuenta = $_POST['user_id'];
+
+                if($password != $password2){
+                    $register_err ='<p class="msg_error">Las Contraseñas no coincide.</p>';
+                }else
+                {
+                    /* Query Para buscar si el usuario ya existe */
+                    $query = mysqli_query($connection, "SELECT * FROM Users WHERE usuario = '$usuario'");
+                    $result = mysqli_fetch_Array($query);
+                    
+                    if($result > 0)
+                    {
+                        $register_err ='<p class="msg_error">EL Correo Electronico ya está registrado.</p>';
+                    }
+                    else
+                    {
+                        $query_insert = mysqli_query($connection, "INSERT INTO usuarios(nombre, apellidos, usuario, password, rol)
+                                    VALUES('$nombre','$apellidos','$usuario','$password', '$tipoCuenta')");
+                        
+                        if($query_insert)
+                        {
+                            $register_err ='<p class="msg_save">Se ha registrado el ususario.</p>';
+                            header("location: index.php");
+                        }
+                        else
+                        {
+                            $register_err ='<p class="msg_error">Error al crear el usuario.</p>';
+                        }
+                    }
+                }
+            }
+        }
     ?>
     <!-- BODY MAIN WRAPPER START -->
     <div class="wrapper fixed__footer">  
@@ -135,7 +176,7 @@
                                         <!-- Start Single Content -->
                                         <div id="login" role="tabpanel" class="single__tabs__panel tab-pane fade in active">
                                             <form class="login" method="post">
-                                                <input name="email" type="text" placeholder="Nombre de Usuario" value="<?php echo $email; ?>"> 
+                                                <input name="email" type="text" placeholder="Correo Electrónico" value="<?php echo $email; ?>"> 
                                                 <input name="password" type="password" placeholder="Contraseña">
                                                 <div class="tabs__checkbox">
                                                     <span class="forget"><a href="#">¿Olvidó su contraseña?</a></span>
@@ -146,19 +187,21 @@
                                                 </div>
                                             </form>
                                         </div>
-                                        
                                         <!-- End Single Content -->
+
                                         <!-- Start Single Content -->
                                         <div id="register" role="tabpanel" class="single__tabs__panel tab-pane fade">
-                                            <form class="login" method="post">
-                                                <input type="text" placeholder="Nombre*">
-                                                <input type="email" placeholder="Correo Electrónico*">
+                                            <form class="register" method="post">
+                                                <input type="name" placeholder="Nombre*">
+                                                <input type="lastname" placeholder="Apellidos*">
                                                 <input type="password" placeholder="Contraseña*">
+                                                <input type="password2" placeholder="Confirma contraseña*">
+                                                <input type="email" placeholder="Correo Electrónico*">
+                                                <input type="user_id" placeholder="ID Estudiante">
+                                                <div class="tabs__checkbox">
+                                                    <span class="forget__bold"><?php echo $register_err; ?></span>
+                                                </div>
                                             </form>
-                                            <div class="tabs__checkbox">
-                                                <input type="checkbox">
-                                                <span>Recordar datos</span>
-                                            </div>
                                             <div class="htc__login__btn">
                                                 <button href="#">Registrarse</button>
                                             </div>
