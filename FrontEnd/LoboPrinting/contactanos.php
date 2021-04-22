@@ -103,16 +103,16 @@
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
                                         <a href="https://goo.gl/maps/gaXPoNbvLJqKzq7dA" target="_blank"  class="blog__blur">
-                                            <img src="images/services/location.svg" alt="blog images">
+                                            <img src="images/services/clock.svg" alt="blog images">
                                         </a>
                                         <div class="blog__hover__info">
                                             <div class="blog__hover__action">
-                                                <p class="blog__des">Carr 653 Km 0.8<br> Sector Las Dunas, Arecibo</p>
+                                                <p class="blog__des">Estamos abiertos de<br>8:00pm a 4:00pm</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="description foo">
-                                        <h4>Ubicación</h4>
+                                        <h4>Horario</h4>
                                     </div>
                                 </div>
                             </div>

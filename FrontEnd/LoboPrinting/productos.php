@@ -165,7 +165,7 @@
                                         print "
                                             <div class=''>
                                                 <div class='col-md-3 single__pro col-lg-3 cat--1 col-sm-4 col-xs-12'>
-                                                    <div class='product fee'>
+                                                    <div class='product foo'>
                                                         <div class='product__inner'>
                                                             <div class='pro__thumb'>
                                                                 <a href='single-product.php?product_id={$row['product_id']}'>
