@@ -192,7 +192,7 @@
 
                                         <!-- Start Single Content -->
                                         <div id="register" role="tabpanel" class="single__tabs__panel tab-pane fade">
-                                            <form class="register" method="post">
+                                            <form class="login" method="post">
                                                 <input type="name" placeholder="Nombre*">
                                                 <input type="lastname" placeholder="Apellidos*">
                                                 <input type="password" placeholder="Contraseña*">
