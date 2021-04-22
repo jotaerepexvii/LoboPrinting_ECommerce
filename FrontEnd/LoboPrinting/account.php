@@ -138,7 +138,7 @@
                                 ";
                             
                                 $query2 = "SELECT *
-                                            FROM Address
+                                            FROM Payment_method
                                             WHERE user_id={$_SESSION['login']}";
                                 $r2 = mysqli_query($dbc,$query2);//Make the Query
                                 $row2 = mysqli_fetch_array($r2);//Save Query Result    
