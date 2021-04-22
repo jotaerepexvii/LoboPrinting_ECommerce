@@ -70,12 +70,36 @@
                                     <div class="row">
                                         <div class="product__list another-product-style"> <!--class name for carrousel: product-slider-active owl-carousel -->
                                         <?php
+                                            
+                                            error_reporting(E_ERROR | E_PARSE);
+                                            
                                             $query = "SELECT * 
                                                         FROM Product 
                                                         WHERE product_id = {$_GET['product_id']}";
                                             
                                             $r = mysqli_query($dbc, $query);//Save & Validate Query Result
                                             $row = mysqli_fetch_array($r);//Present Products
+                                            
+                                            if(isset($_POST['add_to_cart']))
+                                            {
+                                                $product_id = $row[product_id];
+                                                $quantity = filter_input(INPUT_POST, 'qtybutton');
+                                                
+                                                
+                                                
+                                                $b=array("product"=>"$product_id","quantity"=>$quantity);
+                                                array_push($_SESSION['cart'],$b); // Items added to cart
+                                                
+                                                $max=sizeof($_SESSION['cart']);
+                                                for($i=0; $i<$max; $i++)
+                                                { 
+                                                    while (list ($key, $val) = each ($_SESSION['cart'][$i]))
+                                                    { 
+                                                        echo "$key -> $val ,"; 
+                                                    } // inner array while loop
+                                                    echo "<br>";
+                                                } // outer array for loop
+                                            }
                                             
                                             print "
                                                 <div class='container'>
@@ -104,22 +128,22 @@
                                                                 <ul class='pro__dtl__prize' >
                                                                     <li>$ $row[price] c/u</li>
                                                                 </ul>
-                                                                <div class='product-action-wrap'>
-                                                                    <div class='prodict-statas'><span>Quantity </span></div>
-                                                                        <div class='product-quantity'>
-                                                                            <form id='myform' method='POST' action='#'>
+                                                                <form action='' method='post'>
+                                                                    <div class='product-action-wrap'>
+                                                                        <div class='prodict-statas'><span>Quantity </span></div>
+                                                                            <div class='product-quantity'>
                                                                                 <div class='product-quantity'>
-                                                                                    <div class='cart-plus-minus'>
+                                                                                     <div class='cart-plus-minus'>
                                                                                         <input class='cart-plus-minus-box' type='text' name='qtybutton' value='1'>
                                                                                     </div>
                                                                                 </div>
-                                                                            </form>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                                <ul class='pro__dtl__btn'>
-                                                                    <li class='buy__now__btn'><a href='checkout.php'>Add To Cart</a></li>
-                                                                </ul>
+                                                                    <ul class='pro__dtl__btn'>
+                                                                        <li class='buy__now__btn'><button type='submit' name=add_to_cart>Add To Cart</button></li>
+                                                                    </ul>
+                                                                </form>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -56,6 +56,7 @@
             if($count == 1)
             {
                 $_SESSION['login'] = $row['user_id'];
+                $_SESSION['cart']=array(array("product","quantity"));
                 header('location:index.php');
             }
             else
