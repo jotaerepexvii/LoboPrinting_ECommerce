@@ -30,7 +30,7 @@
     <!-- Modernizr JS -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     
-    <!-- login accounts
+    <!-- login account
         correo: lolo.collazo@upr 
         passwr: 12345678
     -->

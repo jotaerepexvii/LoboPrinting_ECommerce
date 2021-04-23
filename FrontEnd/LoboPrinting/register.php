@@ -34,7 +34,7 @@
 <body>    
     <?php
         include 'phpIncludes/connection.php';
-        $register_err = $email = $register_scs = '';
+        $register_err = $email = '';
         
         if(isset($_POST['register']))
         {
@@ -73,14 +73,19 @@
                         $register_err = 'El Correo Electronico ya está registrado';
                     }
                     else{
-                        $passEncr = md5($password);
-                        echo $passEncr;
-                        $query_insert = mysqli_query($dbc, "INSERT INTO Users(user_id, name, lastname, email, password, phone, student)
-                                    VALUES('$userID','$nombre','$apellidos','$email','$passEncr', '$phone', '$student')");
-                        
+                        include 'phpIncludes/recaptcha.php';
+                        if ($response->success)
+                        {
+                            $passEncr = md5($password);
+                            $query_insert = mysqli_query($dbc, "INSERT INTO Users(user_id, name, lastname, email, password, phone, student)
+                                        VALUES('$userID','$nombre','$apellidos','$email','$passEncr', '$phone', '$student')");
+                        }
+                        else
+                            $register_err = 'reCAPTCHA fallido<br>Intente nuevamente';
+
                         if($query_insert)
                         {
-                            $register_scs = 'Usuario Registrado';
+                            $register_err = 'Usuario Registrado';
                             /*header("location: index.php");*/
                         }
                         else
@@ -152,17 +157,14 @@
                                                 <input name="password2" type="password" placeholder="Confirma contraseña*">
                                                 <input name="email" type="text" placeholder="Correo Electrónico*">
                                                 <input name="user_id" type="text" placeholder="ID Estudiante">
-                                                <input class="error" disabled>
-                                                    <div class="tabs__checkbox__error">
-                                                        <span class="forget__bold"><?php echo $register_err; ?></span>
-                                                    </div>
-                                                    <div class="tabs__checkbox__scs">
-                                                        <span class="success__bold"><?php echo $register_scs; ?></span>
-                                                    </div>
-                                                </input>
-                                                <div class="htc__login__btn">
-                                                    <button name="register">Registrarse</button>
+                                                <div class="tabs__checkbox">
+                                                    <span class="forget"><a href="#">¿Olvidó su contraseña?</a></span>
+                                                    <span class="forget__bold"><a><?php echo $register_err;?></a></span>
                                                 </div>
+                                                <div class="tabs__checkbox">
+                                                    <div class="g-recaptcha" data-sitekey="6LfOd7YaAAAAAKDfXyWBTAbjZKPhhzXg-8jWqExB"></div>
+                                                </div>
+                                                <div class="htc__login__btn"><button name="register">Registrarse</button></div>
                                             </form>
                                         </div>
                                         <!-- End Single Content -->
@@ -193,6 +195,8 @@
     <script src="js/waypoints.min.js"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="js/main.js"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 
 </html>
