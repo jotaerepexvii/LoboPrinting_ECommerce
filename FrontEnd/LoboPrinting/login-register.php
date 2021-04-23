@@ -34,14 +34,15 @@
 <body>    
     <?php
         include 'phpIncludes/connection.php';
-        $login_err = $email = '';
+        $login_err = $email = $passEncr = '';
         if(isset($_POST['login']))
         {
             // username and password sent from form 
             $email = filter_input(INPUT_POST, 'email');
             $password = filter_input(INPUT_POST, 'password');
+            $passEncr = md5($password);
 
-            $query = "SELECT user_id FROM Users WHERE email = '$email' and password = '$password'";
+            $query = "SELECT user_id FROM Users WHERE email = '$email' and password = '$passEncr'";
             $r = mysqli_query($dbc, $query);
             $row = mysqli_fetch_array($r);
 
