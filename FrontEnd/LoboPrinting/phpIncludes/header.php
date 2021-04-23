@@ -72,7 +72,7 @@
                                         //echo $count;
                                     ?>
                                     <li><a href="login-register.php">Iniciar Sección</a></li>
-                                    <li><a href="login-register.php">Crea Una Cuenta</a></li>
+                                    <li><a href="register.php">Crea Una Cuenta</a></li>
                                 </ul>
                             </li>
                             <li class="drop"><a href="cart.php"><span class="ti-shopping-cart"></span></li>

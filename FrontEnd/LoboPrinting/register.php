@@ -34,51 +34,61 @@
 <body>    
     <?php
         include 'phpIncludes/connection.php';
-        $register_err = $email = '';
+        $register_err = $email = $register_scs = '';
         
         if(isset($_POST['register']))
+        {
+            if(empty($_POST['name']) || empty($_POST['lastname']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['password2']))
             {
-                $register_err ='';
-            if(empty($_POST['name']) || empty($_POST['lastname']) || empty($_POST['password']) 
-                || empty($_POST['password2']) || empty($_POST['email']) || empty($_POST['user_id']))
-            {
-                $register_err = 'Todos los campos son Obligatos';
+                $register_err = 'Llenar Campos Obligatorios';
             }
             else
             {
+                $userID = $_POST['user_id'];
                 $nombre = $_POST['name'];
                 $apellidos = $_POST['lastname'];
-                $usuario = $_POST['password'];
-                $password = $_POST['password2'];
-                $password2 = $_POST['email'];
-                $tipoCuenta = $_POST['user_id'];
+                $password = $_POST['password'];
+                $password2 = $_POST['password2'];
+                $email = $_POST['email'];
+                $phone = '';
+                $student = '';
+                
+                if(!empty($userID)){
+                    $student = 1;
+                }
+                else{
+                    $student = 0;
+                }
 
-
-                    /* Query Para buscar si el usuario ya existe */
-                    $query = mysqli_query($dbc, "SELECT * FROM Users WHERE usuario = '$usuario'");
-                    $result = mysqli_fetch_array($query);
+                if($password != $password2){
+                    $register_err ='Las Contraseñas no coinciden';
+                }
+                else
+                {
+                    /* Query Para buscar si el email ya existe */
+                    $query = mysqli_query($dbc, "SELECT * FROM Users WHERE email = '$email' ");
+                    $result = mysqli_fetch_Array($query);
                     
-                    if($result > 0)
-                    {
+                    if($result > 0){
                         $register_err = 'El Correo Electronico ya está registrado';
                     }
-                    else
-                    {
-                        /*$passEncr = crypt($password, '$2a$07$usesomesillystringforsalt$');*/
-                        $query_insert = mysqli_query($dbc, "INSERT INTO usuarios(nombre, apellidos, usuario, password, rol)
-                                    VALUES('$nombre','$apellidos','$usuario','$password', '$tipoCuenta')");
+                    else{
+                        $passEncr = md5($password);
+                        echo $passEncr;
+                        $query_insert = mysqli_query($dbc, "INSERT INTO Users(user_id, name, lastname, email, password, phone, student)
+                                    VALUES('$userID','$nombre','$apellidos','$email','$passEncr', '$phone', '$student')");
                         
                         if($query_insert)
                         {
-                            $register_err = 'Usuario Registrado';
-                            header("location: index.php");
+                            $register_scs = 'Usuario Registrado';
+                            /*header("location: index.php");*/
                         }
                         else
                         {
                             $register_err ='Error al crear el usuario';
                         }
                     }
-                
+                }
             }
         }
     ?>
@@ -136,7 +146,7 @@
                                         <!-- Start Single Content -->
                                         <div id="register" class="">
                                             <form class="login" method="post">
-                                                <input name="name" type="text" placeholder="Nombre*" value="">
+                                                <input name="name" type="text" placeholder="Nombre*">
                                                 <input name="lastname" type="text" placeholder="Apellidos*">
                                                 <input name="password" type="password" placeholder="Contraseña*">
                                                 <input name="password2" type="password" placeholder="Confirma contraseña*">
@@ -146,8 +156,10 @@
                                                     <div class="tabs__checkbox__error">
                                                         <span class="forget__bold"><?php echo $register_err; ?></span>
                                                     </div>
+                                                    <div class="tabs__checkbox__scs">
+                                                        <span class="success__bold"><?php echo $register_scs; ?></span>
+                                                    </div>
                                                 </input>
-                                                
                                                 <div class="htc__login__btn">
                                                     <button name="register">Registrarse</button>
                                                 </div>
