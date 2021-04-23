@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Iniciar Sesión / Registrarse</title>
+    <title>Iniciar Sesión</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -30,8 +30,11 @@
     <!-- Modernizr JS -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     
-    <!-- login account
+    <!-- login accounts
         correo: lolo.collazo@upr 
+        passwr: 12345678
+
+        correo: pepa.lopez@upr 
         passwr: 12345678
     -->
 </head>
@@ -46,21 +49,21 @@
             // username and password sent from form 
             $email = filter_input(INPUT_POST, 'email');
             $password = filter_input(INPUT_POST, 'password');
-            $passEncr = md5($password);
+            $md5Pass = md5($password);
+            $cryptPass = crypt($md5Pass, 'q/Bx');
 
-            $query = "SELECT user_id FROM Users WHERE email = '$email' and password = '$passEncr'";
+            $query = "SELECT user_id FROM Users WHERE email = '$email' and password = '$cryptPass'";
             $r = mysqli_query($dbc, $query);
             $row = mysqli_fetch_array($r);
             $count = mysqli_num_rows($r);
             
-            if($count == 1) // If result matched $myusername and $mypassword, table row must be 1 row
+            if($count == 1) //If result matched $email and $cryptPass, table row must be 1 row
             {
                 include 'phpIncludes/recaptcha.php';
                 if ($response->success)
                 {
                     $_SESSION['login'] = $row['user_id'];
                     $_SESSION['cart'] = array(array("product","quantity"));
-                    //success
                     header('location:index.php');
                 }
                 else
@@ -68,11 +71,8 @@
             }
             else
             {
-                if((!empty($email)) && (!empty($password)))
-                {
-                    $login_err = 'Credenciales Incorrectas';
-                    $email = '';
-                }
+                $login_err = 'Credenciales Incorrectas';
+                $email = '';
             }
         }
     ?>
@@ -103,7 +103,6 @@
             </div>
         </header>
         <!-- HEADER STYLE END -->
-        <div class="body__overlay"></div>
         <!-- SERVICES AREA START -->
         <section class="htc__blog__area bg__white pb--130">
             <div class="container">
@@ -130,8 +129,8 @@
                                         <!-- Start Single Content -->
                                         <div id="login" role="tabpanel" class="single__tabs__panel tab-pane fade in active">
                                             <form class="login" method="post">
-                                                <input name="email" type="text" placeholder="Correo Electrónico" value="<?php echo $email; ?>" oninvalid="this.setCustomValidity('Inserte Correo Electrónico')" oninput="this.setCustomValidity('')" required> 
-                                                <input name="password" type="password" placeholder="Contraseña" oninvalid="this.setCustomValidity('Inserte Contraseña')" oninput="this.setCustomValidity('')" required>
+                                                <input name="email" type="text" placeholder="Correo Electrónico" value="<?php echo $email; ?>" oninvalid="this.setCustomValidity('Inserte Correo Electrónico')" title="Inserte su correo electrónico" required> 
+                                                <input name="password" type="password" placeholder="Contraseña" oninvalid="this.setCustomValidity('Inserte Contraseña')" oninput="this.setCustomValidity('')" title="Inserte su contraseña" required>
                                                 <div class="tabs__checkbox">
                                                     <span class="forget"><a href="#">¿Olvidó su contraseña?</a></span>
                                                     <span class="forget__bold"><a><?php echo $login_err;?></a></span>
@@ -166,7 +165,6 @@
     <!-- Body main wrapper end -->
     
     <!--Placed js at the end of the document so the pages load faster -->
-
     <!-- jquery latest version -->
     <script src="js/vendor/jquery-1.12.0.min.js"></script>
     <!-- Bootstrap framework js -->

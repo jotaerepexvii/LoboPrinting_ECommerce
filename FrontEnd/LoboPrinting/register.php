@@ -63,6 +63,9 @@
                 if($password != $password2){
                     $register_err ='Las Contraseñas no coinciden';
                 }
+                else if(strlen($password)<8) {
+                    $register_err ='';
+                }
                 else
                 {
                     /* Query Para buscar si el email ya existe */
@@ -76,17 +79,18 @@
                         include 'phpIncludes/recaptcha.php';
                         if ($response->success)
                         {
-                            $passEncr = md5($password);
+                            $md5Pass = md5($password);
+                            $cryptPass = crypt($md5Pass, 'q/Bx');
                             $query_insert = mysqli_query($dbc, "INSERT INTO Users(user_id, name, lastname, email, password, phone, student)
-                                        VALUES('$userID','$nombre','$apellidos','$email','$passEncr', '$phone', '$student')");
+                                        VALUES('$userID','$nombre','$apellidos','$email','$cryptPass', '$phone', '$student')");
                         }
                         else
                             $register_err = 'reCAPTCHA fallido<br>Intente nuevamente';
 
                         if($query_insert)
                         {
-                            $register_err = 'Usuario Registrado';
-                            /*header("location: index.php");*/
+                            header('refresh: 4; url=index.php');
+                            $register_err = 'Usuario Registrado Satisfactoriamente';
                         }
                         else
                         {
@@ -139,7 +143,7 @@
                             <div class="row">
                                 <div class="col-md-6 col-md-offset-3">
                                     <ul class="login__register__menu">
-                                        <li><a href="login-register.php">Iniciar Sección</a></li>
+                                        <li><a href="login.php">Iniciar Sección</a></li>
                                         <li role="presentation" class="login active"><a href="#register" role="tab" data-toggle="tab" >Registrarse</a></li>
                                     </ul>
                                 </div>
@@ -151,14 +155,13 @@
                                         <!-- Start Single Content -->
                                         <div id="register" class="">
                                             <form class="login" method="post">
-                                                <input name="name" type="text" placeholder="Nombre*">
-                                                <input name="lastname" type="text" placeholder="Apellidos*">
-                                                <input name="password" type="password" placeholder="Contraseña*">
-                                                <input name="password2" type="password" placeholder="Confirma contraseña*">
-                                                <input name="email" type="text" placeholder="Correo Electrónico*">
-                                                <input name="user_id" type="text" placeholder="ID Estudiante">
+                                                <input name="name" type="text" placeholder="Nombre*" oninvalid="this.setCustomValidity('Inserte Nombre')" title="Inserte su nombre" required>
+                                                <input name="lastname" type="text" placeholder="Apellidos*" oninvalid="this.setCustomValidity('Inserte Apellidos')" title="Inserte sus apellidos" required>
+                                                <input name="password" type="password" placeholder="Contraseña*" oninvalid="this.setCustomValidity('Inserte Contraseña')" title="La contraseña debe ser al menos de 8 caracteres" required>
+                                                <input name="password2" type="password" placeholder="Confirma contraseña*" oninvalid="this.setCustomValidity('Confirme Contraseña')" title="Inserte nuevamente la contraseña" required>
+                                                <input name="email" type="text" placeholder="Correo Electrónico*" oninvalid="this.setCustomValidity('Inserte Correo Electrónico')" title="Inserte correo electrónico" required>
+                                                <input name="user_id" type="text" placeholder="ID Estudiante" title="Si es estudiante, inserte su ID de estudiante">
                                                 <div class="tabs__checkbox">
-                                                    <span class="forget"><a href="#">¿Olvidó su contraseña?</a></span>
                                                     <span class="forget__bold"><a><?php echo $register_err;?></a></span>
                                                 </div>
                                                 <div class="tabs__checkbox">
