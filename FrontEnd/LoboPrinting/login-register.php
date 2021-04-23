@@ -60,8 +60,8 @@
                 {
                     $_SESSION['login'] = $row['user_id'];
                     $_SESSION['cart'] = array(array("product","quantity"));
-                    //header('location:index.php');
-                    $login_err = '¡¡¡SUCCESS!!!';
+                    //success
+                    header('location:index.php');
                 }
                 else
                     $login_err = 'reCAPTCHA fallido<br>Intente nuevamente';
@@ -72,18 +72,6 @@
                 {
                     $login_err = 'Credenciales Incorrectas';
                     $email = '';
-                }
-                else if(empty($email) && !empty($password))
-                {
-                    $login_err = 'Inserte Email';
-                }
-                else if(!empty($email) && empty($password))
-                {
-                    $login_err = 'Inserte Contraseña';
-                }
-                else
-                {
-                    $login_err = 'Inserte Datos';
                 }
             }
         }
@@ -142,13 +130,11 @@
                                         <!-- Start Single Content -->
                                         <div id="login" role="tabpanel" class="single__tabs__panel tab-pane fade in active">
                                             <form class="login" method="post">
-                                                <input class="error" disabled>
-                                                    <div class="tabs__checkbox__error"><span class="forget__bold"><?php echo $login_err;?></span></div>
-                                                </input>
                                                 <input name="email" type="text" placeholder="Correo Electrónico" value="<?php echo $email; ?>" oninvalid="this.setCustomValidity('Inserte Correo Electrónico')" oninput="this.setCustomValidity('')" required> 
                                                 <input name="password" type="password" placeholder="Contraseña" oninvalid="this.setCustomValidity('Inserte Contraseña')" oninput="this.setCustomValidity('')" required>
                                                 <div class="tabs__checkbox">
                                                     <span class="forget"><a href="#">¿Olvidó su contraseña?</a></span>
+                                                    <span class="forget__bold"><a><?php echo $login_err;?></a></span>
                                                 </div>
                                                 <div class="tabs__checkbox">
                                                     <div class="g-recaptcha" data-sitekey="6LfOd7YaAAAAAKDfXyWBTAbjZKPhhzXg-8jWqExB"></div>
