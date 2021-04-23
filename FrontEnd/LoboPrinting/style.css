@@ -679,7 +679,7 @@
     display: flex;
     justify-content: center;
     margin: 0 auto 51px;
-    max-width: 370px;
+    max-width: 420px;
 }
 .login__register__menu li a {
     color: #000000;
@@ -716,12 +716,25 @@
     width: 100%;
     background: transparent;
 }
+.login input.error {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-style: none none none;
+    color: #686868;
+    font-size: 0px;
+    height: 0px;
+    line-height: 0px;
+    width: 100%;
+    background: transparent;
+}
 .login input + input {
-    margin-bottom: 20px;
-    margin-top: 40px;
+    margin-bottom: 15px;
+    margin-top: 35px;
 }
 .tabs__checkbox span.forget__bold {
-    float: left;
+    float: right;
     color: #ff4136;
     font-size: 15px;
     font-weight: 600;
@@ -744,6 +757,12 @@
 }
 .tabs__checkbox {
     margin-bottom: 20px;
+}
+.tabs__checkbox__error {
+    margin-bottom: 0px;
+    color: red;
+    font-weight: 600;
+    border: none;
 }
 .tabs__checkbox span {
     color: #686868;

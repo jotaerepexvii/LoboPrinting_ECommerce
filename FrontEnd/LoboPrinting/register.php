@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Iniciar Sesión / Registrarse</title>
+    <title>Registrarse</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -34,45 +34,51 @@
 <body>    
     <?php
         include 'phpIncludes/connection.php';
-        $login_err = $email = '';
-        if(isset($_POST['login']))
-        {
-            // username and password sent from form 
-            $email = filter_input(INPUT_POST, 'email');
-            $password = filter_input(INPUT_POST, 'password');
-
-            $query = "SELECT user_id FROM Users WHERE email = '$email' and password = '$password'";
-            $r = mysqli_query($dbc, $query);
-            $row = mysqli_fetch_array($r);
-
-            $count = mysqli_num_rows($r);
-            // If result matched $myusername and $mypassword, table row must be 1 row
-            
-            if($count == 1)
+        $register_err = $email = '';
+        
+        if(isset($_POST['register']))
             {
-                $_SESSION['login'] = $row['user_id'];
-                $_SESSION['cart'] = array(array("product","quantity"));
-                header('location:index.php');
+                $register_err ='';
+            if(empty($_POST['name']) || empty($_POST['lastname']) || empty($_POST['password']) 
+                || empty($_POST['password2']) || empty($_POST['email']) || empty($_POST['user_id']))
+            {
+                $register_err = 'Todos los campos son Obligatos';
             }
             else
             {
-                if((!empty($email)) && (!empty($password)))
-                {
-                    $login_err = 'Credenciales Incorrectas';
-                    $email = '';
-                }
-                else if(empty($email) && !empty($password))
-                {
-                    $login_err = 'Inserte Email';
-                }
-                else if(!empty($email) && empty($password))
-                {
-                    $login_err = 'Inserte Contraseña';
-                }
-                else
-                {
-                    $login_err = 'Inserte Datos';
-                }
+                $nombre = $_POST['name'];
+                $apellidos = $_POST['lastname'];
+                $usuario = $_POST['password'];
+                $password = $_POST['password2'];
+                $password2 = $_POST['email'];
+                $tipoCuenta = $_POST['user_id'];
+
+
+                    /* Query Para buscar si el usuario ya existe */
+                    $query = mysqli_query($dbc, "SELECT * FROM Users WHERE usuario = '$usuario'");
+                    $result = mysqli_fetch_array($query);
+                    
+                    if($result > 0)
+                    {
+                        $register_err = 'El Correo Electronico ya está registrado';
+                    }
+                    else
+                    {
+                        /*$passEncr = crypt($password, '$2a$07$usesomesillystringforsalt$');*/
+                        $query_insert = mysqli_query($dbc, "INSERT INTO usuarios(nombre, apellidos, usuario, password, rol)
+                                    VALUES('$nombre','$apellidos','$usuario','$password', '$tipoCuenta')");
+                        
+                        if($query_insert)
+                        {
+                            $register_err = 'Usuario Registrado';
+                            header("location: index.php");
+                        }
+                        else
+                        {
+                            $register_err ='Error al crear el usuario';
+                        }
+                    }
+                
             }
         }
     ?>
@@ -117,9 +123,9 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6 col-md-offset-3">
-                                    <ul class="login__register__menu" role="tablist">
-                                        <li role="presentation" class="login active"><a href="#login" role="tab" data-toggle="tab">Iniciar Sesión</a></li>
-                                        <li><a href="register.php">Registrarse</a></li>
+                                    <ul class="login__register__menu">
+                                        <li><a href="login-register.php">Iniciar Sección</a></li>
+                                        <li role="presentation" class="login active"><a href="#register" role="tab" data-toggle="tab" >Registrarse</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -128,25 +134,22 @@
                                 <div class="col-md-6 col-md-offset-3">
                                     <div class="htc__login__register__wrap">
                                         <!-- Start Single Content -->
-                                        <div id="login" role="tabpanel" class="single__tabs__panel tab-pane fade in active">
+                                        <div id="register" class="">
                                             <form class="login" method="post">
-                                                <input name="email" type="text" placeholder="Correo Electrónico" value="<?php echo $email; ?>"> 
-                                                <input name="password" type="password" placeholder="Contraseña">
-                                                <div class="tabs__checkbox">
-                                                    <span class="forget"><a href="#">¿Olvidó su contraseña?</a></span>
-                                                    <span class="forget__bold"><?php echo $login_err; ?></span>
-                                                </div>
+                                                <input name="name" type="text" placeholder="Nombre*" value="">
+                                                <input name="lastname" type="text" placeholder="Apellidos*">
+                                                <input name="password" type="password" placeholder="Contraseña*">
+                                                <input name="password2" type="password" placeholder="Confirma contraseña*">
+                                                <input name="email" type="text" placeholder="Correo Electrónico*">
+                                                <input name="user_id" type="text" placeholder="ID Estudiante">
+                                                <input class="error" disabled>
+                                                    <div class="tabs__checkbox__error">
+                                                        <span class="forget__bold"><?php echo $register_err; ?></span>
+                                                    </div>
+                                                </input>
+                                                
                                                 <div class="htc__login__btn">
-                                                    <button name="login">Accesar</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <!-- End Single Content -->
-                                        <!-- Start Single Content -->
-                                        <div id="register" role="tabpanel" class="single__tabs__panel tab-pane fade">
-                                            <form class="login" method="post">
-                                                <div class="htc__login__btn">
-                                                    <button href="register.php">Registrarse</button>
+                                                    <button name="register">Registrarse</button>
                                                 </div>
                                             </form>
                                         </div>
