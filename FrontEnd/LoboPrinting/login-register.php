@@ -35,6 +35,10 @@
     <?php
         include 'phpIncludes/connection.php';
         $login_err = $email = $passEncr = '';
+
+        $secretKey = "6LfOd7YaAAAAAMCf44lxoBDDuVYCPrwGd1hmQQwo";
+        $response = $_POST['g-recaptcha']
+        $urlResponse = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey";
         if(isset($_POST['login']))
         {
             // username and password sent from form 
@@ -140,6 +144,7 @@
                                                 <div class="htc__login__btn">
                                                     <button name="login">Accesar</button>
                                                 </div>
+                                                <div class="g-recaptcha" data-sitekey="6LfOd7YaAAAAAKDfXyWBTAbjZKPhhzXg-8jWqExB"></div>
                                             </form>
                                         </div>
                                         <!-- End Single Content -->
@@ -179,6 +184,8 @@
     <script src="js/waypoints.min.js"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="js/main.js"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 
 </html>

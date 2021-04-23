@@ -20,6 +20,9 @@ FRONT END
         - en seccion de 'Nuestra Tienda' añadir 'Esclusividad - los productos memorabilia se consiguen solo en blabla...'
             - y hacer seccion full width para evitar discrepancia con el pedazo del video
 
+    > cambiar encriptacion md5 a una mas segura, luego
+    > añadir recaptcha
+
 BACK END
     > detalleProducto.php
         - bregar con la imagen del producto
