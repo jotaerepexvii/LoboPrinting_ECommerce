@@ -29,6 +29,11 @@
 
     <!-- Modernizr JS -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    
+    <!-- login accounts
+        correo: lolo.collazo@upr 
+        passwr: 12345678
+    -->
 </head>
 
 <body>    
@@ -36,9 +41,6 @@
         include 'phpIncludes/connection.php';
         $login_err = $email = $passEncr = '';
 
-        $secretKey = "6LfOd7YaAAAAAMCf44lxoBDDuVYCPrwGd1hmQQwo";
-        $response = $_POST['g-recaptcha']
-        $urlResponse = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey";
         if(isset($_POST['login']))
         {
             // username and password sent from form 
@@ -49,15 +51,20 @@
             $query = "SELECT user_id FROM Users WHERE email = '$email' and password = '$passEncr'";
             $r = mysqli_query($dbc, $query);
             $row = mysqli_fetch_array($r);
-
             $count = mysqli_num_rows($r);
-            // If result matched $myusername and $mypassword, table row must be 1 row
             
-            if($count == 1)
+            if($count == 1) // If result matched $myusername and $mypassword, table row must be 1 row
             {
-                $_SESSION['login'] = $row['user_id'];
-                $_SESSION['cart'] = array(array("product","quantity"));
-                header('location:index.php');
+                include 'phpIncludes/recaptcha.php';
+                if ($response->success)
+                {
+                    $_SESSION['login'] = $row['user_id'];
+                    $_SESSION['cart'] = array(array("product","quantity"));
+                    //header('location:index.php');
+                    $login_err = '¡¡¡SUCCESS!!!';
+                }
+                else
+                    $login_err = 'reCAPTCHA fallido<br>Intente nuevamente';
             }
             else
             {
@@ -135,16 +142,18 @@
                                         <!-- Start Single Content -->
                                         <div id="login" role="tabpanel" class="single__tabs__panel tab-pane fade in active">
                                             <form class="login" method="post">
-                                                <input name="email" type="text" placeholder="Correo Electrónico" value="<?php echo $email; ?>"> 
-                                                <input name="password" type="password" placeholder="Contraseña">
+                                                <input class="error" disabled>
+                                                    <div class="tabs__checkbox__error"><span class="forget__bold"><?php echo $login_err;?></span></div>
+                                                </input>
+                                                <input name="email" type="text" placeholder="Correo Electrónico" value="<?php echo $email; ?>" oninvalid="this.setCustomValidity('Inserte Correo Electrónico')" oninput="this.setCustomValidity('')" required> 
+                                                <input name="password" type="password" placeholder="Contraseña" oninvalid="this.setCustomValidity('Inserte Contraseña')" oninput="this.setCustomValidity('')" required>
                                                 <div class="tabs__checkbox">
                                                     <span class="forget"><a href="#">¿Olvidó su contraseña?</a></span>
-                                                    <span class="forget__bold"><?php echo $login_err; ?></span>
                                                 </div>
-                                                <div class="htc__login__btn">
-                                                    <button name="login">Accesar</button>
+                                                <div class="tabs__checkbox">
+                                                    <div class="g-recaptcha" data-sitekey="6LfOd7YaAAAAAKDfXyWBTAbjZKPhhzXg-8jWqExB"></div>
                                                 </div>
-                                                <div class="g-recaptcha" data-sitekey="6LfOd7YaAAAAAKDfXyWBTAbjZKPhhzXg-8jWqExB"></div>
+                                                <div class="htc__login__btn"><button name="login">Accesar</button></div>
                                             </form>
                                         </div>
                                         <!-- End Single Content -->
@@ -187,5 +196,4 @@
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
-
 </html>

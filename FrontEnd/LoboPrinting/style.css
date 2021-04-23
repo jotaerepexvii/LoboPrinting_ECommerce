@@ -724,7 +724,7 @@
     border-style: none none none;
     color: #686868;
     font-size: 0px;
-    height: 0px;
+    height: -10px;
     line-height: 0px;
     width: 100%;
     background: transparent;
@@ -748,7 +748,7 @@
 .tabs__checkbox span.forget a {
     color: #666;
     font-size: 15px;
-    float: right;
+    float: left;
     text-decoration: underline;
 }
 .tabs__checkbox label.forget {
@@ -766,6 +766,8 @@
 }
 .tabs__checkbox__error {
     margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
     color: red;
     font-weight: 600;
     border: none;
