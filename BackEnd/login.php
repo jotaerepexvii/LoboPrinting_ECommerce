@@ -13,23 +13,23 @@
 
     <!-- All css files are included here. -->
     <!-- Bootstrap fremwork main css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../FrontEnd/css/bootstrap.min.css">
     <!-- Owl Carousel main css -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../FrontEnd/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../FrontEnd/css/owl.theme.default.min.css">
     <!-- This core.css file contents all plugings css file. -->
-    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="../FrontEnd/css/core.css">
     <!-- Theme shortcodes/elements style -->
-    <link rel="stylesheet" href="css/shortcode/shortcodes.css">
+    <link rel="stylesheet" href="../FrontEnd/css/shortcode/shortcodes.css">
     <!-- Theme main style -->
-    <link rel="stylesheet" href="styleBack.css">
+    <link rel="stylesheet" href="../FrontEnd/style.css">
     <!-- Responsive css -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="../FrontEnd/css/responsive.css">
     <!-- User style -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="../FrontEnd/css/custom.css">
     
     <!-- Modernizr JS -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="../FrontEnd/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
 <body>    
@@ -44,7 +44,7 @@
             $md5Pass = md5($password);
             $cryptPass = crypt($md5Pass, 'q/Bx');
 
-            $query = "SELECT user_id FROM Administrator WHERE email = '$email' and password = '$cryptPass'";
+            $query = "SELECT admi_id FROM Administrator WHERE email = '$email' and password = '$cryptPass'";
             $r = mysqli_query($dbc, $query);
             $row = mysqli_fetch_array($r);
 
@@ -53,7 +53,7 @@
             
             if($count == 1) //If result matched $email and $cryptPass, table row must be 1 row
             {
-                include 'phpIncludes/recaptcha.php';
+                include '../FrontEnd/phpIncludes/recaptcha.php';
                 if ($response->success)
                 {
                     $_SESSION['login'] = $row['user_id'];
@@ -75,7 +75,7 @@
     <div class="wrapper fixed__footer">  
         <!-- HEADER STYLE START -->
         <header id="header" class="htc-header header--3 bg__white">
-            <div id="sticky-header-with-topbar" class="mainmenu__area sticky__header" style="background: #888888;">
+            <div id="sticky-header-with-topbar" class="mainmenu__area sticky__header" style="background: #999999;">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
@@ -114,7 +114,7 @@
                             <div class="row">
                                 <div class="col-md-6 col-md-offset-3">
                                     <ul class="login__register__menu" role="tablist">
-                                        <li role="presentation" class="login active"><a role="tab" data-toggle="tab">Iniciar Sesión</a></li>
+                                        <li role="presentation" class="login"><a role="tab" data-toggle="tab">Iniciar Sesión</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -125,8 +125,8 @@
                                         <!-- Start Single Content -->
                                         <div id="login" role="tabpanel" class="single__tabs__panel tab-pane fade in active">
                                             <form class="login" method="post">
-                                                <input name="email" type="text" placeholder="Correo Electrónico de Administrador" value="<?php echo $email; ?>" oninvalid="this.setCustomValidity('Inserte Correo Electrónico de Administrador')" title="Inserte su correo electrónico" required> 
-                                                <input name="password" type="password" placeholder="Contraseña de Administrador" oninvalid="this.setCustomValidity('Inserte Contraseña de Administrador')" oninput="this.setCustomValidity('')" title="Inserte su contraseña" required>
+                                                <input name="email" type="text" placeholder="Correo Electrónico de Administrador*" value="<?php echo $email; ?>" oninvalid="this.setCustomValidity('Inserte Correo Electrónico de Administrador')" title="Inserte su correo electrónico" required> 
+                                                <input name="password" type="password" placeholder="Contraseña de Administrador*" oninvalid="this.setCustomValidity('Inserte Contraseña de Administrador')" oninput="this.setCustomValidity('')" title="Inserte su contraseña" required>
                                                 <div class="tabs__checkbox">
                                                     <span class="forget"><a href="#">¿Olvidó su contraseña?</a></span>
                                                     <span class="forget__bold"><a><?php echo $login_err;?></a></span>
@@ -154,17 +154,17 @@
     <!--Placed js at the end of the document so the pages load faster -->
 
     <!-- jquery latest version -->
-    <script src="js/vendor/jquery-1.12.0.min.js"></script>
+    <script src="../FrontEnd/js/vendor/jquery-1.12.0.min.js"></script>
     <!-- Bootstrap framework js -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../FrontEnd/js/bootstrap.min.js"></script>
     <!-- All js plugins included in this file. -->
-    <script src="js/plugins.js"></script>
-    <script src="js/slick.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="../FrontEnd/js/plugins.js"></script>
+    <script src="../FrontEnd/js/slick.min.js"></script>
+    <script src="../FrontEnd/js/owl.carousel.min.js"></script>
     <!-- Waypoints.min.js. -->
-    <script src="js/waypoints.min.js"></script>
+    <script src="../FrontEnd/js/waypoints.min.js"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
-    <script src="js/main.js"></script>
+    <script src="../FrontEnd/js/main.js"></script>
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>

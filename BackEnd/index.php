@@ -33,7 +33,7 @@
   
   <!-- Main Sidebar Container -->
   <?php
-	  include './phpIncludes/sidebar.php';
+	  include 'phpIncludes/sidebar.php';
   ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
