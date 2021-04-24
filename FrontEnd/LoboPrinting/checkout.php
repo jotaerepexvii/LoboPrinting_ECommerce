@@ -35,6 +35,10 @@
 </head>
 
 <body>
+    <!--REMEMBER TO MOVE LATER TO SESSION IN PHP-->
+        <?php
+        //include 'phpIncludes/recaptcha.php';
+        ?>
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->  
@@ -52,6 +56,7 @@
                 include 'phpIncludes/offset-wrapper.php';
             ?>
         <!-- End Offset Wrapper -->
+
 
         <!-- Start Bradcaump area -->
         <section class="htc__blog__area bg__white pt--80 pb--50">
@@ -79,65 +84,65 @@
                         <div class="ckeckout-left-sidebar">
                             <!-- Start Checkbox Area -->
                             <div class="checkout-form">
-                                <h2 class="section-title-3">Billing details</h2>
+                                <h2 class="section-title-3">Detalles de facturación</h2>
                                 <div class="checkout-form-inner">
                                     <div class="single-checkout-box">
-                                        <input type="text" placeholder="First Name*">
-                                        <input type="text" placeholder="Last Name*">
+                                        <input type="text" placeholder="Nombre*" oninvalid="this.setCustomValidity('Inserte Nombre')" title="Inserte su nombre" required>
+                                        <input type="text" placeholder="Apellidos*" oninvalid="this.setCustomValidity('Inserte Apellidos')" title="Inserte sus apellidos" required>
                                     </div>
                                     <div class="single-checkout-box">
-                                        <input type="email" placeholder="Email*">
-                                        <input type="text" placeholder="Phone*">
+                                        <input type="email" placeholder="Correo Electrónico*" oninvalid="this.setCustomValidity('Inserte Correo Electrónico')" title="Inserte su correo electrónico" required>
+                                        <input type="text" placeholder="Teléfono*" oninvalid="this.setCustomValidity('Inserte Teléfono')" title="Inserte su número de teléfono" required>
                                     </div>
                                     <div class="single-checkout-box">
-                                        <textarea name="message" placeholder="Message*"></textarea>
+                                        <textarea name="message" placeholder="Mensaje*" title="Si desea acompañar su orden con un mensaje, inserte un mensaje"></textarea>
                                     </div>
                                     <div class="single-checkout-box select-option mt--40">
-                                        <select>
-                                            <option>Country*</option>
-                                            <option>Bangladesh</option>
-                                            <option>Bangladesh</option>
-                                            <option>Bangladesh</option>
-                                            <option>Bangladesh</option>
+                                        <select oninvalid="this.setCustomValidity('Seleccione un País')" title="Seleccione el país donde recibirá su orden.<br>Solo Puerto Rico está disponible por el momento" required disabled>
+                                            <option selected disabled hidden>Puerto Rico*</option>
+                                            <option>Puerto Rico</option>
+                                            <option>United States</option>
                                         </select>
-                                        <input type="text" placeholder="Company Name*">
+                                        <input type="text" placeholder="Zip Code*" oninvalid="this.setCustomValidity('Inserte Zip Code')" title="Inserte zip code donde recibirá su orden" required>
                                     </div>
                                     <div class="single-checkout-box">
-                                        <input type="email" placeholder="State*">
-                                        <input type="text" placeholder="Zip Code*">
+                                        <input type="email" placeholder="Pueblo*" oninvalid="this.setCustomValidity('Inserte pueblo')" title="Inserte el pueblo donde recibirá su orden" required>
+                                    </div>
+                                    <div class="single-checkout-box">
+                                        <div class="g-recaptcha" data-sitekey="6LfOd7YaAAAAAKDfXyWBTAbjZKPhhzXg-8jWqExB"></div>
                                     </div>
                                     <div class="single-checkout-box checkbox">
                                         <input id="remind-me" type="checkbox">
-                                        <label for="remind-me"><span></span>Create a Account ?</label>
+                                        <label for="remind-me"><span></span>¿Crear una cuenta?</label>
                                     </div>
                                 </div>
                             </div>
                             <!-- End Checkbox Area -->
                             <!-- Start Payment Box -->
                             <div class="payment-form">
-                                <h2 class="section-title-3">payment details</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur kgjhyt</p>
+                                <h2 class="section-title-3">Método de Pago</h2>
+                                <p></p>
                                 <div class="payment-form-inner">
                                     <div class="single-checkout-box">
-                                        <input type="text" placeholder="Name on Card*">
-                                        <input type="text" placeholder="Card Number*">
+                                        <input type="text" placeholder="Nombre En Tarjeta*">
+                                        <input type="text" placeholder="Número De Tarjeta*">
                                     </div>
                                     <div class="single-checkout-box select-option">
                                         <select>
-                                            <option>Date*</option>
-                                            <option>Date</option>
-                                            <option>Date</option>
-                                            <option>Date</option>
-                                            <option>Date</option>
+                                            <option selected disabled hidden>Día*</option>
+                                            <option>Día</option>
+                                            <option>Día</option>
+                                            <option>Día</option>
+                                            <option>Día</option>
                                         </select>
-                                        <input type="text" placeholder="Security Code*">
+                                        <input type="text" placeholder="Código de Seguridad*">
                                     </div>
                                 </div>
                             </div>
                             <!-- End Payment Box -->
                             <!-- Start Payment Way -->
                             <div class="our-payment-sestem">
-                                <h2 class="section-title-3">We  Accept :</h2>
+                                <h2 class="section-title-3">Se acepta :</h2>
                                 <ul class="payment-menu">
                                     <li><a href="#"><img src="images/payment/1.jpg" alt="payment-img"></a></li>
                                     <li><a href="#"><img src="images/payment/2.jpg" alt="payment-img"></a></li>
@@ -145,13 +150,14 @@
                                     <li><a href="#"><img src="images/payment/4.jpg" alt="payment-img"></a></li>
                                     <li><a href="#"><img src="images/payment/5.jpg" alt="payment-img"></a></li>
                                 </ul>
-                                <div class="checkout-btn">
-                                    <a class="ts-btn btn-light btn-large hover-theme" href="#">CONFIRM & BUY NOW</a>
+                                <div class="checkout-button">
+                                    <button class="btnCheckout" href="#">CONFIRMAR Y COMPRAR</button>
                                 </div>    
                             </div>
                             <!-- End Payment Way -->
                         </div>
                     </div>
+                    
                     <div class="col-md-4 col-lg-4">
                         <div class="checkout-right-sidebar">
                             <div class="our-important-note">
@@ -197,6 +203,7 @@
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="js/main.js"></script>
 
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 
 </html>

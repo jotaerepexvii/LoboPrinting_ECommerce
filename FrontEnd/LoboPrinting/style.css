@@ -3838,7 +3838,27 @@ a.shipping-calculator-button:hover {
 /*---------------------------------------
   27. Our Checkout Page
 ----------------------------------------*/
-
+.checkout-button button.btnCheckout{
+    border: 1px solid #d5d5d5;
+    display: inline-block;
+    font-size: 20px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    transition: all 0.5s ease 0s;
+    width: 300px;
+    color: #4b4b4b;
+    background-color: transparent;
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.checkout-button button.btnCheckout:hover{
+    color: #ffffff;
+    background-color: #ff4136;
+    border: 1px solid #ff4136;
+}
 .single-checkout-box input[type="text"],
 .single-checkout-box input[type="email"],
 .single-checkout-box input[type="password"] {

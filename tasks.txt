@@ -1,27 +1,13 @@
 FRONT END
-    > contactanos.php
-        - tratar de colocar el mapa un poco mas ancho (800px esta bien) y poder centralizarlo luego de 'ensancharlo'
-        -  los cuadros amarillos
-            +uno puede ser de número de telefono, email y dirección postal
-
-    > phpInclude/ footer.php
-        - ver que mas se puede añadir al footer
-        - cambiar el rights reserved
-
     >checkout.php
-        - everything
+        - reCAPTCHA - REMEMBER TO MOVE LATER TO SESSION IN PHP
 
-    >login-register.php
-        - dividir login-register en 2?
-
-    > realizar page nuevo (user.php) que muestre los detalles del usuario (y que los pueda editar?) y eso
+    > account.php
+        - detalles del usuario que sean editables
 
     > sobre-nosotros.php
         - en seccion de 'Nuestra Tienda' añadir 'Esclusividad - los productos memorabilia se consiguen solo en blabla...'
-            - y hacer seccion full width para evitar discrepancia con el pedazo del video
-
-    > cambiar encriptacion md5 a una mas segura, luego
-    > añadir recaptcha
+        - y hacer seccion full width para evitar discrepancia con el pedazo del video
 
 BACK END
     > detalleProducto.php

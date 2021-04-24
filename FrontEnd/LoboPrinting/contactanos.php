@@ -154,9 +154,9 @@
                         <div class="section__title section__title--2 text-center">
                             <h2 class="title__line">Nuestra Localización</h2>
                             <p>Estamos ubicados en la UPR de Arecibo, al lado de la Imprenta de la Universidad</p>
-                            <p style="margin-top:50px;">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7568.699108933881!2d-66.7439321!3d18.4678191!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf81fe612f4f1f3f7!2sUniversidad%20de%20Puerto%20Rico%20-%20Recinto%20de%20Arecibo!5e0!3m2!1ses-419!2spr!4v1619030795396!5m2!1ses-419!2spr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                            </p>
+                            <div class="row pt--80">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7568.699108933881!2d-66.7439321!3d18.4678191!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf81fe612f4f1f3f7!2sUniversidad%20de%20Puerto%20Rico%20-%20Recinto%20de%20Arecibo!5e0!3m2!1ses-419!2spr!4v1619030795396!5m2!1ses-419!2spr" width="900" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
                         </div>
                     </div>
                 </div>

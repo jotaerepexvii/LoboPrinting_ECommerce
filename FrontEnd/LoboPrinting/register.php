@@ -64,7 +64,7 @@
                     $register_err ='Las Contraseñas no coinciden';
                 }
                 else if(strlen($password)<8) {
-                    $register_err ='';
+                    $register_err ='La contraseña debe ser de 8 caracteres o más';
                 }
                 else
                 {
