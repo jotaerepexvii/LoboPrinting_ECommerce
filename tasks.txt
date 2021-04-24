@@ -4,6 +4,7 @@ FRONT END
 
     > account.php
         - detalles del usuario que sean editables
+        - Nombres con primera letra en mayúscula
 
     > sobre-nosotros.php
         - en seccion de 'Nuestra Tienda' añadir 'Esclusividad - los productos memorabilia se consiguen solo en blabla...'
@@ -11,6 +12,7 @@ FRONT END
 
     > login.php and register.php
         - ver como se ve mejor la opcion de "Crear Nueva Cuenta"
+
 
 BACK END
     > detalleProducto.php
