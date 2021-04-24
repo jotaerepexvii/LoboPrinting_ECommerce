@@ -90,12 +90,17 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-10 col-lg-8 col-sm-6 col-xs-6">
-                        </div>
-                        <div class="col-md-2 col-sm-4 col-xs-3"> 
+                        <div class="col-md-9 col-lg-8 col-sm-6 col-xs-6">
                             <nav class="mainmenu__nav hidden-xs hidden-sm">
                                 <ul class="main__menu"> 
                                     <li class="drop"><a href="index.php">Inicio</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-3"> 
+                            <nav class="mainmenu__nav hidden-xs hidden-sm">
+                                <ul class="main__menu"> 
+                                    <li class="drop"><a href="register.php">Crear Nueva Cuenta</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -114,6 +119,7 @@
                                 <div class="col-md-6 col-md-offset-3"> 
                                     <ul class="login__register__menu" role="tablist">
                                         <li role="presentation" class="login active"><a href="#login" role="tab" data-toggle="tab">Iniciar Sesión</a></li>
+                                        <!-- <li><a href="register.php">Registrarse</a></li> -->
                                     </ul>
                                 </div>
                             </div>
@@ -138,10 +144,8 @@
                                         </div>
                                         <!-- End Single Content -->
                                     </div>
-                                    
                                 </div>
                             </div>
-                            <div class="htc__login__btn"><button class="wide2x" href="register.php">Crear nueva cuenta</button></div>
                             <!-- End Login Register Content -->
                         </div>
                     </div>

@@ -681,8 +681,8 @@
 .login__register__menu {
     display: flex;
     justify-content: center;
-    margin: 0 auto 35px;
-    max-width: 420px;
+    margin: 0 auto 50px;
+    max-width: 600px;
 }
 .login__register__menu li a {
     color: #000000;
@@ -690,17 +690,17 @@
     transition: all 0.4s ease 0s;
 }
 .login__register__menu li {
-    padding: 0 20px;
+    padding: 15px 30px;
 }
 .login__register__menu li.active a {
-    color: #000;
+    color: #ff4136;
 }
 .login__register__menu li a:hover {
     color: #ff4136;
 }
 .htc__login__register__wrap {
     margin: 0 auto;
-    max-width: 420px;
+    max-width: 400px;
 }
 .login input {
     -moz-border-bottom-colors: none;

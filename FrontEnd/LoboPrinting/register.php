@@ -115,11 +115,18 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-8 col-lg-8 col-sm-6 col-xs-6">
+                        <div class="col-md-9 col-lg-8 col-sm-6 col-xs-6">
+                            <nav class="mainmenu__nav hidden-xs hidden-sm">
+                                <ul class="main__menu"> 
+                                    <li class="drop"><a href="index.php">Inicio</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-3">
                             <!-- MENU START -->
                             <nav class="mainmenu__nav hidden-xs hidden-sm">
                                 <ul class="main__menu">
-                                    <li class="drop"><a href="index.php">Inicio</a></li>
+                                    <li class="drop"><a href="login.php">Iniciar Sessión</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -135,16 +142,10 @@
                 <div class="row align-items-center">
                     <div class="blog__wrap clearfix mt--60 xmt-30">
                         <div class="container">
-                            <div class="row"> <!--space between header and form-->
-                                <div class="col-md-6 col-md-offset-3"> 
-                                    <ul class="login__register__menu" role="tablist"></ul>
-                                </div>
-                            </div>
                             <div class="row">
                                 <div class="col-md-6 col-md-offset-3">
-                                    <ul class="login__register__menu">
-                                        <li><a href="login.php">Iniciar Sección</a></li>
-                                        <li role="presentation" class="login active"><a href="#register" role="tab" data-toggle="tab" >Registrarse</a></li>
+                                    <ul class="login__register__menu" role="tablist">
+                                        <li role="presentation" class="login"><a href="#register" role="tab" data-toggle="tab" >Registrarse</a></li>
                                     </ul>
                                 </div>
                             </div>
