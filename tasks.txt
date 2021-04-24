@@ -16,7 +16,4 @@ BACK END
     > detalleProducto.php
         - bregar con la imagen del producto
 
-    > login.php
-        - conectarlo
-
     admin table id (admi_id) pienso que debe de auto-incrementar

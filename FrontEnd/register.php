@@ -126,7 +126,7 @@
                             <!-- MENU START -->
                             <nav class="mainmenu__nav hidden-xs hidden-sm">
                                 <ul class="main__menu">
-                                    <li class="drop"><a href="login.php">Iniciar Sessión</a></li>
+                                    <li class="drop"><a href="login.php">Iniciar Sesión</a></li>
                                 </ul>
                             </nav>
                         </div>
