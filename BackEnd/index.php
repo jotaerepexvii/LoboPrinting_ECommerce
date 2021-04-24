@@ -185,7 +185,7 @@
                           print "
                             <tr>
                                 <td>
-                                <img src= '../../FrontEnd/LoboPrinting/images/lobo_products/$row[image]' alt='$row[image]' class='img-circle img-size-32 mr-2'>
+                                <img src= '../FrontEnd/LoboPrinting/images/lobo_products/$row[image]' alt='$row[image]' class='img-circle img-size-32 mr-2'>
                                   <a href='detallesProducto.php?product_id={$row['product_id']}'> $row[name] $row[description]</a>
                                 </td>
                                 <td>$$row[price]</td>
