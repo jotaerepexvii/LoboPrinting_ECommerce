@@ -18,3 +18,5 @@ BACK END
 
     > login.php
         - conectarlo
+
+    admin table id (admi_id) pienso que debe de auto-incrementar
