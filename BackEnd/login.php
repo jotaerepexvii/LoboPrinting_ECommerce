@@ -34,49 +34,39 @@
 
 <body>    
     <?php
-        $dbc = @mysqli_connect('136.145.29.193','brytacmo','brytacmo840$cuta','brytacmo_db')
-            OR die('No se pudo conectar a la base de datos'.mysqli_connect_error());
-        //echo "Probando 12";
-        session_start();
-        $login_err = '';
-        $email = '';
+        include '../FrontEnd/phpIncludes/connection.php';
+        $login_err = $email = '';
         if(isset($_POST['login']))
         {
             // username and password sent from form 
             $email = filter_input(INPUT_POST, 'email');
             $password = filter_input(INPUT_POST, 'password');
+            $md5Pass = md5($password);
+            $cryptPass = crypt($md5Pass, 'q/Bx');
 
-            $query = "SELECT user_id FROM Users WHERE email = '$email' and password = '$password'";
+            $query = "SELECT user_id FROM Administrator WHERE email = '$email' and password = '$cryptPass'";
             $r = mysqli_query($dbc, $query);
             $row = mysqli_fetch_array($r);
 
             $count = mysqli_num_rows($r);
             // If result matched $myusername and $mypassword, table row must be 1 row
             
-            if($count == 1)
+            if($count == 1) //If result matched $email and $cryptPass, table row must be 1 row
             {
-                $_SESSION['login'] = $row['user_id'];
-                header('location:index.php');
+                include 'phpIncludes/recaptcha.php';
+                if ($response->success)
+                {
+                    $_SESSION['login'] = $row['user_id'];
+                    $_SESSION['cart'] = array(array("product","quantity"));
+                    header('location:index.php');
+                }
+                else
+                    $login_err = 'reCAPTCHA Fallido<br>Intente nuevamente';
             }
             else
             {
-                if((!empty($email)) && (!empty($password)))
-                {
-                    $login_err = 'Credenciales Incorrectas';
-                    $email = '';
-                }
-                else if(empty($email) && !empty($password))
-                {
-                    $login_err = 'Inserte Email';
-                }
-                else if(!empty($email) && empty($password))
-                {
-                    $login_err = 'Inserte Contraseña';
-                }
-                else if(empty($email) && empty($password))
-                {
-                    $login_err = 'Inserte Datos';
-                }
+                $login_err = 'Credenciales Incorrectas';
+                $email = '';
             }
         }
         //include('header.php');
@@ -85,15 +75,24 @@
     <div class="wrapper fixed__footer">  
         <!-- HEADER STYLE START -->
         <header id="header" class="htc-header header--3 bg__white">
-            <div id="sticky-header-with-topbar" class="mainmenu__area sticky__header" style="background: gold;">
+            <div id="sticky-header-with-topbar" class="mainmenu__area sticky__header" style="background: #888888;">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="logo">
                                 <a href="index.php">
-                                    <img src="logo/lp4.png" alt="logo">
+                                    <img src="../FrontEnd/images/logo/lobo_printing.svg" alt="logo">
                                 </a>
                             </div>
+                        </div>
+                        <div class="col-md-8 col-lg-8 col-sm-6 col-xs-6">
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-3"> 
+                            <nav class="mainmenu__nav hidden-xs hidden-sm">
+                                <ul class="main__menu"> 
+                                    <li class="drop"><a href="register.php">Area De Administrador</a></li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>
@@ -126,15 +125,16 @@
                                         <!-- Start Single Content -->
                                         <div id="login" role="tabpanel" class="single__tabs__panel tab-pane fade in active">
                                             <form class="login" method="post">
-                                                <input name="email" type="text" placeholder="Correo de Administrador" value="<?php echo $email; ?>"> 
-                                                <input name="password" type="password" placeholder="Contraseña">
+                                                <input name="email" type="text" placeholder="Correo Electrónico de Administrador" value="<?php echo $email; ?>" oninvalid="this.setCustomValidity('Inserte Correo Electrónico de Administrador')" title="Inserte su correo electrónico" required> 
+                                                <input name="password" type="password" placeholder="Contraseña de Administrador" oninvalid="this.setCustomValidity('Inserte Contraseña de Administrador')" oninput="this.setCustomValidity('')" title="Inserte su contraseña" required>
                                                 <div class="tabs__checkbox">
                                                     <span class="forget"><a href="#">¿Olvidó su contraseña?</a></span>
-                                                    <span class="forget__bold"><?php echo $login_err; ?></span>
+                                                    <span class="forget__bold"><a><?php echo $login_err;?></a></span>
                                                 </div>
-                                                <div class="htc__login__btn">
-                                                    <button name="login">Accesar</button>
+                                                <div class="tabs__checkbox">
+                                                    <div class="g-recaptcha" data-sitekey="6LfOd7YaAAAAAKDfXyWBTAbjZKPhhzXg-8jWqExB"></div>
                                                 </div>
+                                                <div class="htc__login__btn"><button class="scs" name="login">Accesar</button></div>
                                             </form>
                                         </div>
                                         <!-- End Single Content -->
@@ -165,6 +165,8 @@
     <script src="js/waypoints.min.js"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="js/main.js"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 
 </html>
