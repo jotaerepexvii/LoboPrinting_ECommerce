@@ -6,38 +6,35 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index.php" class="brand-link">
-      <img src="dist/img/lobo.ico" alt="Lobo Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Menu</span>
+      <img src="dist/img/person.svg" alt="Lobo Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <?php
+            error_reporting(E_ERROR | E_PARSE);
+            $query = "SELECT *
+                        FROM Administrator
+                        WHERE admin_id={$_SESSION['login']}";
+            $r = mysqli_query($dbc,$query);//Make the Query
+            $row = mysqli_fetch_array($r);//Save Query Result
+
+            print"
+                <span class='brand-text font-weight-light'>$row[name] $row[lastname]</span>
+            ";
+        ?>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
+        <!-- Sidebar user panel (optional) 
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
                 <img src="dist/img/user2-160x16.jpg" class="img-circle elevation-2" alt="">
             </div>
             <div class="info">
-                <?php
-                    //error_reporting(E_ERROR | E_PARSE);
-                
-                    $query = "SELECT *
-                                FROM Administrator
-                                WHERE admin_id={$_SESSION['login']}";
-                    $r = mysqli_query($dbc,$query);//Make the Query
-                    $row = mysqli_fetch_array($r);//Save Query Result
-
-                    print"
-                        <a href='#' class='d-block'>Hola $row[name] $row[lastname]!</a>
-                    ";
-                ?>
+                <a></a>
             </div>
         </div>
+        -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <!-- Add icons to the links using the .nav-icon class
-                    with font-awesome or any other icon font library -->
-
                 <li class="nav-item menu-open">
                     <li class="nav-item">
                         <a href="./index.php" class="nav-link">
@@ -45,7 +42,6 @@
                             <p>Inicio</p>
                         </a>
                     </li>
-
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-box-open"></i>
@@ -72,7 +68,6 @@
                             </li>
                         </ul>
                     </li>
-
                     <li class="nav-item">
                         <a href="./administradores.php" class="nav-link">
                             <i class="nav-icon fas fa-user"></i>
@@ -93,7 +88,6 @@
                             </li>
                         </ul>
                     </li>
-
                     <li class="nav-item">
                         <a href="./usuarios.php" class="nav-link">
                             <i class="nav-icon fas fa-users"></i>
@@ -114,7 +108,6 @@
                             </li>
                         </ul>
                     </li>
-
                 </li>
                 <li class="nav-item menu-open">
                     <li class="nav-header">Reportes</li>
@@ -138,7 +131,6 @@
                         </li>
                     </li>
                 </li>
-
             </ul>
         </nav>
     </div>
