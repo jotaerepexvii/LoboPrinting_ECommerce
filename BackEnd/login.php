@@ -34,38 +34,49 @@
 
 <body>    
     <?php
-        include '././FrontEnd/LoboPrinting/phpIncludes/connection.php';
-        $login_err = $email = $passEncr = '';
-
+        $dbc = @mysqli_connect('136.145.29.193','brytacmo','brytacmo840$cuta','brytacmo_db')
+            OR die('No se pudo conectar a la base de datos'.mysqli_connect_error());
+        //echo "Probando 12";
+        session_start();
+        $login_err = '';
+        $email = '';
         if(isset($_POST['login']))
         {
             // username and password sent from form 
             $email = filter_input(INPUT_POST, 'email');
             $password = filter_input(INPUT_POST, 'password');
-            $md5Pass = md5($password);
-            $cryptPass = crypt($md5Pass, 'q/bAxDM&IN');
 
-            $query = "SELECT admi_id FROM Administrator WHERE email = '$email' and password = '$cryptPass'";
+            $query = "SELECT user_id FROM Users WHERE email = '$email' and password = '$password'";
             $r = mysqli_query($dbc, $query);
             $row = mysqli_fetch_array($r);
+
             $count = mysqli_num_rows($r);
+            // If result matched $myusername and $mypassword, table row must be 1 row
             
-            if($count == 1) //If result matched $email and $cryptPass, table row must be 1 row
+            if($count == 1)
             {
-                include 'phpIncludes/recaptcha.php';
-                if ($response->success)
-                {
-                    $_SESSION['login'] = $row['user_id'];
-                    $_SESSION['cart'] = array(array("product","quantity"));
-                    header('location:index.php');
-                }
-                else
-                    $login_err = 'reCAPTCHA Fallido<br>Intente nuevamente';
+                $_SESSION['login'] = $row['user_id'];
+                header('location:index.php');
             }
             else
             {
-                $login_err = 'Credenciales Incorrectas';
-                $email = '';
+                if((!empty($email)) && (!empty($password)))
+                {
+                    $login_err = 'Credenciales Incorrectas';
+                    $email = '';
+                }
+                else if(empty($email) && !empty($password))
+                {
+                    $login_err = 'Inserte Email';
+                }
+                else if(!empty($email) && empty($password))
+                {
+                    $login_err = 'Inserte Contraseña';
+                }
+                else if(empty($email) && empty($password))
+                {
+                    $login_err = 'Inserte Datos';
+                }
             }
         }
         //include('header.php');
@@ -115,14 +126,11 @@
                                         <!-- Start Single Content -->
                                         <div id="login" role="tabpanel" class="single__tabs__panel tab-pane fade in active">
                                             <form class="login" method="post">
-                                                <input name="email" type="text" placeholder="Correo de Administrador" value="<?php echo $email; ?>" oninvalid="this.setCustomValidity('Inserte Correo Electrónico')" title="Inserte su correo electrónico" required> 
-                                                <input name="password" type="password" placeholder="Contraseña" oninvalid="this.setCustomValidity('Inserte Contraseña')" oninput="this.setCustomValidity('')" title="Inserte su contraseña" required>
+                                                <input name="email" type="text" placeholder="Correo de Administrador" value="<?php echo $email; ?>"> 
+                                                <input name="password" type="password" placeholder="Contraseña">
                                                 <div class="tabs__checkbox">
                                                     <span class="forget"><a href="#">¿Olvidó su contraseña?</a></span>
                                                     <span class="forget__bold"><?php echo $login_err; ?></span>
-                                                </div>
-                                                <div class="tabs__checkbox">
-                                                    <div class="g-recaptcha" data-sitekey="6LfOd7YaAAAAAKDfXyWBTAbjZKPhhzXg-8jWqExB"></div>
                                                 </div>
                                                 <div class="htc__login__btn">
                                                     <button name="login">Accesar</button>
