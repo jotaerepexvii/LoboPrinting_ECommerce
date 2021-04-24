@@ -675,10 +675,13 @@
 .single__tabs__panel.tab-pane:not(.active) {
     display: none;
 }
+.single__tabs__panel hr {
+    margin-top: 20px;
+}
 .login__register__menu {
     display: flex;
     justify-content: center;
-    margin: 0 auto 51px;
+    margin: 0 auto 35px;
     max-width: 420px;
 }
 .login__register__menu li a {
@@ -690,7 +693,7 @@
     padding: 0 20px;
 }
 .login__register__menu li.active a {
-    color: #ff4136;
+    color: #000;
 }
 .login__register__menu li a:hover {
     color: #ff4136;
@@ -795,9 +798,17 @@
     color: #4b4b4b;
     background-color: transparent;
     text-transform: uppercase;
-    margin-top: 30px;
+    margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
+}
+.htc__login__btn button.scs:hover {
+    border: 1px solid #47bd43;
+    color: #fff;
+    background-color: #47bd43;
+}
+.htc__login__btn button.wide2x {
+    width: 300px;
 }
 .htc__login__btn {
     margin-left: auto;
@@ -4191,11 +4202,35 @@ a.shipping-calculator-button:hover {
     padding-top: 30px;
     text-transform: uppercase;
 }
+.portfolio-description button {
+    border: 1px solid #d5d5d5;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    float: left;
+    transition: all 0.5s ease 0s;
+    width: 100px;
+    color: #4b4b4b;
+    background-color: transparent;
+    text-transform: uppercase;
+    margin: 5px 15px 30px;
+}
+.portfolio-description button:hover {
+    border: 1px solid #ff4136;
+    color: #fff;
+    background-color: #ff4136;
+}
+.portfolio-description button:hover.save {
+    border: 1px solid #47bd43;
+    color: #fff;
+    background-color: #47bd43;
+}
 .portfolio-description > p {
     margin-bottom: 10px;
 }
 .portfolio-info ul {
-    margin-bottom: 50px;
+    margin-bottom: 15px;
 }
 .portfolio-info ul li {
     color: #666;

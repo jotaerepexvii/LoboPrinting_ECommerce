@@ -103,6 +103,7 @@
                                                 <li><span><input value='$row[phone]'></input></span></li>
                                                 <li><span><input value='$row[student]'></input></span></li>
                                             </ul>
+                                            <button>Edit</button><button class='save'>Save</button>
                                         </div>
                                     </div>
                                 ";
@@ -133,6 +134,7 @@
                                                 <li><span><input value='$row1[city]'></input></span></li>
                                                 <li><span><input value='$row1[state]'></input></span></li>
                                             </ul>
+                                            <button>Edit</button><button class='save'>Save</button>
                                         </div>
                                     </div>
                                 ";
@@ -168,6 +170,7 @@
                                                 </div>
                                                 <li><span><input value='$row2[ccv]'</input></span></li>
                                             </ul>
+                                            <button>Edit</button><button class='save'>Save</button>
                                         </div>
                                     </div>
                                 ";

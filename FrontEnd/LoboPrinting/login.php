@@ -67,7 +67,7 @@
                     header('location:index.php');
                 }
                 else
-                    $login_err = 'reCAPTCHA fallido<br>Intente nuevamente';
+                    $login_err = 'reCAPTCHA Fallido<br>Intente nuevamente';
             }
             else
             {
@@ -90,10 +90,11 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-8 col-lg-8 col-sm-6 col-xs-6">
-                            <!-- MENU START -->
+                        <div class="col-md-10 col-lg-8 col-sm-6 col-xs-6">
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-3"> 
                             <nav class="mainmenu__nav hidden-xs hidden-sm">
-                                <ul class="main__menu">
+                                <ul class="main__menu"> 
                                     <li class="drop"><a href="index.php">Inicio</a></li>
                                 </ul>
                             </nav>
@@ -111,14 +112,8 @@
                         <div class="container">
                             <div class="row"> <!--space between header and form-->
                                 <div class="col-md-6 col-md-offset-3"> 
-                                    <ul class="login__register__menu" role="tablist"></ul>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 col-md-offset-3">
                                     <ul class="login__register__menu" role="tablist">
                                         <li role="presentation" class="login active"><a href="#login" role="tab" data-toggle="tab">Iniciar Sesión</a></li>
-                                        <li><a href="register.php">Registrarse</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -138,22 +133,15 @@
                                                 <div class="tabs__checkbox">
                                                     <div class="g-recaptcha" data-sitekey="6LfOd7YaAAAAAKDfXyWBTAbjZKPhhzXg-8jWqExB"></div>
                                                 </div>
-                                                <div class="htc__login__btn"><button name="login">Accesar</button></div>
-                                            </form>
-                                        </div>
-                                        <!-- End Single Content -->
-                                        <!-- Start Single Content -->
-                                        <div id="register" role="tabpanel" class="single__tabs__panel tab-pane fade">
-                                            <form class="login" method="post">
-                                                <div class="htc__login__btn">
-                                                    <button href="register.php">Registrarse</button>
-                                                </div>
+                                                <div class="htc__login__btn"><button class="scs" name="login">Accesar</button></div>
                                             </form>
                                         </div>
                                         <!-- End Single Content -->
                                     </div>
+                                    
                                 </div>
                             </div>
+                            <div class="htc__login__btn"><button class="wide2x" href="register.php">Crear nueva cuenta</button></div>
                             <!-- End Login Register Content -->
                         </div>
                     </div>
