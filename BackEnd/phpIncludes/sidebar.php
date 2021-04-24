@@ -6,7 +6,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index.php" class="brand-link">
-      <img src="dist/img/person.svg" alt="Lobo Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="dist/img/person.png" alt="Lobo Logo" class="brand-image elevation-3" style="opacity: .8">
         <?php
             error_reporting(E_ERROR | E_PARSE);
             $query = "SELECT *
@@ -16,7 +16,7 @@
             $row = mysqli_fetch_array($r);//Save Query Result
 
             print"
-                <span class='brand-text font-weight-light'>$row[name] $row[lastname]</span>
+                <span class='brand-text font-weight-light'>$row[name]</span>
             ";
         ?>
     </a>
