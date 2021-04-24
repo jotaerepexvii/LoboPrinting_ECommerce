@@ -34,7 +34,7 @@
 
 <body>    
     <?php
-        include '../FrontEnd/phpIncludes/connection.php';
+        include 'phpIncludes/connection.php';
         $login_err = $email = '';
         if(isset($_POST['login']))
         {
@@ -44,20 +44,19 @@
             $md5Pass = md5($password);
             $cryptPass = crypt($md5Pass, 'q/Bx');
 
-            $query = "SELECT admi_id FROM Administrator WHERE email = '$email' and password = '$cryptPass'";
+            $query = "SELECT admin_id FROM Administrator WHERE email = '$email' and password = '$cryptPass'";
             $r = mysqli_query($dbc, $query);
             $row = mysqli_fetch_array($r);
 
             $count = mysqli_num_rows($r);
-            // If result matched $myusername and $mypassword, table row must be 1 row
             
             if($count == 1) //If result matched $email and $cryptPass, table row must be 1 row
             {
                 include '../FrontEnd/phpIncludes/recaptcha.php';
                 if ($response->success)
                 {
-                    $_SESSION['login'] = $row['user_id'];
-                    $_SESSION['cart'] = array(array("product","quantity"));
+                    $_SESSION['login'] = $row['admin_id'];
+                    //$_SESSION['cart'] = array(array("product","quantity"));
                     header('location:index.php');
                 }
                 else

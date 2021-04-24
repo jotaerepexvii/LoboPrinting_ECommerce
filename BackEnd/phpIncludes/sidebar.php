@@ -15,10 +15,22 @@
       <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-            <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                <img src="dist/img/user2-160x16.jpg" class="img-circle elevation-2" alt="">
             </div>
             <div class="info">
-            <a href="#" class="d-block">Juan Del Town</a>
+                <?php
+                    //error_reporting(E_ERROR | E_PARSE);
+                
+                    $query = "SELECT *
+                                FROM Administrator
+                                WHERE admin_id={$_SESSION['login']}";
+                    $r = mysqli_query($dbc,$query);//Make the Query
+                    $row = mysqli_fetch_array($r);//Save Query Result
+
+                    print"
+                        <a href='#' class='d-block'>Hola $row[name] $row[lastname]!</a>
+                    ";
+                ?>
             </div>
         </div>
         <nav class="mt-2">
