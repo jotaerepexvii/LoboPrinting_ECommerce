@@ -1,3 +1,0 @@
-<?php
-    '././FrontEnd/LoboPrinting/'
-?>
