@@ -70,30 +70,72 @@
         <?php
             if (!isset($_SESSION['login']))
             {
-                //header( 'Location: index.php' );
-                //exit();
                 print "
-                <section class='htc__blog__area bg__white pt--90'>
-                    <div class='container'>
+                <section class='htc__choose__us__ares bg__white'>
+                    <div class='container-fluid'>
                         <div class='row'>
-                            <div class='col-xs-12'>
-                                <div class='bradcaump__inner text-center'>
-                                    <h2  class='bradcaump-title'>Debe Iniciar Sesion para ver sus datos</h2>
-                                    <nav class='bradcaump-inner'>
-                                        <a class='breadcrumb-item' href='login.php'>Iniciar Sesión</a>
-                                    </nav>
+                            <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
+                                <div class='htc__choose__wrap bg__cat--4'>
+                                    <h2 class='choose__title'>Debes Iniciar Sesión</h2>
+                                    <div class='choose__container'>
+                                        <div class='single__chooose'>
+                                            <div class='choose__us'>
+                                                <div class='choose__icon'>
+                                                    <span class='ti-reload'></span>
+                                                </div>
+                                                <div class='choose__details'>
+                                                    <h4>Devoluciones</h4>
+                                                    <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
+                                                </div>
+                                            </div>
+                                            <div class='choose__us'>
+                                                <div class='choose__icon'>
+                                                    <span class='ti-help-alt'></span>
+                                                </div>
+                                                <div class='choose__details'>
+                                                    <h4>¿Dudas?</h4>
+                                                    <p>Para mas información </p>
+                                                    <div >
+                                                        <a class='red-font' href='contactanos.php'>
+                                                            contáctanos
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class='row'>
-                            <div class='col-xs-12'>
-                                <div class='bradcaump__inner text-center'>
-                                    <h2  class='bradcaump-title'></h2>
-                                    <nav class='bradcaump-inner'>
-                                        <a class='breadcrumb-item' href='index.php'>¿No tiene una cuenta?</a>
-                                        <span class='brd-separetor'> </span>
-                                        <a class='breadcrumb-item' href='register.php'>Regístrate</a>
-                                    </nav>
+                            <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
+                                <div class='htc__choose__wrap bg__cat--4'>
+                                    <h2 class='choose__title'>¿No Tienes Cuenta? Registrate</h2>
+                                    <div class='choose__container'>
+                                        <div class='single__chooose'>
+                                            <div class='choose__us'>
+                                                <div class='choose__icon'>
+                                                    <span class='ti-reload'></span>
+                                                </div>
+                                                <div class='choose__details'>
+                                                    <h4>Devoluciones</h4>
+                                                    <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
+                                                </div>
+                                            </div>
+                                            <div class='choose__us'>
+                                                <div class='choose__icon'>
+                                                    <span class='ti-help-alt'></span>
+                                                </div>
+                                                <div class='choose__details'>
+                                                    <h4>¿Dudas?</h4>
+                                                    <p>Para mas información </p>
+                                                    <div >
+                                                        <a class='red-font' href='contactanos.php'>
+                                                            contáctanos
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -105,8 +147,6 @@
             {
                 //if ( isset( $_SESSION['login']))
                 //{
-                    //header( 'Location: home.php' );
-                    //exit();
                     error_reporting(E_ERROR | E_PARSE);
         
                     $query = "SELECT *
