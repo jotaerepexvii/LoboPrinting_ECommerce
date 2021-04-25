@@ -50,7 +50,7 @@
         <!-- End Offset Wrapper -->
     
         <!-- Start Bradcaump area -->
-        <section class="htc__blog__area bg__white pt--90">
+        <section class="htc__blog__area bg__white ptb--90">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
@@ -76,30 +76,15 @@
                         <div class='row'>
                             <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
                                 <div class='htc__choose__wrap bg__cat--4'>
-                                    <h2 class='choose__title'>Debes Iniciar Sesión</h2>
+                                    <h2 class='choose__title'>Para acceder 'Mi Cuenta'<br>Debes Iniciar Sesión</h2>
                                     <div class='choose__container'>
                                         <div class='single__chooose'>
                                             <div class='choose__us'>
                                                 <div class='choose__icon'>
-                                                    <span class='ti-reload'></span>
+                                                    <span class='ti-user'></span>
                                                 </div>
                                                 <div class='choose__details'>
-                                                    <h4>Devoluciones</h4>
-                                                    <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
-                                                </div>
-                                            </div>
-                                            <div class='choose__us'>
-                                                <div class='choose__icon'>
-                                                    <span class='ti-help-alt'></span>
-                                                </div>
-                                                <div class='choose__details'>
-                                                    <h4>¿Dudas?</h4>
-                                                    <p>Para mas información </p>
-                                                    <div >
-                                                        <a class='red-font' href='contactanos.php'>
-                                                            contáctanos
-                                                        </a>
-                                                    </div>
+                                                    <h4><a href='login.php'>Iniciar Sesión</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -108,30 +93,15 @@
                             </div>
                             <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
                                 <div class='htc__choose__wrap bg__cat--4'>
-                                    <h2 class='choose__title'>¿No Tienes Cuenta? Registrate</h2>
+                                    <h2 class='choose__title'>¿No Tienes Cuenta?<br>Registrate</h2>
                                     <div class='choose__container'>
                                         <div class='single__chooose'>
                                             <div class='choose__us'>
                                                 <div class='choose__icon'>
-                                                    <span class='ti-reload'></span>
+                                                    <span class='ti-plus'></span>
                                                 </div>
                                                 <div class='choose__details'>
-                                                    <h4>Devoluciones</h4>
-                                                    <p>Lorem ipsum dolor sit amet consect adipisic elit sed do. </p>
-                                                </div>
-                                            </div>
-                                            <div class='choose__us'>
-                                                <div class='choose__icon'>
-                                                    <span class='ti-help-alt'></span>
-                                                </div>
-                                                <div class='choose__details'>
-                                                    <h4>¿Dudas?</h4>
-                                                    <p>Para mas información </p>
-                                                    <div >
-                                                        <a class='red-font' href='contactanos.php'>
-                                                            contáctanos
-                                                        </a>
-                                                    </div>
+                                                    <h4><a href='register.php'>Registrarse</a></h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -260,8 +230,14 @@
                 //}
             }   
         ?> 
+        <!-- Start Footer Area -->
+        <?php
+            include 'phpIncludes/footer.php';
+        ?>
+        <!-- End Footer Area -->
     </div>
     <!-- Body main wrapper end -->
+
     
     <!-- Placed js at the end of the document so the pages load faster -->
 

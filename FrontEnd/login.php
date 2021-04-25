@@ -56,6 +56,7 @@
                     $_SESSION['login'] = $row['user_id'];
                     $_SESSION['cart_product'] = array();
                     $_SESSION['cart_quantity'] = array();
+                    $_SESSION['current_page'] = $_SERVER['REQUEST_URI']
                     header('location:index.php');
                 }
                 else
