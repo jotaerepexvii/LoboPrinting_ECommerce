@@ -71,7 +71,23 @@
                                     <?php
                                         //echo $count;
                                     ?>
-                                    <li><a href="login.php">Iniciar Sección</a></li>
+                                    <?php
+                                        if (!isset($_SESSION['login']))
+                                        {
+                                            print "
+                                            <li><a href='login.php'>Iniciar Sección</a></li>
+                                            ";
+                                        }
+                                        else 
+                                        {
+                                            //if ( isset( $_SESSION['login']))
+                                            //{
+                                                print "
+                                                <li><a href='phpIncludes/logout.php'>Cerrar Sección</a></li>
+                                                ";
+                                            //}
+                                        }  
+                                    ?>
                                     <li><a href="register.php">Crea Una Cuenta</a></li>
                                 </ul>
                             </li>

@@ -29,14 +29,6 @@
 
     <!-- Modernizr JS -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-    
-    <!-- login accounts
-        correo: lolo.collazo@upr 
-        passwr: 12345678
-
-        correo: pepa.lopez@upr 
-        passwr: 12345678
-    -->
 </head>
 
 <body>    
@@ -46,11 +38,10 @@
 
         if(isset($_POST['login']))
         {
-            // username and password sent from form 
             $email = filter_input(INPUT_POST, 'email');
             $password = filter_input(INPUT_POST, 'password');
-            $md5Pass = md5($password);
-            $cryptPass = crypt($md5Pass, 'q/Bx');
+            $md5Pass = md5($password);  //encriptación de password a md5
+            $cryptPass = crypt($md5Pass, 'q/Bx'); //encriptación de password md5 a crypt
 
             $query = "SELECT user_id FROM Users WHERE email = '$email' and password = '$cryptPass'";
             $r = mysqli_query($dbc, $query);
