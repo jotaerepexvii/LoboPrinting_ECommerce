@@ -63,7 +63,8 @@
                 if ($response->success)
                 {
                     $_SESSION['login'] = $row['user_id'];
-                    $_SESSION['cart'] = array(array("product","quantity"));
+                    $_SESSION['cart_product'] = array();
+                    $_SESSION['cart_quantity'] = array();
                     header('location:index.php');
                 }
                 else

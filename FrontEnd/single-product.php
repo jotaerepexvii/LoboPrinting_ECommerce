@@ -85,20 +85,8 @@
                                                 $product_id = $row[product_id];
                                                 $quantity = filter_input(INPUT_POST, 'qtybutton');
                                                 
-                                                
-                                                
-                                                $b=array("product"=>"$product_id","quantity"=>$quantity);
-                                                array_push($_SESSION['cart'],$b); // Items added to cart
-                                                
-                                                $max=sizeof($_SESSION['cart']);
-                                                for($i=0; $i<$max; $i++)
-                                                { 
-                                                    while (list ($key, $val) = each ($_SESSION['cart'][$i]))
-                                                    { 
-                                                        echo "$key -> $val ,"; 
-                                                    } // inner array while loop
-                                                    echo "<br>";
-                                                } // outer array for loop
+                                                array_push($_SESSION['cart_product'],$product_id);
+                                                array_push($_SESSION['cart_quantity'],$quantity);
                                             }
                                             
                                             print "

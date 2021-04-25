@@ -96,22 +96,38 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="product-thumbnail"><a href="#"><img src="images/lobo_products/papermate-pinkPearl.jpg" alt="product img" /></a></td>
-                                            <td class="product-name"><a href="#">Vestibulum suscipit</a></td>
-                                            <td class="product-price"><span class="amount">£165.00</span></td>
-                                            <td class="product-quantity"><input type="number" value="1" /></td>
-                                            <td class="product-subtotal">£165.00</td>
-                                            <td class="product-remove"><a href="#">X</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="product-thumbnail"><a href="#"><img src="images/product/3.png" alt="product img" /></a></td>
-                                            <td class="product-name"><a href="#">Vestibulum dictum magna</a></td>
-                                            <td class="product-price"><span class="amount">£50.00</span></td>
-                                            <td class="product-quantity"><input type="number" value="1" /></td>
-                                            <td class="product-subtotal">£50.00</td>
-                                            <td class="product-remove"><a href="#">X</a></td>
-                                        </tr>
+                                        <?php
+                                            
+                                            error_reporting(E_ERROR | E_PARSE);
+                                            
+                                            $total = 0;
+                                            $max=sizeof($_SESSION['cart_product']);
+                                            for($i=0; $i<$max; $i++)
+                                            {
+                                                $p = $_SESSION['cart_product'][$i];
+                                                $q =  $_SESSION['cart_quantity'][$i];
+                                                
+                                                $query = "SELECT * 
+                                                        FROM Product 
+                                                        WHERE product_id = $p";
+                                            
+                                                $r = mysqli_query($dbc, $query);//Save & Validate Query Result
+                                                $row = mysqli_fetch_array($r);//Present Products
+                                                
+                                                $t = $row[price] * $q;
+                                                $total = $total + $t;
+                                                print "
+                                                    <tr>
+                                                        <td class='product-thumbnail'><a href='#'><img src='images/lobo_products/$row[image]' alt='product img' /></a></td>
+                                                        <td class='product-name'><a href='#'>$row[name] $row[description]</a></td>
+                                                        <td class='product-price'><span class='amount'>$row[price]</span></td>
+                                                        <td class='product-quantity'><input type='number' value='$q' /></td>
+                                                        <td class='product-subtotal'>$t</td>
+                                                        <td class='product-remove'><a href='#'>X</a></td>
+                                                    </tr>
+                                                    ";
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -136,7 +152,7 @@
                                             <tbody>
                                                 <tr class="cart-subtotal">
                                                     <th>Subtotal</th>
-                                                    <td><span class="amount">£215.00</span></td>
+                                                    <td><span class="amount"><?php echo $total ?></span></td>
                                                 </tr>
                                                 <tr class="shipping">
                                                     <th>Envío</th>
@@ -162,7 +178,7 @@
                                                 <tr class="order-total">
                                                     <th>Total</th>
                                                     <td>
-                                                        <strong><span class="amount">£215.00</span></strong>
+                                                        <strong><span class="amount"><?php echo $total ?></span></strong>
                                                     </td>
                                                 </tr>                                           
                                             </tbody>
