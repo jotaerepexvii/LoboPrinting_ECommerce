@@ -136,14 +136,6 @@
                                         <input type="submit" value="Actualizar Carrito" />
                                         <a href="productos.php">Continuar Comprando</a>
                                     </div>
-                                    <!--
-                                    <div class="coupon">
-                                        <h3>Coupon</h3>
-                                        <p>Enter your coupon code if you have one.</p>
-                                        <input type="text" placeholder="Coupon code" />
-                                        <input type="submit" value="Apply Coupon" />
-                                    </div>
-                                    -->
                                 </div>
                                 <div class="col-md-4 col-sm-5 col-xs-12">
                                     <div class="cart_totals">
@@ -169,9 +161,7 @@
                                                                     Free Shipping
                                                                 </label>
                                                             </li>
-                                                            <li></li>
                                                         </ul>
-                                                        <p><a class="shipping-calculator-button" href="#">Calculate Shipping</a></p>
                                                     </td>
                                                 </tr>
                                                 <tr class="order-total">
@@ -183,7 +173,9 @@
                                             </tbody>
                                         </table>
                                         <div class="wc-proceed-to-checkout">
-                                            <a href="checkout.php">Checkout</a>
+                                            <?php
+                                                print "<a href='checkout.php?total={$total}'>Checkout</a>";
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
