@@ -76,7 +76,7 @@
                         <div class='row'>
                             <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
                                 <div class='htc__choose__wrap bg__cat--4'>
-                                    <h2 class='choose__title'>Para acceder 'Mi Cuenta'<br>Debes Iniciar Sesión</h2>
+                                    <h2 class='choose__title'>Para acceder a 'Mi Cuenta'<br>Debes iniciar sesión</h2>
                                     <div class='choose__container'>
                                         <div class='single__chooose'>
                                             <div class='choose__us'>
@@ -93,7 +93,7 @@
                             </div>
                             <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
                                 <div class='htc__choose__wrap bg__cat--4'>
-                                    <h2 class='choose__title'>¿No Tienes Cuenta?<br>Registrate</h2>
+                                    <h2 class='choose__title'>¿No tienes cuenta?<br>Registrate</h2>
                                     <div class='choose__container'>
                                         <div class='single__chooose'>
                                             <div class='choose__us'>
