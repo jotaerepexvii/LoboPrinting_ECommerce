@@ -232,7 +232,9 @@
                                                                 </tbody>
                                                             </table>
                                                             <div class='wc-proceed-to-checkout'>
-                                                                <a href='checkout.php'>Pagar</a>
+                                                                <?php
+                                                                    print '<a href='checkout.php?total={$total}'>Pagar</a>';
+                                                                ?>
                                                             </div>
                                                         </div>
                                                     </div>
