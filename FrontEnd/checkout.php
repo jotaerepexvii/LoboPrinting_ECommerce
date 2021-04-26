@@ -81,6 +81,13 @@
             <div class="container">
                 <div class="row">
                     <?php
+                        error_reporting(E_ERROR | E_PARSE);
+                                
+                        $query = "SELECT *
+                                    FROM Users
+                                    WHERE user_id = {$_SESSION['login']}";
+                        $r = mysqli_query($dbc,$query);//Make the Query
+                        $row = mysqli_fetch_array($r);
 
                         print"
                         <div class='col-md-8 col-lg-8'>
@@ -90,11 +97,11 @@
                                     <h2 class='section-title-3'>Detalles de facturación</h2>
                                     <div class='checkout-form-inner'>
                                         <div class='single-checkout-box'>
-                                            <input type='text' placeholder='Nombre*' oninvalid='this.setCustomValidity('Inserte Nombre')' title='Inserte su nombre' required>
-                                            <input type='text' placeholder='Apellidos*' oninvalid='this.setCustomValidity('Inserte Apellidos')' title='Inserte sus apellidos' required>
+                                            <input type='text' placeholder='Nombre*' oninvalid='this.setCustomValidity('Inserte Nombre')' title='Inserte su nombre' value=$row[name] required>
+                                            <input type='text' placeholder='Apellidos*' oninvalid='this.setCustomValidity('Inserte Apellidos')' title='Inserte sus apellidos' value=$row[lastname] required>
                                         </div>
                                         <div class='single-checkout-box'>
-                                            <input type='email' placeholder='Correo Electrónico*' oninvalid='this.setCustomValidity('Inserte Correo Electrónico')' title='Inserte su correo electrónico' required>
+                                            <input type='email' placeholder='Correo Electrónico*' oninvalid='this.setCustomValidity('Inserte Correo Electrónico')' title='Inserte su correo electrónico' value=$row[email] required>
                                             <input type='text' placeholder='Teléfono*' oninvalid='this.setCustomValidity('Inserte Teléfono')' title='Inserte su número de teléfono' required>
                                         </div>
                                         <div class='single-checkout-box'>
