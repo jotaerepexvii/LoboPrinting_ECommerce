@@ -34,8 +34,8 @@
 <body>    
     <?php
         include 'phpIncludes/connection.php';
+        include 'phpIncludes/functions.php';
         $register_err = $email = '';
-        session_destroy();
         if(isset($_POST['register']))
         {
             if(empty($_POST['name']) || empty($_POST['lastname']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['password2']))
@@ -76,11 +76,10 @@
                         $register_err = 'El Correo Electronico ya está registrado';
                     }
                     else{
-                        include 'phpIncludes/recaptcha.php';
+                        $response = recaptcha();
                         if ($response->success)
                         {
-                            $md5Pass = md5($password);
-                            $cryptPass = crypt($md5Pass, 'q/Bx');
+                            $cryptPass = encrypt($password);
                             $nombre = ucwords($nombre);
                             $apellidos = ucwords($apellidos);
                             $query_insert = mysqli_query($dbc, "INSERT INTO Users(user_id, name, lastname, email, password, phone, student)
@@ -91,8 +90,9 @@
 
                         if($query_insert)
                         {
-                            header('refresh: 4; url=index.php');
+                            header('refresh: 2; url=index.php');
                             $register_err = 'Usuario Registrado Satisfactoriamente';
+                            login($email, $cryptPass);
                         }
                         else
                         {
@@ -158,6 +158,9 @@
                                         <!-- Start Single Content -->
                                         <div id="register" class="">
                                             <form class="login" method="post">
+                                                <div class="tabs__checkbox">
+                                                    <span class="forget__bold"><a><?php echo $register_err;?></a></span>
+                                                </div>
                                                 <input name="name" type="text" placeholder="Nombre*" oninvalid="this.setCustomValidity('Inserte Nombre')" title="Inserte su nombre" required>
                                                 <input name="lastname" type="text" placeholder="Apellidos*" oninvalid="this.setCustomValidity('Inserte Apellidos')" title="Inserte sus apellidos" required>
                                                 <input name="password" type="password" placeholder="Contraseña*" oninvalid="this.setCustomValidity('Inserte Contraseña')" title="La contraseña debe ser al menos de 8 caracteres" required>

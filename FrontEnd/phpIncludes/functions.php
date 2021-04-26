@@ -1,29 +1,24 @@
 <?php
-    function errorLogin($email, $pass)
-    {
+    
 
+    function encrypt($password)
+    {
+        $md5Pass = md5($password);  //encriptación de password a md5
+        $cryptPass = crypt($md5Pass, 'q/Bx'); //encriptación de password md5 a crypt
+        return $cryptPass;
     }
 
-
-    function verificarLogin($user)
+    function login($email, $cryptPass)
     {
-        if($user == '1')
-        {
-            return;
-        }
-        else
-        {
-            header('location: login.php');	
-        }
+        include 'phpIncludes/connection.php';
+        $query = "SELECT user_id FROM Users WHERE email = '$email' and password = '$cryptPass'";
+        $r = mysqli_query($dbc, $query);
+        $row = mysqli_fetch_array($r);
+
+        $_SESSION['login'] = $row['user_id'];
+        $_SESSION['cart_product'] = array();
+        $_SESSION['cart_quantity'] = array();
     }
-
-
-    function logout()
-    {
-        session_start();
-        session_destroy();
-    }
-
 
     function logoutToIndex()
     {
@@ -52,6 +47,7 @@
             before closing body, </body>
                 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         */
+        return $response;
     }
 
     

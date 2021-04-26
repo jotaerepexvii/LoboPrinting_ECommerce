@@ -34,14 +34,13 @@
 <body>    
     <?php
         include 'phpIncludes/connection.php';
-        $login_err = $email = $passEncr = '';
+        include 'phpIncludes/functions.php';
+        $login_err = $email = '';
 
         if(isset($_POST['login']))
         {
             $email = filter_input(INPUT_POST, 'email');
-            $password = filter_input(INPUT_POST, 'password');
-            $md5Pass = md5($password);  //encriptación de password a md5
-            $cryptPass = crypt($md5Pass, 'q/Bx'); //encriptación de password md5 a crypt
+            $cryptPass = encrypt(filter_input(INPUT_POST, 'password'));
 
             $query = "SELECT user_id FROM Users WHERE email = '$email' and password = '$cryptPass'";
             $r = mysqli_query($dbc, $query);
@@ -50,7 +49,7 @@
             
             if($count == 1) //If result matched $email and $cryptPass, table row must be 1 row
             {
-                include 'phpIncludes/recaptcha.php';
+                $response = recaptcha();
                 if ($response->success)
                 {
                     $_SESSION['login'] = $row['user_id'];
@@ -70,7 +69,7 @@
             }
         }
     ?>
-    
+
     <?php
         if (!isset($_SESSION['login']))
         {

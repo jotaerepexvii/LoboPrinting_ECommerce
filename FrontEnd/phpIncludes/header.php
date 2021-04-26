@@ -69,26 +69,20 @@
                                 <ul class="dropdown">
                                     <li><a href="account.php">Cuenta del Usuario</a></li>
                                     <?php
-                                        //echo $count;
-                                    ?>
-                                    <?php
                                         if (!isset($_SESSION['login']))
                                         {
                                             print "
                                             <li><a href='login.php'>Iniciar Sección</a></li>
+                                            <li><a href='register.php'>Crea Una Cuenta</a></li>
                                             ";
                                         }
                                         else 
                                         {
-                                            //if ( isset( $_SESSION['login']))
-                                            //{
-                                                print "
-                                                <li><a href='phpIncludes/logout.php'>Cerrar Sección</a></li>
-                                                ";
-                                            //}
+                                            print "
+                                            <li><a href='phpIncludes/logout.php'>Cerrar Sección</a></li>
+                                            ";
                                         }  
                                     ?>
-                                    <li><a href="register.php">Crea Una Cuenta</a></li>
                                 </ul>
                             </li>
                             <li class="drop"><a href="cart.php"><span class="ti-shopping-cart"></span></li>
