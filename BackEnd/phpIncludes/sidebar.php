@@ -112,13 +112,13 @@
                         <li class="nav-header">Cuenta del Administrador</li>
                             <li class="nav-item">
                             <a href="phpIncludes/logout.php" class="nav-link">
-                                <i class="nav-icon fas fa-chart-line"></i>
+                                <i class="nav-icon fas fa-times"></i>
                                 <p>Cerrar Sesión</p>
                             </a>
                             </li>
                             <li class="nav-item">
                             <a href="productos.php" class="nav-link">
-                                <i class="nav-icon fas fa-table"></i>
+                                <i class="nav-icon fas fa-cog"></i>
                                 <p>Configuración</p>
                             </a>
                         </li>

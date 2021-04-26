@@ -131,9 +131,11 @@
                                                     <span class="forget"><a href="#">¿Olvidó su contraseña?</a></span>
                                                     <span class="forget__bold"><a><?php echo $login_err;?></a></span>
                                                 </div>
+                                                <!--
                                                 <div class="tabs__checkbox">
                                                     <div class="g-recaptcha" data-sitekey="6LfOd7YaAAAAAKDfXyWBTAbjZKPhhzXg-8jWqExB"></div>
                                                 </div>
+                                                -->
                                                 <div class="htc__login__btn"><button class="scs" name="login">Accesar</button></div>
                                             </form>
                                         </div>
