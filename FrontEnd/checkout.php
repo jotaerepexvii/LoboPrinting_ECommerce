@@ -77,127 +77,124 @@
         <section class="our-checkout-area ptb--120 bg__white">
             <div class="container">
                 <div class="row">
-                    <?php
-                        error_reporting(E_ERROR | E_PARSE);
+                    <div class="col-md-8 col-lg-8">
+                        <?php
+                            error_reporting(E_ERROR | E_PARSE);
 
-                        $query = "SELECT *
-                                    FROM Users
-                                    WHERE user_id = {$_SESSION['login']}";
-                        $r = mysqli_query($dbc,$query);//Make the Query
-                        $row = mysqli_fetch_array($r);
+                            $query = "SELECT *
+                                        FROM Users
+                                        WHERE user_id = {$_SESSION['login']}";
+                            $r = mysqli_query($dbc,$query);//Make the Query
+                            $row = mysqli_fetch_array($r);
 
-                        print"
-                            <!-- Start Checkbox Area -->
-                            <div class='checkout-form'>
-                                <h2 class='section-title-3'>Detalles de facturación</h2>
-                                <div class='checkout-form-inner'>
-                                    <div class='single-checkout-box'>
-                                        <input type='text' placeholder='Nombre*' oninvalid='this.setCustomValidity('Inserte Nombre')' title='Inserte su nombre' value=$row[name] required>
-                                        <input type='text' placeholder='Apellidos*' oninvalid='this.setCustomValidity('Inserte Apellidos')' title='Inserte sus apellidos' value=$row[lastname] required>
-                                    </div>
-                                    <div class='single-checkout-box'>
-                                        <input type='email' placeholder='Correo Electrónico*' oninvalid='this.setCustomValidity('Inserte Correo Electrónico')' title='Inserte su correo electrónico' value=$row[email] required>
-                                        <input type='text' placeholder='Teléfono*' oninvalid='this.setCustomValidity('Inserte Teléfono')' title='Inserte su número de teléfono' value=$row[phone]>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <!-- End Checkbox Area -->
-                        ";
-
-                        $query1 = "SELECT *
-                                    FROM Payment_method
-                                    WHERE user_id = {$_SESSION['login']}";
-                        $r1 = mysqli_query($dbc,$query1);//Make the Query
-                        $row1 = mysqli_fetch_array($r1);
-
-                        print "
-                            <!-- Start Payment Box -->
-                            <div class='payment-form'>
-                                <h2 class='section-title-3'>Método de Pago</h2>
-                                <div class='payment-form-inner'>
-                                    <div class='single-checkout-box'>
-                                        <input type='text' placeholder='Nombre De Tarjeta*' value=$row1[card_name]>
-                                        <input type='text' placeholder='Número De Tarjeta*' value=$row1[card_number]>
-                                    </div>
-                                    <div class='single-checkout-box'>
-                                        <input type='text' placeholder='EXP Month*' value=$row1[exp_month]>
-                                        <input type='text' placeholder='EXP Year*' value=$row1[exp_year]>
-                                    </div>
-                                    <div class='single-checkout-box'>
-                                        <input type='text' placeholder='CCV*' value=$row1[ccv]>
+                            print"
+                                <!-- Start Checkbox Area -->
+                                <div class='checkout-form'>
+                                    <h2 class='section-title-3'>Detalles de facturación</h2>
+                                    <div class='checkout-form-inner'>
+                                        <div class='single-checkout-box'>
+                                            <input type='text' placeholder='Nombre*' oninvalid='this.setCustomValidity('Inserte Nombre')' title='Inserte su nombre' value=$row[name] required>
+                                            <input type='text' placeholder='Apellidos*' oninvalid='this.setCustomValidity('Inserte Apellidos')' title='Inserte sus apellidos' value=$row[lastname] required>
+                                        </div>
+                                        <div class='single-checkout-box'>
+                                            <input type='email' placeholder='Correo Electrónico*' oninvalid='this.setCustomValidity('Inserte Correo Electrónico')' title='Inserte su correo electrónico' value=$row[email] required>
+                                            <input type='text' placeholder='Teléfono*' oninvalid='this.setCustomValidity('Inserte Teléfono')' title='Inserte su número de teléfono' value=$row[phone]>
+                                        </div>
+                                        
                                     </div>
                                 </div>
-                            </div>
-                            <!-- End Payment Box -->
-                        ";
+                                <!-- End Checkbox Area -->
+                            ";
 
-                        $query2 = "SELECT *
-                                    FROM Address
-                                    WHERE user_id = {$_SESSION['login']}";
-                        $r2 = mysqli_query($dbc,$query2);//Make the Query
-                        $row2 = mysqli_fetch_array($r2);
+                            $query1 = "SELECT *
+                                        FROM Payment_method
+                                        WHERE user_id = {$_SESSION['login']}";
+                            $r1 = mysqli_query($dbc,$query1);//Make the Query
+                            $row1 = mysqli_fetch_array($r1);
 
-                        print "
-                            <!-- Start Payment Box -->
-                            <div class='payment-form'>
-                                <h2 class='section-title-3'>Direccion de Envio</h2>
-                                <div class='payment-form-inner'>
-                                    <div class='single-checkout-box'>
-                                        <input type='text' placeholder='Direccion 1*' value=$row2[address_1]>
-                                        <input type='text' placeholder='Direccion 2' value=$row2[address_2]>
-                                    </div>
-                                    <div class='single-checkout-box'>
-                                        <input type='text' placeholder='Zip Code*' value=$row2[zip_code]>
-                                        <input type='text' placeholder='Ciudad*' value=$row2[city]>
-                                    </div>
-                                    <div class='single-checkout-box'>
-                                        <input type='text' placeholder='Estado*' value=$row2[state]>
-                                    </div>
-                                </div>
-                                <div class='single-checkout-box'>
-                                    <div class='g-recaptcha' data-sitekey='6LfOd7YaAAAAAKDfXyWBTAbjZKPhhzXg-8jWqExB'></div>
-                                </div>
-                            </div>
-                            <div class='checkout-button'>
-                                <button class='btnCheckout' href='#'>CONFIRMAR Y COMPRAR</button>
-                            </div>
-                            <!-- End Payment Box -->
-                        ";
-                        ?>
-                                <!--
-                                <div class='our-payment-sestem'>
-                                    <h2 class='section-title-3'>Se acepta :</h2>
-                                    <ul class='payment-menu'>
-                                        <li><a href='#'><img src='images/payment/1.jpg' alt='payment-img'></a></li>
-                                        <li><a href='#'><img src='images/payment/2.jpg' alt='payment-img'></a></li>
-                                        <li><a href='#'><img src='images/payment/3.jpg' alt='payment-img'></a></li>
-                                        <li><a href='#'><img src='images/payment/4.jpg' alt='payment-img'></a></li>
-                                        <li><a href='#'><img src='images/payment/5.jpg' alt='payment-img'></a></li>
-                                    </ul>
-                                </div>
-                                -->
-                                <div class="row">
-                                    <div class="col-md-4 col-lg-4">
-                                        <div class="checkout-right-sidebar">
-                                            <div class="our-important-note">
-                                                <h2 class="section-title-3">Note : <?php echo $_GET['total'] ?></h2>
-                                                <p class="note-desc">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eiusmod tempor incididunt ut laborekf et dolore magna aliqua.</p>
-                                                <ul class="important-note">
-                                                    <li><a href="#"><i class="zmdi zmdi-caret-right-circle"></i>Lorem ipsum dolor sit amet, consectetur nipabali</a></li>
-                                                    <li><a href="#"><i class="zmdi zmdi-caret-right-circle"></i>Lorem ipsum dolor sit amet</a></li>
-                                                    <li><a href="#"><i class="zmdi zmdi-caret-right-circle"></i>Lorem ipsum dolor sit amet, consectetur nipabali</a></li>
-                                                    <li><a href="#"><i class="zmdi zmdi-caret-right-circle"></i>Lorem ipsum dolor sit amet, consectetur nipabali</a></li>
-                                                    <li><a href="#"><i class="zmdi zmdi-caret-right-circle"></i>Lorem ipsum dolor sit amet</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="puick-contact-area mt--60">
-                                                <h2 class="section-title-3">Quick Contract</h2>
-                                                <a href="phone:+8801722889963">+012 345 678 102 </a>
-                                            </div>
+                            print "
+                                <!-- Start Payment Box -->
+                                <div class='payment-form'>
+                                    <h2 class='section-title-3'>Método de Pago</h2>
+                                    <div class='payment-form-inner'>
+                                        <div class='single-checkout-box'>
+                                            <input type='text' placeholder='Nombre De Tarjeta*' value=$row1[card_name]>
+                                            <input type='text' placeholder='Número De Tarjeta*' value=$row1[card_number]>
+                                        </div>
+                                        <div class='single-checkout-box'>
+                                            <input type='text' placeholder='EXP Month*' value=$row1[exp_month]>
+                                            <input type='text' placeholder='EXP Year*' value=$row1[exp_year]>
+                                        </div>
+                                        <div class='single-checkout-box'>
+                                            <input type='text' placeholder='CCV*' value=$row1[ccv]>
                                         </div>
                                     </div>
                                 </div>
+                                <!-- End Payment Box -->
+                            ";
+
+                            $query2 = "SELECT *
+                                        FROM Address
+                                        WHERE user_id = {$_SESSION['login']}";
+                            $r2 = mysqli_query($dbc,$query2);//Make the Query
+                            $row2 = mysqli_fetch_array($r2);
+
+                            print "
+                                <!-- Start Payment Box -->
+                                <div class='payment-form'>
+                                    <h2 class='section-title-3'>Direccion de Envio</h2>
+                                    <div class='payment-form-inner'>
+                                        <div class='single-checkout-box'>
+                                            <input type='text' placeholder='Direccion 1*' value=$row2[address_1]>
+                                            <input type='text' placeholder='Direccion 2' value=$row2[address_2]>
+                                        </div>
+                                        <div class='single-checkout-box'>
+                                            <input type='text' placeholder='Zip Code*' value=$row2[zip_code]>
+                                            <input type='text' placeholder='Ciudad*' value=$row2[city]>
+                                        </div>
+                                        <div class='single-checkout-box'>
+                                            <input type='text' placeholder='Estado*' value=$row2[state]>
+                                        </div>
+                                    </div>
+                                    <div class='single-checkout-box'>
+                                        <div class='g-recaptcha' data-sitekey='6LfOd7YaAAAAAKDfXyWBTAbjZKPhhzXg-8jWqExB'></div>
+                                    </div>
+                                </div>
+                                <div class='checkout-button'>
+                                    <button class='btnCheckout' href='#'>CONFIRMAR Y COMPRAR</button>
+                                </div>
+                                <!-- End Payment Box -->
+                            ";
+                        ?>
+                    <!--
+                    <div class='our-payment-sestem'>
+                        <h2 class='section-title-3'>Se acepta :</h2>
+                        <ul class='payment-menu'>
+                            <li><a href='#'><img src='images/payment/1.jpg' alt='payment-img'></a></li>
+                            <li><a href='#'><img src='images/payment/2.jpg' alt='payment-img'></a></li>
+                            <li><a href='#'><img src='images/payment/3.jpg' alt='payment-img'></a></li>
+                            <li><a href='#'><img src='images/payment/4.jpg' alt='payment-img'></a></li>
+                            <li><a href='#'><img src='images/payment/5.jpg' alt='payment-img'></a></li>
+                        </ul>
+                    </div>
+                    -->
+                    </div>
+                    <div class="col-md-4 col-lg-4">
+                        <div class="checkout-right-sidebar">
+                            <div class="our-important-note">
+                                <h2 class="section-title-3">Note : <?php echo $_GET['total'] ?></h2>
+                                <p class="note-desc">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eiusmod tempor incididunt ut laborekf et dolore magna aliqua.</p>
+                                <ul class="important-note">
+                                    <li><a href="#"><i class="zmdi zmdi-caret-right-circle"></i>Lorem ipsum dolor sit amet, consectetur nipabali</a></li>
+                                    <li><a href="#"><i class="zmdi zmdi-caret-right-circle"></i>Lorem ipsum dolor sit amet</a></li>
+                                    <li><a href="#"><i class="zmdi zmdi-caret-right-circle"></i>Lorem ipsum dolor sit amet, consectetur nipabali</a></li>
+                                    <li><a href="#"><i class="zmdi zmdi-caret-right-circle"></i>Lorem ipsum dolor sit amet, consectetur nipabali</a></li>
+                                    <li><a href="#"><i class="zmdi zmdi-caret-right-circle"></i>Lorem ipsum dolor sit amet</a></li>
+                                </ul>
+                            </div>
+                            <div class="puick-contact-area mt--60">
+                                <h2 class="section-title-3">Quick Contract</h2>
+                                <a href="phone:+8801722889963">+012 345 678 102 </a>
                             </div>
                         </div>
                     </div>
