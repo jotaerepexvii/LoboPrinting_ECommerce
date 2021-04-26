@@ -92,12 +92,11 @@
                                             <th class="product-price">Precio</th>
                                             <th class="product-quantity">Cantidad</th>
                                             <th class="product-subtotal">Total</th>
-                                            <th class="product-remove">Remover</th>
+                                            <th class="product-remove">Remove</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            
                                             error_reporting(E_ERROR | E_PARSE);
                                             
                                             $total = 0;
@@ -114,18 +113,18 @@
                                                 $r = mysqli_query($dbc, $query);//Save & Validate Query Result
                                                 $row = mysqli_fetch_array($r);//Present Products
                                                 
-                                                $t = $row[price] * $q;
+                                                $t = $row['price'] * $q;
                                                 $total = $total + $t;
                                                 print "
                                                     <tr>
                                                         <td class='product-thumbnail'><a href='#'><img src='images/lobo_products/$row[image]' alt='product img' /></a></td>
-                                                        <td class='product-name'><a href='#'>$row[name] $row[description]</a></td>
+                                                        <td class='product-name'><a href='http://localhost/LoboPrinting_ECommerce/FrontEnd/single-product.php?product_id=$row[product_id]'>$row[name] $row[description]</a></td>
                                                         <td class='product-price'><span class='amount'>$row[price]</span></td>
                                                         <td class='product-quantity'><input type='number' value='$q' /></td>
                                                         <td class='product-subtotal'>$t</td>
                                                         <td class='product-remove'><a href='#'>X</a></td>
                                                     </tr>
-                                                    ";
+                                                ";
                                             }
                                         ?>
                                     </tbody>

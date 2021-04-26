@@ -1851,6 +1851,7 @@ product__style--7
 }
 .store__btn a {
     border: 1px solid #d5d5d5;
+    color: #4b4b4b;
     display: inline-block;
     font-size: 14px;
     height: 45px;
@@ -2779,6 +2780,23 @@ select.select-color {
     transition: 0.3s;
 }
 .pro__dtl__btn li.buy__now__btn a:hover {
+    color: #fff;
+    background: #ff4136;
+    border: 1px solid #ff4136;
+}
+.pro__dtl__btn li.buy__now__btn button {
+    border: 1px solid #d5d5d5;
+    display: inline-block;
+    font-size: 14px;
+    height: 45px;
+    line-height: 41px;
+    padding: 0 40px;
+    background-color: transparent;
+    text-transform: uppercase;
+    transition: 0.4s;
+    width: 175px;
+}
+.pro__dtl__btn li.buy__now__btn button:hover {
     color: #fff;
     background: #ff4136;
     border: 1px solid #ff4136;

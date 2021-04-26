@@ -82,7 +82,7 @@
                                             
                                             if(isset($_POST['add_to_cart']))
                                             {
-                                                $product_id = $row[product_id];
+                                                $product_id = $row['product_id'];
                                                 $quantity = filter_input(INPUT_POST, 'qtybutton');
                                                 
                                                 array_push($_SESSION['cart_product'],$product_id);
