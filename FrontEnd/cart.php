@@ -140,6 +140,7 @@
                                         emptyCart();
                                     }
                                     else{
+
                                         for($i=0; $i<$max; $i++)
                                         {
                                             $p = $_SESSION['cart_product'][$i];
@@ -200,7 +201,7 @@
                                                                 <tbody>
                                                                     <tr class='cart-subtotal'>
                                                                         <th>Subtotal</th>
-                                                                        <td><span class='amount'><?php echo $total ?></span></td>
+                                                                        <td><span class='amount'>$total</span></td>
                                                                     </tr>
                                                                     <tr class='shipping'>
                                                                         <th>Envío</th>
@@ -226,15 +227,13 @@
                                                                     <tr class='order-total'>
                                                                         <th>Total</th>
                                                                         <td>
-                                                                            <strong><span class='amount'><?php echo $total ?></span></strong>
+                                                                            <strong><span class='amount'>$total</span></strong>
                                                                         </td>
                                                                     </tr>                                           
                                                                 </tbody>
                                                             </table>
                                                             <div class='wc-proceed-to-checkout'>
-                                                                <?php
-                                                                    print '<a href='checkout.php?total={$total}'>Pagar</a>';
-                                                                ?>
+                                                                    <a href='checkout.php?total={$total}'>Pagar</a>
                                                             </div>
                                                         </div>
                                                     </div>
