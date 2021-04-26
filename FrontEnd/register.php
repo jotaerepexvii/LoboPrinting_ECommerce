@@ -35,7 +35,7 @@
     <?php
         include 'phpIncludes/connection.php';
         $register_err = $email = '';
-        
+        session_destroy();
         if(isset($_POST['register']))
         {
             if(empty($_POST['name']) || empty($_POST['lastname']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['password2']))
@@ -81,6 +81,8 @@
                         {
                             $md5Pass = md5($password);
                             $cryptPass = crypt($md5Pass, 'q/Bx');
+                            $nombre = ucwords($nombre);
+                            $apellidos = ucwords($apellidos);
                             $query_insert = mysqli_query($dbc, "INSERT INTO Users(user_id, name, lastname, email, password, phone, student)
                                         VALUES('$userID','$nombre','$apellidos','$email','$cryptPass', '$phone', '$student')");
                         }
