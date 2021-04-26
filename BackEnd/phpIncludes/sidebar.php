@@ -108,26 +108,19 @@
                             </li>
                         </ul>
                     </li>
-                </li>
-                <li class="nav-item menu-open">
-                    <li class="nav-header">Reportes</li>
-                        <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-chart-line"></i>
-                            <p>Ventas</p>
-                        </a>
-                        </li>
-                        <li class="nav-item">
-                        <a href="productos.php" class="nav-link">
-                            <i class="nav-icon fas fa-table"></i>
-                            <p>Inventario</p>
-                        </a>
-                        </li>
-                        <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-hand-holding-usd"></i>
-                            <p>Ganancias</p>
-                        </a>
+                    <li class="nav-item menu-open">
+                        <li class="nav-header">Cuenta del Administrador</li>
+                            <li class="nav-item">
+                            <a href="phpIncludes/logout.php" class="nav-link">
+                                <i class="nav-icon fas fa-chart-line"></i>
+                                <p>Cerrar Sesión</p>
+                            </a>
+                            </li>
+                            <li class="nav-item">
+                            <a href="productos.php" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>Configuración</p>
+                            </a>
                         </li>
                     </li>
                 </li>

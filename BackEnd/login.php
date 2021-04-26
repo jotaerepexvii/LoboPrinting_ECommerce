@@ -52,15 +52,16 @@
             
             if($count == 1) //If result matched $email and $cryptPass, table row must be 1 row
             {
-                include '../FrontEnd/phpIncludes/recaptcha.php';
-                if ($response->success)
-                {
+                //include '../FrontEnd/phpIncludes/functions.php';
+                //$response = recaptcha();
+                //if ($response->success)
+                //{
                     $_SESSION['login'] = $row['admin_id'];
                     //$_SESSION['cart'] = array(array("product","quantity"));
                     header('location:index.php');
-                }
-                else
-                    $login_err = 'reCAPTCHA Fallido<br>Intente nuevamente';
+                //}
+                //else
+                    //$login_err = 'reCAPTCHA Fallido<br>Intente nuevamente';
             }
             else
             {

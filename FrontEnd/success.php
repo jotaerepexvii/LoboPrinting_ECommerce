@@ -29,7 +29,7 @@
                 <?php
                     //include 'phpIncludes/functions.php';
                     //successMsg();
-                    header( "refresh:0.5;url=index.php" );
+                    header( "refresh:0;url=index.php" );
                 ?>
                 Sesión Iniciada
                 <img src='images/icons/personOk.svg' alt='product images'>
