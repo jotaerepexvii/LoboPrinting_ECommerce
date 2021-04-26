@@ -49,18 +49,18 @@
             
             if($count == 1) //If result matched $email and $cryptPass, table row must be 1 row
             {
-                $response = recaptcha();
-                if ($response->success)
-                {
+                //$response = recaptcha();
+                //if ($response->success)
+                //{
                     $_SESSION['login'] = $row['user_id'];
                     $_SESSION['cart_product'] = array();
                     $_SESSION['cart_quantity'] = array();
                     //$_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
                     //header("Location: ". $_SESSION['current_page']);
                     header('location:index.php');
-                }
-                else
-                    $login_err = 'reCAPTCHA Fallido<br>Intente nuevamente';
+                //}
+                //else
+                    //$login_err = 'reCAPTCHA Fallido<br>Intente nuevamente';
             }
             else
             {
@@ -134,9 +134,11 @@
                                                             <span class='forget'><a href='#'>¿Olvidó su contraseña?</a></span>
                                                             <span class='forget__bold'><a>$login_err</a></span>
                                                         </div>
+                                                        <!--
                                                         <div class='tabs__checkbox'>
                                                             <div class='g-recaptcha' data-sitekey='6LfOd7YaAAAAAKDfXyWBTAbjZKPhhzXg-8jWqExB'></div>
                                                         </div>
+                                                        -->
                                                         <div class='htc__login__btn'><button class='scs' name='login'>Accesar</button></div>
                                                     </form>
                                                 </div>

@@ -67,7 +67,6 @@
                         <ul class="main__menu"> 
                             <li class="drop"><a href="#"><span class="ti-user"></span></a>
                                 <ul class="dropdown">
-                                    <li><a href="account.php">Cuenta del Usuario</a></li>
                                     <?php
                                         if (!isset($_SESSION['login']))
                                         {
@@ -79,6 +78,7 @@
                                         else 
                                         {
                                             print "
+                                            <li><a href='account.php'>Cuenta del Usuario</a></li>
                                             <li><a href='phpIncludes/logout.php'>Cerrar Sección</a></li>
                                             ";
                                         }  

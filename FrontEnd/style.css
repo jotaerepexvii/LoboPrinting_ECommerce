@@ -4398,6 +4398,24 @@ a.shipping-calculator-button:hover {
     float: left;
 }
 
+/*center content*/
+body.success{
+    background-color:gold;
+}
+
+section.centerSuccess div.container{
+    background:gold;
+}
+
+section.centerSuccess div.container span{
+    background-color:gold;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+
 /*hr margins*/
 hr.p-tb-60{
     margin-top: 60px;
