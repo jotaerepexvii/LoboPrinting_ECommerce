@@ -113,14 +113,13 @@
                         <div class="col-md-2 col-lg-2 col-sm-3 col-xs-3">
                             <div class="logo">
                                 <a href="index.php">
-                                    <img src="images/logo/lp4.png" alt="logo">
+                                    <img src="images/logo/lobo_printing.svg" alt="logo">
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-9 col-lg-8 col-sm-6 col-xs-6">
                             <nav class="mainmenu__nav hidden-xs hidden-sm">
                                 <ul class="main__menu"> 
-                                    <li class="drop"><a href="index.php">Inicio</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -128,6 +127,7 @@
                             <!-- MENU START -->
                             <nav class="mainmenu__nav hidden-xs hidden-sm">
                                 <ul class="main__menu">
+                                    <li class="drop"><a href="index.php">Inicio</a></li>
                                     <li class="drop"><a href="login.php">Iniciar Sesión</a></li>
                                 </ul>
                             </nav>

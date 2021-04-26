@@ -72,7 +72,7 @@
                                         {
                                             print "
                                             <li><a href='login.php'>Iniciar Sección</a></li>
-                                            <li><a href='register.php'>Crea Una Cuenta</a></li>
+                                            <li><a href='register.php'>Crear Una Cuenta</a></li>
                                             ";
                                         }
                                         else 

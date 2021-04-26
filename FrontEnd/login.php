@@ -88,16 +88,16 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class='col-md-9 col-lg-8 col-sm-6 col-xs-6'>
+                                <div class='col-md-8 col-lg-8 col-sm-6 col-xs-5'>
                                     <nav class='mainmenu__nav hidden-xs hidden-sm'>
-                                        <ul class='main__menu'> 
-                                            <li class='drop'><a href='index.php'>Inicio</a></li>
+                                        <ul class='main__menu'>
                                         </ul>
                                     </nav>
                                 </div>
-                                <div class='col-md-3 col-sm-4 col-xs-3'> 
+                                <div class='col-md-4 col-sm-5 col-xs-4'> 
                                     <nav class='mainmenu__nav hidden-xs hidden-sm'>
                                         <ul class='main__menu'> 
+                                            <li class='drop'><a href='index.php'>Inicio</a></li>
                                             <li class='drop'><a href='register.php'>Crear Nueva Cuenta</a></li>
                                         </ul>
                                     </nav>
