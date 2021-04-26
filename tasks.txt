@@ -13,6 +13,8 @@ FRONT END
     > poder hacer login y que luego te redireccione a la pagina donde estabas
     > poder añadir prodcutos al carrito sin hacer inicio de sesión?
 
+    CHECK CART & CHECKOUT ASAP
+
 BACK END
     > detalleProducto.php
         - bregar con la imagen del producto
