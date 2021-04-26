@@ -57,7 +57,7 @@
                     $_SESSION['cart_quantity'] = array();
                     //$_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
                     //header("Location: ". $_SESSION['current_page']);
-                    header('location:index.php');
+                    header('location:success.php');
                 //}
                 //else
                     //$login_err = 'reCAPTCHA Fallido<br>Intente nuevamente';

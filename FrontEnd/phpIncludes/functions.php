@@ -1,5 +1,15 @@
 <?php
-    
+
+    function successMsg()
+    {
+        print 'Sesión Iniciada';
+        /*if(isset($_SESSION['login'])){
+            print 'Cuentra Creada';
+        }
+        else{
+
+        }*/
+    }
 
     function encrypt($password)
     {

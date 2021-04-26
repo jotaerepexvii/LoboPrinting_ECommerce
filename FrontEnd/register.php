@@ -76,21 +76,21 @@
                         $register_err = 'El Correo Electronico ya está registrado';
                     }
                     else{
-                        $response = recaptcha();
-                        if ($response->success)
-                        {
+                        //$response = recaptcha();
+                        //if ($response->success)
+                        //{
                             $cryptPass = encrypt($password);
                             $nombre = ucwords($nombre);
                             $apellidos = ucwords($apellidos);
                             $query_insert = mysqli_query($dbc, "INSERT INTO Users(user_id, name, lastname, email, password, phone, student)
                                         VALUES('$userID','$nombre','$apellidos','$email','$cryptPass', '$phone', '$student')");
-                        }
-                        else
-                            $register_err = 'reCAPTCHA fallido<br>Intente nuevamente';
+                        //}
+                        //else
+                            //$register_err = 'reCAPTCHA fallido<br>Intente nuevamente';
 
                         if($query_insert)
                         {
-                            header('refresh: 2; url=index.php');
+                            header('success.php');
                             $register_err = 'Usuario Registrado Satisfactoriamente';
                             login($email, $cryptPass);
                         }
@@ -170,9 +170,11 @@
                                                 <div class="tabs__checkbox">
                                                     <span class="forget__bold"><a><?php echo $register_err;?></a></span>
                                                 </div>
+                                                <!--
                                                 <div class="tabs__checkbox">
                                                     <div class="g-recaptcha" data-sitekey="6LfOd7YaAAAAAKDfXyWBTAbjZKPhhzXg-8jWqExB"></div>
                                                 </div>
+                                                -->
                                                 <div class="htc__login__btn"><button name="register">Registrarse</button></div>
                                             </form>
                                         </div>

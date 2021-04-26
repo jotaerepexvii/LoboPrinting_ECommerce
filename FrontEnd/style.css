@@ -4402,18 +4402,21 @@ a.shipping-calculator-button:hover {
 body.success{
     background-color:gold;
 }
-
 section.centerSuccess div.container{
     background:gold;
 }
-
 section.centerSuccess div.container span{
-    background-color:gold;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: -200px;
+    display: flex;
+    justify-content: center;
+    margin: 25% auto;
+    max-width: 400px;
+
+    color: #000000;
+    font-size: 36px;
+    transition: all 0.4s ease 0s;
+}
+section.centerSuccess div.container span img{
+    margin-left: 10px;
 }
 
 /*hr margins*/
