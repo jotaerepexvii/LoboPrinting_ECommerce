@@ -1,10 +1,3 @@
-<?php
-  session_start();
-  include 'phpIncludes/connection.php';
-  if (!isset($_SESSION['login'])) {
-    header('location:login.php');
-  }
-?>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
