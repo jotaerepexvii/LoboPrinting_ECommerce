@@ -23,21 +23,11 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
 </head>
-<!--
-`body` tag options:
-
-  Apply one or more of the following classes to to the body tag
-  to get the desired effect
-  * sidebar-collapse
-  * sidebar-mini
--->
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
-
   <?php
 	  //include './includes/navbar.php';
   ?>
-  
   <!-- Main Sidebar Container -->
   <?php
 	  include 'phpIncludes/sidebar.php';
@@ -219,7 +209,7 @@
                 </table>
               </div>
             </div>
-
+            <!--
             <div class="card">
               <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
@@ -240,7 +230,7 @@
                     <span class="text-muted">Since last week</span>
                   </p>
                 </div>
-                <!-- /.d-flex -->
+                <-- /.d-flex ->
                 <div class="position-relative mb-4">
                   <canvas id="visitors-chart" height="200"></canvas>
                 </div>
@@ -254,6 +244,7 @@
                 </div>
               </div>
             </div>
+            -->
             <!-- /.card -->
             <!-- /.card -->
           </div>

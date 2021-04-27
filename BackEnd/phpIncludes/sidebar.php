@@ -1,8 +1,6 @@
-<!-- *********************************************************************************** -->
 <?php
     include 'phpIncludes/connection.php';
 ?>
-<!-- *********************************************************************************** --> 
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index.php" class="brand-link">
@@ -15,23 +13,11 @@
             $r = mysqli_query($dbc,$query);//Make the Query
             $row = mysqli_fetch_array($r);//Save Query Result
 
-            print"
-                <span class='brand-text font-weight-light'>$row[name]</span>
-            ";
+            print "<span class='brand-text font-weight-light'>$row[name]</span>";
         ?>
     </a>
     <!-- Sidebar -->
     <div class="sidebar">
-        <!-- Sidebar user panel (optional) 
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-                <img src="dist/img/user2-160x16.jpg" class="img-circle elevation-2" alt="">
-            </div>
-            <div class="info">
-                <a></a>
-            </div>
-        </div>
-        -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item menu-open">
@@ -50,12 +36,6 @@
                             <li class="nav-item">
                                 <a href="./productos.php" class="nav-link">
                                 <i class="far fa nav-icon"></i>
-                                <p>Inventario de Productos</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="./productos.php" class="nav-link">
-                                <i class="far fa nav-icon"></i>
                                 <p>Productos Vendidos</p>
                                 </a>
                             </li>
@@ -63,6 +43,12 @@
                                 <a href="./nuevoProducto.php" class="nav-link">
                                 <i class="fas fa nav-icon"></i>
                                 <p>Añadir Producto</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./productos.php" class="nav-link">
+                                <i class="far fa nav-icon"></i>
+                                <p>Ver Toodo El Inventario</p>
                                 </a>
                             </li>
                         </ul>
@@ -76,13 +62,13 @@
                             <li class="nav-item">
                                 <a href="./administradores.php" class="nav-link">
                                 <i class="far fa nav-icon"></i>
-                                <p>Ver Todos</p>
+                                <p>Añadir Administradores</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="./administradores.php" class="nav-link">
                                 <i class="far fa nav-icon"></i>
-                                <p>Añadir Administradores</p>
+                                <p>Ver Todos</p>
                                 </a>
                             </li>
                         </ul>
@@ -96,13 +82,13 @@
                             <li class="nav-item">
                                 <a href="./usuarios.php" class="nav-link">
                                 <i class="far fa nav-icon"></i>
-                                <p>Ver Todos</p>
+                                <p>Ver Estudiantes</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="./usuarios.php" class="nav-link">
                                 <i class="far fa nav-icon"></i>
-                                <p>Ver Estudiantes</p>
+                                <p>Ver Todos</p>
                                 </a>
                             </li>
                         </ul>
@@ -116,7 +102,7 @@
                             </a>
                             </li>
                             <li class="nav-item">
-                            <a href="productos.php" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-cog"></i>
                                 <p>Configuración</p>
                             </a>
