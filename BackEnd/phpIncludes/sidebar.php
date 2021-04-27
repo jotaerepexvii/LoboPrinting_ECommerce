@@ -2,7 +2,7 @@
 <?php
     include 'phpIncludes/connection.php';
 ?>
-        <!-- *********************************************************************************** --> 
+<!-- *********************************************************************************** --> 
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index.php" class="brand-link">
@@ -20,7 +20,6 @@
             ";
         ?>
     </a>
-
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) 
