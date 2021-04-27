@@ -90,7 +90,7 @@
                         <div class="col-md-4 col-sm-4 col-xs-3"> 
                             <nav class="mainmenu__nav hidden-xs hidden-sm">
                                 <ul class="main__menu"> 
-                                    <li class="drop"><a href="register.php">Area De Administrador</a></li>
+                                    <li class="drop"><a href="#">Area De Administrador</a></li>
                                 </ul>
                             </nav>
                         </div>
