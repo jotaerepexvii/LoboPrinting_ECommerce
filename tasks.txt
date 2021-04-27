@@ -4,7 +4,6 @@ FRONT END
 
     > account.php
         - detalles del usuario que sean editables
-        - Nombres con primera letra en mayúscula
 
     > sobre-nosotros.php
         - en seccion de 'Nuestra Tienda' añadir 'Esclusividad - los productos memorabilia se consiguen solo en blabla...'
@@ -13,19 +12,17 @@ FRONT END
     > poder hacer login y que luego te redireccione a la pagina donde estabas
     > poder añadir prodcutos al carrito sin hacer inicio de sesión?
 
-    CHECK CART & CHECKOUT ASAP
-
 BACK END
     > detalleProducto.php
         - bregar con la imagen del producto
 
     admin table id (admi_id) pienso que debe de auto-incrementar
 
+    <!--
+        login accounts
+        correo: lolo.collazo@upr 
+        passwr: 12345678
 
-<!-- login accounts
-    correo: lolo.collazo@upr 
-    passwr: 12345678
-
-    correo: pepa.lopez@upr 
-    passwr: 12345678
--->
+        correo: pepa.lopez@upr 
+        passwr: 12345678
+    -->
