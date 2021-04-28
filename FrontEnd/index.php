@@ -53,19 +53,20 @@
         ?>
         <!-- End Offset Wrapper -->
 
-        <!--banner-->
+        <!--banner--
         <div class="">
             <div class="only-banner bg__white pt--50 pb--80">
                 <div class="container">
                     <div class="only-banner-img">
-                        <!--<iframe id="4a0334d9-fce9-4ce5-83e4-6128d371e9ee" src="https://www.vectary.com/viewer/v1/?model=4a0334d9-fce9-4ce5-83e4-6128d371e9ee&env=teufelsbergground2" frameborder="0" width="100%" height="480"></iframe>-->
+                        <--<iframe id="4a0334d9-fce9-4ce5-83e4-6128d371e9ee" src="https://www.vectary.com/viewer/v1/?model=4a0334d9-fce9-4ce5-83e4-6128d371e9ee&env=teufelsbergground2" frameborder="0" width="100%" height="480"></iframe>-
                         <a><img src="images/place/interiorPano1.jpg" alt="new product"></a>
                     </div>
                 </div>
             </div>
         </div>
+        -->
 
-        <section class="categories-slider-area bg__white">
+        <section class="categories-slider-area bg__white pt--50 pb--80">
             <div class="container">
                 <div class="row">
                     <!-- Start Left Feature -->
@@ -79,7 +80,7 @@
                                         <div class="row">
                                             <div class="col-md-10 col-lg-8 col-md-offset-2 col-lg-offset-4 col-sm-12 col-xs-12">
                                                 <div class="slider__inner">
-                                                    <h1>>><span class="text--theme"> Lobo Printing</span></h1>
+                                                    <h1>><span class="text--theme"> Lobo Printing</span></h1>
                                                     <div class="slider__btn">
                                                         <a class="htc__btn" href="productos.php">Comprar Ahora</a>
                                                     </div>
