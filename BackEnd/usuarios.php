@@ -105,7 +105,7 @@
                           print "
                           <tr>
                             <td>$row[user_id]</td>
-                            <td>$row[name]</td>
+                            <td><a href='detallesUsuario.php?user_id={$row['user_id']}'>$row[name]</a></td>
                             <td>$row[lastname]</td>
                             <td>$row[email]</td>
                             <td>$row[student]</td>

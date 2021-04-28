@@ -26,3 +26,5 @@ BACK END
         correo: pepa.lopez@upr 
         passwr: 12345678
     -->
+
+    > hacer que la tabla de users tenga otra columna

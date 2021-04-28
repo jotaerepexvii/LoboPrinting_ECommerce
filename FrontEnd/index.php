@@ -55,7 +55,7 @@
 
         <!--banner-->
         <div class="">
-            <div class="only-banner bg__white ptb--100">
+            <div class="only-banner bg__white pt--50 pb--80">
                 <div class="container">
                     <div class="only-banner-img">
                         <!--<iframe id="4a0334d9-fce9-4ce5-83e4-6128d371e9ee" src="https://www.vectary.com/viewer/v1/?model=4a0334d9-fce9-4ce5-83e4-6128d371e9ee&env=teufelsbergground2" frameborder="0" width="100%" height="480"></iframe>-->

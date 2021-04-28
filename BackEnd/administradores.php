@@ -97,34 +97,27 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Juan</td>
-                      <td>Del Town Pérez</td>
-                      <td>juan.deltown@upr.edu</td>
-                      <td>Activo</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Juan</td>
-                      <td>Del Town Pérez</td>
-                      <td>juan.deltown@upr.edu</td>
-                      <td>Activo</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Juan</td>
-                      <td>Del Town Pérez</td>
-                      <td>juan.deltown@upr.edu</td>
-                      <td>Activo</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Juan</td>
-                      <td>Del Town Pérez</td>
-                      <td>juan.deltown@upr.edu</td>
-                      <td>Activo</td>
-                    </tr>
+                    <?php
+                      $query = "SELECT * FROM Administrator limit 35";                                
+                      if($r = mysqli_query($dbc, $query))//Save & Validate Query Result
+                      {
+                        while($row=mysqli_fetch_array($r))//Present Products
+                        {
+                          print "
+                          <tr>
+                            <td>$row[admin_id]</td>
+                            <td><a href='detallesAdministradores.php?admin_id={$row['admin_id']}'>$row[name]</a></td>
+                            <td>$row[lastname]</td>
+                            <td>$row[email]</td>
+                            <td>$row[student]</td>
+                          </tr>
+                            ";
+                        }
+                      }
+                      else
+                          print'<p style="color:red">NO SE PUEDE MOSTRAR RECORD PORQUE:'.mysqli_error($dbc).'.</P>';
+                      mysqli_close($dbc);
+                    ?>
                   </tbody>
                   <tfoot>
                     <tr>
