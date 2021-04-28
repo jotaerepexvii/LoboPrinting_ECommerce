@@ -59,11 +59,55 @@
                 <div class="container">
                     <div class="only-banner-img">
                         <!--<iframe id="4a0334d9-fce9-4ce5-83e4-6128d371e9ee" src="https://www.vectary.com/viewer/v1/?model=4a0334d9-fce9-4ce5-83e4-6128d371e9ee&env=teufelsbergground2" frameborder="0" width="100%" height="480"></iframe>-->
-                        <a><img src="images/new-product/3.jpg" alt="new product"></a>
+                        <a><img src="images/place/interiorPano1.jpg" alt="new product"></a>
                     </div>
                 </div>
             </div>
         </div>
+
+        <section class="categories-slider-area bg__white">
+            <div class="container">
+                <div class="row">
+                    <!-- Start Left Feature -->
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 float-left-style">
+                        <!-- Start Slider Area -->
+                        <div class="slider__container slider--one">
+                            <div class="slider__activation__wrap owl-carousel owl-theme">
+                                <!-- Start Single Slide -->
+                                <div class="slide slider__full--screen slider-height-inherit slider-text-right" style="background: rgba(0, 0, 0, 0) url(images/place/interiorPano1.jpg) no-repeat scroll center center / cover ;">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-10 col-lg-8 col-md-offset-2 col-lg-offset-4 col-sm-12 col-xs-12">
+                                                <div class="slider__inner">
+                                                    <h1>>><span class="text--theme"> Lobo Printing</span></h1>
+                                                    <div class="slider__btn">
+                                                        <a class="htc__btn" href="productos.php">Comprar Ahora</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide slider__full--screen slider-height-inherit  slider-text-left" style="background: rgba(0, 0, 0, 0) url(images/slider/bg/2.png) no-repeat scroll center center / cover ;">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+                                                <div class="slider__inner">
+                                                    <h1>New Product <span class="text--theme">Collection</span></h1>
+                                                    <div class="slider__btn">
+                                                        <a class="htc__btn" href="cart.html">shop now</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!--end banner-->
 
         <!-- Start Our Product Area -->

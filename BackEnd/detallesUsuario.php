@@ -10,7 +10,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Detalles de Usuario</title>
+  <title>Detalles del Usuario</title>
   <link rel="icon"  href="dist/img/lobo.ico" type="icon" sizes="16x16">
 
   <!-- Google Font: Source Sans Pro -->
@@ -39,12 +39,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>DDetalles de Usuario</h1>
+            <h1>Detalles del Usuario</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-              <li class="breadcrumb-item active">Detalles de Usuario</li>
+              <li class="breadcrumb-item active">Detalles del Usuario</li>
             </ol>
           </div>
         </div>
@@ -113,40 +113,6 @@
                       <h4 class='mt-0'>
                         <small>$row[student]</small>
                       </h4>
-                    </div>
-                    <hr>
-                    <h4>Available Colors</h4>
-                    <div class='btn-group btn-group-toggle' data-toggle='buttons'>
-                      <label class='btn btn-default text-center active'>
-                        <input type='radio' name='color_option' id='color_option_a1' autocomplete='off' checked>
-                        Green
-                        <br>
-                        <i class='fas fa-circle fa-2x text-green'></i>
-                      </label>
-                      <label class='btn btn-default text-center'>
-                        <input type='radio' name='color_option' id='color_option_a2' autocomplete='off'>
-                        Blue
-                        <br>
-                        <i class='fas fa-circle fa-2x text-blue'></i>
-                      </label>
-                      <label class='btn btn-default text-center'>
-                        <input type='radio' name='color_option' id='color_option_a3' autocomplete='off'>
-                        Purple
-                        <br>
-                        <i class='fas fa-circle fa-2x text-purple'></i>
-                      </label>
-                      <label class='btn btn-default text-center'>
-                        <input type='radio' name='color_option' id='color_option_a4' autocomplete='off'>
-                        Red
-                        <br>
-                        <i class='fas fa-circle fa-2x text-red'></i>
-                      </label>
-                      <label class='btn btn-default text-center'>
-                        <input type='radio' name='color_option' id='color_option_a5' autocomplete='off'>
-                        Orange
-                        <br>
-                        <i class='fas fa-circle fa-2x text-orange'></i>
-                      </label>
                     </div>
                 ";
                 mysqli_close($dbc);

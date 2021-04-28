@@ -11,6 +11,7 @@ FRONT END
 
     > poder hacer login y que luego te redireccione a la pagina donde estabas
     > poder añadir prodcutos al carrito sin hacer inicio de sesión?
+    > bregar colores de carrousel en index
 
 BACK END
     > detalleProducto.php
