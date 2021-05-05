@@ -139,16 +139,16 @@
 
                                     if(count($errors) == 0)
                                     {
+                                        $query_order = "INSERT INTO Order(user_id, order_date, address_id, payment_id, track_number, status_id)
+                                                    VALUES('$user_id', '$my_date', '$address_id', '$payment_id', '$track_num', '$status_id')";
                                         
-                                        $query_order = "INSERT INTO Order (user_id, order_date, address_id, payment_id, track_number, status_id)
-                                        VALUES ('$user_id', '$my_date', '$address_id', '$payment_id', '$track_num', '$status_id')";
-                                        
-                                        //print "$user_id, $my_date, $address_id, $payment_id, $track_num, $status_id)";
+                                        //print "$user_id, $my_date, $address_id, $payment_id, $track_num, $status_id";
 
                                         if(mysqli_query($dbc,$query_order))//Validate Insert
                                         {
                                             mysqli_close($dbc);
                                             //header('Location: administrators.php');
+                                            //header('success.php');
                                             print 'Todo Bien';
                                         }
                                         else
@@ -233,7 +233,7 @@
                                             </div>
                                         </div>
                                         <div class='single-checkout-box'>
-                                            <div class='g-recaptcha' data-sitekey='6LfOd7YaAAAAAKDfXyWBTAbjZKPhhzXg-8jWqExB'></div>
+                                            <!--<div class='g-recaptcha' data-sitekey='6LfOd7YaAAAAAKDfXyWBTAbjZKPhhzXg-8jWqExB'></div>-->
                                         </div>
                                     </div>
                                     <div class='checkout-button'>

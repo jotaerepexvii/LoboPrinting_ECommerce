@@ -13,6 +13,9 @@ FRONT END
     > poder añadir prodcutos al carrito sin hacer inicio de sesión?
     > bregar colores de carrousel en index
 
+    >cart.php
+        - si no hay una sesion iniciada tirar sceen diciendo que haga login o signup
+
 BACK END
     > detalleProducto.php
         - bregar con la imagen del producto
