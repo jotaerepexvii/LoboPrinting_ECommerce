@@ -85,7 +85,6 @@
                                     $errors = array();
 
                                     //Variables
-                                    $user_id = (int)$_POST['user_id'];
                                     $name = filter_input(INPUT_POST, 'name');
                                     $lastname = filter_input(INPUT_POST, 'lastname');
                                     $email = filter_input(INPUT_POST, 'email');
@@ -97,8 +96,7 @@
                                         array_push($errors, 'Lastname is require!');
                                     if  (empty($email))
                                         array_push($errors, 'Email is require!');
-
-                                    $address_id = (int)$_POST['address_id'];
+                                    
                                     $address_1 = filter_input(INPUT_POST, 'address_1');
                                     $address_2 = filter_input(INPUT_POST, 'address_2');
                                     $zip_code = filter_input(INPUT_POST, 'zip_code');
@@ -114,7 +112,6 @@
                                     if  (empty($state))
                                         array_push($errors, 'State is require!');
                                     
-                                    $payment_id = (int)$_POST['payment_id'];
                                     $card_name = filter_input(INPUT_POST, 'card_name');
                                     $card_number = filter_input(INPUT_POST, 'card_number');
                                     $exp_month = filter_input(INPUT_POST, 'exp_month');
@@ -132,24 +129,54 @@
                                     if  (empty($ccv))
                                         array_push($errors, 'CCV is require!');
                                     
-                                    $track_num =  rand(1111111111,getrandmax());
+                                    $order_id = rand(1111111111,getrandmax());
+                                    $user_id = (int)$_POST['user_id'];
                                     date_default_timezone_set('Atlantic/Bermuda');
                                     $my_date = date("Y-m-d H:i:s");
+                                    $address_id = (int)$_POST['address_id'];
+                                    $payment_id = (int)$_POST['payment_id'];
+                                    $track_num = rand(1111111111,getrandmax());
                                     $status_id = 1;
 
                                     if(count($errors) == 0)
                                     {
-                                        $query_order = "INSERT INTO Order(user_id, order_date, address_id, payment_id, track_number, status_id)
-                                                    VALUES('$user_id', '$my_date', '$address_id', '$payment_id', '$track_num', '$status_id')";
+                                        $query_order = "INSERT INTO Orders(order_id, user_id, order_date, address_id, payment_id, track_number, status_id) 
+                                        VALUES('$order_id', '$user_id', '$my_date', '$address_id', '$payment_id', '$track_num', '$status_id')";
                                         
-                                        //print "$user_id, $my_date, $address_id, $payment_id, $track_num, $status_id";
-
                                         if(mysqli_query($dbc,$query_order))//Validate Insert
                                         {
-                                            mysqli_close($dbc);
-                                            //header('Location: administrators.php');
-                                            //header('success.php');
-                                            print 'Todo Bien';
+                                            $max = sizeof($_SESSION['cart_product']);
+                                            
+                                            for($i=0; $i<$max; $i++)
+                                            {
+                                                $p = $_SESSION['cart_product'][$i];
+                                                $q =  $_SESSION['cart_quantity'][$i];
+
+                                                $query = "SELECT price, cost
+                                                        FROM Product 
+                                                        WHERE product_id = $p";
+
+                                                $r = mysqli_query($dbc, $query);//Save & Validate Query Result
+                                                $row = mysqli_fetch_array($r);//Present Products
+                                                
+                                                $price = $row['price'];
+                                                $cost = $row['cost'];
+                                                
+                                                $query_contain = "INSERT INTO Contain(order_id, product_id, product_quantity, price, cost) 
+                                                VALUES('$order_id', '$p', '$q', '$price', '$cost')";
+                                                
+                                                if(mysqli_query($dbc,$query_contain))//Validate Insert
+                                                {
+                                                    /*if($i == $max-1)
+                                                    {
+                                                        mysqli_close($dbc);
+                                                        header('location:account.php');
+                                                    }*/
+                                                    
+                                                }
+                                                else
+                                                    echo "Error: " . $query_contain . "<br>" . mysqli_error($dbc);
+                                            }
                                         }
                                         else
                                             echo "Error: " . $query_order . "<br>" . mysqli_error($dbc);
