@@ -81,7 +81,7 @@
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
                                         <a href="#" class="blog__blur">
-                                            <img src="images/services/phone.svg" alt="blog images">
+                                            <img src="images/contactanos/phone.svg" alt="blog images">
                                         </a>
                                         <div class="blog__hover__info">
                                             <div class="blog__hover__action">
@@ -103,7 +103,7 @@
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
                                         <a href="https://goo.gl/maps/gaXPoNbvLJqKzq7dA" target="_blank"  class="blog__blur">
-                                            <img src="images/services/clock.svg" alt="blog images">
+                                            <img src="images/contactanos/clock.svg" alt="blog images">
                                         </a>
                                         <div class="blog__hover__info">
                                             <div class="blog__hover__action">
@@ -124,7 +124,7 @@
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
                                         <a href="email.php"  class="blog__blur">
-                                            <img src="images/services/mail.svg" alt="blog images">
+                                            <img src="images/contactanos/mail.svg" alt="blog images">
                                         </a>
                                         <div class="blog__hover__info">
                                             <div class="blog__hover__action">
