@@ -283,7 +283,7 @@
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="blog-details.php">Lobo printing estrena su nuevo webpage.</a></p>
+                                            <p class="blog__des">Lobo printing estrena su nuevo webpage.</p>
                                             <div class="blog__btn">
                                                 <a class="read__more__btn" href="blog-details.php">read more</a>
                                             </div>
@@ -303,16 +303,16 @@
                                         </a>
                                         <div class="blog__post__time">
                                             <div class="post__time--inner">
-                                                <span class="date">14</span>
-                                                <span class="month">sep</span>
+                                                <span class="date">12</span>
+                                                <span class="month">feb</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="http://tintadigital.upra.edu/estrenan-school-suply-en-la-upra/">Pequeño “school supply” abre sus puertas en UPRA</a></p>
+                                            <p class="blog__des">Pequeño “school supply” abre sus puertas en UPRA</p>
                                             <div class="blog__btn">
-                                                <a class="read__more__btn" href="http://tintadigital.upra.edu/estrenan-school-suply-en-la-upra/">read more</a>
+                                                <a class="read__more__btn" target="_blank" href="http://tintadigital.upra.edu/estrenan-school-suply-en-la-upra/">read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -337,11 +337,7 @@
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="blog-details.php">Lorem ipsum dolor sit consectetu.</a></p>
-                                            <ul class="bl__meta">
-                                                <li>By :<a href="#">Admin</a></li>
-                                                <li>Product</li>
-                                            </ul>
+                                            <p class="blog__des">Lorem ipsum dolor sit consectetu.</p>
                                             <div class="blog__btn">
                                                 <a class="read__more__btn" href="blog-details.php">read more</a>
                                             </div>
