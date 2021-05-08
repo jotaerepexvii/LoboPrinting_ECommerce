@@ -22,13 +22,4 @@ BACK END
 
     admin table id (admi_id) pienso que debe de auto-incrementar
 
-    <!--
-        login accounts
-        correo: lolo.collazo@upr 
-        passwr: 12345678
-
-        correo: pepa.lopez@upr 
-        passwr: 12345678
-    -->
-
     > hacer que la tabla de users tenga otra columna
