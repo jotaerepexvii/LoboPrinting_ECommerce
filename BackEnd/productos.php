@@ -81,6 +81,7 @@
                                         <th>Precio</th>
                                         <th>Unidades Disponibles</th>
                                         <th>Unidades Vendidas</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -99,6 +100,7 @@
                                                         <td>$$row[price]</td>
                                                         <td>$row[in_stock]</td>
                                                         <td>$row[sold]</td>
+                                                        <td><a href='editarProducto.php?product_id={$row['product_id']}'>Editar</a></td>
                                                     </tr>
                                                 ";
                                             }
@@ -115,6 +117,7 @@
                                         <th>Precio</th>
                                         <th>Unidades Disponibles</th>
                                         <th>Unidades Vendidas</th>
+                                        <th></th>
                                     </tr>
                                 </tfoot>
                             </table>
