@@ -59,6 +59,9 @@
         <!-- End Feature Product -->
 
         <!-- Start Our Product Area -->
+        <?php
+            include 'phpIncludes/back.php';
+        ?>
         <section class="htc__product__area bg__white">
             <div class="container">
                 <div class="row">

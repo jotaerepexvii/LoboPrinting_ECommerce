@@ -249,9 +249,11 @@
                     </div>
                 </div>
             </div>
+            <a name="Noticias"></a>
         </section>
 
         <!-- Start Blog Area -->
+        
         <section class="htc__blog__area bg__white pt--50 pb--130">
             <div class="container">
                 <div class="row">
@@ -269,21 +271,21 @@
                             <div class="blog foo">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="blog-details.html">
+                                        <a href="blog-details.php">
                                             <img src="images/blog/blog-img/1.jpg" alt="blog images">
                                         </a>
                                         <div class="blog__post__time">
                                             <div class="post__time--inner">
-                                                <span class="date">14</span>
-                                                <span class="month">sep</span>
+                                                <span class="date">8</span>
+                                                <span class="month">may</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="blog-details.html">Lobo printing estrena su nuevo webpage.</a></p>
+                                            <p class="blog__des"><a href="blog-details.php">Lobo printing estrena su nuevo webpage.</a></p>
                                             <div class="blog__btn">
-                                                <a class="read__more__btn" href="blog-details.html">read more</a>
+                                                <a class="read__more__btn" href="blog-details.php">read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -296,7 +298,7 @@
                             <div class="blog foo">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="blog-details.html">
+                                        <a href="blog-details.php">
                                             <img src="images/blog/blog-img/2.jpg" alt="blog images">
                                         </a>
                                         <div class="blog__post__time">
@@ -308,9 +310,9 @@
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="blog-details.html">Lorem ipsum dolor sit consectetu.</a></p>
+                                            <p class="blog__des"><a href="http://tintadigital.upra.edu/estrenan-school-suply-en-la-upra/">Pequeño “school supply” abre sus puertas en UPRA</a></p>
                                             <div class="blog__btn">
-                                                <a class="read__more__btn" href="blog-details.html">read more</a>
+                                                <a class="read__more__btn" href="http://tintadigital.upra.edu/estrenan-school-suply-en-la-upra/">read more</a>
                                             </div>
                                         </div>
                                     </div>
@@ -323,7 +325,7 @@
                             <div class="blog foo">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="blog-details.html">
+                                        <a href="blog-details.php">
                                             <img src="images/blog/blog-img/3.jpg" alt="blog images">
                                         </a>
                                         <div class="blog__post__time">
@@ -335,13 +337,13 @@
                                     </div>
                                     <div class="blog__hover__info">
                                         <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="blog-details.html">Lorem ipsum dolor sit consectetu.</a></p>
+                                            <p class="blog__des"><a href="blog-details.php">Lorem ipsum dolor sit consectetu.</a></p>
                                             <ul class="bl__meta">
                                                 <li>By :<a href="#">Admin</a></li>
                                                 <li>Product</li>
                                             </ul>
                                             <div class="blog__btn">
-                                                <a class="read__more__btn" href="blog-details.html">read more</a>
+                                                <a class="read__more__btn" href="blog-details.php">read more</a>
                                             </div>
                                         </div>
                                     </div>

@@ -107,7 +107,7 @@
                                         </a>
                                         <div class="blog__hover__info">
                                             <div class="blog__hover__action">
-                                                <p class="blog__des">Estamos abiertos de<br>8:00pm a 4:00pm</p>
+                                                <p class="blog__des">Abiertos de Lunes a Viernes<br>8:00pm a 4:00pm</p>
                                             </div>
                                         </div>
                                     </div>
