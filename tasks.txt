@@ -23,3 +23,8 @@ BACK END
     admin table id (admi_id) pienso que debe de auto-incrementar
 
     > hacer que la tabla de users tenga otra columna
+
+
+    http://tintadigital.upra.edu/estrenan-school-suply-en-la-upra/
+
+    
