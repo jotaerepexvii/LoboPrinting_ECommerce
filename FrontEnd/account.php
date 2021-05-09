@@ -70,7 +70,8 @@
         <?php
             if (!isset($_SESSION['login']))
             {
-                print "
+                echo("<script>location.href = 'loginRequired.php?msg=$msg';</script>");
+                /*print "
                 <section class='htc__choose__us__ares bg__white'>
                     <div class='container-fluid'>
                         <div class='row'>
@@ -112,6 +113,7 @@
                     </div>
                 </section>
                 ";
+                */
             }
             else 
             {

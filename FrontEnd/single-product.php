@@ -69,7 +69,6 @@
                                     <div class="row">
                                         <div class="product__list another-product-style"> <!--class name for carrousel: product-slider-active owl-carousel -->
                                         <?php
-                                            
                                             error_reporting(E_ERROR | E_PARSE);
                                             
                                             $query = "SELECT * 

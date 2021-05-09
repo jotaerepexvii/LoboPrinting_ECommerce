@@ -85,7 +85,7 @@
                                     ?>
                                 </ul>
                             </li>
-                            <li class="drop"><a href="cart.php"><span class="ti-shopping-cart"></span></li>
+                            <li class="drop"><a href="cart.php"><span class="ti-shopping-cart"></span></a></li>
                         </ul>
                     </nav>
                 </div>

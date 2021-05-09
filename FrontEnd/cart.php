@@ -135,8 +135,7 @@
                                     $total = 0;
                                     $max = sizeof($_SESSION['cart_product']);
 
-                                    if ($max == 0)
-                                    {
+                                    if ($max == 0){
                                         emptyCart();
                                     }
                                     else{
@@ -245,12 +244,12 @@
                                         ";
                                     }
                                 }
-                                else
+                                elseif(!isset($_SESSION['login']))
                                 {
                                     //header("Location:loginRequired.php");
                                     //$total = '';
                                     //emptyCart();
-                                    echo("<script>location.href = 'loginRequired.php?msg=$msg';</script>");
+                                    echo("<script>location.href = 'loginRequired.php';</script>");
                                 }
                             ?>
                         </form> 
