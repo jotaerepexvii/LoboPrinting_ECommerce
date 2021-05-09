@@ -6,10 +6,10 @@
     {
         session_start();
     }
-/*
-$connection = mysqli_connect('localhost', 'root'', '', 'lobo_printing')
-OR die('No se pudo conectar a la base de datos'.mysqli_connect_error());
+    /*
+    $connection = mysqli_connect('localhost', 'root'', '', 'lobo_printing')
+    OR die('No se pudo conectar a la base de datos'.mysqli_connect_error());
 
-session_start();
-*/
+    session_start();
+    */
 ?>
