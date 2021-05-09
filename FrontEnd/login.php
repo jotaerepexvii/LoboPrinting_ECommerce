@@ -19,6 +19,7 @@
     <!--css files included here. -->
     <!-- Bootstrap fremwork main css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <!-- Owl Carousel main css -->
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
@@ -32,8 +33,6 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- custom style -->
     <link rel="stylesheet" href="css/custom.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
 
     <!-- Modernizr JS -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
@@ -137,7 +136,8 @@
                                                 <div id='login' role='tabpanel' class='single__tabs__panel tab-pane fade in active'>
                                                     <form class='login' method='post'>
                                                         <input name='email' type='text' placeholder='Correo Electrónico' value='$email' oninvalid='this.setCustomValidity('Inserte Correo Electrónico')' title='Inserte su correo electrónico' required> 
-                                                        <input name='password' type='password' placeholder='Contraseña' oninvalid='this.setCustomValidity('Inserte Contraseña')' oninput='this.setCustomValidity('')' title='Inserte su contraseña' required>
+                                                        <input id='password' name='password' type='password' placeholder='Contraseña' oninvalid='this.setCustomValidity('Inserte Contraseña')' oninput='this.setCustomValidity('')' title='Inserte su contraseña' required>
+                                                        <span toggle='#password' class='bi-eye field-icon toggle-password'></span>
                                                         <div class='tabs__checkbox'>
                                                             <span class='forget'><a href='#'>¿Olvidó su contraseña?</a></span>
                                                             <span class='forget__bold'><a>$login_err</a></span>

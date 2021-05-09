@@ -20,7 +20,8 @@
     <!--css files included here. -->
     <!-- Bootstrap fremwork main css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Owl Carousel main css -->
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+     Owl Carousel main css -->
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <!-- This core.css file contents all plugings css file. -->
@@ -169,7 +170,7 @@
                                                 </div>
                                                 <input name="name" type="text" placeholder="Nombre*" oninvalid="this.setCustomValidity('Inserte Nombre')" title="Inserte su nombre" required>
                                                 <input name="lastname" type="text" placeholder="Apellidos*" oninvalid="this.setCustomValidity('Inserte Apellidos')" title="Inserte sus apellidos" required>
-                                                <input name="password" type="password" placeholder="Contraseña*" oninvalid="this.setCustomValidity('Inserte Contraseña')" title="La contraseña debe ser al menos de 8 caracteres" required>
+                                                <input id="password" name="password" type="password" placeholder="Contraseña*" oninvalid="this.setCustomValidity('Inserte Contraseña')" title="La contraseña debe ser al menos de 8 caracteres" required>
                                                 <input name="password2" type="password" placeholder="Confirma contraseña*" oninvalid="this.setCustomValidity('Confirme Contraseña')" title="Inserte nuevamente la contraseña" required>
                                                 <input name="email" type="text" placeholder="Correo Electrónico*" oninvalid="this.setCustomValidity('Inserte Correo Electrónico')" title="Inserte correo electrónico" required>
                                                 <input name="user_id" type="text" placeholder="ID Estudiante" title="Si es estudiante, inserte su ID de estudiante">
