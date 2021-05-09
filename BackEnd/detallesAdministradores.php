@@ -1,7 +1,7 @@
 <?php
   session_start();
   include 'phpIncludes/connection.php';
-  if (!isset($_SESSION['login'])) {
+  if (!isset($_SESSION['loginAdmi'])) {
     header('location:login.php');
   }
 ?>

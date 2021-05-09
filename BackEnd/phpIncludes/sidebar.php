@@ -9,7 +9,7 @@
             error_reporting(E_ERROR | E_PARSE);
             $query = "SELECT *
                         FROM Administrator
-                        WHERE admin_id={$_SESSION['login']}";
+                        WHERE admin_id={$_SESSION['loginAdmi']}";
             $r = mysqli_query($dbc,$query);//Make the Query
             $row = mysqli_fetch_array($r);//Save Query Result
 

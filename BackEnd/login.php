@@ -1,7 +1,7 @@
 <?php
   //session_start();
   include 'phpIncludes/connection.php';
-  if (isset($_SESSION['login'])) {
+  if (isset($_SESSION['loginAdmi'])) {
     header('location:index.php');
   }
 ?>
@@ -43,7 +43,7 @@
     <?php
         include 'phpIncludes/connection.php';
         $login_err = $email = '';
-        if(isset($_POST['login']))
+        if(isset($_POST['loginAdmi']))
         {
             // username and password sent from form 
             $email = filter_input(INPUT_POST, 'email');
@@ -63,7 +63,7 @@
                 //$response = recaptcha();
                 //if ($response->success)
                 //{
-                    $_SESSION['login'] = $row['admin_id'];
+                    $_SESSION['loginAdmi'] = $row['admin_id'];
                     //$_SESSION['cart'] = array(array("product","quantity"));
                     header('location:index.php');
                 //}
@@ -130,7 +130,7 @@
                                 <div class="col-md-6 col-md-offset-3">
                                     <div class="htc__login__register__wrap">
                                         <!-- Start Single Content -->
-                                        <div id="login" role="tabpanel" class="single__tabs__panel tab-pane fade in active">
+                                        <div id="loginAdmi" role="tabpanel" class="single__tabs__panel tab-pane fade in active">
                                             <form class="login" method="post">
                                                 <input name="email" type="text" placeholder="Correo Electrónico de Administrador*" value="<?php echo $email; ?>" oninvalid="this.setCustomValidity('Inserte Correo Electrónico de Administrador')" title="Inserte su correo electrónico" required> 
                                                 <input name="password" type="password" placeholder="Contraseña de Administrador*" oninvalid="this.setCustomValidity('Inserte Contraseña de Administrador')" oninput="this.setCustomValidity('')" title="Inserte su contraseña" required>
@@ -143,7 +143,7 @@
                                                     <div class="g-recaptcha" data-sitekey="6LfOd7YaAAAAAKDfXyWBTAbjZKPhhzXg-8jWqExB"></div>
                                                 </div>
                                                 -->
-                                                <div class="htc__login__btn"><button class="scs" name="login">Accesar</button></div>
+                                                <div class="htc__login__btn"><button class="scs" name="loginAdmi">Accesar</button></div>
                                             </form>
                                         </div>
                                         <!-- End Single Content -->
