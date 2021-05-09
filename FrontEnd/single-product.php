@@ -83,6 +83,7 @@
                                             {
                                                 if (!isset($_SESSION['login']))
                                                 {
+                                                    echo("<script>location.href = 'loginRequired.php?msg=$msg';</script>");
                                                 }
                                                 else{
                                                     $product_id = $row['product_id'];
@@ -90,6 +91,8 @@
 
                                                     array_push($_SESSION['cart_product'],$product_id);
                                                     array_push($_SESSION['cart_quantity'],$quantity);
+                                                    
+                                                    echo("<script>location.href = 'cart.php?msg=$msg';</script>");
                                                 }
                                             }
                                             

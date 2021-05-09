@@ -247,7 +247,7 @@
                                 }
                                 else
                                 {
-                                    header("Location:loginRequired.php");
+                                    //header("Location:loginRequired.php");
                                     //$total = '';
                                     //emptyCart();
                                     echo("<script>location.href = 'loginRequired.php?msg=$msg';</script>");
