@@ -65,7 +65,6 @@
             </div>
         </div>
         -->
-
         <section class="categories-slider-area bg__white pt--50 pb--80">
             <div class="container">
                 <div class="row">
@@ -79,24 +78,24 @@
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-md-10 col-lg-8 col-md-offset-2 col-lg-offset-4 col-sm-12 col-xs-12">
-                                                <div class="slider__inner">
-                                                    <h1>><span class="text--theme"> Lobo Printing</span></h1>
+                                                <div class="slider__inner" >
+                                                    <h1><span class="text--theme" style="background:rgba(168, 168, 168, 1); color:#000;"> Lobo Printing</span></h1>
                                                     <div class="slider__btn">
-                                                        <a class="htc__btn" href="productos.php">Comprar Ahora</a>
+                                                        <a class="htc__btn" style="background:rgba(255, 215, 0, 0.8);" href="productos.php">Comprar Ahora</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="slide slider__full--screen slider-height-inherit  slider-text-left" style="background: rgba(0, 0, 0, 0) url(images/index/interiorPano1.jpg) no-repeat scroll center center / cover ;">
+                                <div class="slide slider__full--screen slider-height-inherit  slider-text-left" style="background: rgba(168, 168, 168, 1) url(images/index/interiorPano1.jpg) no-repeat scroll center center / cover ;">
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
                                                 <div class="slider__inner">
-                                                    <h1>New Product <span class="text--theme">Collection</span></h1>
+                                                    <h1><span class="text--theme" style="background:rgba(255, 215, 0, 0.9); color:#000;">Aúlla Lobo</span></h1>
                                                     <div class="slider__btn">
-                                                        <a class="htc__btn" href="cart.html">shop now</a>
+                                                        <a class="htc__btn" style="background:rgba(168, 168, 168, 1);" href="productos.php">shop now</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -110,7 +109,6 @@
             </div>
         </section>
         <!--end banner-->
-
         <!-- Start Our Product Area -->
         <section class="htc__product__area bg__white">
             <div class="container">
@@ -221,9 +219,9 @@
                                                 <h4>Devoluciones</h4>
                                                 <p>Para mas información en devoluciones,</p>
                                                 <div>
-                                                    <a class="red-font" href="contactanos.php">
+                                                <a class="red-font" href="contactanos.php">
                                                     contáctanos
-                                                    </a>
+                                                </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -233,11 +231,9 @@
                                             </div>
                                             <div class="choose__details">
                                                 <h4>¿Dudas?</h4>
-                                                <p>Si necesita saber mas información </p>
+                                                <p>Si necesita saber mas información no dudes en</p>
                                                 <div>
-                                                    <a class="red-font" href="contactanos.php">
-                                                    contáctanos
-                                                    </a>
+                                                    <a class="red-font" href="contactanos.php">contáctarnos</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -250,9 +246,7 @@
             </div>
             <a name="Noticias"></a>
         </section>
-
         <!-- Start Blog Area -->
-        
         <section class="htc__blog__area bg__white pt--50 pb--130">
             <div class="container">
                 <div class="row">
