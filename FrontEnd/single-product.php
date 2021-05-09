@@ -54,10 +54,6 @@
             include 'phpIncludes/offset-wrapper.php';
         ?>
         <!-- End Offset Wrapper -->
-
-        <!-- Start Feature Product -->
-        <!-- End Feature Product -->
-
         <!-- Start Our Product Area -->
         <?php
             include 'phpIncludes/back.php';
