@@ -259,7 +259,6 @@
         </section>
         < -- End Blog Area -->
         
-
         <!-- Start Footer Area -->
         <?php
             include 'phpIncludes/footer.php';

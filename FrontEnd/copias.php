@@ -61,7 +61,7 @@
                     <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 smt-30 xmt-30">
                         <div class="htc__product__details__inner">
                             <div class="pro__detl__title">
-                                <h2>Black Clock</h2>
+                                <h2>Copias</h2>
                             </div>
                             <div class="pro__dtl__rating">
                                 <ul class="pro__rating">

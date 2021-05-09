@@ -297,7 +297,7 @@
                             <div class="blog foo">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="blog-details.php">
+                                        <a target="_blank" href="http://tintadigital.upra.edu/estrenan-school-suply-en-la-upra/">
                                             <img src="images/index/schoolSupplyAbre2.jpg" alt="blog images">
                                         </a>
                                         <div class="blog__post__time">
