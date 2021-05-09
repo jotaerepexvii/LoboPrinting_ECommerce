@@ -60,7 +60,6 @@
                 </div>
             </div>
         </div>
-
         <div class='row align-items-center'>
             <div class='col-md-12 col-lg-12 col-sm-12 col-xs-12 col-md-offset-5'>
                 <div class='htc__choose__wrap'>
