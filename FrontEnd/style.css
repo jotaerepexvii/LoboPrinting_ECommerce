@@ -4419,6 +4419,16 @@ section.centerSuccess div.container span img{
     margin-left: 10px;
 }
 
+/*eye password login*/
+.field-icon {
+    float: right;
+    margin-top: -42px;
+    margin-right: 10px;
+    position: relative;
+    z-index: 4;
+  }
+  /**/
+
 /*hr margins*/
 hr.p-tb-60{
     margin-top: 60px;

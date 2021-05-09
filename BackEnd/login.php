@@ -34,6 +34,8 @@
     <link rel="stylesheet" href="../FrontEnd/css/responsive.css">
     <!-- User style -->
     <link rel="stylesheet" href="../FrontEnd/css/custom.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     
     <!-- Modernizr JS -->
     <script src="../FrontEnd/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -133,7 +135,8 @@
                                         <div id="loginAdmi" role="tabpanel" class="single__tabs__panel tab-pane fade in active">
                                             <form class="login" method="post">
                                                 <input name="email" type="text" placeholder="Correo Electrónico de Administrador*" value="<?php echo $email; ?>" oninvalid="this.setCustomValidity('Inserte Correo Electrónico de Administrador')" title="Inserte su correo electrónico" required> 
-                                                <input name="password" type="password" placeholder="Contraseña de Administrador*" oninvalid="this.setCustomValidity('Inserte Contraseña de Administrador')" oninput="this.setCustomValidity('')" title="Inserte su contraseña" required>
+                                                <input id="password" name="password" type="password" placeholder="Contraseña de Administrador*" oninvalid="this.setCustomValidity('Inserte Contraseña de Administrador')" oninput="this.setCustomValidity('')" title="Inserte su contraseña" required>
+                                                <span toggle="#password" class="bi-eye field-icon toggle-password"></span>
                                                 <div class="tabs__checkbox">
                                                     <span class="forget"><a href="#">¿Olvidó su contraseña?</a></span>
                                                     <span class="forget__bold"><a><?php echo $login_err;?></a></span>
