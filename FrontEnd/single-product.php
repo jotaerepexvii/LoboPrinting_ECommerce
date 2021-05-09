@@ -81,11 +81,16 @@
                                             
                                             if(isset($_POST['add_to_cart']))
                                             {
-                                                $product_id = $row['product_id'];
-                                                $quantity = filter_input(INPUT_POST, 'qtybutton');
-                                                
-                                                array_push($_SESSION['cart_product'],$product_id);
-                                                array_push($_SESSION['cart_quantity'],$quantity);
+                                                if (!isset($_SESSION['login']))
+                                                {
+                                                }
+                                                else{
+                                                    $product_id = $row['product_id'];
+                                                    $quantity = filter_input(INPUT_POST, 'qtybutton');
+
+                                                    array_push($_SESSION['cart_product'],$product_id);
+                                                    array_push($_SESSION['cart_quantity'],$quantity);
+                                                }
                                             }
                                             
                                             print "
@@ -103,7 +108,7 @@
                                                             </div>
                                                         </div>
                                                         <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
-                                                            <div class='htc__product__details__inner pt--70'>
+                                                            <div class='htc__product__details__inner pt--100'>
                                                                 <div class='pro__detl__title'>
                                                                     <h2>$row[name] $row[description]</h2>
                                                                 </div>

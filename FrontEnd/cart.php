@@ -170,16 +170,14 @@
                                             $t = $row['price'] * $q;
                                             $total = $total + $t;
                                             print "
-                                                
-                                                            <tr>
-                                                                <td class='product-thumbnail'><a href='#'><img src='images/lobo_products/$row[image]' alt='product img' /></a></td>
-                                                                <td class='product-name'><a href='http://localhost/LoboPrinting_ECommerce/FrontEnd/single-product.php?product_id=$row[product_id]'>$row[name] $row[description]</a></td>
-                                                                <td class='product-price'><span class='amount'>$row[price]</span></td>
-                                                                <td class='product-quantity'><input type='number' value='$q' /></td>
-                                                                <td class='product-subtotal'>$t</td>
-                                                                <td class='product-remove'><a href='#'>X</a></td>
-                                                            </tr>
-                                                        
+                                                <tr>
+                                                    <td class='product-thumbnail'><a href='#'><img src='images/lobo_products/$row[image]' alt='product img' /></a></td>
+                                                    <td class='product-name'><a href='http://localhost/LoboPrinting_ECommerce/FrontEnd/single-product.php?product_id=$row[product_id]'>$row[name] $row[description]</a></td>
+                                                    <td class='product-price'><span class='amount'>$row[price]</span></td>
+                                                    <td class='product-quantity'><input type='number' value='$q' /></td>
+                                                    <td class='product-subtotal'>$t</td>
+                                                    <td class='product-remove'><a href='#'>X</a></td>
+                                                </tr>
                                             ";
                                         }
                                         print"
@@ -249,8 +247,10 @@
                                 }
                                 else
                                 {
-                                    $total = '';
-                                    emptyCart();
+                                    header("Location:loginRequired.php");
+                                    //$total = '';
+                                    //emptyCart();
+                                    echo("<script>location.href = 'loginRequired.php?msg=$msg';</script>");
                                 }
                             ?>
                         </form> 

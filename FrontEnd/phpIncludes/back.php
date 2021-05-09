@@ -1,4 +1,4 @@
-<section class="htc__product__area shop__page pt--80 bg__white">
+<section class="htc__product__area shop__page pt--50 bg__white">
     <div class="container">
         <div class="htc__product__container">
             <!-- Start Product Menu -->
