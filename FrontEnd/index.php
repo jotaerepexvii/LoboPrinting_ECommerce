@@ -75,7 +75,7 @@
                         <div class="slider__container slider--one">
                             <div class="slider__activation__wrap owl-carousel owl-theme">
                                 <!-- Start Single Slide -->
-                                <div class="slide slider__full--screen slider-height-inherit slider-text-right" style="background: rgba(0, 0, 0, 0) url(images/place/interiorPano1.jpg) no-repeat scroll center center / cover ;">
+                                <div class="slide slider__full--screen slider-height-inherit slider-text-right" style="background: rgba(0, 0, 0, 0) url(images/index/interiorPano1.jpg) no-repeat scroll center center / cover ;">
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-md-10 col-lg-8 col-md-offset-2 col-lg-offset-4 col-sm-12 col-xs-12">
@@ -89,7 +89,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="slide slider__full--screen slider-height-inherit  slider-text-left" style="background: rgba(0, 0, 0, 0) url(images/slider/bg/2.png) no-repeat scroll center center / cover ;">
+                                <div class="slide slider__full--screen slider-height-inherit  slider-text-left" style="background: rgba(0, 0, 0, 0) url(images/index/interiorPano1.jpg) no-repeat scroll center center / cover ;">
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
@@ -182,64 +182,63 @@
             </div>
         </section>
         <!-- End Our Product Area -->
-        
         <section class="htc__choose__us__ares bg__white ptb--100">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="video__wrap bg--3" data--black__overlay="3">
-                            <div class="video__inner">
-                                <a class="video__trigger">
-                                    <i class=""></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
+                    <div class="col-md-10 col-md-offset-1">
                         <div class="htc__choose__wrap bg__cat--4">
-                            <h2 class="choose__title">Nuestra Tienda</h2>
+                            <h2 class="choose__title text-center">Nuestra Tienda</h2>
                             <div class="choose__container">
-                                <div class="single__chooose">
-                                    <div class="choose__us">
-                                        <div class="choose__icon">
-                                            <span class="ti-credit-card"></span>
+                                <div class="col-6">
+                                    <div class="single__chooose">
+                                        <div class="choose__us">
+                                            <div class="choose__icon">
+                                                <span class="ti-credit-card"></span>
+                                            </div>
+                                            <div class="choose__details">
+                                                <h4>Método De Pago</h4>
+                                                <p>Pronto contaremos con los métodos de pago que usted tiene!</p>
+                                            </div>
                                         </div>
-                                        <div class="choose__details">
-                                            <h4>Método De Pago</h4>
-                                            <p>Contamos con ATH Móvil</p>
-                                        </div>
-                                    </div>
-                                    <div class="choose__us">
-                                        <div class="choose__icon">
-                                            <span class="ti-truck"></span>
-                                        </div>
-                                        <div class="choose__details">
-                                            <h4>Envío</h4>
-                                            <p>Envío de memorabilia disponible a todo Puerto Rico</p>
+                                        <div class="choose__us">
+                                            <div class="choose__icon">
+                                                <span class="ti-truck"></span>
+                                            </div>
+                                            <div class="choose__details">
+                                                <h4>Envío</h4>
+                                                <p>Envío por correo de memorabilia disponible a todo Puerto Rico</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="single__chooose">
-                                    <div class="choose__us">
-                                        <div class="choose__icon">
-                                            <span class="ti-reload"></span>
+                                <div class="col-6">
+                                    <div class="single__chooose">
+                                        <div class="choose__us">
+                                            <div class="choose__icon">
+                                                <span class="ti-reload"></span>
+                                            </div>
+                                            <div class="choose__details">
+                                                <h4>Devoluciones</h4>
+                                                <p>Para mas información en devoluciones,</p>
+                                                <div>
+                                                    <a class="red-font" href="contactanos.php">
+                                                    contáctanos
+                                                    </a>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="choose__details">
-                                            <h4>Devoluciones</h4>
-                                            <p>Lorem ipsum </p>
-                                        </div>
-                                    </div>
-                                    <div class="choose__us">
-                                        <div class="choose__icon">
-                                            <span class="ti-help-alt"></span>
-                                        </div>
-                                        <div class="choose__details">
-                                            <h4>¿Dudas?</h4>
-                                            <p>Para mas información </p>
-                                            <div >
-                                                <a class="red-font" href="contactanos.php">
-                                                contáctanos
-                                                </a>
+                                        <div class="choose__us">
+                                            <div class="choose__icon">
+                                                <span class="ti-help-alt"></span>
+                                            </div>
+                                            <div class="choose__details">
+                                                <h4>¿Dudas?</h4>
+                                                <p>Si necesita saber mas información </p>
+                                                <div>
+                                                    <a class="red-font" href="contactanos.php">
+                                                    contáctanos
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -272,12 +271,12 @@
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
                                         <a href="blog-details.php">
-                                            <img src="images/blog/blog-img/1.jpg" alt="blog images">
+                                            <img src="images/index/newWebpage.jpeg" alt="blog images">
                                         </a>
                                         <div class="blog__post__time">
                                             <div class="post__time--inner">
-                                                <span class="date">8</span>
-                                                <span class="month">may</span>
+                                                <span class="month">8 may</span>
+                                                <span class="month">2021</span>
                                             </div>
                                         </div>
                                     </div>
@@ -299,12 +298,12 @@
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
                                         <a href="blog-details.php">
-                                            <img src="images/blog/blog-img/2.jpg" alt="blog images">
+                                            <img src="images/index/schoolSupplyAbre2.jpg" alt="blog images">
                                         </a>
                                         <div class="blog__post__time">
                                             <div class="post__time--inner">
-                                                <span class="date">12</span>
-                                                <span class="month">feb</span>
+                                                <span class="month">12 Feb</span>
+                                                <span class="month">2019</span>
                                             </div>
                                         </div>
                                     </div>
@@ -326,7 +325,7 @@
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
                                         <a href="blog-details.php">
-                                            <img src="images/blog/blog-img/3.jpg" alt="blog images">
+                                            <img src="images/blog/blog-img/1.jpg" alt="blog images">
                                         </a>
                                         <div class="blog__post__time">
                                             <div class="post__time--inner">
