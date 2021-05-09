@@ -244,12 +244,12 @@
                                         ";
                                     }
                                 }
-                                elseif(!isset($_SESSION['login']))
+                                elseif(!(isset($_SESSION['login'])))
                                 {
                                     //header("Location:loginRequired.php");
                                     //$total = '';
                                     //emptyCart();
-                                    echo("<script>location.href = 'loginRequired.php';</script>");
+                                    echo "<script>location.href = 'loginRequired.php';</script>";
                                 }
                             ?>
                         </form> 
