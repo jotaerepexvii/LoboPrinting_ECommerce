@@ -68,12 +68,6 @@
                 
                 print "
                   <div class='col-12 col-sm-6'>
-                    <h3 class='d-inline-block d-sm-none'>LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
-                    <div class='col-12 col-sm-6'>
-                      <img src='../../FrontEnd/LoboPrinting/images/lobo_products/nombreImagen' alt='Product Image'>
-                    </div>
-                  </div>
-                  <div class='col-12 col-sm-6'>
                     <div class='bg-gray py-2 px-3 mt-4'>
                       <h2 class='mb-0'>
                         Nombre
@@ -114,11 +108,17 @@
                         <small>$row[student]</small>
                       </h4>
                     </div>
+                  </div>
+                  <div class='col-12 col-sm-6'>
+                    <h3 class='d-inline-block d-sm-none'>LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
+                    <div class='col-12 col-sm-6'>
+                      <img src='../../FrontEnd/LoboPrinting/images/lobo_products/nombreImagen' alt='Product Image'>
+                    </div>
+                  </div>
+                  
                 ";
                 mysqli_close($dbc);
               ?> 
-              
-            </div>
           </div>
           <div class="row mt-4">
             <nav class="w-100">
