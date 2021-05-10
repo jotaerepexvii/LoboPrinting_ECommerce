@@ -158,9 +158,6 @@
                                                                     </div>
                                                                     <div class='product__details foo'>
                                                                         <h2><a href='single-product.php?product_id={$row['product_id']}'>$row[name] $row[description]</a></h2>
-                                                                        <ul class='product__price'>
-                                                                            <li class='price'>$$row[price]</li>
-                                                                        </ul>
                                                                     </div>
                                                                 </div>
                                                             </div>
