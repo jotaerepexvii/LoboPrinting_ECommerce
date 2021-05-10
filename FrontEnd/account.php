@@ -89,7 +89,7 @@
                                             WHERE user_id = {$_SESSION['login']}";
                                 $r = mysqli_query($dbc,$query);//Make the Query
                                 $row = mysqli_fetch_array($r);//Save Query Result
-
+                                
                                 $query1 = "SELECT *
                                 FROM Address
                                 WHERE user_id = {$_SESSION['login']}";
@@ -180,9 +180,9 @@
                                             </div>
                                         </div>
                                     </div>
-                            ";
-                    }   
-                ?>
+                                ";
+                        }   
+                    ?>
                     <div class='col-md-6'>
                         <div class='portfolio-description mrg-sm'>
                             <h2>Ordenes</h2>
@@ -209,7 +209,7 @@
                                                         <tr>
                                                             <td class='product-subtotal'>$row3[order_id]</td>
                                                             <td class='product-remove'>$row3[order_date]</td>
-                                                            <td class='product-name'><a href='singleOrder.php?order_id=$row3[order_id]'>Detalles</a></td>
+                                                            <td class='product-name'><a href='single-order.php?order_id=$row3[order_id]'>Detalles</a></td>
                                                         </tr>
                                                     ";
                                                 }
