@@ -22,10 +22,10 @@
 
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body class="success">
-    <section class='htc__choose__us__ares pt--150'>
-        <div class='row align-items-center'>
-            <div class='col-md-4 col-lg-4 col-sm-12 col-xs-12 col-md-offset-2'>
+<body class="success" >
+    <section class='htc__choose__us__ares pt--80 pb--60'>
+        <div class='row align-items-center' >
+            <div class='col-md-4 col-lg-4 col-sm-12 col-xs-12 col-md-offset-2' >
                 <div class='htc__choose__wrap bg__cat--4'>
                     <h2 class='choose__title'>¿Tienes ya un Perfil?</h2>
                     <div class='choose__container'>

@@ -4418,7 +4418,8 @@ a.shipping-calculator-button:hover {
 
 /*center content*/
 body.success{
-    background-color:gold;
+    background-color:#ffd700;
+    background-image: url('images/paw-pattern-g.svg');
 }
 section.centerSuccess div.container{
     background:gold;
