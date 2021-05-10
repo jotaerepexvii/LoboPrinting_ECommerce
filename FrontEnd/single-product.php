@@ -181,8 +181,8 @@
                                         <div class="product__list another-product-style"> <!--class name for carrousel: product-slider-active owl-carousel -->
                                             <?php
                                                 $query2 = "SELECT * FROM Product
-                                                            WHERE product_id NOT IN (product_id={$_GET['product_id']})
-                                                            ORDER BY sold limit 4";
+                                                            WHERE product_id NOT IN ({$row['product_id']})
+                                                            ORDER BY RAND() limit 4";
 
                                                 if($r2 = mysqli_query($dbc, $query2))//Save & Validate Query Result
                                                 {
@@ -191,7 +191,7 @@
                                                         //3 products: col-md-4 single__pro col-lg-4 cat--1 col-sm-4 col-xs-12
                                                         print "
                                                             <div class='col-md-3 single__pro col-lg-3 cat--1 col-sm-4 col-xs-12'>
-                                                                <div class='product'>
+                                                                <div class='product foo'>
                                                                     <div class='product__inner'>
                                                                         <div class='pro__thumb'>
                                                                             <a href='single-product.php?product_id={$row2['product_id']}'>
@@ -199,8 +199,11 @@
                                                                             </a>
                                                                         </div>
                                                                     </div>
-                                                                    <div class='product__details foo'>
+                                                                    <div class='product__details'>
                                                                         <h2><a href='single-product.php?product_id={$row2['product_id']}'>$row2[name] $row2[description]</a></h2>
+                                                                        <ul class='product__price'>
+                                                                            <li class='price'>$ $row2[price] c/u</li>
+                                                                        </ul>
                                                                     </div>
                                                                 </div>
                                                             </div>
