@@ -22,7 +22,7 @@
 
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body class="success">   
+<body class="success">
     <section class='htc__choose__us__ares pt--150'>
         <div class='row align-items-center'>
             <div class='col-md-4 col-lg-4 col-sm-12 col-xs-12 col-md-offset-2'>
@@ -61,7 +61,12 @@
             </div>
         </div>
         <div class='row align-items-center'>
-            <div class='col-md-12 col-lg-12 col-sm-12 col-xs-12 col-md-offset-5'>
+            <div class='col-md-4 col-lg-4 col-sm-4 col-xs-4 col-md-offset-2'>
+                <div class='htc__choose__wrap'>
+                    <h2 class='choose__title text-right'><a href="#" type="submit" onclick="history.go(-1);">Atrás</a></h2>
+                </div>
+            </div>
+            <div class='col-md-4 col-lg-4 col-sm-4 col-xs-4'>
                 <div class='htc__choose__wrap'>
                     <h2 class='choose__title'><a href='index.php'>Inicio</a></h2>
                 </div>

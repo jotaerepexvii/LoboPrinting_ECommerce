@@ -52,19 +52,6 @@
             include 'phpIncludes/offset-wrapper.php';
         ?>
         <!-- End Offset Wrapper -->
-
-        <!--banner--
-        <div class="">
-            <div class="only-banner bg__white pt--50 pb--80">
-                <div class="container">
-                    <div class="only-banner-img">
-                        <--<iframe id="4a0334d9-fce9-4ce5-83e4-6128d371e9ee" src="https://www.vectary.com/viewer/v1/?model=4a0334d9-fce9-4ce5-83e4-6128d371e9ee&env=teufelsbergground2" frameborder="0" width="100%" height="480"></iframe>-
-                        <a><img src="images/place/interiorPano1.jpg" alt="new product"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        -->
         <section class="categories-slider-area bg__white pt--50 pb--80">
             <div class="container">
                 <div class="row">
@@ -72,7 +59,7 @@
                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 float-left-style">
                         <!-- Start Slider Area -->
                         <div class="slider__container slider--one">
-                            <div class="slider__activation__wrap owl-carousel owl-theme">
+                            <div class="slider__activation__wrap owl-carousel owl-theme" id="owl-carousel">
                                 <!-- Start Single Slide -->
                                 <div class="slide slider__full--screen slider-height-inherit slider-text-right" style="background: rgba(0, 0, 0, 0) url(images/index/interiorPano1.jpg) no-repeat scroll center center / cover ;">
                                     <div class="container">
@@ -443,6 +430,9 @@
     <script src="js/plugins.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
+    <script src="assets/owl-carousel/owl.carousel.js"></script>
+    <script src="assets/owl-carousel/owl.autoplay.js"></script>
+
     <!-- Waypoints.min.js. -->
     <script src="js/waypoints.min.js"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
