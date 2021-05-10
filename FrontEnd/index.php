@@ -95,7 +95,7 @@
                                                 <div class="slider__inner">
                                                     <h1><span class="text--theme" style="background:rgba(255, 215, 0, 0.9); color:#000;">Aúlla Lobo</span></h1>
                                                     <div class="slider__btn">
-                                                        <a class="htc__btn" style="background:rgba(168, 168, 168, 1);" href="productos.php">shop now</a>
+                                                        <a class="htc__btn" style="background:rgba(168, 168, 168, 1);" href="productos.php">Ver Productos</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -133,20 +133,21 @@
                                                 if(isset($_POST['lo-ultimo']))
                                                 {
                                                     $query = "SELECT * FROM Product 
-                                                              ORDER BY date DESC limit 3";
+                                                              ORDER BY date DESC limit 4";
                                                 } elseif(isset($_POST['mas-vendido'])) {
                                                     $query = "SELECT * FROM Product
-                                                              ORDER BY sold DESC limit 3";
+                                                              ORDER BY sold DESC limit 4";
                                                 } else {
                                                     $query = "SELECT * FROM Product 
-                                                              ORDER BY in_stock DESC limit 3";
+                                                              ORDER BY in_stock DESC limit 4";
                                                 }
                                                 if($r = mysqli_query($dbc, $query))//Save & Validate Query Result
                                                 {
                                                     while($row=mysqli_fetch_array($r))//Present Products
                                                     {
+                                                        //3 products: col-md-4 single__pro col-lg-4 cat--1 col-sm-4 col-xs-12
                                                         print "
-                                                            <div class='col-md-4 single__pro col-lg-4 cat--1 col-sm-4 col-xs-12'>
+                                                            <div class='col-md-3 single__pro col-lg-3 cat--1 col-sm-4 col-xs-12'>
                                                                 <div class='product'>
                                                                     <div class='product__inner'>
                                                                         <div class='pro__thumb'>

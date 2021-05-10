@@ -27,7 +27,7 @@
         <div class='row align-items-center'>
             <div class='col-md-4 col-lg-4 col-sm-12 col-xs-12 col-md-offset-2'>
                 <div class='htc__choose__wrap bg__cat--4'>
-                    <h2 class='choose__title'>¿Tienes ya Perfil?</h2>
+                    <h2 class='choose__title'>¿Tienes ya un Perfil?</h2>
                     <div class='choose__container'>
                         <div class='single__chooose'>
                             <div class='choose__us'>
@@ -44,7 +44,7 @@
             </div>
             <div class='col-md-4 col-lg-4 col-sm-12 col-xs-12'>
                 <div class='htc__choose__wrap bg__cat--4'>
-                    <h2 class='choose__title'>Registrarse</h2>
+                    <h2 class='choose__title'>¿No tienes un perfil?</h2>
                     <div class='choose__container'>
                         <div class='single__chooose'>
                             <div class='choose__us'>

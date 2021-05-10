@@ -60,17 +60,21 @@
         <!-- End Offset Wrapper -->
         
         <!-- Start Bradcaump area -->
-        <section class="htc__blog__area bg__white pt--90 pb--40">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="bradcaump__inner text-center">
-                            <h2  class="bradcaump-title">Carrito</h2>
-                            <nav class="bradcaump-inner">
-                                <a class="breadcrumb-item" href="index.php">Inicio</a>
-                                <span class="brd-separetor">/</span>
-                                <span class="breadcrumb-item active">Carrito</span>
-                            </nav>
+        <section class="htc__blog__area bg__white">
+            <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(images/index/interiorPano1.jpg) no-repeat scroll center center / cover ;">
+                <div class="ht__bradcaump__wrap">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="bradcaump__inner text-center">
+                                    <h2 class="bradcaump-title">Carrito</h2>
+                                    <nav class="bradcaump-inner">
+                                    <a class="breadcrumb-item" href="index.php">Inicio</a>
+                                    <span class="brd-separetor">/</span>
+                                    <span class="breadcrumb-item active">Carrito</span>
+                                    </nav>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -90,7 +94,7 @@
                                     <section class='htc__choose__us__ares bg__white'>
                                         <div class='container-fluid'>
                                             <div class='row align-items-center'>
-                                                <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
+                                                <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12 col-md-offset-3'>
                                                     <div class='htc__choose__wrap bg__cat--4'>
                                                         <h2 class='choose__title'>El carrito está vacío</h2>
                                                         <div class='choose__container'>
@@ -101,23 +105,6 @@
                                                                     </div>
                                                                     <div class='choose__details'>
                                                                         <h4><a href='productos.php'>Ver Productos</h4>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
-                                                    <div class='htc__choose__wrap bg__cat--4'>
-                                                        <h2 class='choose__title'>¿No tienes cuenta? Registrate</h2>
-                                                        <div class='choose__container'>
-                                                            <div class='single__chooose'>
-                                                                <div class='choose__us'>
-                                                                    <div class='choose__icon'>
-                                                                        <span class='ti-plus'></span>
-                                                                    </div>
-                                                                    <div class='choose__details'>
-                                                                        <h4><a href='register.php'>Crear Cuenta</h4>
                                                                     </div>
                                                                 </div>
                                                             </div>
