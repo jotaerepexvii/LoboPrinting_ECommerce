@@ -52,120 +52,73 @@
     </section>
 
     <!-- Main content -->
+    
     <section class="content">
-
-      <!-- Default box -->
-      <div class="card card-solid">
-        <div class="card-body">
-          <div class="row">
-            
-              <?php
-                $query = "SELECT * 
-                            FROM Product 
-                            WHERE product_id = {$_GET['product_id']}";
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <?php
+                  $query = "SELECT * 
+                              FROM Product 
+                              WHERE product_id = {$_GET['product_id']}";
+                  
+                  $r = mysqli_query($dbc, $query);//Save & Validate Query Result
+                  $row = mysqli_fetch_array($r);//Present Products
+                  
+                  print "
+                      <div class='col-md-6'>
+                        <div class='col-12'>
+                          <img src='../FrontEnd/images/lobo_products/$row[image]' class='product-image' alt='Product Image'>
+                        </div>
+                      </div>
+                      <div class='col-md-6'>
+                      <!-- general form elements -->
+                      <div class='card card-secondary'>
+                        <div class='card-header'>
+                          <h5 class='card-title'>Editar Producto</h5>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form  action='#' method='post'>
+                          <div class='card-body'>
+                            <div class='form-group'>
+                                <label for='exampleInputEmail1'>ID</label>
+                                <input type='text' class='form-control' id='product_id' name='product_id' value='$row[product_id]' disabled>
+                            </div>
+                            <div class='form-group'>
+                                <label for='exampleInputPassword1'>Nombre</label>
+                                <input type='text' class='form-control' id='name' name='name' value='$row[name]' disabled>
+                            </div>
+                            <div class='form-group'>
+                                <label for='exampleInputEmail1'>Description</label>
+                                <input type='text' class='form-control' id='descripion' name='description' value='$row[description]' disabled>
+                            </div>
+                            <div class='form-group'>
+                                <label for='exampleInputPassword1'>Precio</label>
+                                <input type='text' class='form-control' id='price' name='price' value='$row[price]' disabled>
+                            </div>
+                            <div class='form-group'>
+                                <label for='exampleInputEmail1'>Costo</label>
+                                <input type='text' class='form-control' id='cost' name='cost' value='$row[cost]' disabled>
+                            </div>
+                            <div class='form-group'>
+                                <label for='exampleInputEmail1'>Cantidad Disponible</label>
+                                <input type='text' class='form-control' id='in_stock' name='in_stock' value='$row[in_stock]' disabled>
+                            </div>
+                          </div>
+                          <!-- /.card-body -->
+                          <div class='card-footer'>
+                            <button class='btn btn-primary btn-block'><a href='editarProducto.php?product_id={$row["product_id"]}' style='color:inherit'>Editar</a></button>
+                          </div>
+                        </form>
+                      </div>
+                  ";
+                  mysqli_close($dbc);
+                ?> 
                 
-                $r = mysqli_query($dbc, $query);//Save & Validate Query Result
-                $row = mysqli_fetch_array($r);//Present Products
-                
-                print "
-                  <div class='col-12 col-sm-6'>
-                    <h3 class='d-inline-block d-sm-none'>LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
-                    <div class='col-12 col-sm-6'>
-                      <img src='../../FrontEnd/LoboPrinting/images/lobo_products/nombreImagen' alt='Product Image'>
-                    </div>
-                  </div>
-                  <div class='col-12 col-sm-6'>
-                    <h3 class='my-3'>$row[name] $row[description]</h3>
-                    <div class='bg-gray py-2 px-3 mt-4'>
-                      <h2 class='mb-0'>
-                        ID
-                      </h2>
-                      <h4 class='mt-0'>
-                        <small>$row[product_id]</small>
-                      </h4>
-                    </div>
-                    <div class='bg-gray py-2 px-3 mt-4'>
-                      <h2 class='mb-0'>
-                        Precio De Venta
-                      </h2>
-                      <h4 class='mt-0'>
-                        <small>$$row[price]</small>
-                      </h4>
-                    </div>
-                    <div class='bg-gray py-2 px-3 mt-4'>
-                      <h2 class='mb-0'>
-                        Unidades Disponible
-                      </h2>
-                      <h4 class='mt-0'>
-                        <small>$row[in_stock]</small>
-                      </h4>
-                    </div>
-                    <div class='bg-gray py-2 px-3 mt-4'>
-                      <h2 class='mb-0'>
-                        Unidades Vendidas
-                      </h2>
-                      <h4 class='mt-0'>
-                        <small>$row[sold]</small>
-                      </h4>
-                    </div>
-                    <hr>
-                    <h4>Available Colors</h4>
-                    <div class='btn-group btn-group-toggle' data-toggle='buttons'>
-                      <label class='btn btn-default text-center active'>
-                        <input type='radio' name='color_option' id='color_option_a1' autocomplete='off' checked>
-                        Green
-                        <br>
-                        <i class='fas fa-circle fa-2x text-green'></i>
-                      </label>
-                      <label class='btn btn-default text-center'>
-                        <input type='radio' name='color_option' id='color_option_a2' autocomplete='off'>
-                        Blue
-                        <br>
-                        <i class='fas fa-circle fa-2x text-blue'></i>
-                      </label>
-                      <label class='btn btn-default text-center'>
-                        <input type='radio' name='color_option' id='color_option_a3' autocomplete='off'>
-                        Purple
-                        <br>
-                        <i class='fas fa-circle fa-2x text-purple'></i>
-                      </label>
-                      <label class='btn btn-default text-center'>
-                        <input type='radio' name='color_option' id='color_option_a4' autocomplete='off'>
-                        Red
-                        <br>
-                        <i class='fas fa-circle fa-2x text-red'></i>
-                      </label>
-                      <label class='btn btn-default text-center'>
-                        <input type='radio' name='color_option' id='color_option_a5' autocomplete='off'>
-                        Orange
-                        <br>
-                        <i class='fas fa-circle fa-2x text-orange'></i>
-                      </label>
-                    </div>
-                ";
-                mysqli_close($dbc);
-              ?> 
-              
-            </div>
-          </div>
-          <div class="row mt-4">
-            <nav class="w-100">
-              <div class="nav nav-tabs" id="product-tab" role="tablist">
-                <a class="nav-item nav-link active" id="product-desc-tab" data-toggle="tab" href="#product-desc" role="tab" aria-controls="product-desc" aria-selected="true">Description</a>
-                <a class="nav-item nav-link" id="product-comments-tab" data-toggle="tab" href="#product-comments" role="tab" aria-controls="product-comments" aria-selected="false">Comments</a>
-                <a class="nav-item nav-link" id="product-rating-tab" data-toggle="tab" href="#product-rating" role="tab" aria-controls="product-rating" aria-selected="false">Rating</a>
               </div>
-            </nav>
-            <div class="tab-content p-3" id="nav-tabContent">
-              <div class="tab-pane fade show active" id="product-desc" role="tabpanel" aria-labelledby="product-desc-tab"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae condimentum erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed posuere, purus at efficitur hendrerit, augue elit lacinia arcu, a eleifend sem elit et nunc. Sed rutrum vestibulum est, sit amet cursus dolor fermentum vel. Suspendisse mi nibh, congue et ante et, commodo mattis lacus. Duis varius finibus purus sed venenatis. Vivamus varius metus quam, id dapibus velit mattis eu. Praesent et semper risus. Vestibulum erat erat, condimentum at elit at, bibendum placerat orci. Nullam gravida velit mauris, in pellentesque urna pellentesque viverra. Nullam non pellentesque justo, et ultricies neque. Praesent vel metus rutrum, tempus erat a, rutrum ante. Quisque interdum efficitur nunc vitae consectetur. Suspendisse venenatis, tortor non convallis interdum, urna mi molestie eros, vel tempor justo lacus ac justo. Fusce id enim a erat fringilla sollicitudin ultrices vel metus. </div>
-              <div class="tab-pane fade" id="product-comments" role="tabpanel" aria-labelledby="product-comments-tab"> Vivamus rhoncus nisl sed venenatis luctus. Sed condimentum risus ut tortor feugiat laoreet. Suspendisse potenti. Donec et finibus sem, ut commodo lectus. Cras eget neque dignissim, placerat orci interdum, venenatis odio. Nulla turpis elit, consequat eu eros ac, consectetur fringilla urna. Duis gravida ex pulvinar mauris ornare, eget porttitor enim vulputate. Mauris hendrerit, massa nec aliquam cursus, ex elit euismod lorem, vehicula rhoncus nisl dui sit amet eros. Nulla turpis lorem, dignissim a sapien eget, ultrices venenatis dolor. Curabitur vel turpis at magna elementum hendrerit vel id dui. Curabitur a ex ullamcorper, ornare velit vel, tincidunt ipsum. </div>
-              <div class="tab-pane fade" id="product-rating" role="tabpanel" aria-labelledby="product-rating-tab"> Cras ut ipsum ornare, aliquam ipsum non, posuere elit. In hac habitasse platea dictumst. Aenean elementum leo augue, id fermentum risus efficitur vel. Nulla iaculis malesuada scelerisque. Praesent vel ipsum felis. Ut molestie, purus aliquam placerat sollicitudin, mi ligula euismod neque, non bibendum nibh neque et erat. Etiam dignissim aliquam ligula, aliquet feugiat nibh rhoncus ut. Aliquam efficitur lacinia lacinia. Morbi ac molestie lectus, vitae hendrerit nisl. Nullam metus odio, malesuada in vehicula at, consectetur nec justo. Quisque suscipit odio velit, at accumsan urna vestibulum a. Proin dictum, urna ut varius consectetur, sapien justo porta lectus, at mollis nisi orci et nulla. Donec pellentesque tortor vel nisl commodo ullamcorper. Donec varius massa at semper posuere. Integer finibus orci vitae vehicula placerat. </div>
             </div>
-          </div>
         </div>
-        <!-- /.card-body -->
-      </div>
-      <!-- /.card -->
     </section>
     <!-- /.content -->
   </div>

@@ -69,7 +69,7 @@
                             WHERE product_id = {$_GET['product_id']}";
                                     
                 $r = mysqli_query($dbc, $query);//Save & Validate Query Result
-                $row=mysqli_fetch_array($r);//Present Products
+                $row = mysqli_fetch_array($r);//Present Products
                                 
                 if(isset($_POST['update']))
                 {
@@ -100,16 +100,28 @@
                         $query2 = "UPDATE Product SET product_id='$product_id', name='$name', description='$description', price='$price', cost='$cost', in_stock='$in_stock'
                         WHERE product_id={$_GET['product_id']}";
 
+                        header('Location: detallesProducto.php?product_id='. $product_id);
+
                         if(mysqli_query($dbc, $query2))
                         {
-                            header('Location:productos.php');
+                            
                             mysqli_close($dbc);
                         }
-                        else	  
+                        else	
+                        {
                             echo "Error: " . $query2 . "<br>" . mysqli_error($dbc);
+                        }  
                     }
                     else	  
                         echo '<script>alert("ERROR:Variables")</script>';
+                }
+                else if(isset($_POST['discard']))
+                {
+                    header('Location: detallesProducto.php?product_id='. $product_id);
+                }
+                else if(isset($_POST['delete']))
+                {
+                    
                 }
             ?>
             <section class="content">
@@ -159,7 +171,8 @@
                                     <!-- /.card-body -->
                                     <div class="card-footer">
                                         <button type="submit" id="update" name="update" class="btn btn-success">Actualizar</button>
-                                        <button type="submit" id="discard" name="discard" class="btn btn-secondary">Descartar</button>
+                                        <button class='btn btn-secondary'><a href='detallesProducto.php?product_id=<?php echo $row['product_id']?>' style='color:inherit'>Descartar Cambios</a></button>
+                                        <button type="submit" id="delete" name="delete" class="btn btn-danger">Eliminar Producto</button>
                                     </div>
                                 </form>
                             </div>
@@ -170,13 +183,9 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-        
-        <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Control sidebar content goes here -->
         </aside>
-        <!-- /.control-sidebar -->
-
         <!-- Main Footer -->
         <?php
             include './phpIncludes/footer.php';
