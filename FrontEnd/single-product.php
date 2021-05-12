@@ -39,8 +39,7 @@
     <![endif]-->  
 
     <!-- BODY MAIN WRAPPER START -->
-    <div class="wrapper fixed__footer">
-        
+    <div>
         <!-- Header Star-->
         <?php
             include 'phpIncludes/header.php';
@@ -68,85 +67,153 @@
                                 <div class="tab-pane active" id="home1">
                                     <div class="row">
                                         <div class="product__list another-product-style"> <!--class name for carrousel: product-slider-active owl-carousel -->
-                                        <?php
-                                            error_reporting(E_ERROR | E_PARSE);
-                                            
-                                            $query = "SELECT * 
-                                                        FROM Product 
-                                                        WHERE product_id = {$_GET['product_id']}";
-                                            
-                                            $r = mysqli_query($dbc, $query);//Save & Validate Query Result
-                                            $row = mysqli_fetch_array($r);//Present Products
-                                            
-                                            if(isset($_POST['add_to_cart']))
-                                            {
-                                                if (!isset($_SESSION['login']))
+                                            <?php
+                                                error_reporting(E_ERROR | E_PARSE);
+                                                
+                                                $query = "SELECT * 
+                                                            FROM Product 
+                                                            WHERE product_id = {$_GET['product_id']}";
+                                                
+                                                $r = mysqli_query($dbc, $query);//Save & Validate Query Result
+                                                $row = mysqli_fetch_array($r);//Present Products
+                                                
+                                                if(isset($_POST['add_to_cart']))
                                                 {
-                                                    echo("<script>location.href = 'loginRequired.php?msg=$msg';</script>");
-                                                }
-                                                else{
-                                                    $product_id = $row['product_id'];
-                                                    $quantity = filter_input(INPUT_POST, 'qtybutton');
+                                                    if (!isset($_SESSION['login']))
+                                                    {
+                                                        echo("<script>location.href = 'loginRequired.php?msg=$msg';</script>");
+                                                    }
+                                                    else{
+                                                        $product_id = $row['product_id'];
+                                                        $quantity = filter_input(INPUT_POST, 'qtybutton');
 
-                                                    array_push($_SESSION['cart_product'],$product_id);
-                                                    array_push($_SESSION['cart_quantity'],$quantity);
-                                                    
-                                                    echo("<script>location.href = 'cart.php?msg=$msg';</script>");
+                                                        array_push($_SESSION['cart_product'],$product_id);
+                                                        array_push($_SESSION['cart_quantity'],$quantity);
+                                                        
+                                                        echo("<script>location.href = 'cart.php?msg=$msg';</script>");
+                                                    }
                                                 }
-                                            }
-                                            
-                                            print "
-                                                <div class='container'>
-                                                    <div class='row'>
-                                                        <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
-                                                            <div class='product'>
-                                                                <div class='product__inner'>
-                                                                    <div class='pro__thumb'>
-                                                                        <a href='#'>
-                                                                            <img src='images/lobo_products/$row[image]' alt='product images'>
-                                                                        </a>
+                                                
+                                                print "
+                                                    <div class='container'>
+                                                        <div class='row'>
+                                                            <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
+                                                                <div class='product'>
+                                                                    <div class='product__inner'>
+                                                                        <div class='pro__thumb'>
+                                                                            <a href='#'>
+                                                                                <img src='images/lobo_products/$row[image]' alt='product images'>
+                                                                            </a>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
-                                                            <div class='htc__product__details__inner pt--100'>
-                                                                <div class='pro__detl__title'>
-                                                                    <h2>$row[name] $row[description]</h2>
-                                                                </div>
-                                                                <div class='pro__details'>
-                                                                    <p>Lorem ipsum dolor sit amet consectetu adipisicing elit sed do eiusmod tempor incididunt ut labore</p>
-                                                                    <p>Lorem ipsum dolor sit amet consectetu adipisicing elit sed do eiusmod tempor incididunt ut labore</p>
-                                                                </div>
-                                                            <div class='htc__product__details__inner'>    
-                                                                <ul class='pro__dtl__prize' >
-                                                                    <li>$ $row[price] c/u</li>
-                                                                </ul>
-                                                                <form action='' method='post'>
-                                                                    <div class='product-action-wrap'>
-                                                                        <div class='prodict-statas'><span>Quantity </span></div>
-                                                                            <div class='product-quantity'>
+                                                            <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
+                                                                <div class='htc__product__details__inner pt--100'>
+                                                                    <div class='pro__detl__title'>
+                                                                        <h2>$row[name] $row[description]</h2>
+                                                                    </div>
+                                                                    <div class='pro__details'>
+                                                                        <p>Lorem ipsum dolor sit amet consectetu adipisicing elit sed do eiusmod tempor incididunt ut labore</p>
+                                                                        <p>Lorem ipsum dolor sit amet consectetu adipisicing elit sed do eiusmod tempor incididunt ut labore</p>
+                                                                    </div>
+                                                                <div class='htc__product__details__inner'>    
+                                                                    <ul class='pro__dtl__prize' >
+                                                                        <li>$ $row[price] c/u</li>
+                                                                    </ul>
+                                                                    <form action='' method='post'>
+                                                                        <div class='product-action-wrap'>
+                                                                            <div class='prodict-statas'><span>Quantity </span></div>
                                                                                 <div class='product-quantity'>
-                                                                                     <div class='cart-plus-minus'>
-                                                                                        <input class='cart-plus-minus-box' type='text' name='qtybutton' value='1'>
+                                                                                    <div class='product-quantity'>
+                                                                                        <div class='cart-plus-minus'>
+                                                                                            <input class='cart-plus-minus-box' type='text' name='qtybutton' value='1'>
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <ul class='pro__dtl__btn'>
-                                                                        <li class='buy__now__btn'><button type='submit' name=add_to_cart>Add To Cart</button></li>
-                                                                    </ul>
-                                                                </form>
+                                                                        <ul class='pro__dtl__btn'>
+                                                                            <li class='buy__now__btn'><button type='submit' name=add_to_cart>Add To Cart</button></li>
+                                                                        </ul>
+                                                                    </form>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <hr class='p-t-150'>
                                                 </div>
-                                                <hr class='p-t-80'>
-                                            </div>
-                                            ";
-                                            mysqli_close($dbc);
-                                        ?>                                           
+                                                ";
+                                            ?>                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="htc__product__area shop__page pt--50 bg__white">
+            <div class="container">
+                <div class="htc__product__container">
+                    <!-- Start Product Menu -->
+                    <div class="row">
+                        <div class="col-md-12 col-md-offset-5 pt--30">
+                            <div class="filter__menu__container">
+                                <div class='pro__detl__title'>
+                                    <h2>Sugerencias</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="htc__product__area bg__white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="product-style-tab pb--100">
+                            <div class="tab-content another-product-style jump">
+                                <div class="tab-pane active" id="home1">
+                                    <div class="row">
+                                        <div class="product__list another-product-style"> <!--class name for carrousel: product-slider-active owl-carousel -->
+                                            <?php
+                                                $query2 = "SELECT * FROM Product
+                                                            WHERE product_id NOT IN ({$row['product_id']})
+                                                            ORDER BY RAND() limit 4";
+
+                                                if($r2 = mysqli_query($dbc, $query2))//Save & Validate Query Result
+                                                {
+                                                    while($row2=mysqli_fetch_array($r2))//Present Products
+                                                    {
+                                                        //3 products: col-md-4 single__pro col-lg-4 cat--1 col-sm-4 col-xs-12
+                                                        print "
+                                                            <div class='col-md-3 single__pro col-lg-3 cat--1 col-sm-4 col-xs-12'>
+                                                                <div class='product foo'>
+                                                                    <div class='product__inner'>
+                                                                        <div class='pro__thumb'>
+                                                                            <a href='single-product.php?product_id={$row2['product_id']}'>
+                                                                                <img src='images/lobo_products/$row2[image]' alt='$row2[name]$row2[description]'>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class='product__details'>
+                                                                        <h2><a href='single-product.php?product_id={$row2['product_id']}'>$row2[name] $row2[description]</a></h2>
+                                                                        <ul class='product__price'>
+                                                                            <li class='price'>$ $row2[price] c/u</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        ";
+                                                    }
+                                                }
+                                                else
+                                                    print'<p style="color:red">NO SE PUEDE MOSTRAR RECORD PORQUE:'.mysqli_error($dbc).'.</P>';
+                                                mysqli_close($dbc);
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
@@ -157,115 +224,10 @@
             </div>
         </section>
         <!-- End Our Product Area -->
-
-
-        <!-- Start Blog Area --
-        <section class="htc__blog__area bg__white pb--130">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="section__title section__title--2 text-center">
-                            <h2 class="title__line">Productos Relacionados</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="blog__wrap clearfix mt--100 xmt-30">
-                        < -- Start Single Blog ->
-                        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-                            <div class="blog ">
-                                <div class="blog__inner">
-                                    <div class="blog__thumb">
-                                        <a href="blog-details.html">
-                                            <img src="images/blog/blog-img/2.jpg" alt="blog images">
-                                        </a>
-                                        <div class="blog__post__time">
-                                            <div class="post__time--inner">
-                                                <span class="date">14</span>
-                                                <span class="month">sep</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="blog__hover__info">
-                                        <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="blog-details.html">Lorem ipsum dolor sit consectetu.</a></p>
-                                            <div class="blog__btn">
-                                                <a class="read__more__btn" href="blog-details.html">read more</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        < -- End Single Blog ->
-                        < -- Start Single Blog ->
-                        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-                            <div class="blog ">
-                                <div class="blog__inner">
-                                    <div class="blog__thumb">
-                                        <a href="blog-details.html">
-                                            <img src="images/blog/blog-img/2.jpg" alt="blog images">
-                                        </a>
-                                        <div class="blog__post__time">
-                                            <div class="post__time--inner">
-                                                <span class="date">14</span>
-                                                <span class="month">sep</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="blog__hover__info">
-                                        <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="blog-details.html">Lorem ipsum dolor sit consectetu.</a></p>
-                                            <div class="blog__btn">
-                                                <a class="read__more__btn" href="blog-details.html">read more</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        < -- End Single Blog ->
-                        < -- Start Single Blog ->
-                        <div class="col-md-4 col-lg-4 hidden-sm col-xs-12">
-                            <div class="blog ">
-                                <div class="blog__inner">
-                                    <div class="blog__thumb">
-                                        <a href="blog-details.html">
-                                            <img src="images/blog/blog-img/3.jpg" alt="blog images">
-                                        </a>
-                                        <div class="blog__post__time">
-                                            <div class="post__time--inner">
-                                                <span class="date">14</span>
-                                                <span class="month">sep</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="blog__hover__info">
-                                        <div class="blog__hover__action">
-                                            <p class="blog__des"><a href="blog-details.html">Lorem ipsum dolor sit consectetu.</a></p>
-                                            <ul class="bl__meta">
-                                                <li>By :<a href="#">Admin</a></li>
-                                                <li>Product</li>
-                                            </ul>
-                                            <div class="blog__btn">
-                                                <a class="read__more__btn" href="blog-details.html">read more</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        < -- End Single Blog ->
-                    </div>
-                </div>
-            </div>
-        </section>
-        < -- End Blog Area -->
-        
         <!-- Start Footer Area -->
-        <?php
-            include 'phpIncludes/footer.php';
-        ?>
+            <?php
+                include 'phpIncludes/footer.php';
+            ?>
         <!-- End Footer Area -->
     </div>
     <!-- Body main wrapper end -->

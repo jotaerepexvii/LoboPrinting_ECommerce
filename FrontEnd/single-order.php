@@ -1,9 +1,12 @@
+<?php
+    //session_start();
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Carrito</title>
+    <title>Orden #<?php echo $_GET['order_id'];?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -62,11 +65,11 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="bradcaump__inner text-center">
-                            <h2  class="bradcaump-title">Mi Cuenta</h2>
+                            <h2  class="bradcaump-title">Ordenes</h2>
                             <nav class="bradcaump-inner">
-                                <a class="breadcrumb-item" href="index.php">Inicio</a>
+                                <a class="breadcrumb-item" href="account.php">Mi Cuenta</a>
                                 <span class="brd-separetor">/</span>
-                                <span class="breadcrumb-item active">Mi Cuenta</span>
+                                <span class="breadcrumb-item active">Ordenes</span>
                             </nav>
                         </div>
                     </div>
@@ -75,7 +78,23 @@
         </section>
         <!-- End Bradcaump area -->
         <!-- cart-main-area start -->
-        <div class="cart-main-area ptb--100 bg__white">
+        <section class="htc__product__area shop__page bg__white">
+            <div class="container">
+                <div class="htc__product__container">
+                    <!-- Start Product Menu -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="filter__menu__container">
+                                <div class="product-tab-list2">
+                                    <button type="submit" onclick="history.go(-1);">< Atrás</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="cart-main-area pt--50 bg__white">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
@@ -125,8 +144,26 @@
                         </div>
                     </div>
                 </div>
+                <section class="htc__product__area shop__page bg__white pb--60">
+                    <div class="container">
+                        <div class="htc__product__container">
+                            <!-- Start Product Menu -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="filter__menu__container">
+                                        <div class="product-tab-list2">
+                                            <button type="submit" onclick="history.go(-1);">< Atrás</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
+            
         </div>
+        
         <!-- cart-main-area end -->
         <!-- Start Footer Area -->
         <?php

@@ -123,9 +123,9 @@
                         </div>
                         <div class="col-md-6">
                         <!-- general form elements -->
-                            <div class="card card-primary">
+                            <div class="card card-secondary">
                                 <div class="card-header">
-                                    <h3 class="card-title">Editar Producto</h3>
+                                    <h5 class="card-title">Editar Producto</h5>
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
@@ -158,7 +158,8 @@
                                     </div>
                                     <!-- /.card-body -->
                                     <div class="card-footer">
-                                        <button type="submit" id="update" name="update" class="btn btn-primary">Actualizar</button>
+                                        <button type="submit" id="update" name="update" class="btn btn-success">Actualizar</button>
+                                        <button type="submit" id="discard" name="discard" class="btn btn-secondary">Descartar</button>
                                     </div>
                                 </form>
                             </div>

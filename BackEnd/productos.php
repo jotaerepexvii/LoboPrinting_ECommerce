@@ -67,13 +67,13 @@
             <!-- Main content -->
             <div class="content">
                 <div class="container-fluid">
-                    <div class="card">
+                    <div class="card-secondary bg-light border-dark">
                         <div class="card-header">
                             <h3 class="card-title">Productos a la venta</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="example1" class="table table-bordered table-striped">
+                            <table id="example1" class="table table-bordered table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th>Id</th>
@@ -100,7 +100,11 @@
                                                         <td>$$row[price]</td>
                                                         <td>$row[in_stock]</td>
                                                         <td>$row[sold]</td>
-                                                        <td><a href='editarProducto.php?product_id={$row['product_id']}'>Editar</a></td>
+                                                        <td>
+                                                            <a href='editarProducto.php?product_id={$row['product_id']}'>Ver</a>
+                                                            <a>|</a>
+                                                            <a href='editarProducto.php?product_id={$row['product_id']}'>Editar</a>
+                                                        </td>
                                                     </tr>
                                                 ";
                                             }

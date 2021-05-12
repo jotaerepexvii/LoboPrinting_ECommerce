@@ -511,11 +511,29 @@
     transition: all 0.4s ease 0s;
 }
 .product-tab-list2 button:hover { /*botones de productos y etc*/
+    color: #ff4136;
+}
+.product-tab-list2 a { /*botones de productos y etc*/
     text-align: center;
     background: transparent none repeat scroll 0 0;
     border: 0 none;
+    color: #666666;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 0 20px;
+    text-transform: uppercase;
+    transition: all 0.4s ease 0s;
+}
+.product-tab-list2 a:hover { /*botones de productos y etc*/
     color: #ff4136;
-    font-size: 18px;
+}
+.product-tab-list2 span { /*botones de productos y etc*/
+    text-align: center;
+    background: transparent none repeat scroll 0 0;
+    border: 0 none;
+    color: #666666;
+    font-size: 17px;
     font-weight: 500;
     line-height: 20px;
     padding: 0 20px;
@@ -4400,7 +4418,8 @@ a.shipping-calculator-button:hover {
 
 /*center content*/
 body.success{
-    background-color:gold;
+    background-color:#ffd700;
+    background-image: url('images/paw-pattern-g.svg');
 }
 section.centerSuccess div.container{
     background:gold;

@@ -9,7 +9,9 @@
                 <div class="col-md-12">
                     <div class="filter__menu__container">
                         <div class="product-tab-list2">
-                            <button type="submit" onclick="history.go(-1);">< Back</button>
+                            <button type="submit" onclick="history.go(-1);">< Atrás</button>
+                            <span>|</span>
+                            <a href="productos.php"> Todos los Productos</a>
                         </div>
                     </div>
                 </div>
