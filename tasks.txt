@@ -7,27 +7,16 @@ FRONT END
 
     > sobre-nosotros.php
         - en seccion de 'Nuestra Tienda' añadir 'Esclusividad - los productos memorabilia se consiguen solo en blabla...'
-        - y hacer seccion full width para evitar discrepancia con el pedazo del video.
 
     > poder hacer login y que luego te redireccione a la pagina donde estabas
 
 
 BACK END
-    > detalleProducto.php
-        - bregar con la imagen del producto
-
     admin table id (admi_id) pienso que debe de auto-incrementar
 
     > hacer que la tabla de users tenga otra columna
 
 
 others>
-    https://github.com/pipwerks/PDFObject
-    https://pdfobject.com/
-
-
-    <object data="myfile.pdf" type="application/pdf" width="100%" height="100%">
-        <p>Alternative text - include a link <a href="myfile.pdf">to the PDF!</a></p>
-    </object>
 
     

@@ -72,29 +72,29 @@
                         <div class="col-12">
                             <div class="card bg-light border-dark">
                                 <div class="card-header">
-                                    <h3 class="card-title" style="font-weight: bold;">Productos a la venta</h3>
+                                    <h3 class="card-title" style="font-weight: bold;">Haga 'click' sobre el nombre de un artículo para ver o editar</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <table id="example1" class="table table-bordered table-hover table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Id</th>
+                                                <th title='El ID del producto es su respectivo barcode'>Id</th>
                                                 <th title='Click sobre el nombre para ver o editar'>Artículo</th>
-                                                <th>Precio</th>
-                                                <th>Unidades Disponibles</th>
-                                                <th>Unidades Vendidas</th>
-                                                <th>Ver/Editar</th>
+                                                <th title='Pecio de producto en dolares'>Precio</th>
+                                                <th title="Unidades del producto disponible a la venta">Disponibles</th>
+                                                <th title="Unidades del producto vendidas">Vendidas</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                                $query = "SELECT *
-                                                    FROM Product limit 25";
+                                                $query = "SELECT * 
+                                                        FROM Product 
+                                                        ORDER BY product_id";
                                             
                                                 if($r = mysqli_query($dbc, $query))//Save & Validate Query Result
                                                 {
-                                                    while($row=mysqli_fetch_array($r))//Present Products
+                                                    while($row = mysqli_fetch_array($r))//Present Products
                                                     {
                                                         print "
                                                             <tr>
@@ -103,11 +103,11 @@
                                                                 <td>$$row[price]</td>
                                                                 <td>$row[in_stock]</td>
                                                                 <td>$row[sold]</td>
-                                                                <td>
+                                                                <!--<td>
                                                                     <a href='editarProducto.php?product_id={$row['product_id']}'>Ver</a>
                                                                     <a>|</a>
                                                                     <a href='editarProducto.php?product_id={$row['product_id']}'>Editar</a>
-                                                                </td>
+                                                                </td>-->
                                                             </tr>
                                                         ";
                                                     }
@@ -122,9 +122,8 @@
                                                 <th>Id</th>
                                                 <th>Artículo</th>
                                                 <th>Precio</th>
-                                                <th>Unidades Disponibles</th>
-                                                <th>Unidades Vendidas</th>
-                                                <th>Ver/Editar</th>
+                                                <th>Disponibles</th>
+                                                <th>Vendidas</th>
                                             </tr>
                                         </tfoot>
                                     </table>
@@ -173,6 +172,7 @@
 <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.download.min.js"></script>
 <!-- AdminLTE -->
 <script src="dist/js/adminlte.js"></script>
 
@@ -184,7 +184,7 @@
   $(function () {
     $("#example1").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["excel", "pdf", "print", "colvis"]
+      "buttons": ["down", "csv", "pdf", "print"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({
       "paging": true,
