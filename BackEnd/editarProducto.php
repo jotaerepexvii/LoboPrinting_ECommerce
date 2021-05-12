@@ -100,11 +100,9 @@
                         $query2 = "UPDATE Product SET product_id='$product_id', name='$name', description='$description', price='$price', cost='$cost', in_stock='$in_stock'
                         WHERE product_id={$_GET['product_id']}";
 
-                        header('Location: detallesProducto.php?product_id='. $product_id);
-
                         if(mysqli_query($dbc, $query2))
                         {
-                            
+                            header('Location: detallesProducto.php?product_id='. $product_id);
                             mysqli_close($dbc);
                         }
                         else	
