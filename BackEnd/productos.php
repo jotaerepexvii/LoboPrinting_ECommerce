@@ -33,7 +33,6 @@
         <?php
             //include './includes/navbar.php';
         ?>
-
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
@@ -46,7 +45,6 @@
                 include './phpIncludes/sidebar.php';
             ?>
         </aside>
-
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -186,7 +184,7 @@
   $(function () {
     $("#example1").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["excel", "pdf", "print"]
+      "buttons": ["excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({
       "paging": true,
