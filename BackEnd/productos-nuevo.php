@@ -51,6 +51,49 @@
       </div>
     </section>
     <!-- Main content -->
+    <?php           
+        if(isset($_POST['add']))
+        {
+            $errors = array();
+
+            $product_id = (int)$_POST['product_id'];
+            $name = filter_input(INPUT_POST, 'name');
+            $description = filter_input(INPUT_POST, 'description');
+            $price = filter_input(INPUT_POST, 'price');
+            $cost = filter_input(INPUT_POST, 'cost');
+            $in_stock = filter_input(INPUT_POST, 'in_stock');
+
+            $sold = 0;
+            $dateAdded = date("Y-m-d");
+            $image = "1.png";
+
+            if (empty($_POST['product_id']) || empty($_POST['name']) || empty($_POST['description']) || empty($_POST['price']) || empty($_POST['cost']) || empty($_POST['in_stock']))
+            {
+              array_push($errors, 'Todo Los Campos Son Requeridos');
+            }
+            else if(count($errors) == 0)
+            {
+                $query_insert = mysqli_query($dbc, "INSERT INTO Product(product_id, name, description, price, cost, in_stock)
+                VALUES('$product_id','$name','$description','$price','$cost', '$in_stock', '$sold', '$dateAdded', $image)");
+
+                if(mysqli_query($dbc, $query_insert))
+                {
+                    header("Location: productos-detalles.php?product_id=$product_id");
+                    mysqli_close($dbc);
+                }
+                else	
+                {
+                    echo "Error: " . $query_insert . "<br>" . mysqli_error($dbc);
+                }  
+            }
+            else	  
+                echo '<script>alert("ERROR:Variables")</script>';
+        }
+        else if(isset($_POST['discard']))
+        {
+            header("Location: productos.php");
+        }
+    ?>
     <section class="content">
         <div class="container-fluid">
             <div class="row">
@@ -59,19 +102,28 @@
                 <!-- general form elements -->
                     <div class="card card-secondary">
                         <div class="card-header">
-                            <h5 class="card-title">Añada el nuevo producto</h5>
+                            <h5 class="card-title">Añada el nuevo producto<br></h5>
+                            <h5 class="card-title"><?php echo $errors?></h5>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form  action="#" method="post">
+                        <form action="#" method="post">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">ID (Barcode)</label>
                                     <input type="text" class="form-control" id="product_id" name="product_id" value="<?php echo $row['product_id'] ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Categoría</label>
-                                    <input type="text" class="form-control" id="name" name="name" value="<?php echo $row['name'] ?>">
+                                    <label for="exampleInputPassword1">Tipo de Artículo</label>
+                                    <input type="text" class="form-control" id="name" name="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1" id="category" name="category">Categoría</label>
+                                    <select class="form-control">
+                                      <option>Escolar</option>
+                                      <option>Laboratorio</option>
+                                      <option>Memorabilia</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Nombre</label>
@@ -89,19 +141,19 @@
                                     <label for="exampleInputEmail1">Cantidad Disponible</label>
                                     <input type="text" class="form-control" id="in_stock" name="in_stock" value="<?php echo $row['in_stock'] ?>">
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" action="phpIncludes/upload.php">
                                   <label for="exampleInputFile">Imágen</label>
                                   <div class="input-group">
                                     <div class="custom-file">
-                                      <input type="file" class="custom-file-input" id="exampleInputFile">
-                                      <label class="custom-file-label" for="exampleInputFile">Escojer Imágen...</label>
+                                      <input type="file" name="imageUpload" id="imageUpload" class="custom-file-input">
+                                      <label type="submit" name="submit" value="Upload Image" class="custom-file-label" title="Solo imágenes JPG, JPEG, PNG o SVG son permitidas" for="exampleInputFile"></label>
                                     </div>
                                   </div>
                                 </div>
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <button type="submit" id="update" name="update" class="btn btn-warning">Añadir</button>
+                                <button type="submit" id="add" name="add" class="btn btn-warning">Añadir</button>
                                 <button type="submit" class='btn btn-secondary'><a href='productos.php' style='color:inherit'>Descartar</a></button>
                             </div>
                         </form>

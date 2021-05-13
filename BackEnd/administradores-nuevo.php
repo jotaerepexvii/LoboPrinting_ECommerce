@@ -85,7 +85,7 @@
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <button type="submit" id="update" name="update" class="btn btn-success">Añadir</button>
+                                <button type="submit" id="update" name="update" class="btn btn-warning">Añadir</button>
                                 <button type="submit" class='btn btn-secondary'><a href='administradores.php' style='color:inherit'>Descartar</a></button>
                             </div>
                         </form>

@@ -92,7 +92,7 @@
                     <!-- /.card-body -->
                     <div class='card-footer'>
                         <button type='submit' id='update' name='update' class='btn btn-primary'><a href='administradores-editar.php?admin_id=$row[admin_id]' style='color:inherit'>Editar</a></button>
-                        <button class='btn btn-secondary'><a href='administradores.php' style='color:inherit'>Volver</a></button>
+                        <button type='submit' class='btn btn-secondary'><a href='administradores.php' style='color:inherit'>Ver Todos los Administradores</a></button>
                     </div>
                   </form>
                 </div>

@@ -102,7 +102,7 @@
 
                         if(mysqli_query($dbc, $query2))
                         {
-                            header('Location: productos-detalles.php?product_id='. $product_id);
+                            header("Location: productos-detalles.php?product_id=$product_id");
                             mysqli_close($dbc);
                         }
                         else	
@@ -115,7 +115,7 @@
                 }
                 else if(isset($_POST['discard']))
                 {
-                    header('Location: productos-detalles.php?product_id='. $product_id);
+                    header("Location: productos-detalles.php?product_id=$product_id");
                 }
                 else if(isset($_POST['delete']))
                 {

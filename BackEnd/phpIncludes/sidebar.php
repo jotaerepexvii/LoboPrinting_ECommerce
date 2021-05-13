@@ -1,20 +1,18 @@
 <?php
     include 'phpIncludes/connection.php';
+
+    error_reporting(E_ERROR | E_PARSE);
+    $query = "SELECT *
+                FROM Administrator
+                WHERE admin_id={$_SESSION['loginAdmi']}";
+    $r = mysqli_query($dbc,$query);//Make the Query
+    $row = mysqli_fetch_array($r);//Save Query Result
 ?>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index.php" class="brand-link">
-      <img src="dist/img/person.png" alt="Lobo Logo" class="brand-image elevation-3" style="opacity: .8">
-        <?php
-            error_reporting(E_ERROR | E_PARSE);
-            $query = "SELECT *
-                        FROM Administrator
-                        WHERE admin_id={$_SESSION['loginAdmi']}";
-            $r = mysqli_query($dbc,$query);//Make the Query
-            $row = mysqli_fetch_array($r);//Save Query Result
-
-            print "<span class='brand-text font-weight-light'>$row[name]</span>";
-        ?>
+    <a href="administradores-detalles.php?admin_id=<?php echo $row['admin_id'] ?>" class="brand-link">
+        <img src='dist/img/person.png' alt='Lobo Logo' class='brand-image elevation-3' style='opacity: .8'>
+        <span class='brand-text font-weight-light'><?php echo $row['name'] ?></span>
     </a>
     <!-- Sidebar -->
     <div class="sidebar">
@@ -128,20 +126,17 @@
                     <li class="nav-item menu-open">
                         <li class="nav-header">Cuenta del Administrador</li>
                             <li class="nav-item">
-                            <a href="phpIncludes/logout.php" class="nav-link">
-                                <i class="nav-icon fas fa-times"></i>
-                                <p>Cerrar Sesión</p>
-                            </a>
+                                <a href="phpIncludes/logout.php" class="nav-link">
+                                    <i class="nav-icon fas fa-times"></i>
+                                    <p>Cerrar Sesión</p>
+                                </a>
                             </li>
                             <li class="nav-item">
-                            <?php
-                                print"
-                                    <a href='administradores-detalles.php?admin_id={$row['admin_id']}' class='nav-link'>
-                                "
-                            ?>
-                                <i class="nav-icon fas fa-cog"></i>
-                                <p>Configuración</p>
-                            </a>
+                                <a href="administradores-detalles.php?admin_id=<?php echo $row['admin_id'] ?>" class="nav-link">
+                                    <i class="nav-icon fas fa-cog"></i>
+                                    <p>Configuración</p>
+                                </a>
+                            </li>
                         </li>
                     </li>
                 </li>
