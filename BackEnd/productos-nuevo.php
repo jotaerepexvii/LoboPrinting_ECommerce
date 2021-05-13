@@ -62,7 +62,6 @@
             $price = filter_input(INPUT_POST, 'price');
             $cost = filter_input(INPUT_POST, 'cost');
             $in_stock = filter_input(INPUT_POST, 'in_stock');
-
             $sold = 0;
             $dateAdded = date("Y-m-d");
             $image = "1.png";
@@ -73,10 +72,10 @@
             }
             else if(count($errors) == 0)
             {
-                $query_insert = mysqli_query($dbc, "INSERT INTO Product(product_id, name, description, price, cost, in_stock)
+                $query_insert = mysqli_query($dbc, "INSERT INTO Product(product_id, name, description, price, cost, in_stock, sold, date, image)
                 VALUES('$product_id','$name','$description','$price','$cost', '$in_stock', '$sold', '$dateAdded', $image)");
 
-                if(mysqli_query($dbc, $query_insert))
+                if($query_insert)
                 {
                     header("Location: productos-detalles.php?product_id=$product_id");
                     mysqli_close($dbc);
@@ -146,7 +145,7 @@
                                   <label for="exampleInputFile">Imágen</label>
                                   <div class="input-group">
                                     <div class="custom-file">
-                                      <input type="file" name="fileToUpload" id="fileToUpload" class="custom-file-input">
+                                      <input type="file" name="exampleInputFile" id="exampleInputFile" class="custom-file-input">
                                       <label type="submit" name="submit" value="Upload Image" class="custom-file-label" title="Solo imágenes JPG, JPEG, PNG o SVG son permitidas" for="exampleInputFile"></label>
                                     </div>
                                   </div>
