@@ -51,7 +51,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Editar Producto</h1>
+                            <h1 class="m-0">Detalles de Orden</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -99,7 +99,7 @@
                         <!-- left column -->
                         <div class="col-md-6">
                         <!-- general form elements -->
-                            <div class="card card-primary">
+                            <div class="card card-secondary">
                                 <div class="card-header">
                                     <h3 class="card-title">Detalles de Orden</h3>
                                 </div>
@@ -151,7 +151,7 @@
                         </div>
                         <div class="col-md-6">
                         <!-- general form elements -->
-                            <div class="card card-primary">
+                            <div class="card card-secondary">
                                 <div class="card-header">
                                     <h3 class="card-title">Productos en la Orden</h3>
                                 </div>

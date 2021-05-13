@@ -55,16 +55,11 @@
         <div class="container-fluid">
             <div class="row">
                 <!-- left column -->
-                <div class="col-md-6">
-                    <div class="col-12">
-                        <img src="../FrontEnd/images/lobo_products/<?php echo $row['image'] ?>" class="product-image" alt="Product Image">
-                    </div>
-                </div>
-                <div class="col-md-6">
+                <div class="col-md-6 offset-md-3">
                 <!-- general form elements -->
                     <div class="card card-secondary">
                         <div class="card-header">
-                            <h5 class="card-title">Nuevo Producto</h5>
+                            <h5 class="card-title">Añada el nuevo producto</h5>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
@@ -107,7 +102,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" id="update" name="update" class="btn btn-success">Añadir</button>
-                                <button class='btn btn-secondary'><a href='detallesProducto.php?product_id=<?php echo $row['product_id']?>' style='color:inherit'>Descartar</a></button>
+                                <button type="submit" class='btn btn-secondary'><a href='productos.php' style='color:inherit'>Descartar Cambios</a></button>
                             </div>
                         </form>
                     </div>

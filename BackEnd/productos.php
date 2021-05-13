@@ -99,7 +99,7 @@
                                                         print "
                                                             <tr>
                                                                 <td>$row[product_id]</td>
-                                                                <td><a href='detallesProducto.php?product_id={$row['product_id']}'>$row[name] $row[description]<a></td>
+                                                                <td><a href='productos-detalles.php?product_id={$row['product_id']}'>$row[name] $row[description]<a></td>
                                                                 <td>$$row[price]</td>
                                                                 <td>$row[in_stock]</td>
                                                                 <td>$row[sold]</td>

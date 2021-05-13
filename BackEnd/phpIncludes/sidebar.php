@@ -40,7 +40,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./nuevoProducto.php" class="nav-link">
+                                <a href="./productos-nuevo.php" class="nav-link">
                                 <i class="fas fa nav-icon"></i>
                                 <p>Añadir Producto</p>
                                 </a>
@@ -108,13 +108,13 @@
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                 <i class="far fa nav-icon"></i>
-                                <p>Reporte Diario</p>
+                                <p>Reporte Semanal</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                 <i class="far fa nav-icon"></i>
-                                <p>Reporte Semanal</p>
+                                <p>Reporte Anual</p>
                                 </a>
                             </li>
                         </ul>

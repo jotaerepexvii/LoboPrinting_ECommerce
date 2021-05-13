@@ -102,7 +102,7 @@
 
                         if(mysqli_query($dbc, $query2))
                         {
-                            header('Location: detallesProducto.php?product_id='. $product_id);
+                            header('Location: productos-detalles.php?product_id='. $product_id);
                             mysqli_close($dbc);
                         }
                         else	
@@ -115,7 +115,7 @@
                 }
                 else if(isset($_POST['discard']))
                 {
-                    header('Location: detallesProducto.php?product_id='. $product_id);
+                    header('Location: productos-detalles.php?product_id='. $product_id);
                 }
                 else if(isset($_POST['delete']))
                 {
@@ -169,7 +169,7 @@
                                     <!-- /.card-body -->
                                     <div class="card-footer">
                                         <button type="submit" id="update" name="update" class="btn btn-success">Actualizar</button>
-                                        <button class='btn btn-secondary'><a href='detallesProducto.php?product_id=<?php echo $row['product_id']?>' style='color:inherit'>Descartar Cambios</a></button>
+                                        <button class='btn btn-secondary'><a href='productos-detalles.php?product_id=<?php echo $row['product_id']?>' style='color:inherit'>Descartar Cambios</a></button>
                                         <button type="submit" id="delete" name="delete" class="btn btn-danger">Eliminar Producto</button>
                                     </div>
                                 </form>

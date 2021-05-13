@@ -176,13 +176,13 @@
                                                             <tr>
                                                                 <td>
                                                                 <img src= '../FrontEnd/images/lobo_products/$row[image]' alt='$row[image]' class='img-circle img-size-32 mr-2'>
-                                                                  <a href='detallesProducto.php?product_id={$row['product_id']}'> $row[name] $row[description]</a>
+                                                                  <a href='productos-detalles.php?product_id={$row['product_id']}'> $row[name] $row[description]</a>
                                                                 </td>
                                                                 <td>$$row[price]</td>
                                                                 <td>$row[sold] Vendidos
                                                                 </td>
                                                                 <td>
-                                                                <a href='detallesProducto.php?product_id={$row['product_id']}' class='text-muted'>
+                                                                <a href='productos-detalles.php?product_id={$row['product_id']}' class='text-muted'>
                                                                     <i class='fas fa-search'></i>
                                                                 </a>
                                                                 </td>
