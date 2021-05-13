@@ -185,7 +185,7 @@
                                                         print "
                                                             <tr>
                                                                 <td class='text-left'>$row_orders[product_id]</td>
-                                                                <td class='text-left'>$row_orders2[name] $row_orders2[description]</td>
+                                                                <td class='text-left'><a href='productos-detalles.php?product_id={$row_orders['product_id']}'>$row_orders2[name] $row_orders2[description]</a></td>
                                                                 <td class='text-left'>$row_orders2[price]</td>
                                                                 <td class='text-left'>$row_orders2[cost]</td>
                                                             </tr>";

@@ -10,7 +10,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Detalles Del Producto</title>
+  <title>Editar Administrador</title>
   <link rel="icon"  href="dist/img/lobo.ico" type="icon" sizes="16x16">
 
   <!-- Google Font: Source Sans Pro -->
@@ -39,17 +39,18 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Nuevo Producto</h1>
+            <h1>Editar Administrador</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-              <li class="breadcrumb-item active">Nuevo Producto</li>
+              <li class="breadcrumb-item active">Editar Administrador</li>
             </ol>
           </div>
         </div>
-      </div>
+      </div><!-- /.container-fluid -->
     </section>
+
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
@@ -59,50 +60,33 @@
                 <!-- general form elements -->
                     <div class="card card-secondary">
                         <div class="card-header">
-                            <h5 class="card-title">Añada el nuevo producto</h5>
+                            <h5 class="card-title">Edite datos del administrador</h5>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
                         <form  action="#" method="post">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">ID (Barcode)</label>
-                                    <input type="text" class="form-control" id="product_id" name="product_id" value="<?php echo $row['product_id'] ?>">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Categoría</label>
-                                    <input type="text" class="form-control" id="name" name="name" value="<?php echo $row['name'] ?>">
+                                    <label for="exampleInputEmail1">ID</label>
+                                    <input type="text" class="form-control" id="admin_id" name="admin_id" value="<?php echo $row['admin_id'] ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Nombre</label>
-                                    <input type="text" class="form-control" id="descripion" name="description" value="<?php echo $row['description'] ?>">
+                                    <input title="Inserte su nombre" type="text" class="form-control" id="name" name="name" value="<?php echo $row['name'] ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Precio</label>
-                                    <input type="text" class="form-control" id="price" name="price" value="<?php echo $row['price'] ?>">
+                                    <label for="exampleInputPassword1">Apellido</label>
+                                    <input title="Inserte sus apellidos" type="text" class="form-control" id="lastname" name="lastname" value="<?php echo $row['lastname'] ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Costo</label>
-                                    <input type="text" class="form-control" id="cost" name="cost" value="<?php echo $row['cost'] ?>">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Cantidad Disponible</label>
-                                    <input type="text" class="form-control" id="in_stock" name="in_stock" value="<?php echo $row['in_stock'] ?>">
-                                </div>
-                                <div class="form-group">
-                                  <label for="exampleInputFile">Imágen</label>
-                                  <div class="input-group">
-                                    <div class="custom-file">
-                                      <input type="file" class="custom-file-input" id="exampleInputFile">
-                                      <label class="custom-file-label" for="exampleInputFile">Escojer Imágen...</label>
-                                    </div>
-                                  </div>
+                                    <label for="exampleInputEmail1">Correo Electrónico</label>
+                                    <input title="Inserte su correo electrónico" type="text" class="form-control" id="email" name="email" value="<?php echo $row['email'] ?>">
                                 </div>
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <button type="submit" id="update" name="update" class="btn btn-warning">Añadir</button>
-                                <button type="submit" class='btn btn-secondary'><a href='productos.php' style='color:inherit'>Descartar</a></button>
+                                <button type="submit" class="btn btn-warning" id="update" name="update">Guardar</button>
+                                <button type="submit" class='btn btn-secondary'><a href='administradores-detalles.php?admin_id=<?php echo $row['admin_id']?>' style='color:inherit'>Descartar</a></button>
                             </div>
                         </form>
                     </div>

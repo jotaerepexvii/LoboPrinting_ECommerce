@@ -60,7 +60,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="./administradores.php" class="nav-link">
+                                <a href="./administradores-nuevo.php" class="nav-link">
                                 <i class="far fa nav-icon"></i>
                                 <p>Añadir Administradores</p>
                                 </a>
@@ -80,9 +80,9 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="./usuarios.php" class="nav-link">
+                                <a href="../FrontEnd/register.php" class="nav-link">
                                 <i class="far fa nav-icon"></i>
-                                <p>Ver Estudiantes</p>
+                                <p>Añadir Usuario</p>
                                 </a>
                             </li>
                             <li class="nav-item">

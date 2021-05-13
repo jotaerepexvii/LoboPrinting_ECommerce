@@ -69,7 +69,7 @@
                 <div class='card card-secondary'>
                   <form action='#' method='post'>
                     <div class='card-header'>
-                      <h5 class='card-title'>Editar Administrador</h5>
+                      <h5 class='card-title'>Detalles del Administrador</h5>
                     </div>
                     <div class='card-body'>
                         <div class='form-group'>
@@ -91,8 +91,8 @@
                     </div>
                     <!-- /.card-body -->
                     <div class='card-footer'>
-                        <button type='submit' id='update' name='update' class='btn btn-success'>Editar</button>
-                        <button class='btn btn-secondary'><a href='detallesProducto.php?product_id=$row[product_id]' style='color:inherit'>Descartar Cambios</a></button>
+                        <button type='submit' id='update' name='update' class='btn btn-primary'><a href='administradores-editar.php?admin_id=$row[admin_id]' style='color:inherit'>Editar</a></button>
+                        <button class='btn btn-secondary'><a href='administradores.php' style='color:inherit'>Volver</a></button>
                     </div>
                   </form>
                 </div>

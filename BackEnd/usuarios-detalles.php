@@ -50,77 +50,117 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
-
-    <!-- Main content -->
     <section class="content">
       <!-- Default box -->
-      <div class="card card-solid">
-        <div class="card-body">
-          <div class="row">
-              <?php
-                $query = "SELECT * 
-                            FROM Users 
-                            WHERE user_id = {$_GET['user_id']}";
-                
-                $r = mysqli_query($dbc, $query);//Save & Validate Query Result
-                $row = mysqli_fetch_array($r);//Present Products
-                
-                print "
-                  <div class='col-12 col-sm-6'>
-                    <div class='bg-gray py-2 px-3 mt-4'>
-                      <h2 class='mb-0'>
-                        Nombre
-                      </h2>
-                      <h4 class='mt-0'>
-                        <small>$row[name] $row[lastname]</small>
-                      </h4>
+      <div class="container-fluid">
+        <div class="row">
+          <?php
+            $query = "SELECT * 
+            FROM Users 
+            WHERE user_id = {$_GET['user_id']}";
+
+            $r = mysqli_query($dbc, $query);//Save & Validate Query Result
+            $row = mysqli_fetch_array($r);//Present Products
+            
+            print "
+              <div class='col-md-6'>
+                <div class='card card-secondary'>
+                  <form action='#' method='post'>
+                    <div class='card-header'>
+                      <h5 class='card-title'>Editar Administrador</h5>
                     </div>
-                    <div class='bg-gray py-2 px-3 mt-4'>
-                      <h2 class='mb-0'>
-                        ID
-                      </h2>
-                      <h4 class='mt-0'>
-                        <small>$row[user_id]</small>
-                      </h4>
+                    <div class='card-body'>
+                        <div class='form-group'>
+                            <label for='exampleInputPassword1'>Nombre</label>
+                            <input type='text' class='form-control' id='name' name='name' value='$row[user_id]'>
+                        </div>
+                        <div class='form-group'>
+                            <label for='exampleInputPassword1'>Nombre</label>
+                            <input type='text' class='form-control' id='name' name='name' value='$row[name]'>
+                        </div>
+                        <div class='form-group'>
+                            <label for='exampleInputPassword1'>Apellidos</label>
+                            <input type='text' class='form-control' id='name' name='name' value='$row[lastname]'>
+                        </div>
+                        <div class='form-group'>
+                            <label for='exampleInputEmail1'>ID</label>
+                            <input type='text' class='form-control' id='product_id' name='product_id' value='$row[email]'>
+                        </div>
+                        <div class='form-group'>
+                            <label for='exampleInputEmail1'>Email</label>
+                            <input type='text' class='form-control' id='descripion' name='description' value='$row[phone]'>
+                        </div>
+                        <div class='form-group'>
+                            <label for='exampleInputEmail1'>Email</label>
+                            <input type='text' class='form-control' id='descripion' name='description' value='$row[student]'>
+                        </div>
                     </div>
-                    <div class='bg-gray py-2 px-3 mt-4'>
-                      <h2 class='mb-0'>
-                        Email
-                      </h2>
-                      <h4 class='mt-0'>
-                        <small>$row[email]</small>
-                      </h4>
+                    <!-- /.card-body -->
+                    <div class='card-footer'>
+                        <button type='submit' id='update' name='update' class='btn btn-success'>Editar</button>
+                        <button class='btn btn-secondary'><a href='detallesProducto.php?product_id=$row[product_id]' style='color:inherit'>Descartar Cambios</a></button>
                     </div>
-                    <div class='bg-gray py-2 px-3 mt-4'>
-                      <h2 class='mb-0'>
-                        Teléfono
-                      </h2>
-                      <h4 class='mt-0'>
-                        <small>$row[phone]</small>
-                      </h4>
+                  </form>
+                </div>
+              </div>
+              <div class='col-md-6'>
+                <div class='card card-secondary'>
+                  <form action='#' method='post'>
+                    <div class='card-header'>
+                      <h5 class='card-title'>Ordenes</h5>
                     </div>
-                    <div class='bg-gray py-2 px-3 mt-4'>
-                      <h2 class='mb-0'>
-                        Unidades Vendidas
-                      </h2>
-                      <h4 class='mt-0'>
-                        <small>$row[student]</small>
-                      </h4>
-                    </div>
+              ";
+
+                //Query Search Order
+                $query_orders = "SELECT *
+                            FROM Contain
+                            WHERE order_id = {$_GET['order_id']}";
+
+                if($r_orders = mysqli_query($dbc, $query_orders))//Save & Validate Query Results
+                {
+                  while($row_orders=mysqli_fetch_array($r_orders))//Present Users
+                  {
+                    $query_orders2 = "SELECT *
+                                        FROM Product
+                                        WHERE product_id = $row_orders[product_id]";
+                    if($r_orders2 = mysqli_query($dbc, $query_orders2))
+                    {
+                      $row_orders2=mysqli_fetch_array($r_orders2);
+                      print "
+                        <table class='table table-striped table-valign-middle'>
+                          <thead>
+                              <tr>
+                                  <th>ID</th>
+                                  <th>Nombre</th>
+                                  <th>Precio</th>
+                                  <th>Costo</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                                <td class='text-left'>$row_orders[product_id]</td>
+                                <td class='text-left'><a href='productos-detalles.php?product_id={$row_orders['product_id']}'>$row_orders2[name] $row_orders2[description]</a></td>
+                                <td class='text-left'>$row_orders2[price]</td>
+                                <td class='text-left'>$row_orders2[cost]</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>";
+                    }
+                  }
+                }
+                else
+                    print'<p style="color:red">NO SE PUEDE MOSTRAR RECORD PORQUE:'.mysqli_error($dbc).'.</P>';
+                //mysqli_close($dbc);
+                print
+                "
+                    </form>
                   </div>
-                  <div class='col-12 col-sm-6'>
-                    <h3 class='d-inline-block d-sm-none'>LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
-                    <div class='col-12 col-sm-6'>
-                      <img src='../../FrontEnd/LoboPrinting/images/lobo_products/nombreImagen' alt='Product Image'>
-                    </div>
-                  </div>
-                  
-                ";
-                mysqli_close($dbc);
-              ?> 
-          </div>
+                </div>
+              ";
+            mysqli_close($dbc);
+          ?> 
         </div>
-        <!-- /.card-body -->
       </div>
       <!-- /.card -->
     </section>

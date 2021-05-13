@@ -86,7 +86,7 @@
 
         <div class="card bg-light border-dark">
               <div class="card-header">
-                <h3 class="card-title" style="font-weight: bold;">Administradores de Lobo Printing</h3>
+                <h3 class="card-title" style="font-weight: bold;">Haga 'click' sobre el nombre de un administrador para ver o editar</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">

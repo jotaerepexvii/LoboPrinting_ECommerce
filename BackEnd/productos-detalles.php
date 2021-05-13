@@ -108,7 +108,7 @@
                           </div>
                           <!-- /.card-body -->
                           <div class='card-footer'>
-                            <button class='btn btn-primary btn-block'><a href='editarProducto.php?product_id={$row["product_id"]}' style='color:inherit'>Editar</a></button>
+                            <button class='btn btn-primary btn-block'><a href='productos-editar.php?product_id={$row["product_id"]}' style='color:inherit'>Editar</a></button>
                           </div>
                         </form>
                       </div>
