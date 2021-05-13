@@ -253,7 +253,193 @@
                                                     }
                                                 else
                                                     print'<p style="color:red">NO SE PUEDE MOSTRAR RECORD PORQUE:'.mysqli_error($dbc).'.</P>';
-                                                mysqli_close($dbc);
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header border-0">
+                                    <h3 class="card-title">Reporte Diario</h3>
+                                    <div class="card-tools">
+                                        <a href="orders.php" class="btn btn-tool btn-sm">
+                                            <i class="fas fa-search"></i>Todas
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-body table-responsive p-0">
+                                    <table class="table table-striped table-valign-middle">
+                                        <thead>
+                                            <tr>
+                                                <th class='text-center'>Day/Month</th>
+                                                <th class='text-center'>Orders</th>
+                                                <th class='text-center'>Products</th>
+                                                <th class='text-center'>Sales</th>
+                                                <th class='text-center'>Costs</th>
+                                                <th class='text-center'>Earnings</th>
+                                                <th class='text-center'>Gross Profit</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                                $current_day = date('d');//Current Day Number
+                                                $current_month = date('n');//Current Month Number
+                                                //Query Create Week Report
+                                                $query_day =  "SELECT COUNT(DISTINCT O.order_id) orders,
+                                                                        COUNT(product_id*product_quantity) products,
+                                                                        SUM(price) sales,
+                                                                        SUM(cost) costs,
+                                                                        SUM(price-cost) earnings,
+                                                                        (SUM(price-cost)/SUM(price))*100 profit
+                                                                    FROM Orders O INNER JOIN Contain C ON O.order_id = C.order_id
+                                                                    WHERE DAY(order_date) = $current_day AND MONTH(order_date) = $current_month";
+
+                                                if($r_day = mysqli_query($dbc, $query_day))//Save & Validate Query Results
+                                                {
+                                                    $row_day=mysqli_fetch_array($r_day);//Present Users
+                                                    print "
+                                                        <tr>
+                                                            <td class='text-center'>$current_day/$current_month</td>
+                                                            <td class='text-center'>$row_day[orders]</td>
+                                                            <td class='text-center'>$row_day[products]</td>
+                                                            <td class='text-center'>$$row_day[sales]</td>
+                                                            <td class='text-center'>$$row_day[costs]</td>
+                                                            <td class='text-center'>$$row_day[earnings]</td>
+                                                            <td class='text-center'>$row_day[profit]%</td>
+                                                        </tr>
+                                                    ";
+                                                }
+                                                else
+                                                    print'<p style="color:red">NO SE PUEDE MOSTRAR RECORD PORQUE:'.mysqli_error($dbc).'.</P>';
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header border-0">
+                                    <h3 class="card-title">Reporte Semmanal</h3>
+                                    <div class="card-tools">
+                                        <a href="orders.php" class="btn btn-tool btn-sm">
+                                            <i class="fas fa-search"></i>Todas
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-body table-responsive p-0">
+                                    <table class="table table-striped table-valign-middle">
+                                        <thead>
+                                            <tr>
+                                                <th class='text-center'>Week #</th>
+                                                <th class='text-center'>Orders</th>
+                                                <th class='text-center'>Products</th>
+                                                <th class='text-center'>Sales</th>
+                                                <th class='text-center'>Costs</th>
+                                                <th class='text-center'>Earnings</th>
+                                                <th class='text-center'>Gross Profit</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                                $current_week = date('W');//Current Week Number
+                                                //Query Create Week Report
+                                                $query_day =  "SELECT COUNT(DISTINCT O.order_id) orders,
+                                                                        COUNT(product_id*product_quantity) products,
+                                                                        SUM(price) sales,
+                                                                        SUM(cost) costs,
+                                                                        SUM(price-cost) earnings,
+                                                                        (SUM(price-cost)/SUM(price))*100 profit
+                                                                    FROM Orders O INNER JOIN Contain C ON O.order_id = C.order_id
+                                                                    WHERE WEEK(order_date,1)=$current_week";
+
+                                                if($r_day = mysqli_query($dbc, $query_day))//Save & Validate Query Results
+                                                {
+                                                    $row_day=mysqli_fetch_array($r_day);//Present Users
+                                                    print "
+                                                        <tr>
+                                                            <td class='text-center'>$current_week</td>
+                                                            <td class='text-center'>$row_day[orders]</td>
+                                                            <td class='text-center'>$row_day[products]</td>
+                                                            <td class='text-center'>$$row_day[sales]</td>
+                                                            <td class='text-center'>$$row_day[costs]</td>
+                                                            <td class='text-center'>$$row_day[earnings]</td>
+                                                            <td class='text-center'>$row_day[profit]%</td>
+                                                        </tr>
+                                                    ";
+                                                }
+                                                else
+                                                    print'<p style="color:red">NO SE PUEDE MOSTRAR RECORD PORQUE:'.mysqli_error($dbc).'.</P>';
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header border-0">
+                                    <h3 class="card-title">Reporte Mensual</h3>
+                                    <div class="card-tools">
+                                        <a href="orders.php" class="btn btn-tool btn-sm">
+                                            <i class="fas fa-search"></i>Todas
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-body table-responsive p-0">
+                                    <table class="table table-striped table-valign-middle">
+                                        <thead>
+                                            <tr>
+                                                <th class='text-center'>Month #</th>
+                                                <th class='text-center'>Orders</th>
+                                                <th class='text-center'>Products</th>
+                                                <th class='text-center'>Sales</th>
+                                                <th class='text-center'>Costs</th>
+                                                <th class='text-center'>Earnings</th>
+                                                <th class='text-center'>Gross Profit</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                                $current_month = date('n');//Current Month Number
+                                                //Query Create Week Report
+                                                $query_day =  "SELECT COUNT(DISTINCT O.order_id) orders,
+                                                                        COUNT(product_id*product_quantity) products,
+                                                                        SUM(price) sales,
+                                                                        SUM(cost) costs,
+                                                                        SUM(price-cost) earnings,
+                                                                        (SUM(price-cost)/SUM(price))*100 profit
+                                                                    FROM Orders O INNER JOIN Contain C ON O.order_id = C.order_id
+                                                                     WHERE MONTH(order_date) = $current_month";
+
+                                                if($r_day = mysqli_query($dbc, $query_day))//Save & Validate Query Results
+                                                {
+                                                    $row_day=mysqli_fetch_array($r_day);//Present Users
+                                                    print "
+                                                        <tr>
+                                                            <td class='text-center'>$current_month</td>
+                                                            <td class='text-center'>$row_day[orders]</td>
+                                                            <td class='text-center'>$row_day[products]</td>
+                                                            <td class='text-center'>$$row_day[sales]</td>
+                                                            <td class='text-center'>$$row_day[costs]</td>
+                                                            <td class='text-center'>$$row_day[earnings]</td>
+                                                            <td class='text-center'>$row_day[profit]%</td>
+                                                        </tr>
+                                                    ";
+                                                }
+                                                else
+                                                    print'<p style="color:red">NO SE PUEDE MOSTRAR RECORD PORQUE:'.mysqli_error($dbc).'.</P>';
                                             ?>
                                         </tbody>
                                     </table>
