@@ -64,22 +64,22 @@
                 <!-- general form elements -->
                     <div class="card card-secondary">
                         <div class="card-header">
-                            <h5 class="card-title">Editar Producto</h5>
+                            <h5 class="card-title">Nuevo Producto</h5>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
                         <form  action="#" method="post">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">ID</label>
+                                    <label for="exampleInputEmail1">ID (Barcode)</label>
                                     <input type="text" class="form-control" id="product_id" name="product_id" value="<?php echo $row['product_id'] ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Nombre</label>
+                                    <label for="exampleInputPassword1">Categoría</label>
                                     <input type="text" class="form-control" id="name" name="name" value="<?php echo $row['name'] ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Description</label>
+                                    <label for="exampleInputEmail1">Nombre</label>
                                     <input type="text" class="form-control" id="descripion" name="description" value="<?php echo $row['description'] ?>">
                                 </div>
                                 <div class="form-group">
@@ -95,8 +95,13 @@
                                     <input type="text" class="form-control" id="in_stock" name="in_stock" value="<?php echo $row['in_stock'] ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Imagen</label>
-                                    <input type="text" class="form-control" id="in_stock" name="in_stock" value="<?php echo $row['in_stock'] ?>">
+                                  <label for="exampleInputFile">Imágen</label>
+                                  <div class="input-group">
+                                    <div class="custom-file">
+                                      <input type="file" class="custom-file-input" id="exampleInputFile">
+                                      <label class="custom-file-label" for="exampleInputFile">Escojer Imágen...</label>
+                                    </div>
+                                  </div>
                                 </div>
                             </div>
                             <!-- /.card-body -->
