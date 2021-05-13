@@ -74,30 +74,31 @@
                     </div>
                   </div>
                   <div class='col-12 col-sm-6'>
-                    <div class='bg-gray py-2 px-3 mt-4'>
-                      <h2 class='mb-0'>
-                        Nombre
-                      </h2>
-                      <h4 class='mt-0'>
-                        <small>$row[name] $row[lastname]</small>
-                      </h4>
-                    </div>
-                    <div class='bg-gray py-2 px-3 mt-4'>
-                      <h2 class='mb-0'>
-                        ID
-                      </h2>
-                      <h4 class='mt-0'>
-                        <small>$row[admin_id]</small>
-                      </h4>
-                    </div>
-                    <div class='bg-gray py-2 px-3 mt-4'>
-                      <h2 class='mb-0'>
-                        Email
-                      </h2>
-                      <h4 class='mt-0'>
-                        <small>$row[email]</small>
-                      </h4>
-                    </div>
+                  <form action='#' method='post'>
+                      <div class='card-body'>
+                          <div class='form-group'>
+                              <label for='exampleInputPassword1'>Nombre</label>
+                              <input type='text' class='form-control' id='name' name='name' value='$row[name]'>
+                          </div>
+                          <div class='form-group'>
+                              <label for='exampleInputPassword1'>Apellidos</label>
+                              <input type='text' class='form-control' id='name' name='name' value='$row[lastname]'>
+                          </div>
+                          <div class='form-group'>
+                              <label for='exampleInputEmail1'>ID</label>
+                              <input type='text' class='form-control' id='product_id' name='product_id' value='$row[admi_id]'>
+                          </div>
+                          <div class='form-group'>
+                              <label for='exampleInputEmail1'>Email</label>
+                              <input type='text' class='form-control' id='descripion' name='description' value='$row[description]'>
+                          </div>
+                      </div>
+                      <!-- /.card-body -->
+                      <div class='card-footer'>
+                          <button type='submit' id='update' name='update' class='btn btn-success'>Actualizar</button>
+                          <button class='btn btn-secondary'><a href='detallesProducto.php?product_id=$row[product_id]' style='color:inherit'>Descartar Cambios</a></button>
+                      </div>
+                  </form>
                 ";
                 mysqli_close($dbc);
               ?> 

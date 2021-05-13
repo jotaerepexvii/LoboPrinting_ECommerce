@@ -110,7 +110,7 @@
                           print "
                           <tr>
                             <td>$row[admin_id]</td>
-                            <td><a href='detallesAdministradores.php?admin_id={$row['admin_id']}'>$row[name]</a></td>
+                            <td><a href='administradores-detalles.php?admin_id={$row['admin_id']}'>$row[name]</a></td>
                             <td>$row[lastname]</td>
                             <td>$row[email]</td>
                             <td>$row[student]</td>

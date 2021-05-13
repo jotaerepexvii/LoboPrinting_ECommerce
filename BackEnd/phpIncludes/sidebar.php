@@ -93,6 +93,32 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-file-alt"></i>
+                            <p>Reportes<i class="right fas fa-angle-left"></i></p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                <i class="far fa nav-icon"></i>
+                                <p>Reporte Diario</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                <i class="far fa nav-icon"></i>
+                                <p>Reporte Diario</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                <i class="far fa nav-icon"></i>
+                                <p>Reporte Semanal</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="nav-item menu-open">
                         <li class="nav-header">Cuenta del Administrador</li>
                             <li class="nav-item">
@@ -104,7 +130,7 @@
                             <li class="nav-item">
                             <?php
                                 print"
-                                    <a href='detallesAdministradores.php?admin_id={$row['admin_id']}' class='nav-link'>
+                                    <a href='administradores-detalles.php?admin_id={$row['admin_id']}' class='nav-link'>
                                 "
                             ?>
                                 <i class="nav-icon fas fa-cog"></i>
