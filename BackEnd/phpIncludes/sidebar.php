@@ -32,12 +32,6 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="./productos.php" class="nav-link">
-                                <i class="far fa nav-icon"></i>
-                                <p>Productos Vendidos</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
                                 <a href="./productos-nuevo.php" class="nav-link">
                                 <i class="fas fa nav-icon"></i>
                                 <p>Añadir Producto</p>

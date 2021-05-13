@@ -64,7 +64,7 @@
             $in_stock = filter_input(INPUT_POST, 'in_stock');
             $sold = 0;
             $dateAdded = date("Y-m-d");
-            $image = "1.png";
+            $image = "1";
 
             if (empty($_POST['product_id']) || empty($_POST['name']) || empty($_POST['description']) || empty($_POST['price']) || empty($_POST['cost']) || empty($_POST['in_stock']))
             {
@@ -107,7 +107,7 @@
                         <!-- /.card-header -->
                         <!-- form start
                           action="phpIncludes/upload.php" -->
-                        <form method="post">
+                        <form action="phpIncludes/upload.php" method="post" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">ID (Barcode)</label>
@@ -145,7 +145,7 @@
                                   <label for="exampleInputFile">Imágen</label>
                                   <div class="input-group">
                                     <div class="custom-file">
-                                      <input type="file" name="exampleInputFile" id="exampleInputFile" class="custom-file-input">
+                                      <input type="file" name="exampleInputFile" id="exampleInputFile" class="custom-file-input" accept="image/*">
                                       <label type="submit" name="submit" value="Upload Image" class="custom-file-label" title="Solo imágenes JPG, JPEG, PNG o SVG son permitidas" for="exampleInputFile"></label>
                                     </div>
                                   </div>
