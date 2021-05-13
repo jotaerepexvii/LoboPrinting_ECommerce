@@ -141,10 +141,11 @@
                                     </div>
                                     <!-- /.card-body -->
                                     <div class="card-footer">
-                                        <button type="submit" id="update" name="update" class="btn btn-primary">Actualizar</button>
+                                        <button type="submit" id="update" name="update" class="btn btn-warning">Actualizar</button>
                                         <?php
                                                 print"<input type ='hidden' name='order_id' value='".$_GET['order_id']."'>"
                                         ?>
+                                        <button type="submit" class="btn btn-secondary"><a href='ordenes.php' style='color:inherit'>Volver</a></button>
                                     </div>
                                 </form>
                             </div>

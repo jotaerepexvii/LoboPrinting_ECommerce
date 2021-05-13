@@ -54,6 +54,38 @@
                         </ul>
                     </li>
                     <li class="nav-item">
+                        <a href="ordenes.php" class="nav-link">
+                            <i class="nav-icon fas fa-receipt"></i>
+                            <p>Órdenes</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-file-alt"></i>
+                            <p>Reportes<i class="right fas fa-angle-left"></i></p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                <i class="far fa nav-icon"></i>
+                                <p>Reporte Diario</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                <i class="far fa nav-icon"></i>
+                                <p>Reporte Semanal</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                <i class="far fa nav-icon"></i>
+                                <p>Reporte Anual</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
                         <a href="./administradores.php" class="nav-link">
                             <i class="nav-icon fas fa-user"></i>
                             <p>Administradores<i class="right fas fa-angle-left"></i></p>
@@ -89,32 +121,6 @@
                                 <a href="./usuarios.php" class="nav-link">
                                 <i class="far fa nav-icon"></i>
                                 <p>Ver Todos</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-file-alt"></i>
-                            <p>Reportes<i class="right fas fa-angle-left"></i></p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                <i class="far fa nav-icon"></i>
-                                <p>Reporte Diario</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                <i class="far fa nav-icon"></i>
-                                <p>Reporte Semanal</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                <i class="far fa nav-icon"></i>
-                                <p>Reporte Anual</p>
                                 </a>
                             </li>
                         </ul>

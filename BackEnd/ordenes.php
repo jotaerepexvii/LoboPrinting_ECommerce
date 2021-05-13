@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- IonIcons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
@@ -37,12 +41,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Inicio</h1>
+                            <h1 class="m-0">Todas las Ordenes</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Tablero Administrativo</a></li>
-                                <li class="breadcrumb-item active">Inicio</li>
+                                <li class="breadcrumb-item active">Todas las Ordenes</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -53,22 +57,12 @@
             <div class="content">
                 <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
-                    <div class="row">
-                        <div class="col">
                             <div class="card">
-                                <div class="card-header border-0">
-                                    <h3 class="card-title">Todas las Ordenes</h3>
-                                    <div class="card-tools">
-                                        <a href="#" class="btn btn-tool btn-sm">
-                                            <i class="fas fa-download"></i>
-                                        </a>
-                                        <a href="#" class="btn btn-tool btn-sm">
-                                            <i class="fas fa-bars"></i>
-                                        </a>
-                                    </div>
+                                <div class="card-header">
+                                    <h3 class="card-title" style="font-weight: bold;">Haga 'click' sobre el ID de una orden para ver o editar sus detalles</h3>
                                 </div>
-                                <div class="card-body table-responsive p-0">
-                                    <table class="table table-striped table-valign-middle">
+                                <div class="card-body">
+                                    <table id="example1" class="table table-striped ">
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
@@ -76,15 +70,14 @@
                                                 <th>Venta</th>
                                                 <th>Fecha</th>
                                                 <th>Status</th>
-                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
                                                 //Query Search Order
                                                     $query_orders = "SELECT order_id
-                                                                        FROM Orders
-                                                                        ORDER BY YEAR(order_date), MONTH(order_date), DAY(order_date) DESC";
+                                                                    FROM Orders
+                                                                    ORDER BY YEAR(order_date), MONTH(order_date), DAY(order_date) DESC";
 
                                                     if($r_orders = mysqli_query($dbc, $query_orders))//Save & Validate Query Results
                                                     {
@@ -98,16 +91,18 @@
                                                                 $row_orders2=mysqli_fetch_array($r_orders2);
                                                                 print "
                                                                     <tr>
-                                                                        <td class='text-center'>$row_orders[order_id]</td>
+                                                                        <td class='text-center'><a href='ordenes-detalles.php?order_id={$row_orders['order_id']}'>$row_orders[order_id]</a></td>
                                                                         <td class='text-center'>$row_orders2[track_number]</td>
                                                                         <td class='text-center'>$row_orders2[total]</td>
                                                                         <td class='text-center'>$row_orders2[order_date]</td>
                                                                         <td class='text-center'>$row_orders2[status_name]</td>
+                                                                        <!--
                                                                         <td>
                                                                             <a href='ordenes-detalles.php?order_id={$row_orders['order_id']}' class='text-muted'>
                                                                                 <i class='fas fa-search'>Detalles</i>
                                                                             </a>
                                                                         </td>
+                                                                        -->
                                                                     </tr>";
                                                             }
                                                         }
@@ -120,8 +115,6 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>
-                    </div>
                     <!-- /.row -->
                 </div>
                 <!-- /.container-fluid -->
@@ -148,6 +141,20 @@
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="plugins/jszip/jszip.min.js"></script>
+<script src="plugins/pdfmake/pdfmake.min.js"></script>
+<script src="plugins/pdfmake/vfs_fonts.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.download.min.js"></script>
 <!-- AdminLTE -->
 <script src="dist/js/adminlte.js"></script>
 
@@ -157,5 +164,22 @@
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard3.js"></script>
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["down", "csv", "pdf", "print"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
 </body>
 </html>
