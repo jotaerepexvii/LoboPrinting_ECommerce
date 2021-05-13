@@ -206,7 +206,7 @@
                                 <div class="card-header border-0">
                                     <h3 class="card-title">Ordenes Recientes</h3>
                                     <div class="card-tools">
-                                        <a href="orders.php" class="btn btn-tool btn-sm">
+                                        <a href="ordenes.php" class="btn btn-tool btn-sm">
                                             <i class="fas fa-search"></i>Todas
                                         </a>
                                     </div>
@@ -267,7 +267,7 @@
                                 <div class="card-header border-0">
                                     <h3 class="card-title">Reporte Diario</h3>
                                     <div class="card-tools">
-                                        <a href="orders.php" class="btn btn-tool btn-sm">
+                                        <a href="ordenes.php" class="btn btn-tool btn-sm">
                                             <i class="fas fa-search"></i>Todas
                                         </a>
                                     </div>
@@ -330,7 +330,7 @@
                                 <div class="card-header border-0">
                                     <h3 class="card-title">Reporte Semmanal</h3>
                                     <div class="card-tools">
-                                        <a href="orders.php" class="btn btn-tool btn-sm">
+                                        <a href="ordenes.php" class="btn btn-tool btn-sm">
                                             <i class="fas fa-search"></i>Todas
                                         </a>
                                     </div>
@@ -392,7 +392,7 @@
                                 <div class="card-header border-0">
                                     <h3 class="card-title">Reporte Mensual</h3>
                                     <div class="card-tools">
-                                        <a href="orders.php" class="btn btn-tool btn-sm">
+                                        <a href="ordenes.php" class="btn btn-tool btn-sm">
                                             <i class="fas fa-search"></i>Todas
                                         </a>
                                     </div>

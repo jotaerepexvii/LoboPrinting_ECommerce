@@ -85,7 +85,7 @@
 
                         if(mysqli_query($dbc, $query2))
                         {
-                            header('Location: orders.php');
+                            header('Location: ordenes.php');
                             mysqli_close($dbc);
                         }
                         else	  

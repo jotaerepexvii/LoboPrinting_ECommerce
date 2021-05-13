@@ -104,7 +104,7 @@
                                                                         <td class='text-center'>$row_orders2[order_date]</td>
                                                                         <td class='text-center'>$row_orders2[status_name]</td>
                                                                         <td>
-                                                                            <a href='order_detail.php?order_id={$row_orders['order_id']}' class='text-muted'>
+                                                                            <a href='ordenes-detalles.php?order_id={$row_orders['order_id']}' class='text-muted'>
                                                                                 <i class='fas fa-search'>Detalles</i>
                                                                             </a>
                                                                         </td>
