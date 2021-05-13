@@ -106,8 +106,9 @@
                             <h5 class="card-title"><?php echo $errors?></h5>
                         </div>
                         <!-- /.card-header -->
-                        <!-- form start -->
-                        <form action="#" method="post">
+                        <!-- form start
+                          action="phpIncludes/upload.php" -->
+                        <form method="post">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">ID (Barcode)</label>
@@ -141,11 +142,11 @@
                                     <label for="exampleInputEmail1">Cantidad Disponible</label>
                                     <input type="text" class="form-control" id="in_stock" name="in_stock" value="<?php echo $row['in_stock'] ?>">
                                 </div>
-                                <div class="form-group" action="phpIncludes/upload.php">
+                                <div class="form-group" action="#">
                                   <label for="exampleInputFile">Imágen</label>
                                   <div class="input-group">
                                     <div class="custom-file">
-                                      <input type="file" name="imageUpload" id="imageUpload" class="custom-file-input">
+                                      <input type="file" name="fileToUpload" id="fileToUpload" class="custom-file-input">
                                       <label type="submit" name="submit" value="Upload Image" class="custom-file-label" title="Solo imágenes JPG, JPEG, PNG o SVG son permitidas" for="exampleInputFile"></label>
                                     </div>
                                   </div>
