@@ -25,10 +25,9 @@
 </head>
     
 <body class="hold-transition sidebar-mini">
+
     <div class="wrapper">
-        <?php
-            //include './includes/navbar.php';
-        ?>
+
 
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -97,25 +96,18 @@
 
                     if(count($errors) == 0)
                     {
-                        $query2 = "UPDATE Product SET product_id='$product_id', name='$name', description='$description', price='$price', cost='$cost', in_stock='$in_stock'
-                        WHERE product_id={$_GET['product_id']}";
+                        $query2 = mysqli_query($dbc, "UPDATE Product SET product_id='$product_id', name='$name', description='$description', price='$price', cost='$cost', in_stock='$in_stock'
+                        WHERE product_id={$_GET['product_id']}");
 
-                        if(mysqli_query($dbc, $query2))
-                        {
-                            header("Location: productos-detalles.php?product_id=$product_id");
-                            mysqli_close($dbc);
-                        }
-                        else	
-                        {
-                            echo "Error: " . $query2 . "<br>" . mysqli_error($dbc);
-                        }  
+                        header("Location: productos-detalles.php?product_id=".$product_id);
+                        //mysqli_close($dbc); 
                     }
                     else	  
                         echo '<script>alert("ERROR:Variables")</script>';
                 }
                 else if(isset($_POST['discard']))
                 {
-                    header("Location: productos-detalles.php?product_id=$product_id");
+                    header("Location: productos-detalles.php?product_id=".$product_id);
                 }
                 else if(isset($_POST['delete']))
                 {
@@ -139,7 +131,7 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form  action="#" method="post">
+                                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> <!--//ERROR-->
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">ID</label>
@@ -169,7 +161,7 @@
                                     <!-- /.card-body -->
                                     <div class="card-footer">
                                         <button type="submit" id="update" name="update" class="btn btn-success">Actualizar</button>
-                                        <button class='btn btn-secondary'><a href='productos-detalles.php?product_id=<?php echo $row['product_id']?>' style='color:inherit'>Descartar Cambios</a></button>
+                                        <button type="submit" id="discard" name="discard" class='btn btn-secondary'>Descartar Cambios</button>
                                         <button type="submit" id="delete" name="delete" class="btn btn-danger">Eliminar Producto</button>
                                     </div>
                                 </form>

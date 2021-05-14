@@ -79,7 +79,7 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form  action='#' method='post'>
+                        <form action='productos-editar.php?product_id={$row['product_id']}' method='post'>
                           <div class='card-body'>
                             <div class='form-group'>
                                 <label for='exampleInputEmail1'>ID</label>
@@ -108,12 +108,12 @@
                           </div>
                           <!-- /.card-body -->
                           <div class='card-footer'>
-                            <button class='btn btn-primary btn-block'><a href='productos-editar.php?product_id={$row["product_id"]}' style='color:inherit'>Editar</a></button>
+                            <button class='btn btn-primary btn-block'>Editar</button>
                           </div>
                         </form>
                       </div>
                   ";
-                  mysqli_close($dbc);
+                  //mysqli_close($dbc);
                 ?> 
                 
               </div>

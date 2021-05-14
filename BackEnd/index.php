@@ -63,7 +63,7 @@
                                             $result = mysqli_query($dbc, 'SELECT SUM(sold) AS totalSold FROM Product'); 
                                             $row = mysqli_fetch_assoc($result); 
                                             $sum = $row['totalSold'];
-                                            echo $sum
+                                            echo $sum;
                                         ?>
                                     </h3>
                                     <p>Artículos Vendidos</p>
@@ -83,7 +83,7 @@
                                             $result = mysqli_query($dbc, 'SELECT SUM(in_stock) AS totalStock FROM Product'); 
                                             $row = mysqli_fetch_assoc($result); 
                                             $sum = $row['totalStock'];
-                                            echo $sum
+                                            echo $sum;
                                         ?>
                                     </h3>
                                     <p>Artículos En Inventario</p>
@@ -170,7 +170,7 @@
                                                             ORDER BY sold DESC limit 8";                               
                                                 if($r = mysqli_query($dbc, $query))//Save & Validate Query Result
                                                 {
-                                                    while($row=mysqli_fetch_array($r))//Present Products
+                                                    while($row = mysqli_fetch_array($r))//Present Products
                                                     {
                                                         print "
                                                             <tr>

@@ -52,46 +52,7 @@
     </section>
     <!-- Main content -->
     <?php           
-        if(isset($_POST['submit']))
-        {
-            $errors = array();
-
-            $product_id = (int)$_POST['product_id'];
-            $name = filter_input(INPUT_POST, 'name');
-            $description = filter_input(INPUT_POST, 'description');
-            $price = filter_input(INPUT_POST, 'price');
-            $cost = filter_input(INPUT_POST, 'cost');
-            $in_stock = filter_input(INPUT_POST, 'in_stock');
-            $sold = 0;
-            $dateAdded = date("Y-m-d");
-            $image = "1";
-
-            if (empty($_POST['product_id']) || empty($_POST['name']) || empty($_POST['description']) || empty($_POST['price']) || empty($_POST['cost']) || empty($_POST['in_stock']))
-            {
-              array_push($errors, 'Todo Los Campos Son Requeridos');
-            }
-            else if(count($errors) == 0)
-            {
-                $query_insert = mysqli_query($dbc, "INSERT INTO Product(product_id, name, description, price, cost, in_stock, sold, date, image)
-                VALUES('$product_id','$name','$description','$price','$cost', '$in_stock', '$sold', '$dateAdded', $image)");
-
-                if($query_insert)
-                {
-                    header("Location: productos-detalles.php?product_id=$product_id");
-                    mysqli_close($dbc);
-                }
-                else	
-                {
-                    echo "Error: " . $query_insert . "<br>" . mysqli_error($dbc);
-                }  
-            }
-            else	  
-                echo '<script>alert("ERROR:Variables")</script>';
-        }
-        else if(isset($_POST['discard']))
-        {
-            header("Location: productos.php");
-        }
+        include './phpIncludes/adicion-producto.php';
     ?>
     <section class="content">
         <div class="container-fluid">
@@ -106,8 +67,8 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start
-                          action="phpIncludes/upload.php" -->
-                        <form method="post" action="phpIncludes/upload.php" enctype="multipart/form-data">
+                          action="phpIncludes/adicion-producto.php" -->
+                        <form method="post" action="phpIncludes/adicion-producto.php" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">ID (Barcode)</label>
@@ -131,11 +92,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Precio</label>
-                                    <input type="text" class="form-control" id="price" name="price" value="<?php echo $row['price'] ?>">
+                                    <input type="text" class="form-control" id="price" name="price" value="<?php echo $row['price'] ?>" title="Precio al que será vendido el producto">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Costo</label>
-                                    <input type="text" class="form-control" id="cost" name="cost" value="<?php echo $row['cost'] ?>">
+                                    <input type="text" class="form-control" id="cost" name="cost" value="<?php echo $row['cost'] ?>" title="Costo al que fue adquirido el producto">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Cantidad Disponible</label>
@@ -145,8 +106,7 @@
                                   <label for="exampleInputFile">Imágen</label>
                                   <div class="input-group">
                                     <div class="custom-file">
-                                      <input type="file" name="file" class="">
-                                      <!--<button type="submit" name="submit" class="">Subir</button>-->
+                                      <input type="file" name="file" class="form-control">
                                     </div>
                                   </div>
                                 </div>
@@ -154,7 +114,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" id="submit" name="submit" class="btn btn-warning">Añadir</button>
-                                <button type="submit" class='btn btn-secondary'><a href='productos.php' style='color:inherit'>Descartar</a></button>
+                                <button type="submit" name="discard" class='btn btn-secondary'><a href='productos.php' style='color:inherit'>Descartar</a></button>
                             </div>
                         </form>
                     </div>

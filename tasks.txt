@@ -16,7 +16,14 @@ BACK END
 
     > hacer que la tabla de users tenga otra columna
 
+    > cuando uno suba un nuevo producto verificar que el id no se repita!!!!!
+        > permitir subir imagen solo cuando este todo el form del nuevo producto compretamente lleno y sin errores
 
-others>
 
+
+OTHERS
+
+    links
+        Upload file part 1: https://www.youtube.com/watch?v=JaRq73y5MJk&t=848s
+        Upload file part 2: https://www.youtube.com/watch?v=y4GxrIa7MiE minute 44:39 a 46:30
     
