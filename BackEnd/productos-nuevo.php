@@ -145,8 +145,8 @@
                                   <label for="exampleInputFile">Imágen</label>
                                   <div class="input-group">
                                     <div class="custom-file">
-                                      <input type="file" name="exampleInputFile" id="exampleInputFile" class="custom-file-input" accept="image/*">
-                                      <label type="submit" name="submit" value="Upload Image" class="custom-file-label" title="Solo imágenes JPG, JPEG, PNG o SVG son permitidas" for="exampleInputFile"></label>
+                                      <input type="file" name="file" class="" accept="image/*">
+                                      <button type="submit" name="submit" class="btn btn-secondary">Subir</button>
                                     </div>
                                   </div>
                                 </div>
