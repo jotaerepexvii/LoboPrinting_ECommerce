@@ -68,7 +68,7 @@
                             WHERE product_id = {$_GET['product_id']}";
                                     
                 $r = mysqli_query($dbc, $query);//Save & Validate Query Result
-                $row = mysqli_fetch_array($r);//Present Products
+                $row = mysqli_fetch_array($r); //Present Products
                                 
                 if(isset($_POST['update']))
                 {
