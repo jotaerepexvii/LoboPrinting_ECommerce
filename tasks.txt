@@ -7,11 +7,13 @@ FRONT END
         - pensar que hacer con el id del usuario cuando no es student
 
     > sobre-nosotros.php
+        - eliminar "sobre-nosotros.php' o cambiar el titulo de contactanos por sobre nosotros y añadir todo ahí
         - en seccion de 'Nuestra Tienda' añadir 'Esclusividad - los productos memorabilia se consiguen solo en blabla...'
 
     !> poder hacer login y que luego te redireccione a la pagina donde estabas
 
     !> servicios solo accesible para personas que han hecho login
+        - al menos poder subir archivos de servicio
 
     !> filtros de productos
 
