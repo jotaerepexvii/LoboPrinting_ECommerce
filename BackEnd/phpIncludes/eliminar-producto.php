@@ -6,7 +6,6 @@
     }
     ob_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +26,6 @@
     <div class="login-box">
         <div class="login-logo">
             <a href="../index.html"><b>Advertencia</b></a>
-            <img src="../../../FrontEnd/images/lobo_products/$product_id">
         </div>
         <?php
             $query = "SELECT * 
@@ -38,7 +36,8 @@
             $row = mysqli_fetch_array($r); //Present Products
 
             $product_id = $_GET['product_id'];
-            
+            $product_img = $row['image'];
+
             if(isset($_POST['discard']))
             {
                 header("Location: ../productos-detalles.php?product_id=$product_id");
@@ -46,7 +45,7 @@
             else if(isset($_POST['delete']))
             {
                 mysqli_query($dbc, "DELETE FROM Product WHERE product_id = '$product_id'");
-                unlink("../../FrontEnd/images/lobo_products/$product_id");
+                unlink("../../FrontEnd/images/lobo_products/$product_img");
                 echo("<script>location.href = '../productos.php';</script>");
             }
         ?>
@@ -64,11 +63,11 @@
             </div>
         </div>
     </div>
-<!-- jQuery -->
-<script src="../plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="../dist/js/adminlte.min.js"></script>
+    <!-- jQuery -->
+    <script src="../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../dist/js/adminlte.min.js"></script>
 </body>
 </html>

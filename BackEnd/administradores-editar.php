@@ -50,7 +50,66 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
+    <?php
+      $query = "SELECT * 
+                  FROM Admnistrator 
+                  WHERE admin_id = {$_GET['admin_id']}";
+                          
+      $r = mysqli_query($dbc, $query);//Save & Validate Query Result
+      $row = mysqli_fetch_array($r); //Present Products
 
+      $admin_id = $_GET['admin_id'];
+      
+      if(isset($_POST['update']))
+      {
+          $errors = array();
+          
+          $newadmin_id = (int)$_POST['admin_id'];
+          $name = filter_input(INPUT_POST, 'name');
+          $lastname = filter_input(INPUT_POST, 'lastname');
+          $email = filter_input(INPUT_POST, 'email');
+          $password = filter_input(INPUT_POST, 'password');
+
+          $name = preg_replace('/[^a-zA-Z0-9 ]/', '', $name);
+          $lastname = preg_replace('/[^a-zA-Z0-9 ]/', '', $lastname);
+
+          if  (empty($admin_id))
+              array_push($errors, 'admin_id is require!');
+          if  (empty($name))
+              array_push($errors, 'name is require!');
+          if  (empty($lastname))
+              array_push($errors, 'lastname is require!');
+          if  (empty($email))
+              array_push($errors, 'email is require!');
+          if  (empty($password))
+              array_push($errors, 'password is require!');
+          
+          if(count($errors) == 0)
+          {
+              $query2 = "UPDATE Administrator SET admin_id='$newadmin_id', name='$name', lastname='$lastname', email='$email', password='$password'
+              WHERE admin_id='$admin_id'";
+
+              if (mysqli_query($dbc, $query2)){
+                  mysqli_close($dbc);
+                  echo("<script>location.href = 'administradores-detalles.php?admin_id=$newadmin_id';</script>");
+                  //header("Location: administradores-detalles.php?admin_id=$admin_id");
+              }
+              else{
+                  echo "ERROR";
+              }
+          }
+          else	  
+              echo '<script>alert("ERROR:Variables")</script>';
+      }
+      else if(isset($_POST['discard']))
+      {
+          header("Location: administradores-detalles.php?admin_id=$admin_id");
+      }
+      else if(isset($_POST['delete']))
+      {
+          echo("<script>location.href = 'phpIncludes/eliminar-administrador.php?admin_id=$admin_id';</script>");
+      }
+    ?>
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
@@ -64,31 +123,32 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form  action="#" method="post">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">ID</label>
-                                    <input type="text" class="form-control" id="admin_id" name="admin_id" value="<?php echo $row['admin_id'] ?>">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Nombre</label>
-                                    <input title="Inserte su nombre" type="text" class="form-control" id="name" name="name" value="<?php echo $row['name'] ?>">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Apellido</label>
-                                    <input title="Inserte sus apellidos" type="text" class="form-control" id="lastname" name="lastname" value="<?php echo $row['lastname'] ?>">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Correo Electrónico</label>
-                                    <input title="Inserte su correo electrónico" type="text" class="form-control" id="email" name="email" value="<?php echo $row['email'] ?>">
-                                </div>
-                            </div>
-                            <!-- /.card-body -->
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-warning" id="update" name="update">Guardar</button>
-                                <button type="submit" class='btn btn-secondary'><a href='administradores-detalles.php?admin_id=<?php echo $row['admin_id']?>' style='color:inherit'>Descartar</a></button>
-                            </div>
-                        </form>
+                        <form action="#" method="post" enctype="multipart/form-data"> 
+                          <div class="card-body">
+                              <div class="form-group">
+                                  <label for="exampleInputEmail1">Nombre</label>
+                                  <input type="text" class="form-control" id="name" name="name" value="<?php echo $row['name'] ?>" required>
+                              </div>
+                              <div class="form-group">
+                                  <label for="exampleInputPassword1">Apellidos</label>
+                                  <input type="text" class="form-control" id="lastname" name="lastname" value="<?php echo $row['lastname'] ?>" required>
+                              </div>
+                              <div class="form-group">
+                                  <label for="exampleInputEmail1">ID</label>
+                                  <input type="number" class="form-control" id="admin_id" name="admin_id" value="<?php echo $row['admin_id'] ?>" min="0" step="1" required>
+                              </div>
+                              <div class="form-group">
+                                  <label for="exampleInputEmail1">E-mail</label>
+                                  <input type="email" class="form-control" id="email" name="email" value="<?php echo $row['email'] ?>" required>
+                              </div>
+                          </div>
+                          <!-- /.card-body -->
+                          <div class="card-footer">
+                              <button type="submit" id="update" name="update" class="btn btn-success">Actualizar</button>
+                              <button type="submit" id="discard" name="discard" class="btn btn-secondary">Descartar Cambios</button>
+                              <button type="submit" id="delete" name="delete" class="btn btn-danger">Eliminar Administrador</button>
+                          </div>
+                      </form>
                     </div>
                 </div>
             </div>

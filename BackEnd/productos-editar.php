@@ -26,10 +26,7 @@
 </head>
     
 <body class="hold-transition sidebar-mini">
-
     <div class="wrapper">
-
-
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
@@ -43,7 +40,6 @@
             ?>
             <!-- /.sidebar -->
         </aside>
-
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -123,8 +119,6 @@
                 }
                 else if(isset($_POST['delete']))
                 {
-                    //header("Location: productos-detalles.php?product_id=$product_id");
-                    //mysqli_query($dbc, "DELETE FROM Product WHERE product_id = '$product_id'");
                     echo("<script>location.href = 'phpIncludes/eliminar-producto.php?product_id=$product_id';</script>");
                 }
             ?>
@@ -157,7 +151,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Nombre de Producto</label>
-                                            <input type="text" class="form-control" id="descripion" name="description" value="<?php echo $row['description'] ?>" required>
+                                            <input type="text" class="form-control" id="description" name="description" value="<?php echo $row['description'] ?>" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Precio</label>

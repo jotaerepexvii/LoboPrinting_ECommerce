@@ -50,9 +50,7 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
-
     <!-- Main content -->
-    
     <section class="content">
         <div class="container-fluid">
             <div class="row">
@@ -123,7 +121,6 @@
                   ";
                   //mysqli_close($dbc);
                 ?> 
-                
               </div>
             </div>
         </div>

@@ -67,7 +67,7 @@
             print "
               <div class='col-md-6 offset-md-3'>
                 <div class='card card-secondary'>
-                  <form action='#' method='post'>
+                  <form action='administradores-editar.php?admin_id={$row['product_id']}' method='post'>
                     <div class='card-header'>
                       <h5 class='card-title'>Detalles del Administrador</h5>
                     </div>
@@ -91,14 +91,14 @@
                     </div>
                     <!-- /.card-body -->
                     <div class='card-footer'>
-                        <button type='submit' id='update' name='update' class='btn btn-primary'><a href='administradores-editar.php?admin_id=$row[admin_id]' style='color:inherit'>Editar</a></button>
-                        <button type='submit' class='btn btn-secondary'><a href='administradores.php' style='color:inherit'>Ver Todos los Administradores</a></button>
+                        <button class='btn btn-primary btn-block'>Editar</button>
+                        <button type='submit' class='btn btn-secondary btn-block'><a href='administradores.php' style='color:inherit'>Ver Todos los Administradores</a></button>
                     </div>
                   </form>
                 </div>
               </div>
             ";
-            mysqli_close($dbc);
+            //mysqli_close($dbc);
           ?> 
         </div>
       </div>
