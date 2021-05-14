@@ -83,15 +83,9 @@
                     $price = filter_input(INPUT_POST, 'price');
                     $cost = filter_input(INPUT_POST, 'cost');
                     $in_stock = filter_input(INPUT_POST, 'in_stock');
-                    
-                    /*
-                    $newProduct_id = (int)$_POST['product_id'];
-                    $name = $_POST['name'];
-                    $description = $_POST['description'];
-                    $price = $_POST['price'];
-                    $cost = $_POST['cost'];
-                    $in_stock = $_POST['in_stock'];
-                    */
+
+                    $name = preg_replace('/[^a-zA-Z0-9 ]/', '', $name);
+                    $description = preg_replace('/[^a-zA-Z0-9 ]/', '', $description);
 
                     if  (empty($product_id))
                         array_push($errors, 'product_id is require!');
@@ -106,7 +100,6 @@
                     if  (empty($in_stock))
                         array_push($errors, 'in_stock is require!');
                     
-
                     if(count($errors) == 0)
                     {
                         $query2 = "UPDATE Product SET product_id='$newProduct_id', name='$name', description='$description', price='$price', cost='$cost', in_stock='$in_stock'
@@ -123,16 +116,16 @@
                     }
                     else	  
                         echo '<script>alert("ERROR:Variables")</script>';
-                         
                 }
                 else if(isset($_POST['discard']))
                 {
                     header("Location: productos-detalles.php?product_id=$product_id");
-                    //echo("<script>location.href = 'productos-detalles.php?product_id=$product_id';</script>");
                 }
                 else if(isset($_POST['delete']))
                 {
-                    header("Location: productos-detalles.php?product_id=$product_id");
+                    //header("Location: productos-detalles.php?product_id=$product_id");
+                    //mysqli_query($dbc, "DELETE FROM Product WHERE product_id = '$product_id'");
+                    echo("<script>location.href = 'phpIncludes/eliminar-producto.php?product_id=$product_id';</script>");
                 }
             ?>
             <section class="content">
@@ -155,15 +148,15 @@
                                 <form action="#" method="post" enctype="multipart/form-data"> 
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">ID</label>
-                                            <input type="number" class="form-control" id="product_id" name="product_id" value="<?php echo $row['product_id'] ?>" required>
+                                            <label for="exampleInputEmail1">ID (Barcode)</label>
+                                            <input type="number" class="form-control" id="product_id" name="product_id" value="<?php echo $row['product_id'] ?>" min="0" step="1" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Nombre</label>
+                                            <label for="exampleInputPassword1">Tipo de Producto</label>
                                             <input type="text" class="form-control" id="name" name="name" value="<?php echo $row['name'] ?>" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Description</label>
+                                            <label for="exampleInputEmail1">Nombre de Producto</label>
                                             <input type="text" class="form-control" id="descripion" name="description" value="<?php echo $row['description'] ?>" required>
                                         </div>
                                         <div class="form-group">
@@ -180,7 +173,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Dia Añadido</label>
-                                            <input type="date" class="form-control" id="date" name="date" value="<?php echo $row['date'] ?>" disabled>
+                                            <input type="readonly" class="form-control" id="date" name="date" value="<?php echo $row['date'] ?>" disabled>
                                         </div>
                                     </div>
                                     <!-- /.card-body -->

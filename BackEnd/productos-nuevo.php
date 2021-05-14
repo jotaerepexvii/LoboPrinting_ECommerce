@@ -10,7 +10,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Detalles Del Producto</title>
+  <title>Añadir Producto</title>
   <link rel="icon"  href="dist/img/lobo.ico" type="icon" sizes="16x16">
 
   <!-- Google Font: Source Sans Pro -->
@@ -39,12 +39,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Nuevo Producto</h1>
+            <h1>Añadir Producto</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-              <li class="breadcrumb-item active">Nuevo Producto</li>
+              <li class="breadcrumb-item active">Añadir Producto</li>
             </ol>
           </div>
         </div>
@@ -66,47 +66,46 @@
                             <h5 class="card-title"><?php echo $errors?></h5>
                         </div>
                         <!-- /.card-header -->
-                        <!-- form start
-                          action="phpIncludes/adicion-producto.php" -->
-                        <form method="post" action="phpIncludes/adicion-producto.php" enctype="multipart/form-data">
+                        <!-- action="phpIncludes/adicion-producto.php" añade producto con su imagen y valida todo-->
+                        <form method="post" action="phpIncludes/adicion-producto.php" enctype="multipart/form-data" oninvalid="alert('You must fill out the form!');">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">ID (Barcode)</label>
-                                    <input type="text" class="form-control" id="product_id" name="product_id" value="<?php echo $row['product_id'] ?>">
+                                    <input type="number" class="form-control" id="product_id" name="product_id" value="<?php echo $row['product_id'] ?>" min="0" step="1" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Tipo de Artículo</label>
-                                    <input type="text" class="form-control" id="name" name="name">
+                                    <label for="exampleInputPassword1">Tipo de Producto</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1" id="category" name="category">Categoría</label>
-                                    <select class="form-control">
+                                    <select class="form-control" required>
                                       <option>Escolar</option>
                                       <option>Laboratorio</option>
                                       <option>Memorabilia</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Nombre</label>
-                                    <input type="text" class="form-control" id="descripion" name="description" value="<?php echo $row['description'] ?>">
+                                    <label for="exampleInputEmail1">Nombre de Producto</label>
+                                    <input type="text" class="form-control" id="descripion" name="description" value="<?php echo $row['description'] ?>" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Precio</label>
-                                    <input type="text" class="form-control" id="price" name="price" value="<?php echo $row['price'] ?>" title="Precio al que será vendido el producto">
+                                    <label for="exampleInputPassword1">Precio de Venta</label>
+                                    <input type="number" class="form-control" id="price" name="price" value="<?php echo $row['price'] ?>" title="Precio al que será vendido el producto" placeholder="$" min="0.01" step="0.01" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Costo</label>
-                                    <input type="text" class="form-control" id="cost" name="cost" value="<?php echo $row['cost'] ?>" title="Costo al que fue adquirido el producto">
+                                    <label for="exampleInputEmail1">Costo de Adquisición</label>
+                                    <input type="number" class="form-control" id="cost" name="cost" value="<?php echo $row['cost'] ?>" title="Costo al que fue adquirido el producto" placeholder="$" min="0.01" step="0.01">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Cantidad Disponible</label>
-                                    <input type="text" class="form-control" id="in_stock" name="in_stock" value="<?php echo $row['in_stock'] ?>">
+                                    <input type="number" class="form-control" id="in_stock" name="in_stock" value="<?php echo $row['in_stock'] ?>" min="0" step="1" required>
                                 </div>
-                                <div class="form-group" action="#">
+                                <div class="form-group">
                                   <label for="exampleInputFile">Imágen</label>
                                   <div class="input-group">
                                     <div class="custom-file">
-                                      <input type="file" name="file" class="form-control">
+                                      <input type="file" name="file" class="form-control" title="Escoja una imágen" required>
                                     </div>
                                   </div>
                                 </div>
@@ -114,7 +113,7 @@
                             <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" id="submit" name="submit" class="btn btn-warning">Añadir</button>
-                                <button type="submit" name="discard" class='btn btn-secondary'><a href='productos.php' style='color:inherit'>Descartar</a></button>
+                                <button type="button" name="discard" class='btn btn-secondary'><a href='productos.php' style='color:inherit'>Descartar</a></button>
                             </div>
                         </form>
                     </div>

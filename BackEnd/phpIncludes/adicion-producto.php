@@ -15,6 +15,8 @@
         $sold = 0;
         $dateAdded = date("Y-m-d");
 
+        $name = preg_replace('/[^a-zA-Z0-9 ]/', '', $name);
+        $description = preg_replace('/[^a-zA-Z0-9 ]/', '', $description);
 
         $file = $_FILES['file'];
         $fileName = $_FILES['file']['name'];
@@ -26,10 +28,17 @@
         $fileActExt = strtolower(end($fileExt));
         $allowedExt = array('jpg', 'jpeg', 'png', 'webp', 'svg');
 
-
         if (empty($_POST['product_id']) || empty($_POST['name']) || empty($_POST['description']) || empty($_POST['price']) || empty($_POST['cost']) || empty($_POST['in_stock']))
         {
-            array_push($errors, 'Todo Los Campos Son Requeridos');
+            array_push($errors, 'Todos Los Campos Son Requeridos');
+            echo("  <script>
+                        if (confirm('Todos Los Campos Son Requeridos')) {
+                            history.go(-1);
+                        }
+                        else{
+                            history.go(-1);
+                        }
+                    </script>");
         }
         else if(count($errors) == 0)
         {
@@ -37,7 +46,6 @@
                 if ($fileError === 0){
                     if($fileSize < 5242880){    //if less than 5mb
                         $newFileName = $product_id.".".$fileActExt;
-    
                         $fileDestination = '../../FrontEnd/images/lobo_products/'.$newFileName;
 
                         $query_insert = mysqli_query($dbc, "INSERT INTO Product(product_id, name, description, price, cost, in_stock, sold, date, image)
@@ -45,7 +53,16 @@
 
                         if($query_insert){
                             move_uploaded_file($fileTmpLoc, $fileDestination);
-                            header("Location: ../productos-detalles.php?product_id=".$product_id);
+                            echo("  
+                                <script>
+                                    if (confirm('El producto fue añadido')) {
+                                        location.href = '../productos-detalles.php?product_id=$product_id';
+                                    }
+                                    else{
+                                        location.href = '../productos-detalles.php?product_id=$product_id';
+                                    }
+                                </script>
+                            ");
                             mysqli_close($dbc);
                         }
                         else{
@@ -65,8 +82,7 @@
             }
         }
     }
-    else if(isset($_POST['discard']))
-    {
+    else if(isset($_POST['discard'])){
         header("Location: productos.php");
     }
 ?>

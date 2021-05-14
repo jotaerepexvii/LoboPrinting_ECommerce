@@ -86,11 +86,11 @@
                                 <input type='text' class='form-control' id='product_id' name='product_id' value='$row[product_id]' disabled>
                             </div>
                             <div class='form-group'>
-                                <label for='exampleInputPassword1'>Nombre</label>
+                                <label for='exampleInputPassword1'>Tipo De Producto</label>
                                 <input type='text' class='form-control' id='name' name='name' value='$row[name]' disabled>
                             </div>
                             <div class='form-group'>
-                                <label for='exampleInputEmail1'>Description</label>
+                                <label for='exampleInputEmail1'>Nombre de Producto</label>
                                 <input type='text' class='form-control' id='descripion' name='description' value='$row[description]' disabled>
                             </div>
                             <div class='form-group'>

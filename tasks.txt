@@ -19,7 +19,8 @@ BACK END
     > cuando uno suba un nuevo producto verificar que el id no se repita!!!!!
         > permitir subir imagen solo cuando este todo el form del nuevo producto compretamente lleno y sin errores
 
-
+    > productos-editar.php  
+        poder borrar un producto!!!
 
 OTHERS
 
