@@ -10,9 +10,10 @@ FRONT END
 
     > poder hacer login y que luego te redireccione a la pagina donde estabas
 
+    > servicios solo accesible para personas que han hecho login
 
 BACK END
-    admin table id (admi_id) pienso que debe de auto-incrementar
+    > admin table id (admi_id) pienso que debe de auto-incrementar
 
     > hacer que la tabla de users tenga otra columna
 
@@ -21,6 +22,10 @@ BACK END
 
     > productos-editar.php  
         poder borrar un producto!!!
+
+    eliminar decimales extra en los reportes
+
+    no permitir editar usuarios
 
 OTHERS
 
