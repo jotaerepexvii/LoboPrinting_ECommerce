@@ -145,8 +145,8 @@
                                   <label for="exampleInputFile">Imágen</label>
                                   <div class="input-group">
                                     <div class="custom-file">
-                                      <input type="file" name="file" class="" accept="image/*">
-                                      <button type="submit" name="submit" class="btn btn-secondary">Subir</button>
+                                      <input type="image" name="image" class="" accept="image/*">
+                                      <button type="image" name="image" class="btn btn-secondary">Subir</button>
                                     </div>
                                   </div>
                                 </div>

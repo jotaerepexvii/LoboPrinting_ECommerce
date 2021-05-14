@@ -49,6 +49,7 @@
     }
     */
 
+    
     if(isset($_FILES['image'])){//Checks if file is set
         $errors= array();
         $file_name = $_FILES['image']['name'];
@@ -74,6 +75,41 @@
             echo "Success";
         }else{
             print_r($errors);
+        }
+    }
+
+
+
+
+    if(isset($_POST['image'])){
+        $file = $_FILES['file'];
+
+        $fileName = $_FILES['file']['name'];
+        $fileTmpName = $_FILES['image']['tmp_name'];
+        $fileSize = $_FILES['image']['size'];
+        $fileError = $_FILES['image']['error'];
+        $fileType = $_FILES['image']['type'];
+
+        $fileExt = explode('.',$fileName);
+        $fileActExt = strtolower(end($fileExt));
+
+        $allowedExt = array('jpg', 'jpeg', 'png', 'webp', 'svg');
+
+        if(in_array($fileExt, $allowedExt)){//if the extension in the supported types
+            if ($fileError === 0){
+                if($fileSize < 1000000){
+                    $newFileName = uniqid;
+                }
+                else{
+                    echo "File size too big";
+                }
+            }
+            else{
+                echo "Error uploading file";
+            }
+        }
+        else{
+            echo "extension not allowed, please choose a JPEG or PNG file.";
         }
     }
 ?>
