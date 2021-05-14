@@ -4,6 +4,7 @@
   if (!isset($_SESSION['loginAdmi'])) {
     header('location:login.php');
   }
+  ob_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +47,7 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            <div class="content-header">
+            <div class="content-header" id="actualizar">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
@@ -69,17 +70,28 @@
                                     
                 $r = mysqli_query($dbc, $query);//Save & Validate Query Result
                 $row = mysqli_fetch_array($r); //Present Products
-                                
+
+                $product_id = $_GET['product_id'];
+                
                 if(isset($_POST['update']))
                 {
                     $errors = array();
-
-                    $product_id = (int)$_POST['product_id'];
+                    
+                    $newProduct_id = (int)$_POST['product_id'];
                     $name = filter_input(INPUT_POST, 'name');
                     $description = filter_input(INPUT_POST, 'description');
                     $price = filter_input(INPUT_POST, 'price');
                     $cost = filter_input(INPUT_POST, 'cost');
                     $in_stock = filter_input(INPUT_POST, 'in_stock');
+                    
+                    /*
+                    $newProduct_id = (int)$_POST['product_id'];
+                    $name = $_POST['name'];
+                    $description = $_POST['description'];
+                    $price = $_POST['price'];
+                    $cost = $_POST['cost'];
+                    $in_stock = $_POST['in_stock'];
+                    */
 
                     if  (empty($product_id))
                         array_push($errors, 'product_id is require!');
@@ -93,25 +105,34 @@
                         array_push($errors, 'cost is require!');
                     if  (empty($in_stock))
                         array_push($errors, 'in_stock is require!');
+                    
 
                     if(count($errors) == 0)
                     {
-                        $query2 = mysqli_query($dbc, "UPDATE Product SET product_id='$product_id', name='$name', description='$description', price='$price', cost='$cost', in_stock='$in_stock'
-                        WHERE product_id={$_GET['product_id']}");
+                        $query2 = "UPDATE Product SET product_id='$newProduct_id', name='$name', description='$description', price='$price', cost='$cost', in_stock='$in_stock'
+                        WHERE product_id='$product_id'";
 
-                        header("Location: productos-detalles.php?product_id=".$product_id);
-                        //mysqli_close($dbc); 
+                        if (mysqli_query($dbc, $query2)){
+                            mysqli_close($dbc);
+                            echo("<script>location.href = 'productos-detalles.php?product_id=$newProduct_id';</script>");
+                            //header("Location: productos-detalles.php?product_id=$product_id");
+                        }
+                        else{
+                            echo "ERROR";
+                        }
                     }
                     else	  
                         echo '<script>alert("ERROR:Variables")</script>';
+                         
                 }
                 else if(isset($_POST['discard']))
                 {
-                    header("Location: productos-detalles.php?product_id=".$product_id);
+                    header("Location: productos-detalles.php?product_id=$product_id");
+                    //echo("<script>location.href = 'productos-detalles.php?product_id=$product_id';</script>");
                 }
                 else if(isset($_POST['delete']))
                 {
-                    
+                    header("Location: productos-detalles.php?product_id=$product_id");
                 }
             ?>
             <section class="content">
@@ -131,31 +152,35 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> <!--//ERROR-->
+                                <form action="#" method="post" enctype="multipart/form-data"> 
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">ID</label>
-                                            <input type="text" class="form-control" id="product_id" name="product_id" value="<?php echo $row['product_id'] ?>">
+                                            <input type="number" class="form-control" id="product_id" name="product_id" value="<?php echo $row['product_id'] ?>" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Nombre</label>
-                                            <input type="text" class="form-control" id="name" name="name" value="<?php echo $row['name'] ?>">
+                                            <input type="text" class="form-control" id="name" name="name" value="<?php echo $row['name'] ?>" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Description</label>
-                                            <input type="text" class="form-control" id="descripion" name="description" value="<?php echo $row['description'] ?>">
+                                            <input type="text" class="form-control" id="descripion" name="description" value="<?php echo $row['description'] ?>" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Precio</label>
-                                            <input type="text" class="form-control" id="price" name="price" value="<?php echo $row['price'] ?>">
+                                            <input type="number" class="form-control" id="price" name="price" value="<?php echo $row['price'] ?>" min="0.01" step="0.01" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Costo</label>
-                                            <input type="text" class="form-control" id="cost" name="cost" value="<?php echo $row['cost'] ?>">
+                                            <label for="exampleInputEmail1">Costo de Adquisición</label>
+                                            <input type="number" class="form-control" id="cost" name="cost" value="<?php echo $row['cost'] ?>" min="0.01" step="0.01">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Cantidad Disponible</label>
-                                            <input type="text" class="form-control" id="in_stock" name="in_stock" value="<?php echo $row['in_stock'] ?>">
+                                            <input type="number" class="form-control" id="in_stock" name="in_stock" value="<?php echo $row['in_stock'] ?>" min="0" step="1" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Dia Añadido</label>
+                                            <input type="date" class="form-control" id="date" name="date" value="<?php echo $row['date'] ?>" disabled>
                                         </div>
                                     </div>
                                     <!-- /.card-body -->

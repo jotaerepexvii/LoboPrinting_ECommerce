@@ -75,7 +75,7 @@
                       <!-- general form elements -->
                       <div class='card card-secondary'>
                         <div class='card-header'>
-                          <h5 class='card-title'>Editar Producto</h5>
+                          <h5 class='card-title'>Detalles Producto</h5>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
@@ -98,12 +98,20 @@
                                 <input type='text' class='form-control' id='price' name='price' value='$row[price]' disabled>
                             </div>
                             <div class='form-group'>
-                                <label for='exampleInputEmail1'>Costo</label>
+                                <label for='exampleInputEmail1'>Costo de Adquisición</label>
                                 <input type='text' class='form-control' id='cost' name='cost' value='$row[cost]' disabled>
                             </div>
                             <div class='form-group'>
                                 <label for='exampleInputEmail1'>Cantidad Disponible</label>
                                 <input type='text' class='form-control' id='in_stock' name='in_stock' value='$row[in_stock]' disabled>
+                            </div>
+                            <div class='form-group'>
+                                <label for='exampleInputEmail1'>Cantidad Vendida</label>
+                                <input type='text' class='form-control' id='sold' name='sold' value='$row[sold]' disabled>
+                            </div>
+                            <div class='form-group'>
+                                <label for='exampleInputEmail1'>Dia Añadido</label>
+                                <input type='text' class='form-control' id='date' name='date' value='$row[date]' disabled>
                             </div>
                           </div>
                           <!-- /.card-body -->

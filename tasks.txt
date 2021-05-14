@@ -27,3 +27,5 @@ OTHERS
         Upload file part 1: https://www.youtube.com/watch?v=JaRq73y5MJk&t=848s
         Upload file part 2: https://www.youtube.com/watch?v=y4GxrIa7MiE minute 44:39 a 46:30
     
+
+    querys en mysqli procedural
