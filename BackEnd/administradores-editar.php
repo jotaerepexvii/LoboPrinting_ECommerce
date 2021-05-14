@@ -25,30 +25,37 @@
 <div class="wrapper">
   <!-- Navbar -->
   <!-- /.navbar -->
-
-  <!-- Main Sidebar Container -->
-    <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Control sidebar content goes here -->
+    <a href="index.php" class="brand-link">
+        <img src="dist/img/lobo.ico" alt="Lobo Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">Menu</span>
+    </a>
     <?php
       include './phpIncludes/sidebar.php';
     ?>
+  </aside>
+  <!-- Main Sidebar Container -->
+    <!-- Main Sidebar Container -->
+    
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Editar Administrador</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-              <li class="breadcrumb-item active">Editar Administrador</li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
+    <div class="content-header" id="actualizar">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Editar Administrador</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="index.php">Tablero Administrativo</a></li>
+                        <li class="breadcrumb-item active">Editar Administrador</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
     <?php
       $query = "SELECT * 
                   FROM Admnistrator 
@@ -160,9 +167,6 @@
       include './phpIncludes/footer.php';
     ?>
   <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
