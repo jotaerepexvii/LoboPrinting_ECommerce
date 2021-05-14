@@ -47,7 +47,7 @@
         echo "Se produjo un error al guardar la imagen";
     }
     }
-    */
+    
 
     
     if(isset($_FILES['image'])){//Checks if file is set
@@ -78,17 +78,17 @@
         }
     }
 
+    */
 
-
-
-    if(isset($_POST['image'])){
+    echo "Start";
+    if(isset($_POST['submit'])){
         $file = $_FILES['file'];
 
         $fileName = $_FILES['file']['name'];
-        $fileTmpName = $_FILES['image']['tmp_name'];
-        $fileSize = $_FILES['image']['size'];
-        $fileError = $_FILES['image']['error'];
-        $fileType = $_FILES['image']['type'];
+        $fileTmpLoc = $_FILES['file']['tmp_name'];
+        $fileSize = $_FILES['file']['size'];
+        $fileError = $_FILES['file']['error'];
+        $fileType = $_FILES['file']['type'];
 
         $fileExt = explode('.',$fileName);
         $fileActExt = strtolower(end($fileExt));
@@ -98,7 +98,12 @@
         if(in_array($fileExt, $allowedExt)){//if the extension in the supported types
             if ($fileError === 0){
                 if($fileSize < 1000000){
-                    $newFileName = uniqid;
+                    $newFileName = uniqid('', true).".".$fileActExt;
+
+                    $fileDestination = 'image/'.$newFileName;
+                    move_uploaded_file($fileTmpLoc, $fileDestination);
+                    echo "Success";
+                    header("Location: ../BackEnd/productos.php");
                 }
                 else{
                     echo "File size too big";
@@ -112,4 +117,6 @@
             echo "extension not allowed, please choose a JPEG or PNG file.";
         }
     }
+    else
+        echo "<br>End";
 ?>

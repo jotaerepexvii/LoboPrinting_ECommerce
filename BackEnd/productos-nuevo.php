@@ -52,7 +52,7 @@
     </section>
     <!-- Main content -->
     <?php           
-        if(isset($_POST['add']))
+        if(isset($_POST['submit']))
         {
             $errors = array();
 
@@ -107,7 +107,7 @@
                         <!-- /.card-header -->
                         <!-- form start
                           action="phpIncludes/upload.php" -->
-                        <form action="phpIncludes/upload.php" method="post" enctype="multipart/form-data">
+                        <form method="post" action="phpIncludes/upload.php" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">ID (Barcode)</label>
@@ -145,15 +145,15 @@
                                   <label for="exampleInputFile">Imágen</label>
                                   <div class="input-group">
                                     <div class="custom-file">
-                                      <input type="image" name="image" class="" accept="image/*">
-                                      <button type="image" name="image" class="btn btn-secondary">Subir</button>
+                                      <input type="file" name="file" class="">
+                                      <!--<button type="submit" name="submit" class="">Subir</button>-->
                                     </div>
                                   </div>
                                 </div>
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <button type="submit" id="add" name="add" class="btn btn-warning">Añadir</button>
+                                <button type="submit" id="submit" name="submit" class="btn btn-warning">Añadir</button>
                                 <button type="submit" class='btn btn-secondary'><a href='productos.php' style='color:inherit'>Descartar</a></button>
                             </div>
                         </form>
