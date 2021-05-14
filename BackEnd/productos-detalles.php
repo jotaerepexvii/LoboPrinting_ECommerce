@@ -75,8 +75,6 @@
                         <div class='card-header'>
                           <h5 class='card-title'>Detalles Producto</h5>
                         </div>
-                        <!-- /.card-header -->
-                        <!-- form start -->
                         <form action='productos-editar.php?product_id={$row['product_id']}' method='post'>
                           <div class='card-body'>
                             <div class='form-group'>

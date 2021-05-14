@@ -31,7 +31,6 @@
     <?php
       include './phpIncludes/sidebar.php';
     ?>
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -64,7 +63,7 @@
       {
           $errors = array();
           
-          $newadmin_id = (int)$_POST['admin_id'];
+          $newAdmin_id = (int)$_POST['admin_id'];
           $name = filter_input(INPUT_POST, 'name');
           $lastname = filter_input(INPUT_POST, 'lastname');
           $email = filter_input(INPUT_POST, 'email');
@@ -86,12 +85,12 @@
           
           if(count($errors) == 0)
           {
-              $query2 = "UPDATE Administrator SET admin_id='$newadmin_id', name='$name', lastname='$lastname', email='$email', password='$password'
+              $query2 = "UPDATE Administrator SET admin_id='$newAdmin_id', name='$name', lastname='$lastname', email='$email', password='$password'
               WHERE admin_id='$admin_id'";
 
               if (mysqli_query($dbc, $query2)){
                   mysqli_close($dbc);
-                  echo("<script>location.href = 'administradores-detalles.php?admin_id=$newadmin_id';</script>");
+                  echo("<script>location.href = 'administradores-detalles.php?admin_id=$newAdmin_id';</script>");
                   //header("Location: administradores-detalles.php?admin_id=$admin_id");
               }
               else{
