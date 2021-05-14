@@ -90,20 +90,20 @@
         $fileError = $_FILES['file']['error'];
         $fileType = $_FILES['file']['type'];
 
-        $fileExt = explode('.',$fileName);
+        $fileExt = explode('.', $fileName);
         $fileActExt = strtolower(end($fileExt));
 
         $allowedExt = array('jpg', 'jpeg', 'png', 'webp', 'svg');
 
-        if(in_array($fileExt, $allowedExt)){//if the extension in the supported types
+        if(in_array($fileActExt, $allowedExt)){//if the extension in the supported types
             if ($fileError === 0){
-                if($fileSize < 1000000){
+                if($fileSize < 5242880){
                     $newFileName = uniqid('', true).".".$fileActExt;
 
-                    $fileDestination = 'image/'.$newFileName;
+                    $fileDestination = '../../FrontEnd/images/lobo_products/'.$newFileName;
                     move_uploaded_file($fileTmpLoc, $fileDestination);
                     echo "Success";
-                    header("Location: ../BackEnd/productos.php");
+                    header("Location: ../productos.php");
                 }
                 else{
                     echo "File size too big";
