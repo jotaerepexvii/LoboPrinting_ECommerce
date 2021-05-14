@@ -58,21 +58,21 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="reporte-diario.php" class="nav-link">
                                 <i class="far fa nav-icon"></i>
                                 <p>Reporte Diario</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="reporte-semanal.php" class="nav-link">
                                 <i class="far fa nav-icon"></i>
                                 <p>Reporte Semanal</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="reporte-mensual.php" class="nav-link">
                                 <i class="far fa nav-icon"></i>
-                                <p>Reporte Anual</p>
+                                <p>Reporte Mensual</p>
                                 </a>
                             </li>
                         </ul>

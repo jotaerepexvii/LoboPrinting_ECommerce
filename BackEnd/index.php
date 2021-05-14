@@ -267,7 +267,7 @@
                                 <div class="card-header border-0">
                                     <h3 class="card-title">Reporte Diario</h3>
                                     <div class="card-tools">
-                                        <a href="ordenes.php" class="btn btn-tool btn-sm">
+                                        <a href="reporte-diario.php" class="btn btn-tool btn-sm">
                                             <i class="fas fa-search"></i>Todas
                                         </a>
                                     </div>
@@ -287,6 +287,9 @@
                                         </thead>
                                         <tbody>
                                             <?php
+                                                $dtz = new DateTimeZone("America/Puerto_Rico");
+                                                $dt = new DateTime("now", $dtz);
+                                            
                                                 $current_day = date('d');//Current Day Number
                                                 $current_month = date('n');//Current Month Number
                                                 //Query Create Week Report
@@ -330,7 +333,7 @@
                                 <div class="card-header border-0">
                                     <h3 class="card-title">Reporte Semmanal</h3>
                                     <div class="card-tools">
-                                        <a href="ordenes.php" class="btn btn-tool btn-sm">
+                                        <a href="reporte-semanal.php" class="btn btn-tool btn-sm">
                                             <i class="fas fa-search"></i>Todas
                                         </a>
                                     </div>
@@ -392,7 +395,7 @@
                                 <div class="card-header border-0">
                                     <h3 class="card-title">Reporte Mensual</h3>
                                     <div class="card-tools">
-                                        <a href="ordenes.php" class="btn btn-tool btn-sm">
+                                        <a href="reporte-mensual.php" class="btn btn-tool btn-sm">
                                             <i class="fas fa-search"></i>Todas
                                         </a>
                                     </div>
