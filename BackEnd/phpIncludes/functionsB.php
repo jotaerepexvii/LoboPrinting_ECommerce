@@ -1,5 +1,4 @@
 <?php
-
     function successMsg()
     {
         print 'Sesión Iniciada';
@@ -11,15 +10,41 @@
         }*/
     }
 
+
     function confirm($msg){
-        echo("  <script>
+        echo("  
+            <script>
                 if (confirm('$msg')) {
                 }
                 else{
                 }
             </script>");
     }
-    
+
+
+    function addUSD($numberMoney)
+    {
+        if(empty($numberMoney))
+            $numberMoney2 = "$0.00";
+        else
+            $numberMoney2 = "$".$numberMoney;
+        return $numberMoney2;
+    }
+
+
+    function numberToPercent($num)
+    {
+        //number_format((float)$num, 2, '.', ',');
+        $numPerc = round($num, 2)."%";
+        return $numPerc;
+    }
+
+    function dayOfYearToJMY($day)
+    {
+        $dayJMY = DateTime::createFromFormat('z', $day)->format('j-M-Y');
+        return $dayJMY;
+    }
+
 
     function encrypt($password)
     {
@@ -27,6 +52,7 @@
         $cryptPass = crypt($md5Pass, 'q/Bx'); //encriptación de password md5 a crypt
         return $cryptPass;
     }
+
 
     function login($email, $cryptPass)
     {
@@ -39,6 +65,7 @@
         //$_SESSION['cart_product'] = array();
         //$_SESSION['cart_quantity'] = array();
     }
+
 
     function logoutToIndex()
     {

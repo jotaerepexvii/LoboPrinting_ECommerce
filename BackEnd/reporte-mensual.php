@@ -37,12 +37,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Inicio</h1>
+                            <h1 class="m-0">Reporte Mensual</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Tablero Administrativo</a></li>
-                                <li class="breadcrumb-item active">Inicio</li>
+                                <li class="breadcrumb-item active">Reporte Mensual</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -56,11 +56,15 @@
                         <div class="col">
                             <div class="card">
                                 <div class="card-header border-0">
-                                    <h3 class="card-title">Reporte Diario</h3>
+                                    <h3 class="card-title font-weight-bold">Seleccione Un Mes:</h3>
                                     <div class="card-tools">
-                                        <form action='reporte-mensual.php' method='post'>
-                                            <p>Select a month: <input type="month" name="amonth" min="2020-04">
-                                            <button type="submit" name="submit" class="btn btn-primary">SOMETER</button>
+                                        <form action="reporte-mensual.php" method='post'>
+                                            <div class="input-group input-group-sm">
+                                                <input type="month" name="amonth" class="form-control" min="2020-04">
+                                                <span class="input-group-append">
+                                                    <button type="submit" name="submit" class="btn btn-info btn-flat">Someter</button>
+                                                </span>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
