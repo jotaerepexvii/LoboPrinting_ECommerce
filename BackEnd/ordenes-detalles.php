@@ -122,7 +122,7 @@
                                             $status_query = "SELECT *
                                                             FROM Status";
                                             
-                                            $status_r = mysqli_query($dbc,$status_query);//Make the Query
+                                            $status_r = mysqli_query($dbc, $status_query);//Make the Query
                                         ?>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Status</label>
