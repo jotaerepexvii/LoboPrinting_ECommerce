@@ -2,6 +2,8 @@ FRONT END
     >checkout.php
         - reCAPTCHA - REMEMBER TO MOVE LATER TO SESSION IN PHP
 
+        > validar que existan todos los datos de checkout
+
     !> account.php
         - detalles del usuario que sean editables
         - pensar que hacer con el id del usuario cuando no es student
@@ -10,16 +12,16 @@ FRONT END
         - eliminar "sobre-nosotros.php' o cambiar el titulo de contactanos por sobre nosotros y añadir todo ahí
         - en seccion de 'Nuestra Tienda' añadir 'Esclusividad - los productos memorabilia se consiguen solo en blabla...'
 
-    !> poder hacer login y que luego te redireccione a la pagina donde estabas
+    > poder hacer login y que luego te redireccione a la pagina donde estabas
 
     !> servicios solo accesible para personas que han hecho login
         - al menos poder subir archivos de servicio
 
     !> filtros de productos
 
-BACK END
-    !> admin table id (admi_id) pienso que debe de auto-incrementar
+    !> borrar articulos del cart.php
 
+BACK END
     > hacer que la tabla de users tenga otra columna
 
     !> cuando uno suba un nuevo producto verificar que el id no se repita!!!!!
@@ -28,13 +30,13 @@ BACK END
 
     !> no permitir editar usuarios desde backend, hacerlo en Front
 
-OTHERS
 
+OTHERS
     links
         Upload file part 1: https://www.youtube.com/watch?v=JaRq73y5MJk&t=848s
         Upload file part 2: https://www.youtube.com/watch?v=y4GxrIa7MiE minute 44:39 a 46:30
 
-PRESENTACION
 
+PRESENTACION
     chart de percentaje de uso de los distintos lenguajes usados en el ecommerce (dejarse llevar por github)
     los querys son en mysqli procedural
