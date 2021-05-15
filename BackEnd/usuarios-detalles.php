@@ -61,44 +61,53 @@
 
             $r = mysqli_query($dbc, $query);//Save & Validate Query Result
             $row = mysqli_fetch_array($r);//Present Products
+
+            if($row['student'] == 1)
+              $sdnt = 'YES';
+            else
+              $sdnt = 'NO';
             
             print "
               <div class='col-md-6'>
                 <div class='card card-secondary'>
                   <form action='#' method='post'>
                     <div class='card-header'>
-                      <h5 class='card-title'>Editar Administrador</h5>
+                      <h5 class='card-title'>Detalles del Usuario</h5>
                     </div>
                     <div class='card-body'>
                         <div class='form-group'>
-                            <label for='exampleInputPassword1'>Nombre</label>
-                            <input type='text' class='form-control' id='name' name='name' value='$row[user_id]'>
+                            <label for='exampleInputPassword1'>ID</label>
+                            <input type='password' class='form-control' id='name' name='name' value='$row[user_id]' disabled>
                         </div>
                         <div class='form-group'>
                             <label for='exampleInputPassword1'>Nombre</label>
-                            <input type='text' class='form-control' id='name' name='name' value='$row[name]'>
+                            <input type='text' class='form-control' id='name' name='name' value='$row[name]' disabled>
                         </div>
                         <div class='form-group'>
                             <label for='exampleInputPassword1'>Apellidos</label>
-                            <input type='text' class='form-control' id='name' name='name' value='$row[lastname]'>
-                        </div>
-                        <div class='form-group'>
-                            <label for='exampleInputEmail1'>ID</label>
-                            <input type='text' class='form-control' id='product_id' name='product_id' value='$row[email]'>
+                            <input type='text' class='form-control' id='name' name='name' value='$row[lastname]' disabled>
                         </div>
                         <div class='form-group'>
                             <label for='exampleInputEmail1'>Email</label>
-                            <input type='text' class='form-control' id='descripion' name='description' value='$row[phone]'>
+                            <input type='text' class='form-control' id='product_id' name='product_id' value='$row[email]' disabled>
                         </div>
                         <div class='form-group'>
-                            <label for='exampleInputEmail1'>Email</label>
-                            <input type='text' class='form-control' id='descripion' name='description' value='$row[student]'>
+                            <label for='exampleInputEmail1'>Phone</label>
+                            <input type='text' class='form-control' id='descripion' name='description' value='$row[phone]' disabled>
+                        </div>
+                        <div class='form-group'>
+                            <label for='exampleInputEmail1'>Password</label>
+                            <input type='password' class='form-control' id='descripion' name='description' value='$row[password]' disabled>
+                        </div>
+                        <div class='form-group'>
+                            <label for='exampleInputEmail1'>Student</label>
+                            <input type='text' class='form-control' id='descripion' name='description' value='$sdnt' disabled>
                         </div>
                     </div>
                     <!-- /.card-body -->
                     <div class='card-footer'>
-                        <button type='submit' id='update' name='update' class='btn btn-success'>Editar</button>
-                        <button class='btn btn-secondary'><a href='detallesProducto.php?product_id=$row[product_id]' style='color:inherit'>Descartar Cambios</a></button>
+                        <button type='submit' id='update' name='update' class='btn btn-success'><a href='../FrontEnd/login.php' style='color:inherit'>Editar [Front End]</a></button>
+                        <button type='submit' id='update2' name='update2' class='btn btn-secondary'><a href='usuarios.php' style='color:inherit'>Todos los Usuarios</a></button>
                     </div>
                   </form>
                 </div>
@@ -110,7 +119,6 @@
                       <h5 class='card-title'>Ordenes</h5>
                     </div>
               ";
-
                 //Query Search Order
                 $query_orders = "SELECT *
                             FROM Contain
@@ -148,6 +156,23 @@
                       </div>";
                     }
                   }
+
+                  if(mysql_num_rows($rorders) == 0){
+                      print "
+                        <table class='table table-striped table-valign-middle'>
+                          <thead>
+                              <tr>
+                                  <th>No hay ordenes que mostrar</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                                <td class='text-left'></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>";
+                    }
                 }
                 else
                     print'<p style="color:red">NO SE PUEDE MOSTRAR RECORD PORQUE:'.mysqli_error($dbc).'.</P>';
