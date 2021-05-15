@@ -70,28 +70,26 @@
                                     
                 $r = mysqli_query($dbc, $query);//Save & Validate Query Result
                 $row=mysqli_fetch_array($r);//Present Products
-                                
+                 
                 if(isset($_POST['update']))
                 {
-                    if(isset($_POST['update']))
+                    $errors = array();
+
+                    $order_id = (int)$_POST['order_id'];
+                    $status = $_POST['status'];
+
+                    $query2 = "UPDATE Orders SET status_id='$status'
+                                WHERE order_id='$order_id'";
+
+                    if(mysqli_query($dbc, $query2))
                     {
-                        $errors = array();
-
-                        $order_id = (int)$_POST['order_id'];
-                        $status = $_POST['status'];
-
-                      $query2 = "UPDATE Orders SET status_id='$status'
-                                    WHERE order_id='$order_id'";
-
-                        if(mysqli_query($dbc, $query2))
-                        {
-                            header('Location: ordenes.php');
-                            mysqli_close($dbc);
-                        }
-                        else	  
-                            print '<p style="color:red;">No se pudo actualizar la información del estudiante ya que ocurrió el error:<br />' . mysqli_error($dbc);
+                        header('Location: ordenes.php');
+                        mysqli_close($dbc);
                     }
+                    else	  
+                        print '<p style="color:red;">No se pudo actualizar la información del estudiante ya que ocurrió el error:<br />' . mysqli_error($dbc);
                 }
+                
             ?>
             <section class="content">
                 <div class="container-fluid">
@@ -131,7 +129,7 @@
                                             <select name="status" id="status" class="custom-select rounded-0">
                                                 <?php
                                                     print "<option value='$row[status_id]'> $row[status_name]</option>";//Default
-                                                    while($status_row=mysqli_fetch_array($status_r))//Presents Grains
+                                                    while($status_row = mysqli_fetch_array($status_r))//Presents Grains
                                                     { 
                                                         print "<option value='$status_row[status_id]'> $status_row[status_name]</option>";
                                                     }
