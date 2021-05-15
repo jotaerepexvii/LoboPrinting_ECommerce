@@ -143,7 +143,7 @@
                                         <?php
                                                 print"<input type ='hidden' name='order_id' value='".$_GET['order_id']."'>"
                                         ?>
-                                        <button type="submit" class="btn btn-secondary"><a href='ordenes.php' style='color:inherit'>Volver</a></button>
+                                        <button type="submit" class="btn btn-secondary"><a href='#' style='color:inherit' onclick="history.go(-1);">Volver</a></button>
                                     </div>
                                 </form>
                             </div>

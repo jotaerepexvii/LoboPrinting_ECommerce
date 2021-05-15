@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   
-    <title>Lobo Printing | Inicio</title>
+    <title>Reportes Mensuales</title>
     <link rel="icon"  href="dist/img/lobo.ico" type="icon" sizes="16x16">
 
     <!-- Google Font: Source Sans Pro -->

@@ -146,7 +146,8 @@
                         
                       ";
                     }
-                }else if (empty($query_orders)){
+                }
+                if ((mysqli_num_rows($orders_q)) == 0){
                     print "
                     <div>
                       <table class='table table-striped table-valign-middle'>
@@ -155,16 +156,9 @@
                                 <th>No hay órdenes que mostrar</th>
                             </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                              <td class='text-left'></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>";
+                        ";
                 }
-                print
-                "  
+                print "  
                       </table>
                     </div>
                   </div>

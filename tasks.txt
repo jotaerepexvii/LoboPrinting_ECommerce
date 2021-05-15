@@ -24,8 +24,6 @@ BACK END
 
     !> check porque borra los 0 del principio de un id de producto
 
-    !> check error de porque no se muestran ordenes en detalles de usuario
-
 OTHERS
     links
         Upload file part 1: https://www.youtube.com/watch?v=JaRq73y5MJk&t=848s

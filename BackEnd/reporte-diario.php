@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   
-    <title>Lobo Printing | Inicio</title>
+    <title>Reportes Diarios</title>
     <link rel="icon"  href="dist/img/lobo.ico" type="icon" sizes="16x16">
 
     <!-- Google Font: Source Sans Pro -->
@@ -58,10 +58,12 @@
                                 <div class="card-header border-0">
                                     <h3 class="card-title">Reporte Diario</h3>
                                     <div class="card-tools">
-                                        <form action='reporte-diario.php' method='post'>
-                                            <p>Select a day: <input type="date" name="aday" class="form-control" min="2020-04-01">
-                                            <button type="submit" name="submit" class="btn btn-primary">SOMETER</button>
-                                        </form>
+                                    <div class="input-group input-group-sm">
+                                        <input type="date" class="form-control" min="2020-04-01">
+                                        <span class="input-group-append">
+                                            <button type="submit" class="btn btn-info btn-flat">Someter</button>
+                                        </span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="card-body table-responsive p-0">
