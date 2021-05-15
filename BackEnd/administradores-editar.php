@@ -4,6 +4,7 @@
   if (!isset($_SESSION['loginAdmi'])) {
     header('location:login.php');
   }
+  ob_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +59,7 @@
     </div>
     <?php
       $query = "SELECT * 
-                  FROM Admnistrator 
+                  FROM Administrator 
                   WHERE admin_id = {$_GET['admin_id']}";
                           
       $r = mysqli_query($dbc, $query);//Save & Validate Query Result

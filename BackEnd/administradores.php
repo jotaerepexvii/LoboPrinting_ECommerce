@@ -102,7 +102,7 @@
                   </thead>
                   <tbody>
                     <?php
-                      $query = "SELECT * FROM Administrator limit 35";                                
+                      $query = "SELECT * FROM Administrator";                                
                       if($r = mysqli_query($dbc, $query))//Save & Validate Query Result
                       {
                         while($row=mysqli_fetch_array($r))//Present Products

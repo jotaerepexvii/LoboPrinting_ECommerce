@@ -71,7 +71,7 @@
                   <div class='card-header'>
                     <h5 class='card-title'>Detalles del Administrador</h5>
                   </div>
-                  <form action='administradores-editar.php?admin_id={$row['admin_id']}' method='post'>
+                  <form action='administradores-editar.php?admin_id=$row[admin_id]' method='post'>
                     <div class='card-body'>
                       <div class='form-group'>
                           <label for='exampleInputPassword1'>Nombre</label>
