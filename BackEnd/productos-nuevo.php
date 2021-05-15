@@ -63,10 +63,9 @@
                     <div class="card card-secondary">
                         <div class="card-header">
                             <h5 class="card-title">Añada el nuevo producto<br></h5>
-                            <h5 class="card-title"><?php echo $errors?></h5>
                         </div>
                         <!-- /.card-header -->
-                        <!-- action="phpIncludes/adicion-producto.php" añade producto con su imagen y valida todo-->
+                        <!-- action="phpIncludes/adicion-producto.php": añade producto con su imagen y valida todo-->
                         <form method="post" action="phpIncludes/adicion-producto.php" enctype="multipart/form-data" oninvalid="alert('You must fill out the form!');">
                             <div class="card-body">
                                 <div class="form-group">

@@ -3,7 +3,6 @@
     include 'connection.php';
 
     if(isset($_POST['submit'])){
-        
         $errors = array();
 
         $product_id = (int)$_POST['product_id'];
@@ -32,53 +31,55 @@
         {
             array_push($errors, 'Todos Los Campos Son Requeridos');
             echo("  <script>
-                        if (confirm('Todos Los Campos Son Requeridos')) {
-                            history.go(-1);
-                        }
-                        else{
+                        if (alert('Todos Los Campos Son Requeridos')) {
                             history.go(-1);
                         }
                     </script>");
         }
         else if(count($errors) == 0)
         {
-            if(in_array($fileActExt, $allowedExt)){//if the extension in the supported types
-                if ($fileError === 0){
-                    if($fileSize < 5242880){    //if less than 5mb
-                        $newFileName = $product_id.".".$fileActExt;
-                        $fileDestination = '../../FrontEnd/images/lobo_products/'.$newFileName;
+            $query = mysqli_query($dbc, "SELECT * FROM Product WHERE product_id = '$product_id' ");
+            $result = mysqli_fetch_Array($query);
+            
+            if($result > 0){
+                echo "<script type='text/javascript'> alert('Ya existe un producto con el mismo ID (barcode)'); history.go(-1); </script>";
+            }
+            else{
+                if(in_array($fileActExt, $allowedExt)){//if the extension in the supported types
+                    if ($fileError === 0){
+                        if($fileSize < 5242880){    //if less than 5mb
+                            $newFileName = $product_id.".".$fileActExt;
+                            $fileDestination = '../../FrontEnd/images/lobo_products/'.$newFileName;
 
-                        $query_insert = mysqli_query($dbc, "INSERT INTO Product(product_id, name, description, price, cost, in_stock, sold, date, image)
-                        VALUES('$product_id','$name','$description','$price','$cost', '$in_stock', '$sold', '$dateAdded', '$newFileName')");
+                            $query_insert = mysqli_query($dbc, "INSERT INTO Product(product_id, name, description, price, cost, in_stock, sold, date, image)
+                            VALUES('$product_id','$name','$description','$price','$cost', '$in_stock', '$sold', '$dateAdded', '$newFileName')");
 
-                        if($query_insert){
-                            move_uploaded_file($fileTmpLoc, $fileDestination);
-                            echo("  
-                                <script>
-                                    if (confirm('El producto fue añadido')) {
-                                        location.href = '../productos-detalles.php?product_id=$product_id';
-                                    }
-                                    else{
-                                        location.href = '../productos-detalles.php?product_id=$product_id';
-                                    }
-                                </script>
-                            ");
-                            mysqli_close($dbc);
+                            if($query_insert){
+                                move_uploaded_file($fileTmpLoc, $fileDestination);
+                                /*echo("<script>
+                                        if (alert('El producto fue añadido')) {
+                                            location.href = '../productos-detalles.php?product_id=$product_id';
+                                        }
+                                    </script>");
+                                */
+                                header("Location: ../productos-detalles.php?product_id=$product_id");
+                                mysqli_close($dbc);
+                            }
+                            else{
+                                echo "Error: " . $query_insert . "<br>" . mysqli_error($dbc);
+                            }  
                         }
                         else{
-                            echo "Error: " . $query_insert . "<br>" . mysqli_error($dbc);
-                        }  
+                            echo ("<script> confirm('File size too big'); history.go(-1); </script>");
+                        }
                     }
                     else{
-                        echo "File size too big";
+                        echo ("<script>confirm('Error uploading file'); history.go(-1);</script>");
                     }
                 }
                 else{
-                    echo "Error uploading file";
+                    echo ("<script>confirm('extension not allowed, please choose a JPEG or PNG file.'); history.go(-1);</script>");
                 }
-            }
-            else{
-                echo "extension not allowed, please choose a JPEG or PNG file.";
             }
         }
     }
