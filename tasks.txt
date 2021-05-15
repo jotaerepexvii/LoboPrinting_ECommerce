@@ -29,6 +29,9 @@ BACK END
 
     !> no permitir editar usuarios desde backend, hacerlo en Front
 
+    !> administrador-nuevo.php
+        - encrypt password
+
 
 OTHERS
     links
