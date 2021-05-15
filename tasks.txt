@@ -17,9 +17,9 @@ FRONT END
 
     !> borrar articulos del cart.php
 
-BACK END
-    !> cuando uno suba un nuevo producto verificar que el id no se repita!!!!!
+    !> error insertando order
 
+BACK END
     !> eliminar decimales extra en los reportes
 
     !> check porque borra los 0 del principio de un id de producto

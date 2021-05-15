@@ -23,15 +23,11 @@
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
-  <!-- Navbar -->
-  <!-- /.navbar -->
-
   <!-- Main Sidebar Container -->
     <!-- Main Sidebar Container -->
     <?php
       include './phpIncludes/sidebar.php';
     ?>
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -56,8 +52,8 @@
         <div class="row">
           <?php
             $query = "SELECT * 
-            FROM Users 
-            WHERE user_id = {$_GET['user_id']}";
+                      FROM Users 
+                      WHERE user_id = {$_GET['user_id']}";
 
             $r = mysqli_query($dbc, $query);//Save & Validate Query Result
             $row = mysqli_fetch_array($r);//Present Products
@@ -114,75 +110,66 @@
               </div>
               <div class='col-md-6'>
                 <div class='card card-secondary'>
-                  <form action='#' method='post'>
                     <div class='card-header'>
                       <h5 class='card-title'>Ordenes</h5>
                     </div>
               ";
                 //Query Search Order
                 $query_orders = "SELECT *
-                            FROM Contain
-                            WHERE order_id = {$_GET['order_id']}";
+                                FROM Orders
+                                WHERE user_id = $row[user_id]";
 
-                if($r_orders = mysqli_query($dbc, $query_orders))//Save & Validate Query Results
+                if($orders_q = mysqli_query($dbc, $query_orders))//Save & Validate Query Results
                 {
-                  while($row_orders=mysqli_fetch_array($r_orders))//Present Users
-                  {
-                    $query_orders2 = "SELECT *
-                                        FROM Product
-                                        WHERE product_id = $row_orders[product_id]";
-                    if($r_orders2 = mysqli_query($dbc, $query_orders2))
-                    {
-                      $row_orders2=mysqli_fetch_array($r_orders2);
-                      print "
-                        <table class='table table-striped table-valign-middle'>
-                          <thead>
-                              <tr>
-                                  <th>ID</th>
-                                  <th>Nombre</th>
-                                  <th>Precio</th>
-                                  <th>Costo</th>
-                              </tr>
-                          </thead>
-                          <tbody>
+                    print"
+                    <div>
+                      <table class='table table-striped table-valign-middle'>
+                        <thead>
                             <tr>
-                                <td class='text-left'>$row_orders[product_id]</td>
-                                <td class='text-left'><a href='productos-detalles.php?product_id={$row_orders['product_id']}'>$row_orders2[name] $row_orders2[description]</a></td>
-                                <td class='text-left'>$row_orders2[price]</td>
-                                <td class='text-left'>$row_orders2[cost]</td>
+                                <th>Order ID</th>
+                                <th>Order Date</th>
+                                <th>Track Number</th>
                             </tr>
-                          </tbody>
-                        </table>
-                      </div>";
-                    }
-                  }
+                        </thead>
 
-                  if(mysql_num_rows($rorders) == 0){
+                    ";
+                    while($r_orders = mysqli_fetch_array($orders_q))//Present Query Results
+                    {
                       print "
-                        <table class='table table-striped table-valign-middle'>
-                          <thead>
-                              <tr>
-                                  <th>No hay ordenes que mostrar</th>
-                              </tr>
-                          </thead>
                           <tbody>
                             <tr>
-                                <td class='text-left'></td>
+                                <td class='text-left'><a href='ordenes-detalles.php?order_id={$r_orders['order_id']}'>$r_orders[order_id]</a></td>
+                                <td class='text-left'>$r_orders[order_date]</td>
+                                <td class='text-left'>$r_orders[track_number]</td>
                             </tr>
                           </tbody>
-                        </table>
-                      </div>";
+                        
+                      ";
                     }
+                }else if (empty($query_orders)){
+                    print "
+                    <div>
+                      <table class='table table-striped table-valign-middle'>
+                        <thead>
+                            <tr>
+                                <th>No hay órdenes que mostrar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                              <td class='text-left'></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>";
                 }
-                else
-                    print'<p style="color:red">NO SE PUEDE MOSTRAR RECORD PORQUE:'.mysqli_error($dbc).'.</P>';
-                //mysqli_close($dbc);
                 print
-                "
-                    </form>
+                "  
+                      </table>
+                    </div>
                   </div>
                 </div>
-              ";
+                ";
             mysqli_close($dbc);
           ?> 
         </div>
