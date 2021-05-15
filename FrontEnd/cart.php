@@ -121,32 +121,41 @@
                                     error_reporting(E_ERROR | E_PARSE);
                                     $total = 0;
                                     $max = sizeof($_SESSION['cart_product']);
+                                    //$max = $max - 1;
 
-                                    if ($max == 0)
+                                    if ($max == 1)
                                     {
                                         emptyCart();
                                     }
                                     else
                                     {
                                         print"
-                                            <div class='table-content table-responsive'>
-                                                <table>
-                                                    <thead>
-                                                        <tr>
-                                                            <th class='product-thumbnail'>Image</th>
-                                                            <th class='product-name'>Producto</th>
-                                                            <th class='product-price'>Precio</th>
-                                                            <th class='product-quantity'>Cantidad</th>
-                                                            <th class='product-subtotal'>Total</th>
-                                                            <th class='product-remove'>Remove</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
+                                        <div class='table-content table-responsive'>
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th class='product-thumbnail'>Image</th>
+                                                        <th class='product-name'>Producto</th>
+                                                        <th class='product-price'>Precio</th>
+                                                        <th class='product-quantity'>Cantidad</th>
+                                                        <th class='product-subtotal'>Total</th>
+                                                        <th class='product-remove'>Remove</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
                                         ";
-                                        for($i=0; $i<$max; $i++)
+                                        
+                                        for($i=0; $i<sizeof($_SESSION['cart_product']); $i++)
                                         {
+                                 
                                             $p = $_SESSION['cart_product'][$i];
                                             $q =  $_SESSION['cart_quantity'][$i];
+
+                                            echo "P".$p."<br>";
+                                            echo "Q".$q."<br>";
+                                            echo "MAX".$max."<br>";
+                                            echo $_SESSION['cart_product'][0]."<br>";
+                                            echo $_SESSION['cart_product'][1]."<br>";
                                             
                                             $query = "SELECT * 
                                                     FROM Product 
@@ -158,27 +167,99 @@
                                             $t = $row['price'] * $q;
                                             $total = $total + $t;
                                             
-                                            print "
-                                                            <tr>
-                                                                <td class='product-thumbnail'><a href='#'><img src='images/lobo_products/$row[image]' alt='product img' /></a></td>
-                                                                <td class='product-name'><a href='http://localhost/LoboPrinting_ECommerce/FrontEnd/single-product.php?product_id=$row[product_id]'>$row[name] $row[description]</a></td>
-                                                                <td class='product-price'><span class='amount'>$row[price]</span></td>
-                                                                <td class='product-quantity'><input type='number' value='$q'/></td>
-                                                                <td class='product-subtotal'>$t</td>
-                                                                <td class='product-remove'>
-                                                                    <form action='cart.php' method='post'>
-                                                                        <input type='hidden' name='remove_item' id='remove_item' value='$i'/>
-                                                                        <input name='delete' type='submit' value='X'/>
-                                                                    </form>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
+                                            if(sizeof($_SESSION['cart_product']) != 1){
+                                                print "
+                                                <tr>
+                                                    <td class='product-thumbnail'><a href='#'><img src='images/lobo_products/$row[image]' alt='product img' /></a></td>
+                                                    <td class='product-name'><a href='http://localhost/LoboPrinting_ECommerce/FrontEnd/single-product.php?product_id=$row[product_id]'>$row[name] $row[description]</a></td>
+                                                    <td class='product-price'><span class='amount'>$row[price]</span></td>
+                                                    <td class='product-quantity'><input type='number' value='$q'/></td>
+                                                    <td class='product-subtotal'>$t</td>
+                                                    <td class='product-remove'>
+                                                        <form action='cart.php' method='post'>
+                                                            <input type='text' name='remove_item' id='remove_item' value='$i'/>
+                                                            <input name='delete' type='submit' value='X'/>
+                                                        </form>
+                                                    </td>
+                                                </tr>
                                             ";
+                                            }
+                                            
                                         }
-                                        
+                                        $envio = 5.00;
+                                        print "
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class='row'>
+                                                                <div class='col-md-8 col-sm-7 col-xs-12'>
+                                                                    <div class='buttons-cart'>
+                                                                        <input type='submit' value='Actualizar Carrito' />
+                                                                        <a href='productos.php'>Continuar Comprando</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class='col-md-4 col-sm-5 col-xs-12'>
+                                                                    <div class='cart_totals'>
+                                                                        <table>
+                                                                            <tbody>
+                                                                                <tr class='cart-subtotal'>
+                                                                                    <th>SUBTOTAL</th>
+                                                                                    <td><span class='amount'>$$total</span></td>
+                                                                                </tr>
+                                                                                <tr class='shipping'>
+                                                                                    <th>Envío</th>
+                                                                                    <td>
+                                                                                        <ul id='shipping_method'>
+                                                                                            <li>
+                                                                                                <input type='radio' /> 
+                                                                                                <label>
+                                                                                                    Envio <span class='amount'>$$envio</span>
+                                                                                                </label>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <input type='radio' /> 
+                                                                                                <label>
+                                                                                                    Recoger
+                                                                                                </label>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr class='order-total'>
+                                                                                    <th>Total</th>
+                                                                                    <td>
+                                                                                        <strong><span class='amount'>$$total</span></strong>
+                                                                                    </td>
+                                                                                </tr>                                           
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div class='wc-proceed-to-checkout'>
+                                                                        <a href='checkout.php?total={$total}'>Pagar</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        ";
                                     }
+                            
+                                    if (isset($_POST['delete']))
+                                    {
+                                        $id_to_remove = $_POST['remove_item'];
+                                        //$_SESSION['cart_array']=array_diff($_SESSION['cart_array'],$id_to_remove);
+                                        unset($_SESSION['cart_product'][$id_to_remove]);
+                                        unset($_SESSION['cart_quantity'][$id_to_remove]);
+
+                                        $_SESSION['cart_product'] = array_values($_SESSION['cart_product']);
+                                        $_SESSION['cart_quantity'] = array_values($_SESSION['cart_quantity']);
+                                        //echo "Entro al IF";
+                                        echo "<script>location.href = 'cart.php';</script>";
+                                    }
+
                                 }
                                 elseif(!(isset($_SESSION['login'])))
                                 {
@@ -187,69 +268,8 @@
                                     //emptyCart();
                                     echo "<script>location.href = 'loginRequired.php';</script>";
                                 }
-                                $envio = 5.00;
-                            
-                                if (isset($_POST['delete']))
-                                {
-                                    $id_to_remove = (int)$_POST['remove_item'];
-                                    //$_SESSION['cart_array']=array_diff($_SESSION['cart_array'],$id_to_remove);
-                                    unset($_SESSION['cart_array']["$id_to_remove"]);
-                                    echo "Entro al IF";
-                                }
                             ?>
-                            <div class='row'>
-                                <div class='col-md-8 col-sm-7 col-xs-12'>
-                                    <div class='buttons-cart'>
-                                        <input type='submit' value='Actualizar Carrito' />
-                                        <a href='productos.php'>Continuar Comprando</a>
-                                    </div>
-                                </div>
-                                <div class='col-md-4 col-sm-5 col-xs-12'>
-                                    <div class='cart_totals'>
-                                        <table>
-                                            <tbody>
-                                                <tr class='cart-subtotal'>
-                                                    <th>SUBTOTAL</th>
-                                                    <td><span class='amount'>$<?php echo $total ?></span></td>
-                                                </tr>
-                                                <tr class='shipping'>
-                                                    <th>Envío</th>
-                                                    <td>
-                                                        <ul id='shipping_method'>
-                                                            <li>
-                                                                <input type='radio' /> 
-                                                                <label>
-                                                                    Envio <span class='amount'>$<?php echo $envio ?></span>
-                                                                </label>
-                                                            </li>
-                                                            <li>
-                                                                <input type='radio' /> 
-                                                                <label>
-                                                                    Recoger
-                                                                </label>
-                                                            </li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr class='order-total'>
-                                                    <th>Total</th>
-                                                    <td>
-                                                        <strong><span class='amount'>$<?php echo $total ?></span></strong>
-                                                    </td>
-                                                </tr>                                           
-                                            </tbody>
-                                        </table>
-                                        <div class='wc-proceed-to-checkout'>
-                                            <a href='checkout.php?total={$total}'>Pagar</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form> 
-                    </div>
-                </div>
-            </div>
-        </div>
+                                    
         <!-- cart-main-area end -->
         <!-- Start Footer Area -->
         <?php

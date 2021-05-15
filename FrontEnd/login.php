@@ -60,8 +60,13 @@
                 //if ($response->success)
                 //{
                     $_SESSION['login'] = $row['user_id'];
+
                     $_SESSION['cart_product'] = array();
+                    array_push($_SESSION['cart_product'], '1');
+
                     $_SESSION['cart_quantity'] = array();
+                    array_push($_SESSION['cart_quantity'], '1');
+
                     //$_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
                     //header("Location: ". $_SESSION['current_page']);
                     header('location:success.php');
