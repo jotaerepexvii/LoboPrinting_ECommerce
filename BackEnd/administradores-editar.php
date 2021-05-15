@@ -70,11 +70,10 @@
       {
           $errors = array();
           
-          $newAdmin_id = (int)$_POST['admin_id'];
+          $newAdmin_id = $_POST['admin_id'];
           $name = filter_input(INPUT_POST, 'name');
           $lastname = filter_input(INPUT_POST, 'lastname');
           $email = filter_input(INPUT_POST, 'email');
-          $password = filter_input(INPUT_POST, 'password');
 
           $name = preg_replace('/[^a-zA-Z0-9 ]/', '', $name);
           $lastname = preg_replace('/[^a-zA-Z0-9 ]/', '', $lastname);
@@ -87,12 +86,10 @@
               array_push($errors, 'lastname is require!');
           if  (empty($email))
               array_push($errors, 'email is require!');
-          if  (empty($password))
-              array_push($errors, 'password is require!');
           
           if(count($errors) == 0)
           {
-              $query2 = "UPDATE Administrator SET admin_id='$newAdmin_id', name='$name', lastname='$lastname', email='$email', password='$password'
+              $query2 = "UPDATE Administrator SET admin_id='$newAdmin_id', name='$name', lastname='$lastname', email='$email'
               WHERE admin_id='$admin_id'";
 
               if (mysqli_query($dbc, $query2)){
