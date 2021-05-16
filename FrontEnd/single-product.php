@@ -65,6 +65,11 @@
                                         <div class="product__list another-product-style"> <!--class name for carrousel: product-slider-active owl-carousel -->
                                             <?php
                                                 error_reporting(E_ERROR | E_PARSE);
+
+                                                $query = "SELECT * FROM Product WHERE product_id = {$_GET['product_id']}";
+                                                
+                                                $rslt = mysqli_query($dbc, $query);
+                                                $row = mysqli_fetch_array($rslt);
                                                 
                                                 if(isset($_POST['add_to_cart']))
                                                 {
@@ -95,12 +100,6 @@
                                                         }
                                                         else
                                                         {
-                                                            /*$product_id = $row['product_id'];
-                                                            $quantity = filter_input(INPUT_POST, 'qtybutton');
-                                                            array_push($_SESSION['cart_product'], $product_id);
-                                                            array_push($_SESSION['cart_quantity'], $quantity);
-                                                            */
-
                                                             $item_array = array(
                                                                 'item_id'       => $_GET['product_id'],
                                                                 'item_name'     => $_POST['hidden_name'],
@@ -108,15 +107,10 @@
                                                                 'item_quantity' => $_POST['qtybutton']
                                                             );
                                                             $_SESSION['shopping_cart'][0] = $item_array;
-                                                            echo("<script>location.href = 'cart.php?msg=$msg';</script>");
+                                                            echo("<script>location.href = 'cart.php';</script>");
                                                         }
                                                     }
                                                 }
-
-                                                $query = "SELECT * FROM Product WHERE product_id = {$_GET['product_id']}";
-                                                
-                                                $r = mysqli_query($dbc, $query);//Save & Validate Query Result
-                                                $row = mysqli_fetch_array($r);//Present Products
 
                                                 print "
                                                     <div class='container'>
