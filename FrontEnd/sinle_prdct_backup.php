@@ -1,7 +1,3 @@
-<?php
-    session_start();
-    include 'phpIncludes/connection.php';
-?>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -45,14 +41,22 @@
     <!-- BODY MAIN WRAPPER START -->
     <div>
         <!-- Header Star-->
-        <?php include 'phpIncludes/header.php'; ?>
+        <?php
+            include 'phpIncludes/header.php';
+        ?>
         <!-- Header End-->
+
         <div class="body__overlay"></div>
+
         <!-- Start Offset Wrapper -->
-        <?php include 'phpIncludes/offset-wrapper.php'; ?>
+        <?php
+            include 'phpIncludes/offset-wrapper.php';
+        ?>
         <!-- End Offset Wrapper -->
         <!-- Start Our Product Area -->
-        <?php include 'phpIncludes/back.php'; ?>
+        <?php
+            include 'phpIncludes/back.php';
+        ?>
         <section class="htc__product__area bg__white">
             <div class="container">
                 <div class="row">
@@ -66,58 +70,30 @@
                                             <?php
                                                 error_reporting(E_ERROR | E_PARSE);
                                                 
+                                                $query = "SELECT * 
+                                                            FROM Product 
+                                                            WHERE product_id = {$_GET['product_id']}";
+                                                
+                                                $r = mysqli_query($dbc, $query);//Save & Validate Query Result
+                                                $row = mysqli_fetch_array($r);//Present Products
+                                                
                                                 if(isset($_POST['add_to_cart']))
                                                 {
                                                     if (!isset($_SESSION['login']))
                                                     {
                                                         echo("<script>location.href = 'loginRequired.php?msg=$msg';</script>");
                                                     }
-                                                    else
-                                                    {
-                                                        if(isset($_SESSION['shopping_cart']))
-                                                        {
-                                                            $item_array_id = array_column($_SESSION['shopping_cart'], "item_id");
-                                                            if(!in_array($_GET["product_id"], $item_array_id))
-                                                            {
-                                                                $count = count($_SESSION["shopping_cart"]);
-                                                                $item_array = array(
-                                                                    'item_id'       => $_GET['product_id'],
-                                                                    'item_name'     => $_POST['hidden_name'],
-                                                                    'item_price'    => $_POST['hidden_price'],
-                                                                    'item_quantity' => $_POST['qtybutton']
-                                                                );
-                                                                $_SESSION['shopping_cart'][$count] = $item_array;
+                                                    else{
+                                                        $product_id = $row['product_id'];
+                                                        $quantity = filter_input(INPUT_POST, 'qtybutton');
 
-                                                            }else
-                                                            {
-
-                                                            }
-                                                        }
-                                                        else
-                                                        {
-                                                            /*$product_id = $row['product_id'];
-                                                            $quantity = filter_input(INPUT_POST, 'qtybutton');
-                                                            array_push($_SESSION['cart_product'], $product_id);
-                                                            array_push($_SESSION['cart_quantity'], $quantity);
-                                                            */
-
-                                                            $item_array = array(
-                                                                'item_id'       => $_GET['product_id'],
-                                                                'item_name'     => $_POST['hidden_name'],
-                                                                'item_price'    => $_POST['hidden_price'],
-                                                                'item_quantity' => $_POST['qtybutton']
-                                                            );
-                                                            $_SESSION['shopping_cart'][0] = $item_array;
-                                                            echo("<script>location.href = 'cart.php?msg=$msg';</script>");
-                                                        }
+                                                        array_push($_SESSION['cart_product'],$product_id);
+                                                        array_push($_SESSION['cart_quantity'],$quantity);
+                                                        
+                                                        echo("<script>location.href = 'cart.php?msg=$msg';</script>");
                                                     }
                                                 }
-
-                                                $query = "SELECT * FROM Product WHERE product_id = {$_GET['product_id']}";
                                                 
-                                                $r = mysqli_query($dbc, $query);//Save & Validate Query Result
-                                                $row = mysqli_fetch_array($r);//Present Products
-
                                                 print "
                                                     <div class='container'>
                                                         <div class='row'>
@@ -145,25 +121,20 @@
                                                                     <ul class='pro__dtl__prize' >
                                                                         <li>$ $row[price] c/u</li>
                                                                     </ul>
-                                                                    <form action='single-product.php?action=add&id=$row[product_id]' method='get'>
+                                                                    <form action='' method='post'>
                                                                         <div class='product-action-wrap'>
                                                                             <div class='prodict-statas'><span>Quantity </span></div>
                                                                                 <div class='product-quantity'>
                                                                                     <div class='product-quantity'>
                                                                                         <div class='cart-plus-minus'>
                                                                                             <input class='cart-plus-minus-box' type='text' name='qtybutton' value='1'>
-                                                                                            <input class='cart-plus-minus-box' type='hidden' name='hidden_name' value='$row[name]'>
-                                                                                            <input class='cart-plus-minus-box' type='hidden' name='hidden_price' value='$row[price]'>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <ul class='pro__dtl__btn'>
-                                                                            <li class='buy__now__btn'>
-                                                                                <button type='submit' name=add_to_cart>Add To Cart</button>
-                                                                                <a href='single-product.php?action=add&id=$row[product_id]'>Add To Cart</a>
-                                                                            </li>
+                                                                            <li class='buy__now__btn'><button type='submit' name=add_to_cart>Add To Cart</button></li>
                                                                         </ul>
                                                                     </form>
                                                                 </div>

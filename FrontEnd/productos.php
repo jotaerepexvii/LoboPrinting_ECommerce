@@ -155,7 +155,7 @@
                                 } else
                                 {
                                     $query = "SELECT *
-                                            FROM Product limit 40";
+                                            FROM Product";
                                 }
                                 
                                 if($r = mysqli_query($dbc, $query))//Save & Validate Query Result
