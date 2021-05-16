@@ -77,12 +77,12 @@
                                     <table id="example1" class="table table-striped">
                                         <thead>
                                             <tr>
-                                                <th class='text-center'>Day</th>
-                                                <th class='text-center'>Orders</th>
-                                                <th class='text-center'>Products</th>
-                                                <th class='text-center'>Sales</th>
-                                                <th class='text-center'>Costs</th>
-                                                <th class='text-center'>Earnings</th>
+                                                <th class='text-center'>Mes</th>
+                                                <th class='text-center'>Órdenes</th>
+                                                <th class='text-center'>Producots</th>
+                                                <th class='text-center'>Ventas</th>
+                                                <th class='text-center'>Costos</th>
+                                                <th class='text-center'>Ganancia</th>
                                                 <th class='text-center'>Gross Profit</th>
                                             </tr>
                                         </thead>

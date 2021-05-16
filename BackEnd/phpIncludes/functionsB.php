@@ -59,6 +59,13 @@
     }
 
 
+    function monthOfYearToJMY($month)
+    {
+        $monthJMY = DateTime::createFromFormat('m', $month)->format('M-Y');
+        return $monthJMY;
+    }
+
+
     function encrypt($password)
     {
         $md5Pass = md5($password);  //encriptación de password a md5
