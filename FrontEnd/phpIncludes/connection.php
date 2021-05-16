@@ -6,6 +6,7 @@
         {
             session_start();
         }
+        ob_start();
         /*
         if (session_status() === PHP_SESSION_ACTIVE)
         {

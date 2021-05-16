@@ -1,6 +1,49 @@
 <?php
     session_start();
     include 'phpIncludes/connection.php';
+
+    $query = "SELECT * FROM Product WHERE product_id = {$_GET['product_id']}";
+                                                
+        $rslt = mysqli_query($dbc, $query);
+        $row = mysqli_fetch_array($rslt);
+
+    if(isset($_POST['add_to_cart']))
+    {
+        if (!isset($_SESSION['login']))
+        {
+            echo("<script>location.href = 'loginRequired.php?msg=$msg';</script>");
+        }
+        else
+        {
+            if(isset($_SESSION['shopping_cart']))
+            {
+                $item_array_id = array_column($_SESSION['shopping_cart'], "item_id");
+                if(!in_array($_GET["product_id"], $item_array_id))
+                {
+                    $count = count($_SESSION["shopping_cart"]);
+                    $item_array = array(
+                        'item_id'       => $_GET['product_id'],
+                        'item_name'     => $_POST['hidden_name'],
+                        'item_price'    => $_POST['hidden_price'],
+                        'item_quantity' => $_POST['qtybutton']
+                    );
+                    $_SESSION['shopping_cart'][$count] = $item_array;
+                }
+                echo("<script>location.href = 'cart.php';</script>");
+            }
+            else
+            {
+                $item_array = array(
+                    'item_id'       => $_GET['product_id'],
+                    'item_name'     => $_POST['hidden_name'],
+                    'item_price'    => $_POST['hidden_price'],
+                    'item_quantity' => $_POST['qtybutton']
+                );
+                $_SESSION['shopping_cart'][0] = $item_array;
+                echo("<script>location.href = 'cart.php';</script>");
+            }
+        }
+    }
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -38,6 +81,10 @@
 </head>
 
 <body>
+<?php
+
+?>
+
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->  
@@ -66,52 +113,6 @@
                                             <?php
                                                 error_reporting(E_ERROR | E_PARSE);
 
-                                                $query = "SELECT * FROM Product WHERE product_id = {$_GET['product_id']}";
-                                                
-                                                $rslt = mysqli_query($dbc, $query);
-                                                $row = mysqli_fetch_array($rslt);
-                                                
-                                                if(isset($_POST['add_to_cart']))
-                                                {
-                                                    if (!isset($_SESSION['login']))
-                                                    {
-                                                        echo("<script>location.href = 'loginRequired.php?msg=$msg';</script>");
-                                                    }
-                                                    else
-                                                    {
-                                                        if(isset($_SESSION['shopping_cart']))
-                                                        {
-                                                            $item_array_id = array_column($_SESSION['shopping_cart'], "item_id");
-                                                            if(!in_array($_GET["product_id"], $item_array_id))
-                                                            {
-                                                                $count = count($_SESSION["shopping_cart"]);
-                                                                $item_array = array(
-                                                                    'item_id'       => $_GET['product_id'],
-                                                                    'item_name'     => $_POST['hidden_name'],
-                                                                    'item_price'    => $_POST['hidden_price'],
-                                                                    'item_quantity' => $_POST['qtybutton']
-                                                                );
-                                                                $_SESSION['shopping_cart'][$count] = $item_array;
-
-                                                            }else
-                                                            {
-
-                                                            }
-                                                        }
-                                                        else
-                                                        {
-                                                            $item_array = array(
-                                                                'item_id'       => $_GET['product_id'],
-                                                                'item_name'     => $_POST['hidden_name'],
-                                                                'item_price'    => $_POST['hidden_price'],
-                                                                'item_quantity' => $_POST['qtybutton']
-                                                            );
-                                                            $_SESSION['shopping_cart'][0] = $item_array;
-                                                            echo("<script>location.href = 'cart.php';</script>");
-                                                        }
-                                                    }
-                                                }
-
                                                 print "
                                                     <div class='container'>
                                                         <div class='row'>
@@ -139,7 +140,7 @@
                                                                     <ul class='pro__dtl__prize' >
                                                                         <li>$ $row[price] c/u</li>
                                                                     </ul>
-                                                                    <form method='post' action='single-product.php?action=add&id=$row[product_id]'>
+                                                                    <form method='post' action='single-product.php?action=add&product_id=$row[product_id]'>
                                                                         <div class='product-action-wrap'>
                                                                             <div class='prodict-statas'><span>Quantity </span></div>
                                                                                 <div class='product-quantity'>

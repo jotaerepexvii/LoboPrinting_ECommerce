@@ -2,30 +2,19 @@
     session_start();
     include 'phpIncludes/connection.php';
 
-
     if (isset($_GET['action']))
     {
         if($_GET['action'] == 'delete')
         {
             foreach($_SESSION['shopping_cart'] as $keys => $values)
             {
-                if($values['item_id'] == $_GET['id'])
+                if($values['item_id'] == $_GET['product_id'])
                 {
                     unset($_SESSION['shopping_cart'][$keys]);   //se remueve item
                     echo "<script>location.href = 'cart.php';</script>";
                 }
             }
         }
-        /*
-        $id_to_remove = $_POST['remove_item'];
-        //$_SESSION['cart_array']=array_diff($_SESSION['cart_array'],$id_to_remove);
-        unset($_SESSION['cart_product'][$id_to_remove]);
-        unset($_SESSION['cart_quantity'][$id_to_remove]);
-
-        $_SESSION['cart_product'] = array_values($_SESSION['cart_product']);
-        $_SESSION['cart_quantity'] = array_values($_SESSION['cart_quantity']);
-        echo "<script>location.href = 'cart.php';</script>";
-        */
     }
 ?>
 <!doctype html>
@@ -146,6 +135,7 @@
                                     </section>
                                     ";
                                 }
+                                
                                 if (isset($_SESSION['login']))
                                 {
                                     error_reporting(E_ERROR | E_PARSE);
@@ -174,86 +164,81 @@
                                                 </thead>
                                                 <tbody>
                                         ";
-                                        /*
-                                        $query = "SELECT * 
-                                                    FROM Product 
-                                                    WHERE product_id = $values[item_id]";
-                                        
-                                        $r = mysqli_query($dbc, $query);//Save & Validate Query Result
-                                        $row = mysqli_fetch_array($r);//Present Products
-                                        */
+
                                         foreach($_SESSION["shopping_cart"] as $keys => $values)
                                         {
-                                        
-                                            $t = $values['item_price'] * $values['item_quantity'];
+                                            $query = "SELECT * 
+                                            FROM Product 
+                                            WHERE product_id = $values[item_id]";
+                                
+                                            $r = mysqli_query($dbc, $query);//Save & Validate Query Result
+                                            $row = mysqli_fetch_array($r);//Present Products
+                                            
+                                            $t = $row['price'] * $values['item_quantity'];
                                             $total = $total + $t;
                                             
-                                            //if(sizeof($_SESSION['cart_product']) != 1){
-                                                print "
-                                                <tr>
-                                                    <td class='product-thumbnail'><a href='#'><img src='images/lobo_products/' alt='product img' /></a></td>
-                                                    <td class='product-name'><a href='http://localhost/LoboPrinting_ECommerce/FrontEnd/single-product.php?product_id=$values[item_id]'>$values[item_name]</a></td>
-                                                    <td class='product-price'><span class='amount'>$values[item_price]</span></td>
-                                                    <td class='product-quantity'><input type='number' value='$q'/></td>
-                                                    <td class='product-subtotal'>$t</td>
-                                                    <td class='product-subtotal'><a href='cart.php?action=delete&id=$values[item_id]'>X</a></td>
-                                                </tr>
-                                                ";
-                                            //}
+                                            print "
+                                            <tr>
+                                                <td class='product-thumbnail'><a href='single-product.php?product_id=$values[item_id]'><img src='images/lobo_products/$row[image]' alt='product img' /></a></td>
+                                                <td class='product-name'><a href='single-product.php?product_id=$values[item_id]'>$row[name] $row[description]</a></td>
+                                                <td class='product-price'><span class='amount'>$row[price]</span></td>
+                                                <td class='product-quantity'><input type='number' value='$values[item_quantity]'/></td>
+                                                <td class='product-subtotal'>$t</td>
+                                                <td class='product-subtotal'><a href='cart.php?action=delete&product_id=$values[item_id]'>X</a></td>
+                                            </tr>
+                                            ";
                                             
                                         }
-                                        $envio = 5.00;
+                                        //$envio = 5.00;
                                         print "
                                                                     </tbody>
                                                                 </table>
                                                             </div>
                                                             <div class='row'>
-                                                                <div class='col-md-8 col-sm-7 col-xs-12'>
-                                                                    <div class='buttons-cart'>
-                                                                        <input type='submit' value='Actualizar Carrito' />
-                                                                        <a href='productos.php'>Continuar Comprando</a>
+                                                                <form method='post' action=cart.php>
+                                                                    <div class='col-md-8 col-sm-7 col-xs-12'>
+                                                                        <div class='buttons-cart'>
+                                                                            <input type='submit' value='Actualizar'>
+                                                                            <a href='productos.php'>Continuar Comprando</a>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                                <div class='col-md-4 col-sm-5 col-xs-12'>
-                                                                    <div class='cart_totals'>
-                                                                        <table>
-                                                                            <tbody>
-                                                                                <tr class='cart-subtotal'>
-                                                                                    <th>SUBTOTAL</th>
-                                                                                    <td><span class='amount'>$$total</span></td>
-                                                                                </tr>
-                                                                                <tr class='shipping'>
-                                                                                    <th>Envío</th>
-                                                                                    <td>
-                                                                                        <ul id='shipping_method'>
-                                                                                            <li>
-                                                                                                <input type='radio' /> 
-                                                                                                <label>
-                                                                                                    Envio <span class='amount'>$$envio</span>
-                                                                                                </label>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <input type='radio' /> 
-                                                                                                <label>
-                                                                                                    Recoger
-                                                                                                </label>
-                                                                                            </li>
-                                                                                        </ul>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr class='order-total'>
-                                                                                    <th>Total</th>
-                                                                                    <td>
-                                                                                        <strong><span class='amount'>$$total</span></strong>
-                                                                                    </td>
-                                                                                </tr>                                           
-                                                                            </tbody>
-                                                                        </table>
+                                                                    <div class='col-md-4 col-sm-5 col-xs-12'>
+                                                                        <div class='cart_totals'>
+                                                                            <table>
+                                                                                <tbody>
+                                                                                    <tr class='cart-subtotal'>
+                                                                                        <th>SUBTOTAL</th>
+                                                                                        <td><span class='amount'>$$total</span></td>
+                                                                                    </tr>
+                                                                                    <tr class='shipping'>
+                                                                                        <th>Envío</th>
+                                                                                        <td>
+                                                                                            <ul id='shipping_method'>
+                                                                                                <li>
+                                                                                                    <input type='radio' id='envio' name='envio'  value='envio'> 
+                                                                                                    <label>Envio<span class='amount'>+$5</span></label>
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    <input type='radio' id='recogido' name='recogido' value='recogido'> 
+                                                                                                    <label>Recoger<span class='amount'>+$0</span></label>
+                                                                                                </li>
+                                                                                            </ul>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr class='order-total'>
+                                                                                        <th>Total</th>
+                                                                                        <td>
+                                                                                            <strong><span class='amount'>$$total</span></strong>
+                                                                                        </td>
+                                                                                    </tr>                                
+                                                                                </tbody>
+                                                                            </table>
+                                                                            <div class='wc-proceed-to-checkout'>
+                                                                                <a href='checkout.php?total={$total}'>Pagar</a>
+                                                                            </div> 
+                                                                        </div>
                                                                     </div>
-                                                                    <div class='wc-proceed-to-checkout'>
-                                                                        <a href='checkout.php?total={$total}'>Pagar</a>
-                                                                    </div>
-                                                                </div>
+                                                                </form>
                                                             </div>
                                                         </form> 
                                                     </div>
@@ -269,6 +254,11 @@
                                     //$total = '';
                                     //emptyCart();
                                     echo "<script>location.href = 'loginRequired.php';</script>";
+                                }
+
+                                if($_POST['Actualizar'] == 'envio')
+                                {
+                                    $total = $total + 5;
                                 }
                             ?>
                                     

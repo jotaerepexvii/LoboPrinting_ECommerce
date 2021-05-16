@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include 'phpIncludes/connection.php';
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -139,15 +143,24 @@
                                     $payment_id = (int)$_POST['payment_id'];
                                     $track_num = rand(1111111111,getrandmax());
                                     $status_id = 1;
+                                    $pickup = 0;
+
+                                    if($_POST['Actualizar'] == 'envio')
+                                    {
+                                        $pickup = 1;
+                                        echo $pickup;
+                                        $total = ($_GET['total']) + 5;
+                                    }
 
                                     if(count($errors) == 0)
                                     {
                                         $query_order = "INSERT INTO Orders(order_id, user_id, order_date, address_id, payment_id, track_number, status_id, pickup) 
-                                        VALUES('$order_id', '$user_id', '$my_date', '$address_id', '$payment_id', '$track_num', '$status_id', '1')";
+                                        VALUES('$order_id', '$user_id', '$my_date', '$address_id', '$payment_id', '$track_num', '$status_id', '$pickup')";
                                         
-                                        if(mysqli_query($dbc,$query_order))//Validate Insert
+                                        if(mysqli_query($dbc, $query_order))//Validate Insert
                                         {
-                                            $max = sizeof($_SESSION['cart_product']);
+                                            //$max = sizeof($_SESSION['cart_product']);
+                                            foreach($_SESSION["shopping_cart"] as $keys => $values)
                                             for($i=0; $i<$max; $i++)
                                             {
                                                 $p = $_SESSION['cart_product'][$i];

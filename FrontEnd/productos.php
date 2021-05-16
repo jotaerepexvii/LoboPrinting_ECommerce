@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include 'phpIncludes/connection.php';
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -168,7 +172,7 @@
                                                     <div class='product foo'>
                                                         <div class='product__inner'>
                                                             <div class='pro__thumb'>
-                                                                <a href='single-product.php?product_id={$row['product_id']}'>
+                                                                <a href='single-product.php?product_id=$row[product_id]'>
                                                                     <img src='images/lobo_products/$row[image]' alt='product images'>
                                                                 </a>
                                                             </div>
