@@ -3,52 +3,6 @@
     include 'phpIncludes/connection.php';
 
     $_GET['sort'] = '';
-    
-    if($_GET['sort'] == 'alpha')
-    {
-        if($_GET['ordr'] == 'asc')
-        {
-            $query = "SELECT *
-                FROM Product ORDER BY name ASC ";
-        }
-        if($_GET['ordr'] == 'desc')
-        {
-            $query = "SELECT *
-                FROM Product ORDER BY name DESC ";
-        }
-    }
-    else if($_GET['sort'] == 'price')
-    {
-        if($_GET['ordr'] == 'asc')
-        {
-            $query = "SELECT *
-                FROM Product ORDER BY price ASC ";
-        }
-        if($_GET['ordr'] == 'desc')
-        {
-            $query = "SELECT *
-                FROM Product ORDER BY price DESC ";
-        }
-    }
-    else if ($_GET['sort'] == 'time')
-    {
-        if($_GET['ordr'] == 'new')
-        {
-            $query = "SELECT *
-                FROM Product ORDER BY date DESC ";
-        }
-        if($_GET['ordr'] == 'old')
-        {
-            $query = "SELECT *
-                FROM Product ORDER BY date ASC ";
-        }
-    }
-    else
-    {
-        $query = "SELECT *
-            FROM Product ORDER BY date DESC ";
-    }
-
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -132,8 +86,8 @@
                             <div class="filter__menu__container">
                                 <div class="product-tab-list2">
                                     <form action="productos.php" method="post" enctype="multipart/form-data">
-                                        <a href="productos1.php">Todo</a>
-                                        <a type="submit" name="escolar">Escolar</a>
+                                        <button type="submit" name="todo">Todo</button>
+                                        <button type="submit" name="escolar">Escolar</button>
                                         <button type="submit" name="laboratorio">Laboratorio</button>
                                         <button type="submit" name="memorabilia">Memorabilia</button>
                                     </form>
@@ -162,13 +116,13 @@
                                         <div class="single__filter">
                                             <h2>Ordenar Por</h2>
                                             <ul class="filter__list">
-                                                <li><a href="productos1.php">Todo</a></li>
-                                                <li><a href="productos1.php?sort=alpha&ordr=asc">Alfabeto: A-Z</a></li>
-                                                <li><a href="productos1.php?sort=alpha&ordr=desc">Alfabeto: Z-A</a></li>
-                                                <li><a href="productos1.php?sort=price&ordr=asc">Precio: Menor a Mayor</a></li>
-                                                <li><a href="productos1.php?sort=price&ordr=desc">Precio: Mayor a Menor</a></li>
-                                                <li><a href="productos1.php?sort=time&ordr=new">Lo Más Reciente</a></li>
-                                                <li><a href="productos1.php?sort=time&ordr=old">Lo Más Antiguo</a></li>
+                                                <li><a href="productos.php">Todo</a></li>
+                                                <li><a href="productos.php?sort=alpha_asc">Alfabeto: A-Z</a></li>
+                                                <li><a href="productos.php?sort=alpha_desc">Alfabeto: Z-A</a></li>
+                                                <li><a href="productos.php?sort=price_asc">Precio: Ascendente</a></li>
+                                                <li><a href="productos.php?sort=price_desc">Precio: Descendente</a></li>
+                                                <li><a href="productos.php?sort=newest">Lo Más Reciente</a></li>
+                                                <li><a href="productos.php?sort=oldest">Lo Más Antiguo</a></li>
                                             </ul>
                                             <h2 style="margin-top: 30px;">Cantidad</h2>
                                             <ul class="filter__list">
@@ -186,6 +140,39 @@
                     <div class="row">
                         <div class="product__list another-product-style">
                             <?php
+                                $order = 'ASC';
+                                
+                                    
+
+                                if(isset($_POST['todo']))
+                                {
+                                     $query = "SELECT *
+                                            FROM Product ORDER BY name ".$order." ";
+                                }
+                                elseif(isset($_POST['escolar']))
+                                {
+                                    $query = "SELECT *
+                                        FROM Product p, Category c
+                                        WHERE p.product_id = c.product_id AND category_id = 1";
+                                }
+                                elseif(isset($_POST['laboratorio']))
+                                {
+                                    $query = "SELECT *
+                                        FROM Product p, Category c
+                                        WHERE p.product_id = c.product_id AND category_id = 2";
+                                }
+                                elseif(isset($_POST['memorabilia']))
+                                {
+                                    $query = "SELECT *
+                                        FROM Product p, Category c
+                                        WHERE p.product_id = c.product_id AND category_id = 3";
+                                }
+                                else
+                                {
+                                    $query = "SELECT *
+                                            FROM Product";
+                                }
+                                
                                 if($r = mysqli_query($dbc, $query))//Save & Validate Query Result
                                 {
                                     while($row=mysqli_fetch_array($r))//Present Products

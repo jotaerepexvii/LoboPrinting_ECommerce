@@ -24,9 +24,9 @@
                             <li class="drop"><a href="index.php">Inicio</a></li>
                             <li class="drop"><a href="servicios.php">Servicios</a>
                                 <ul class="dropdown">
-                                    <li><a href="copias.php">Copias</a></li>
-                                    <li><a href="fotos.php">Fotos</a></li>
-                                    <li><a href="encuadernado.php">Encuadernados</a></li>
+                                    <li><a href="servicios-copias.php">Copias</a></li>
+                                    <li><a href="servicios-fotos.php">Fotos</a></li>
+                                    <li><a href="servicios-encuadernado.php">Encuadernados</a></li>
                                 </ul>
                             </li>
                             <li class="drop"><a href="productos.php">Productos</a>
@@ -48,9 +48,9 @@
                                 <li><a href="index.php">Inicio</a></li>
                                 <li><a href="services.php">Servicios</a>
                                     <ul>
-                                        <li><a href="copias.php">Copias</a></li>
-                                        <li><a href="fotos.php">Fotos</a></li>
-                                        <li><a href="encuadernado.php">Encuadernados</a></li>
+                                        <li><a href="servicios-copias.php">Copias</a></li>
+                                        <li><a href="servicios-fotos.php">Fotos</a></li>
+                                        <li><a href="servicios-encuadernado.php">Encuadernados</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="productos.php">Productos</a></li>

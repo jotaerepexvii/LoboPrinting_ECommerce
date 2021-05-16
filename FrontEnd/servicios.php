@@ -76,12 +76,12 @@
                             <div class="blog foo">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="copias.php">
+                                        <a href="servicios-copias.php">
                                             <img src="images/services/copies.jpg" alt="blog images">
                                         </a>
                                     </div>
                                     <div class="description">
-                                        <h4><a href="copias.php">Copias</a></h4>
+                                        <h4><a href="servicios-copias.php">Copias</a></h4>
                                     </div>
                                 </div>
                             </div>
@@ -92,12 +92,12 @@
                             <div class="blog foo">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="fotos.php">
+                                        <a href="servicios-fotos.php">
                                             <img src="images/services/photo.jpg" alt="blog images">
                                         </a>
                                     </div>
                                     <div class="description">
-                                        <h4><a href="fotos.php">Fotos</a></h4>
+                                        <h4><a href="servicios-fotos.php">Fotos</a></h4>
                                     </div>
                                 </div>
                             </div>
@@ -108,12 +108,12 @@
                             <div class="blog foo">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="encuadernado.php">
+                                        <a href="servicios-encuadernado.php">
                                             <img src="images/services/bound.jpg" alt="blog images">
                                         </a>
                                     </div>
                                     <div class="description">
-                                        <h4><a href="encuadernado.php">Encuadernado</a></h4>
+                                        <h4><a href="servicios-encuadernado.php">Encuadernado</a></h4>
                                     </div>
                                 </div>
                             </div>

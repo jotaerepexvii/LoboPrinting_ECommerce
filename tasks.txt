@@ -21,8 +21,12 @@ FRONT END
 
     !!!> radio button envio ponerlo a funcionar <!!!
 
+    >> blog-details.php change name
+
 BACK END
     !> poder insertar los 0 del principio de un id de producto
+
+    !> añadir categoria al añadir producto nuevo
 
 
 
@@ -32,6 +36,7 @@ OTHERS
         Upload file part 2: https://www.youtube.com/watch?v=y4GxrIa7MiE minute 44:39 a 46:30
         https://stackoverflow.com/questions/9567673/get-week-number-in-the-year-from-a-date-php
         http://www.expertphp.in/article/php-how-to-get-start-date-and-end-date-from-given-week-number-and-year
+        https://www.webslesson.info/2016/08/simple-php-mysql-shopping-cart.html
 
 
 

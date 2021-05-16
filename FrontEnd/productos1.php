@@ -2,8 +2,6 @@
     session_start();
     include 'phpIncludes/connection.php';
 
-    $_GET['sort'] = '';
-    
     if($_GET['sort'] == 'alpha')
     {
         if($_GET['ordr'] == 'asc')
@@ -45,10 +43,12 @@
     }
     else
     {
+        $_GET['sort'] = '';
         $query = "SELECT *
             FROM Product ORDER BY date DESC ";
     }
 
+    
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
