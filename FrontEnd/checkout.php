@@ -161,17 +161,17 @@
                                         {
                                             //$max = sizeof($_SESSION['cart_product']);
                                             foreach($_SESSION["shopping_cart"] as $keys => $values)
-                                            for($i=0; $i<$max; $i++)
+                                            //for($i=0; $i<$max; $i++)
                                             {
-                                                $p = $_SESSION['cart_product'][$i];
-                                                $q =  $_SESSION['cart_quantity'][$i];
+                                                $p = $values['item_id'];
+                                                $q = $values['item_quantity'];
 
                                                 $query = "SELECT price, cost
                                                         FROM Product 
                                                         WHERE product_id = $p";
 
-                                                $r = mysqli_query($dbc, $query);//Save & Validate Query Result
-                                                $row = mysqli_fetch_array($r);//Present Products
+                                                $resultInsrt = mysqli_query($dbc, $query);//Save & Validate Query Result
+                                                $row = mysqli_fetch_array($resultInsrt);//Present Products
                                                 
                                                 $price = $row['price'];
                                                 $cost = $row['cost'];
@@ -181,12 +181,16 @@
                                                 
                                                 if(mysqli_query($dbc,$query_contain))//Validate Insert
                                                 {
-                                                    /*if($i == $max-1)
+                                                    mysqli_close($dbc);
+
+                                                    foreach($_SESSION['shopping_cart'] as $keys => $values)
                                                     {
-                                                        mysqli_close($dbc);
-                                                        header('location:account.php');
-                                                    }*/
-                                                    
+                                                        unset($_SESSION['shopping_cart'][$keys]);   //se remueve item
+                                                        //echo "<script>location.href = 'cart.php';</script>";
+                                                    }
+
+                                                    $_SESSION['success'] = 'Compra Realizada';
+                                                    header('location:phpIncludes/success.php');
                                                 }
                                                 else
                                                     echo "Error: " . $query_contain . "<br>" . mysqli_error($dbc);
@@ -198,9 +202,7 @@
                                      else
                                             echo '<script>alert("ERROR:Variables")</script>';
                                 }
-                            ?>
-                            
-                            <?php
+
                                 error_reporting(E_ERROR | E_PARSE);
 
                                 $query = "SELECT *

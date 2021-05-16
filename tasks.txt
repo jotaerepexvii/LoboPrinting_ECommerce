@@ -11,18 +11,18 @@ FRONT END
         - eliminar "sobre-nosotros.php' o cambiar el titulo de contactanos por sobre nosotros y añadir todo ahí
         - en seccion de 'Nuestra Tienda' añadir 'Esclusividad - los productos memorabilia se consiguen solo en blabla...'
 
-    !> al menos poder subir archivos de servicio
+    !!!> al menos poder subir archivos de servicio
 
-    !> filtros de productos - 
+    !!!> filtros de productos - 
 
-    !> borrar articulos del cart.php
+    DONE!> borrar articulos del cart.php
 
-    !> error insertando order
+    DONE!> error insertando order
 
-    !> radio button envio ponerlo a funcionar
+    !!!> radio button envio ponerlo a funcionar
 
 BACK END
-    !> check porque borra los 0 del principio de un id de producto
+    !> borra los 0 del principio de un id de producto
 
 
 

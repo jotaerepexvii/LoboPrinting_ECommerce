@@ -69,7 +69,8 @@
 
                     //$_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
                     //header("Location: ". $_SESSION['current_page']);
-                    header('location:success.php');
+                    $_SESSION['success'] = 'Sesión Iniciada';
+                    header('location:phpIncludes/success.php');
                 //}
                 //else
                     //$login_err = 'reCAPTCHA Fallido<br>Intente nuevamente';

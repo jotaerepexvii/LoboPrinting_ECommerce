@@ -183,7 +183,7 @@
                                                 <td class='product-name'><a href='single-product.php?product_id=$values[item_id]'>$row[name] $row[description]</a></td>
                                                 <td class='product-price'><span class='amount'>$row[price]</span></td>
                                                 <td class='product-quantity'><input type='number' value='$values[item_quantity]'/></td>
-                                                <td class='product-subtotal'>$t</td>
+                                                <td class='product-subtotal'>$".number_format((float)$t, 2, '.', ',')."</td>
                                                 <td class='product-subtotal'><a href='cart.php?action=delete&product_id=$values[item_id]'>X</a></td>
                                             </tr>
                                             ";
