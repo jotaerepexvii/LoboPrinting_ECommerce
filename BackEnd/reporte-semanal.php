@@ -63,9 +63,13 @@
                                 <div class="card-header border-0">
                                     <h3 class="card-title">Reporte Semanal</h3>
                                     <div class="card-tools">
-                                        <form action='reporte-semanal.php' method='post'>
-                                            <p>Select a week: <input type="week" name="aweek" class="form-control" min="2020-W14">
-                                            <button type="submit" name="submit" class="btn btn-primary">SOMETER</button>
+                                        <form action="reporte-semanal.php" method='post'>
+                                            <div class="input-group input-group-sm">
+                                                <input type="week" name="aweek" class="form-control" min="2020-W14">
+                                                <span class="input-group-append">
+                                                    <button type="submit" name="submit" class="btn btn-info btn-flat">Someter</button>
+                                                </span>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -105,9 +109,10 @@
                                                     if($r_day = mysqli_query($dbc, $query_day))//Save & Validate Query Results
                                                     {
                                                         $row_day=mysqli_fetch_array($r_day);//Present Users
+                                                        $weekJMY = weekOfYearToJMY($week);
                                                         print "
                                                             <tr>
-                                                                <td class='text-center'>$week</td>
+                                                                <td class='text-center'>".$weekJMY['start_date']." to ".$weekJMY['end_date']."</td>
                                                                 <td class='text-center'>$row_day[orders]</td>
                                                                 <td class='text-center'>$row_day[products]</td>
                                                                 <td class='text-center'>".addUSD($row_day['sales'])."</td>
@@ -144,7 +149,7 @@
                                                             $weekJMY = weekOfYearToJMY($i);
                                                             print "
                                                                 <tr>
-                                                                    <td class='text-center'>".$weekJMY['start_date']." - ".$weekJMY['end_date']."</td>
+                                                                    <td class='text-center'>".$weekJMY['start_date']." to ".$weekJMY['end_date']."</td>
                                                                     <td class='text-center'>$row_day[orders]</td>
                                                                     <td class='text-center'>$row_day[products]</td>
                                                                     <td class='text-center'>".addUSD($row_day['sales'])."</td>

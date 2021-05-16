@@ -65,7 +65,7 @@
                                     <div class="card-tools">
                                         <form action="reporte-diario.php" method='post'>
                                             <div class="input-group input-group-sm">
-                                                <input type="date" name="aday" class="form-control" min="2020-04-01">
+                                                <input type="week" name="aday" class="form-control" min="2020-04-01">
                                                 <span class="input-group-append">
                                                     <button type="submit" name="submit" class="btn btn-info btn-flat">Someter</button>
                                                 </span>
@@ -152,7 +152,7 @@
                                                             $row_day=mysqli_fetch_array($r_day);//Present Users
                                                             print "
                                                                 <tr>
-                                                                    <td class='text-center'>".dayOfYearToJMY($day)."</td>
+                                                                    <td class='text-center'>".dayOfYearToJMY($i)."</td>
                                                                     <td class='text-center'>$row_day[orders]</td>
                                                                     <td class='text-center'>$row_day[products]</td>
                                                                     <td class='text-center'>".addUSD($row_day['sales'])."</td>
