@@ -2,7 +2,7 @@
   session_start();
   include 'phpIncludes/connection.php';
   if (!isset($_SESSION['login'])) {
-    header('location:loginRequired.php');
+    header('location:login-required.php');
   }
 ?>
 <!doctype html>

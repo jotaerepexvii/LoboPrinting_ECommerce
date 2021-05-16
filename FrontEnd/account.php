@@ -76,7 +76,7 @@
                     <?php
                         if (!isset($_SESSION['login']))
                         {
-                            echo("<script>location.href = 'loginRequired.php?msg=$msg';</script>");
+                            echo("<script>location.href = 'login-required.php?msg=$msg';</script>");
                         }
                         else 
                         {
