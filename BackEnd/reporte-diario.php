@@ -152,7 +152,7 @@
                                                             $row_day=mysqli_fetch_array($r_day);//Present Users
                                                             print "
                                                                 <tr>
-                                                                    <td class='text-center'>".dayOfYearToJMY($i)."</td>
+                                                                    <td class='text-center'>".dayOfYearToJMY($day)."</td>
                                                                     <td class='text-center'>$row_day[orders]</td>
                                                                     <td class='text-center'>$row_day[products]</td>
                                                                     <td class='text-center'>".addUSD($row_day['sales'])."</td>

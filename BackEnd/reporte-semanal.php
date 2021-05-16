@@ -1,6 +1,7 @@
 <?php
     session_start();
     include 'phpIncludes/connection.php';
+    include 'phpIncludes/functionsB.php';
     if (!isset($_SESSION['loginAdmi']))
     {
         header('location:login.php');
@@ -19,6 +20,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- IonIcons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
@@ -56,7 +61,7 @@
                         <div class="col">
                             <div class="card">
                                 <div class="card-header border-0">
-                                    <h3 class="card-title">Reporte Diario</h3>
+                                    <h3 class="card-title">Reporte Semanal</h3>
                                     <div class="card-tools">
                                         <form action='reporte-semanal.php' method='post'>
                                             <p>Select a week: <input type="week" name="aweek" class="form-control" min="2020-W14">
@@ -64,8 +69,8 @@
                                         </form>
                                     </div>
                                 </div>
-                                <div class="card-body table-responsive p-0">
-                                    <table class="table table-striped table-valign-middle">
+                                <div class="card-body table-responsive">
+                                    <table id="example1" class="table table-striped">
                                         <thead>
                                             <tr>
                                                 <th class='text-center'>Week</th>
@@ -105,10 +110,10 @@
                                                                 <td class='text-center'>$week</td>
                                                                 <td class='text-center'>$row_day[orders]</td>
                                                                 <td class='text-center'>$row_day[products]</td>
-                                                                <td class='text-center'>$$row_day[sales]</td>
-                                                                <td class='text-center'>$$row_day[costs]</td>
-                                                                <td class='text-center'>$$row_day[earnings]</td>
-                                                                <td class='text-center'>$row_day[profit]%</td>
+                                                                <td class='text-center'>".addUSD($row_day['sales'])."</td>
+                                                                <td class='text-center'>".addUSD($row_day['costs'])."</td>
+                                                                <td class='text-center'>".addUSD($row_day['earnings'])."</td>
+                                                                <td class='text-center'>".numberToPercent($row_day['profit'])."</td>
                                                             </tr>
                                                         ";
                                                     }
@@ -136,15 +141,16 @@
                                                         if($r_day = mysqli_query($dbc, $query_day))//Save & Validate Query Results
                                                         {
                                                             $row_day=mysqli_fetch_array($r_day);//Present Users
+                                                            $weekJMY = weekOfYearToJMY($i);
                                                             print "
                                                                 <tr>
-                                                                    <td class='text-center'>$i</td>
+                                                                    <td class='text-center'>".$weekJMY['start_date']." - ".$weekJMY['end_date']."</td>
                                                                     <td class='text-center'>$row_day[orders]</td>
                                                                     <td class='text-center'>$row_day[products]</td>
-                                                                    <td class='text-center'>$$row_day[sales]</td>
-                                                                    <td class='text-center'>$$row_day[costs]</td>
-                                                                    <td class='text-center'>$$row_day[earnings]</td>
-                                                                    <td class='text-center'>$row_day[profit]%</td>
+                                                                    <td class='text-center'>".addUSD($row_day['sales'])."</td>
+                                                                    <td class='text-center'>".addUSD($row_day['costs'])."</td>
+                                                                    <td class='text-center'>".addUSD($row_day['earnings'])."</td>
+                                                                    <td class='text-center'>".numberToPercent($row_day['profit'])."</td>
                                                                 </tr>
                                                             ";
                                                         }
@@ -180,19 +186,48 @@
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
-
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="plugins/jszip/jszip.min.js"></script>
+<script src="plugins/pdfmake/pdfmake.min.js"></script>
+<script src="plugins/pdfmake/vfs_fonts.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.download.min.js"></script>
 <!-- AdminLTE -->
 <script src="dist/js/adminlte.js"></script>
-
 <!-- OPTIONAL SCRIPTS -->
 <script src="plugins/chart.js/Chart.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard3.js"></script>
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["down", "csv", "pdf", "print"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
 </body>
 </html>

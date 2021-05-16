@@ -1,6 +1,7 @@
 <?php
     session_start();
     include 'phpIncludes/connection.php';
+    include 'phpIncludes/functionsB.php';
     if (!isset($_SESSION['loginAdmi']))
     {
         header('location:login.php');
@@ -106,7 +107,7 @@
                                                         $row_day=mysqli_fetch_array($r_day);//Present Users
                                                         print "
                                                             <tr>
-                                                                <td class='text-center'>$month</td>
+                                                                <td class='text-center'>".DateTime::createFromFormat('m', $month)->format('M-Y')."</td>
                                                                 <td class='text-center'>$row_day[orders]</td>
                                                                 <td class='text-center'>$row_day[products]</td>
                                                                 <td class='text-center'>$$row_day[sales]</td>
