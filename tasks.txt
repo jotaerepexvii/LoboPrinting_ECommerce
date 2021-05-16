@@ -20,8 +20,6 @@ FRONT END
     !> error insertando order
 
 BACK END
-    !> eliminar decimales extra en los reportes
-
     !> check porque borra los 0 del principio de un id de producto
 
 OTHERS

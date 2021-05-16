@@ -144,7 +144,7 @@
                         <div class="col">
                             <div class="card">
                                 <div class="card-header border-0">
-                                    <h3 class="card-title">Productos Más Vendidos</h3>
+                                    <h3 class="card-title">Productos Más Vendidos (cambiar por ultimos productos vendidos)</h3>
                                     <div class="card-tools">
                                         <a href="#" class="btn btn-tool btn-sm">
                                             <i class="fas fa-download"></i>
@@ -204,7 +204,7 @@
                         <div class="col">
                             <div class="card">
                                 <div class="card-header border-0">
-                                    <h3 class="card-title">Ordenes Recientes</h3>
+                                    <h3 class="card-title font-weight-bold">Ordenes Recientes</h3>
                                     <div class="card-tools">
                                         <a href="ordenes.php" class="btn btn-tool btn-sm">
                                             <i class="fas fa-search"></i>Todas
@@ -212,7 +212,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body table-responsive p-0">
-                                    <table class="table table-striped table-valign-middle">
+                                    <table class="table table-striped">
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
@@ -242,11 +242,11 @@
                                                                 $row_orders2=mysqli_fetch_array($r_orders2);
                                                                 print "
                                                                     <tr>
-                                                                        <td class='text-center'>$row_orders[order_id]</td>
-                                                                        <td class='text-center'>$row_orders2[track_number]</td>
-                                                                        <td class='text-center'>$row_orders2[total]</td>
-                                                                        <td class='text-center'>$row_orders2[order_date]</td>
-                                                                        <td class='text-center'>$row_orders2[status_name]</td>
+                                                                        <td class='text-left'>$row_orders[order_id]</td>
+                                                                        <td class='text-left'>$row_orders2[track_number]</td>
+                                                                        <td class='text-left'>$row_orders2[total]</td>
+                                                                        <td class='text-left'>$row_orders2[order_date]</td>
+                                                                        <td class='text-left'>$row_orders2[status_name]</td>
                                                                     </tr>";
                                                             }
                                                         }
@@ -265,7 +265,7 @@
                         <div class="col">
                             <div class="card">
                                 <div class="card-header border-0">
-                                    <h3 class="card-title">Reporte Diario</h3>
+                                    <h3 class="card-title font-weight-bold">Reporte Diario</h3>
                                     <div class="card-tools">
                                         <a href="reporte-diario.php" class="btn btn-tool btn-sm">
                                             <i class="fas fa-search"></i>Todas
@@ -331,7 +331,7 @@
                         <div class="col">
                             <div class="card">
                                 <div class="card-header border-0">
-                                    <h3 class="card-title">Reporte Semmanal</h3>
+                                    <h3 class="card-title font-weight-bold">Reporte Semmanal</h3>
                                     <div class="card-tools">
                                         <a href="reporte-semanal.php" class="btn btn-tool btn-sm">
                                             <i class="fas fa-search"></i>Todas
@@ -393,7 +393,7 @@
                         <div class="col">
                             <div class="card">
                                 <div class="card-header border-0">
-                                    <h3 class="card-title">Reporte Mensual</h3>
+                                    <h3 class="card-title font-weight-bold">Reporte Mensual</h3>
                                     <div class="card-tools">
                                         <a href="reporte-mensual.php" class="btn btn-tool btn-sm">
                                             <i class="fas fa-search"></i>Todas
