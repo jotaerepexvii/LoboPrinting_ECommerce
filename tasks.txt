@@ -19,10 +19,10 @@ FRONT END
 
     DONE!> error insertando order
 
-    !!!> radio button envio ponerlo a funcionar
+    !!!> radio button envio ponerlo a funcionar <!!!
 
 BACK END
-    !> borra los 0 del principio de un id de producto
+    !> poder insertar los 0 del principio de un id de producto
 
 
 

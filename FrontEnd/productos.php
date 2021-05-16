@@ -94,7 +94,14 @@
                         </div>
                         <div class="col-md-3">
                             <div class="product-tab-list2">
-                                <button class="filter__menu float-left-style" href="#">Filtros</button>
+                                <div class="filter__menu float-left-style" href="#">
+                                    <form action="productos.php" method="post" enctype="multipart/form-data">
+                                        <button type="submit" name="todo">Todo</button>
+                                        <button type="submit" name="escolar">Escolar</button>
+                                        <button type="submit" name="laboratorio">Laboratorio</button>
+                                        <button type="submit" name="memorabilia">Memorabilia</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -152,6 +159,12 @@
                                         FROM Product p, Category c
                                         WHERE p.product_id = c.product_id AND category_id = 2";
                                 } elseif(isset($_POST['memorabilia']))
+                                {
+                                    $query = "SELECT *
+                                        FROM Product p, Category c
+                                        WHERE p.product_id = c.product_id AND category_id = 3";
+                                }
+                                elseif(isset($_POST['']))
                                 {
                                     $query = "SELECT *
                                         FROM Product p, Category c
