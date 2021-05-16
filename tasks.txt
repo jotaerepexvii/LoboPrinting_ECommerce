@@ -19,14 +19,20 @@ FRONT END
 
     !> error insertando order
 
+
+
 BACK END
     !> check porque borra los 0 del principio de un id de producto
 
+
+
 OTHERS
-    links
+    Links
         Upload file part 1: https://www.youtube.com/watch?v=JaRq73y5MJk&t=848s
         Upload file part 2: https://www.youtube.com/watch?v=y4GxrIa7MiE minute 44:39 a 46:30
         https://stackoverflow.com/questions/9567673/get-week-number-in-the-year-from-a-date-php
+        http://www.expertphp.in/article/php-how-to-get-start-date-and-end-date-from-given-week-number-and-year
+
 
 
 PRESENTACION
