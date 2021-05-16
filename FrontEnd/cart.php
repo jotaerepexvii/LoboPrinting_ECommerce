@@ -255,7 +255,7 @@
                                     //emptyCart();
                                     echo "<script>location.href = 'loginRequired.php';</script>";
                                 }
-
+                                //radio button post
                                 if($_POST['Actualizar'] == 'envio')
                                 {
                                     $total = $total + 5;
