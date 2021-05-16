@@ -1,8 +1,7 @@
 FRONT END
     >checkout.php
         - reCAPTCHA - REMEMBER TO MOVE LATER TO SESSION IN PHP
-
-        > validar que existan todos los datos de checkout
+        > validar que existan todos los datos de checkout (la direccion y etc) - BRYAN
 
     !> account.php
         - detalles del usuario que sean editables
@@ -12,29 +11,28 @@ FRONT END
         - eliminar "sobre-nosotros.php' o cambiar el titulo de contactanos por sobre nosotros y añadir todo ahí
         - en seccion de 'Nuestra Tienda' añadir 'Esclusividad - los productos memorabilia se consiguen solo en blabla...'
 
-    > poder hacer login y que luego te redireccione a la pagina donde estabas
+    !> al menos poder subir archivos de servicio
 
-    !> servicios solo accesible para personas que han hecho login
-        - al menos poder subir archivos de servicio
-
-    !> filtros de productos
+    !> filtros de productos - 
 
     !> borrar articulos del cart.php
 
+    !> error insertando order
+
+
+
 BACK END
-    > hacer que la tabla de users tenga otra columna
+    !> check porque borra los 0 del principio de un id de producto
 
-    !> cuando uno suba un nuevo producto verificar que el id no se repita!!!!!
-
-    !> eliminar decimales extra en los reportes
-
-    !> no permitir editar usuarios desde backend, hacerlo en Front
 
 
 OTHERS
-    links
+    Links
         Upload file part 1: https://www.youtube.com/watch?v=JaRq73y5MJk&t=848s
         Upload file part 2: https://www.youtube.com/watch?v=y4GxrIa7MiE minute 44:39 a 46:30
+        https://stackoverflow.com/questions/9567673/get-week-number-in-the-year-from-a-date-php
+        http://www.expertphp.in/article/php-how-to-get-start-date-and-end-date-from-given-week-number-and-year
+
 
 
 PRESENTACION

@@ -155,7 +155,7 @@
                                 } else
                                 {
                                     $query = "SELECT *
-                                            FROM Product limit 40";
+                                            FROM Product";
                                 }
                                 
                                 if($r = mysqli_query($dbc, $query))//Save & Validate Query Result
@@ -174,7 +174,7 @@
                                                             </div>
                                                         </div>
                                                         <div class='product__details'>
-                                                            <h2><a href='single-product.php?product_id={$row['product_id']}'>$row[name]<br/>$row[description]</a></h2>
+                                                            <h2><a href='single-product.php?product_id=$row[product_id]'>$row[name]<br/>$row[description]</a></h2>
                                                             <ul class='product__price'>
                                                                 <li class='price'>$$row[price]</li>
                                                             </ul>

@@ -91,11 +91,11 @@
                             </div>
                             <div class='form-group'>
                                 <label for='exampleInputPassword1'>Precio</label>
-                                <input type='text' class='form-control' id='price' name='price' value='$row[price]' disabled>
+                                  <input type='text' class='form-control' id='price' name='price' value='$$row[price]' disabled>
                             </div>
                             <div class='form-group'>
                                 <label for='exampleInputEmail1'>Costo de Adquisición</label>
-                                <input type='text' class='form-control' id='cost' name='cost' value='$row[cost]' disabled>
+                                <input type='text' class='form-control' id='cost' name='cost' value='$$row[cost]' disabled>
                             </div>
                             <div class='form-group'>
                                 <label for='exampleInputEmail1'>Cantidad Disponible</label>

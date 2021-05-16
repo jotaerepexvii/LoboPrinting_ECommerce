@@ -97,6 +97,7 @@
                                     if  (empty($email))
                                         array_push($errors, 'Email is require!');
                                     
+
                                     $address_1 = filter_input(INPUT_POST, 'address_1');
                                     $address_2 = filter_input(INPUT_POST, 'address_2');
                                     $zip_code = filter_input(INPUT_POST, 'zip_code');
@@ -112,6 +113,7 @@
                                     if  (empty($state))
                                         array_push($errors, 'State is require!');
                                     
+
                                     $card_name = filter_input(INPUT_POST, 'card_name');
                                     $card_number = filter_input(INPUT_POST, 'card_number');
                                     $exp_month = filter_input(INPUT_POST, 'exp_month');
@@ -140,13 +142,12 @@
 
                                     if(count($errors) == 0)
                                     {
-                                        $query_order = "INSERT INTO Orders(order_id, user_id, order_date, address_id, payment_id, track_number, status_id) 
-                                        VALUES('$order_id', '$user_id', '$my_date', '$address_id', '$payment_id', '$track_num', '$status_id')";
+                                        $query_order = "INSERT INTO Orders(order_id, user_id, order_date, address_id, payment_id, track_number, status_id, pickup) 
+                                        VALUES('$order_id', '$user_id', '$my_date', '$address_id', '$payment_id', '$track_num', '$status_id', '1')";
                                         
                                         if(mysqli_query($dbc,$query_order))//Validate Insert
                                         {
                                             $max = sizeof($_SESSION['cart_product']);
-                                            
                                             for($i=0; $i<$max; $i++)
                                             {
                                                 $p = $_SESSION['cart_product'][$i];

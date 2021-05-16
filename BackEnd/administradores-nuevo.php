@@ -21,6 +21,66 @@
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
+<?php
+  include 'phpIncludes/functionsB.php'; 
+  $register_err = $email = '';
+  if(isset($_POST['register']))
+  {
+      if(empty($_POST['name']) || empty($_POST['lastname']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['password2']))
+      {
+          $register_err = 'Llenar Campos Obligatorios';
+      }
+      else
+      {
+          //$adminID = $_POST['admin_id'];
+          $nombre = $_POST['name'];
+          $apellidos = $_POST['lastname'];
+          $email = $_POST['email'];
+          $password = $_POST['password'];
+          $password2 = $_POST['password2'];
+
+          if($password != $password2){
+              $register_err ='Las Contraseñas no coinciden';
+          }
+          else if(strlen($password)<8) {
+              $register_err ='La contraseña debe ser al menos de 8 caracteres';
+          }
+          else
+          {   /* Query Para buscar si el email ya existe */
+              $query = mysqli_query($dbc, "SELECT * FROM Administrator WHERE email = '$email' ");
+              $result = mysqli_fetch_Array($query);
+              
+              if($result > 0){
+                  $register_err = 'El Correo Electronico ya está registrado';
+              }
+              else{
+                  //$response = recaptcha();
+                  //if ($response->success)
+                  //{
+                      $cryptPass = encrypt($password);
+                      $nombre = ucwords($nombre);
+                      $apellidos = ucwords($apellidos);
+                      $query_insert = mysqli_query($dbc, "INSERT INTO Administrator(name, lastname, email, password)
+                                  VALUES('$nombre','$apellidos','$email','$cryptPass')");
+                  //}
+                  //else
+                      //$register_err = 'reCAPTCHA fallido<br>Intente nuevamente';
+
+                  if($query_insert)
+                  {
+                      $register_err = 'Administrador Registrado Satisfactoriamente';
+                      confirm($register_err);
+                      echo "<script>location.href='administradores.php'</script>";
+                  }
+                  else
+                  {
+                      $register_err ='Error al crear el usuario';
+                  }
+              }
+          }
+      }
+  }
+?>
 <!-- Site wrapper -->
 <div class="wrapper">
   <!-- Navbar -->
@@ -50,7 +110,6 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
-
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
@@ -64,28 +123,32 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form  action="#" method="post">
+                        <form action="#" method="post" >
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">ID</label>
-                                    <input type="text" class="form-control" id="product_id" name="product_id" value="<?php echo $row['product_id'] ?>">
-                                </div>
-                                <div class="form-group">
                                     <label for="exampleInputEmail1">Nombre</label>
-                                    <input title="Inserte su nombre" type="text" class="form-control" id="descripion" name="description" value="<?php echo $row['description'] ?>">
+                                    <input title="Inserte su nombre" type="text" class="form-control" id="name" name="name" value="<?php echo $row['name'] ?>" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Apellido</label>
-                                    <input title="Inserte sus apellidos" type="text" class="form-control" id="price" name="price" value="<?php echo $row['price'] ?>">
+                                    <input title="Inserte sus apellidos" type="text" class="form-control" id="lastname" name="lastname" value="<?php echo $row['lastname'] ?>" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Correo Electrónico</label>
-                                    <input title="Inserte su correo electrónico" type="text" class="form-control" id="cost" name="cost" value="<?php echo $row['cost'] ?>">
+                                    <input title="Inserte su correo electrónico" type="email" class="form-control" id="email" name="email" value="<?php echo $row['email'] ?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Contraseña</label>
+                                    <input title="Inserte contraseña de al menos 8 caracteres" type="password" class="form-control" id="password" name="password" value="<?php echo $row['password'] ?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Confirmar Contraseña</label>
+                                    <input title="Repita su contraseña" type="password" class="form-control" id="password2" name="password2" value="<?php echo $row['password2'] ?>" required>
                                 </div>
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <button type="submit" id="update" name="update" class="btn btn-warning">Añadir</button>
+                                <button type="submit" id="register" name="register" class="btn btn-success">Registrar</button>
                                 <button type="submit" class='btn btn-secondary'><a href='administradores.php' style='color:inherit'>Descartar</a></button>
                             </div>
                         </form>

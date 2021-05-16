@@ -1,32 +1,6 @@
 <?php
     session_start();
     include 'phpIncludes/connection.php';
-
-
-    if (isset($_GET['action']))
-    {
-        if($_GET['action'] == 'delete')
-        {
-            foreach($_SESSION['shopping_cart'] as $keys => $values)
-            {
-                if($values['item_id'] == $_GET['id'])
-                {
-                    unset($_SESSION['shopping_cart'][$keys]);   //se remueve item
-                    echo "<script>location.href = 'cart.php';</script>";
-                }
-            }
-        }
-        /*
-        $id_to_remove = $_POST['remove_item'];
-        //$_SESSION['cart_array']=array_diff($_SESSION['cart_array'],$id_to_remove);
-        unset($_SESSION['cart_product'][$id_to_remove]);
-        unset($_SESSION['cart_quantity'][$id_to_remove]);
-
-        $_SESSION['cart_product'] = array_values($_SESSION['cart_product']);
-        $_SESSION['cart_quantity'] = array_values($_SESSION['cart_quantity']);
-        echo "<script>location.href = 'cart.php';</script>";
-        */
-    }
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -150,14 +124,14 @@
                                 {
                                     error_reporting(E_ERROR | E_PARSE);
                                     $total = 0;
-                                    //$max = sizeof($_SESSION['cart_product']);
+                                    $max = sizeof($_SESSION['cart_product']);
                                     //$max = $max - 1;
 
-                                    if (empty($_SESSION["shopping_cart"]))
+                                    if ($max == 1)
                                     {
                                         emptyCart();
                                     }
-                                    else if (!empty($_SESSION["shopping_cart"]))
+                                    else
                                     {
                                         print"
                                         <div class='table-content table-responsive'>
@@ -174,32 +148,46 @@
                                                 </thead>
                                                 <tbody>
                                         ";
-                                        /*
-                                        $query = "SELECT * 
-                                                    FROM Product 
-                                                    WHERE product_id = $values[item_id]";
                                         
-                                        $r = mysqli_query($dbc, $query);//Save & Validate Query Result
-                                        $row = mysqli_fetch_array($r);//Present Products
-                                        */
-                                        foreach($_SESSION["shopping_cart"] as $keys => $values)
+                                        for($i=0; $i<sizeof($_SESSION['cart_product']); $i++)
                                         {
+                                 
+                                            $p = $_SESSION['cart_product'][$i];
+                                            $q =  $_SESSION['cart_quantity'][$i];
+
+                                            echo "P".$p."<br>";
+                                            echo "Q".$q."<br>";
+                                            echo "MAX".$max."<br>";
+                                            echo $_SESSION['cart_product'][0]."<br>";
+                                            echo $_SESSION['cart_product'][1]."<br>";
+                                            
+                                            $query = "SELECT * 
+                                                    FROM Product 
+                                                    WHERE product_id = $p";
                                         
-                                            $t = $values['item_price'] * $values['item_quantity'];
+                                            $r = mysqli_query($dbc, $query);//Save & Validate Query Result
+                                            $row = mysqli_fetch_array($r);//Present Products
+                                            
+                                            $t = $row['price'] * $q;
                                             $total = $total + $t;
                                             
-                                            //if(sizeof($_SESSION['cart_product']) != 1){
+                                            if(sizeof($_SESSION['cart_product']) != 1){
                                                 print "
                                                 <tr>
-                                                    <td class='product-thumbnail'><a href='#'><img src='images/lobo_products/' alt='product img' /></a></td>
-                                                    <td class='product-name'><a href='http://localhost/LoboPrinting_ECommerce/FrontEnd/single-product.php?product_id=$values[item_id]'>$values[item_name]</a></td>
-                                                    <td class='product-price'><span class='amount'>$values[item_price]</span></td>
+                                                    <td class='product-thumbnail'><a href='#'><img src='images/lobo_products/$row[image]' alt='product img' /></a></td>
+                                                    <td class='product-name'><a href='http://localhost/LoboPrinting_ECommerce/FrontEnd/single-product.php?product_id=$row[product_id]'>$row[name] $row[description]</a></td>
+                                                    <td class='product-price'><span class='amount'>$row[price]</span></td>
                                                     <td class='product-quantity'><input type='number' value='$q'/></td>
                                                     <td class='product-subtotal'>$t</td>
-                                                    <td class='product-subtotal'><a href='cart.php?action=delete&id=$values[item_id]'>X</a></td>
+                                                    <td class='product-remove'>
+                                                        <form action='cart.php' method='post'>
+                                                            <input type='text' name='remove_item' id='remove_item' value='$i'/>
+                                                            <input name='delete' type='submit' value='X'/>
+                                                        </form>
+                                                    </td>
                                                 </tr>
-                                                ";
-                                            //}
+                                            ";
+                                            }
                                             
                                         }
                                         $envio = 5.00;
@@ -262,6 +250,20 @@
                                         </div>
                                         ";
                                     }
+                            
+                                    if (isset($_POST['delete']))
+                                    {
+                                        $id_to_remove = $_POST['remove_item'];
+                                        //$_SESSION['cart_array']=array_diff($_SESSION['cart_array'],$id_to_remove);
+                                        unset($_SESSION['cart_product'][$id_to_remove]);
+                                        unset($_SESSION['cart_quantity'][$id_to_remove]);
+
+                                        $_SESSION['cart_product'] = array_values($_SESSION['cart_product']);
+                                        $_SESSION['cart_quantity'] = array_values($_SESSION['cart_quantity']);
+                                        //echo "Entro al IF";
+                                        echo "<script>location.href = 'cart.php';</script>";
+                                    }
+
                                 }
                                 elseif(!(isset($_SESSION['login'])))
                                 {

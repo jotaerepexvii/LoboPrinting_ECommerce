@@ -91,11 +91,11 @@
                                                                 $row_orders2=mysqli_fetch_array($r_orders2);
                                                                 print "
                                                                     <tr>
-                                                                        <td class='text-center'><a href='ordenes-detalles.php?order_id={$row_orders['order_id']}'>$row_orders[order_id]</a></td>
-                                                                        <td class='text-center'>$row_orders2[track_number]</td>
-                                                                        <td class='text-center'>$row_orders2[total]</td>
-                                                                        <td class='text-center'>$row_orders2[order_date]</td>
-                                                                        <td class='text-center'>$row_orders2[status_name]</td>
+                                                                        <td class='text-left'><a href='ordenes-detalles.php?order_id={$row_orders['order_id']}'>$row_orders[order_id]</a></td>
+                                                                        <td class='text-left'>$row_orders2[track_number]</td>
+                                                                        <td class='text-left'>$row_orders2[total]</td>
+                                                                        <td class='text-left'>$row_orders2[order_date]</td>
+                                                                        <td class='text-left'>$row_orders2[status_name]</td>
                                                                         <!--
                                                                         <td>
                                                                             <a href='ordenes-detalles.php?order_id={$row_orders['order_id']}' class='text-muted'>
