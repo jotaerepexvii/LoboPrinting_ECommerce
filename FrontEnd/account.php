@@ -80,109 +80,260 @@
                         }
                         else 
                         {
-                            //if ( isset( $_SESSION['login']))
-                            //{
-                                error_reporting(E_ERROR | E_PARSE);
-
-                                $query = "SELECT *
-                                            FROM Users
-                                            WHERE user_id = {$_SESSION['login']}";
-                                $r = mysqli_query($dbc,$query);//Make the Query
-                                $row = mysqli_fetch_array($r);//Save Query Result
+                            error_reporting(E_ERROR | E_PARSE);
+                            
+                            $query = "SELECT *
+                                        FROM Users
+                                        WHERE user_id = {$_SESSION['login']}";
+                            $r = mysqli_query($dbc,$query);//Make the Query
+                            $row = mysqli_fetch_array($r);//Save Query Result
                                 
-                                $query1 = "SELECT *
-                                FROM Address
-                                WHERE user_id = {$_SESSION['login']}";
-                                $r1 = mysqli_query($dbc,$query1);//Make the Query
-                                $row1 = mysqli_fetch_array($r1);//Save Query Result
+                            $query1 = "SELECT *
+                                        FROM Address
+                                        WHERE user_id = {$_SESSION['login']}";
+                            $r1 = mysqli_query($dbc,$query1);//Make the Query
+                            $row1 = mysqli_fetch_array($r1);//Save Query Result
 
-                                $query2 = "SELECT *
-                                            FROM Payment_method
-                                            WHERE user_id = {$_SESSION['login']}";
-                                $r2 = mysqli_query($dbc,$query2);//Make the Query
-                                $row2 = mysqli_fetch_array($r2);//Save Query Result 
-
-                                print "
-                                    <div class='col-md-6'>
-                                        <div class='portfolio-description'>
-                                            <h2>Perfil</h2>
-                                            <div class='portfolio-info'>
-                                                <div class='col-md-3'>
-                                                    <ul>
-                                                        <li><span class='bld'>ID</span></li>
-                                                        <li><span class='bld'>Name</span></li>
-                                                        <li><span class='bld'>Last Name</span></li>
-                                                        <li><span class='bld'>Email</span></li>
-                                                        <li><span class='bld'>Phone</span></li>
-                                                        <li><span class='bld'>Student</span></li>
-                                                    </ul>
-                                                </div>
-                                                <div class='col-md-9'>
-                                                    <ul>
-                                                        <li><span><input value='$row[user_id]' disabled></input></span></li>
-                                                        <li><span><input value='$row[name]'></input></span></li>
-                                                        <li><span><input value='$row[lastname]'></input></span></li>
-                                                        <li><span class='lowercase'><input class='wide75' value='$row[email]'></input></span></li>
-                                                        <li><span><input value='$row[phone]'></input></span></li>
-                                                        <li><span><input value='$row[student]'></input></span></li>
-                                                    </ul>
-                                                    <button>Edit</button><button class='save'>Save</button>
-                                                </div>
-                                            </div>
-                                            <h2>Address</h2>
-                                            <div class='portfolio-info'>
-                                                <div class='col-md-3'>
-                                                    <ul>
-                                                        <li><span class='bld'>ADDRESS 1</span></li>
-                                                        <li><span class='bld'>ADDRESS 2</span></li>
-                                                        <li><span class='bld'>ZIP CODE</span></li>
-                                                        <li><span class='bld'>CITY</span></li>
-                                                        <li><span class='bld'>STATE</span></li>
-                                                    </ul>
-                                                </div>
-                                                <div class='col-md-9'>
-                                                    <ul>
-                                                        <li><span class='capitalize'><input value='$row1[address_1]'></input></span></li>
-                                                        <li><span><input value='$row1[address_2]'></input></span></li>
-                                                        <li><span><input value='$row1[zip_code]'></input></span></li>
-                                                        <li><span><input value='$row1[city]'></input></span></li>
-                                                        <li><span><input value='$row1[state]'></input></span></li>
-                                                    </ul>
-                                                    <button>Edit</button><button class='save'>Save</button>
-                                                </div>
-                                            </div>
-                                            <h2>Payment Method</h2>
-                                            <div class='portfolio-info'>
-                                                <div class='col-md-3'>
-                                                    <ul>
-                                                        <li><span class='bld'>CARD NAME</span></li>
-                                                        <li><span class='bld'>NUMBER</span></li>
-                                                        <li><span class='bld'>EXP DATE</span></li>
-                                                        <li><span class='bld'>CCV</span></li>
-                                                    </ul>
-                                                </div>
-                                                <div class='col-md-9'>
-                                                    <ul>
-                                                        <li><span class='uppercase'><input value='$row2[card_name]'></input></span></li>
-                                                        <li><span><input value='$row2[card_number]'></input></span></li>
-                                                        <div class='col-md-12'>
-                                                            <div class='col-md-6'>
-                                                                <li><span><input class='wide100' value='$row2[exp_month]'></input></span></li>
-                                                            </div>
-                                                            <div class='col-md-6'>
-                                                                <li><span><input class='wide100' value='$row2[exp_year]'></input></span></li>
-                                                            </div>
-                                                        </div>
-                                                        <li><span><input value='$row2[ccv]'</input></span></li>
-                                                    </ul>
-                                                    <button>Edit</button><button class='save'>Save</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ";
-                        }   
+                            $query2 = "SELECT *
+                                        FROM Payment_method
+                                        WHERE user_id = {$_SESSION['login']}";
+                            $r2 = mysqli_query($dbc,$query2);//Make the Query
+                            $row2 = mysqli_fetch_array($r2);//Save Query Result 
+                        }    
                     ?>
+                    <div class='col-md-6'>
+                        <div class='portfolio-description'>
+                            <form action="account.php" method="post">
+                                <h2>Perfil</h2>
+                                <div class='portfolio-info'>
+                                    <div class='col-md-3'>
+                                        <ul>
+                                            <li><span class='bld'>ID</span></li>
+                                            <li><span class='bld'>Name</span></li>
+                                            <li><span class='bld'>Last Name</span></li>
+                                            <li><span class='bld'>Email</span></li>
+                                            <li><span class='bld'>Phone</span></li>
+                                            <li><span class='bld'>Student</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class='col-md-9'>
+                                        <ul>
+                                            <li><span><input type='text' id="user_id" name="user_id" value='<?php echo $row[user_id] ?>' disabled></span></li>
+                                            <li><span><input type='text' id="name" name="name" value='<?php echo $row[name] ?>'></span></li>
+                                            <li><span><input type='text' id="lastname" name="lastname" value='<?php echo $row[lastname] ?>'></span></li>
+                                            <li><span class='lowercase'><input class='wide75' type='text' id="email" name="email" value='<?php echo $row[email] ?>'></span></li>
+                                            <li><span><input type='text' id="phone" name="phone" value='<?php echo $row[phone] ?>'></span></li>
+                                            <li><span><input type='text' id="student" name="student" value='<?php echo $row[student] ?>'></span></li>
+                                        </ul>
+                                        <input type='hidden' id="password" name="password" value='<?php echo $row[password] ?>'>
+                                        <button id="editar_usuario" name="editar_usuario">Editar</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <?php
+                                if(isset($_POST['editar_usuario']))
+                                {
+                                    $errors = array();
+
+                                    $user_id = filter_input(INPUT_POST, 'user_id');
+                                    $name = filter_input(INPUT_POST, 'name');
+                                    $lastname = filter_input(INPUT_POST, 'lastname');
+                                    $email = filter_input(INPUT_POST, 'email');
+                                    $password = filter_input(INPUT_POST, 'password');
+                                    $phone = filter_input(INPUT_POST, 'phone');
+                                    $student = filter_input(INPUT_POST, 'student');
+
+                                    if  (empty($name))
+                                        array_push($errors, 'name is require!');
+                                    if  (empty($lastname))
+                                        array_push($errors, 'lastname is require!');
+                                    if  (empty($email))
+                                        array_push($errors, 'email is require!');
+                                    if  (empty($phone))
+                                        array_push($errors, 'email is require!');
+                                    if  (empty($student))
+                                        array_push($errors, 'email is require!');
+
+                                    if(count($errors) == 0)
+                                    {
+                                        $query_editar = "UPDATE Users SET user_id = '$userd_id', name='$name', lastname='$lastname', email='$email',  password='$password', phone='$phone', student='$student'
+                                            WHERE user_id='$user_id'";
+
+                                        if (mysqli_query($dbc, $query_editar))
+                                        {
+                                            //mysqli_close($dbc);
+                                            //echo("<script>location.href = 'account.php?user_id=$user_id';</script>");
+                                            echo '<script>alert("ERROR:Entro")</script>';
+                                        }
+                                        else
+                                        {
+                                            echo '<script>alert("ERROR:Query")</script>';
+                                        }
+                                    }
+                                    else	  
+                                        echo '<script>alert("ERROR:Variables")</script>';
+                                }
+                            ?>
+                            <form action="account.php" method="post">
+                                <h2>Address</h2>
+                                <div class='portfolio-info'>
+                                    <div class='col-md-3'>
+                                        <ul>
+                                            <li><span class='bld'>ADDRESS 1</span></li>
+                                            <li><span class='bld'>ADDRESS 2</span></li>
+                                            <li><span class='bld'>ZIP CODE</span></li>
+                                            <li><span class='bld'>CITY</span></li>
+                                            <li><span class='bld'>STATE</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class='col-md-9'>
+                                        <ul>
+                                            <li><span class='capitalize'><input value='<?php echo $row1[address_1] ?>'></span></li>
+                                            <li><span><input value='<?php echo $row1[address_2] ?>'></span></li>
+                                            <li><span><input value='<?php echo $row1[zip_code] ?>'></span></li>
+                                            <li><span><input value='<?php echo $row1[city] ?>'></span></li>
+                                            <li><span><input value='<?php echo $row1[state] ?>'></span></li>
+                                        </ul>
+                                        <?php
+                                            if($row1[user_id] == NULL)
+                                            {
+                                                print "<button type='submit' id='add_address' name='add_address'>Anadir</button>";
+                                            }
+                                            else
+                                                print "<button type='submit' id='update_address' name='update_address'>Editar</button>";
+                                        ?>
+                                    </div>
+                                </div>
+                            </form>
+                            <?php
+                                if(isset($_POST['update_address']))
+                                {
+                                    $errors = array();
+
+                                    $user_id = filter_input(INPUT_POST, 'user_id');
+                                    $address_1 = filter_input(INPUT_POST, 'address_1');
+                                    $zip_code = filter_input(INPUT_POST, 'zip_code');
+                                    $city = filter_input(INPUT_POST, 'city');
+                                    $state = filter_input(INPUT_POST, 'state');
+
+                                    if  (empty($address_1))
+                                        array_push($errors, 'name is require!');
+                                    if  (empty($zip_code))
+                                        array_push($errors, 'lastname is require!');
+                                    if  (empty($city))
+                                        array_push($errors, 'email is require!');
+                                    if  (empty($state))
+                                        array_push($errors, 'email is require!');
+
+                                    if(count($errors) == 0)
+                                    {
+                                        $query_editar = "UPDATE Address SET user_id = '$userd_id', address_1='$address_1', zip_code='$zip_code', city='$city',  state='$state'
+                                            WHERE user_id='$user_id'";
+
+                                        if (mysqli_query($dbc, $query_editar))
+                                        {
+                                            //mysqli_close($dbc);
+                                            //echo("<script>location.href = 'account.php?user_id=$user_id';</script>");
+                                            echo '<script>alert("ERROR:Entro")</script>';
+                                        }
+                                        else
+                                        {
+                                            echo '<script>alert("ERROR:Query")</script>';
+                                        }
+                                    }
+                                    else	  
+                                        echo '<script>alert("ERROR:Variables")</script>';
+                                }
+                                if(isset($_POST['add_address']))
+                                {
+
+                                }
+                            ?>
+                            <form action="account.php" method="post">
+                                <h2>Payment Method</h2>
+                                <div class='portfolio-info'>
+                                    <div class='col-md-3'>
+                                        <ul>
+                                            <li><span class='bld'>CARD NAME</span></li>
+                                            <li><span class='bld'>NUMBER</span></li>
+                                            <li><span class='bld'>EXP DATE</span></li>
+                                            <li><span class='bld'>CCV</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class='col-md-9'>
+                                        <ul>
+                                            <li><span class='uppercase'><input value='<?php echo $row2[card_name] ?>'></span></li>
+                                            <li><span><input value='<?php echo $row2[card_number] ?>'></span></li>
+                                            <div class='col-md-12'>
+                                                <div class='col-md-6'>
+                                                    <li><span><input class='wide100' value='<?php echo $row2[exp_month] ?>'></span></li>
+                                                </div>
+                                                <div class='col-md-6'>
+                                                    <li><span><input class='wide100' value='<?php echo $row2[exp_year] ?>'></span></li>
+                                                </div>
+                                            </div>
+                                            <li><span><input value='<?php echo $row2[ccv] ?>'></span></li>
+                                        </ul>
+                                        <?php
+                                            if($row2[user_id] == NULL)
+                                            {
+                                                print "<button type='submit' id='add_payment' name='add_payment'>Anadir</button>";
+                                            }
+                                            else
+                                                print "<button type='submit' id='update_payment' name='update_payment'>Editar</button>";
+                                        ?>
+                                    </div>
+                                </div>
+                            </form>
+                            <?php
+                                if(isset($_POST['update_payment']))
+                                {
+                                    $errors = array();
+
+                                    $user_id = filter_input(INPUT_POST, 'user_id');
+                                    $card_name = filter_input(INPUT_POST, 'card_name');
+                                    $card_number = filter_input(INPUT_POST, 'card_number');
+                                    $exp_month = filter_input(INPUT_POST, 'exp_month');
+                                    $exp_year = filter_input(INPUT_POST, 'exp_year');
+                                    $ccv = filter_input(INPUT_POST, 'ccv');
+
+                                    if  (empty($card_name))
+                                        array_push($errors, 'name is require!');
+                                    if  (empty($card_number))
+                                        array_push($errors, 'lastname is require!');
+                                    if  (empty($exp_month))
+                                        array_push($errors, 'email is require!');
+                                    if  (empty($exp_year))
+                                        array_push($errors, 'email is require!');
+                                    if  (empty($ccv))
+                                        array_push($errors, 'email is require!');
+
+                                    if(count($errors) == 0)
+                                    {
+                                        $query_editar = "UPDATE Payent_method SET user_id = '$userd_id', card_name='$card_name', card_number='$card_number', exp_month='$exp_month',  exp_year='$exp_year', ccv='$ccv'
+                                            WHERE user_id='$user_id'";
+
+                                        if (mysqli_query($dbc, $query_editar))
+                                        {
+                                            //mysqli_close($dbc);
+                                            //echo("<script>location.href = 'account.php?user_id=$user_id';</script>");
+                                            echo '<script>alert("ERROR:Entro")</script>';
+                                        }
+                                        else
+                                        {
+                                            echo '<script>alert("ERROR:Query")</script>';
+                                        }
+                                    }
+                                    else	  
+                                        echo '<script>alert("ERROR:Variables")</script>';
+                                }
+                                if(isset($_POST['add_payment']))
+                                {
+
+                                }
+                            ?>
+                        </div>
+                    </div>
                     <div class='col-md-6'>
                         <div class='portfolio-description mrg-sm'>
                             <h2>Ordenes</h2>
