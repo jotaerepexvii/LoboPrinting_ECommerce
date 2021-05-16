@@ -145,7 +145,7 @@
                                                                     <ul class='pro__dtl__prize' >
                                                                         <li>$ $row[price] c/u</li>
                                                                     </ul>
-                                                                    <form action='single-product.php?action=add&id=$row[product_id]' method='get'>
+                                                                    <form method='post' action='single-product.php?action=add&id=$row[product_id]'>
                                                                         <div class='product-action-wrap'>
                                                                             <div class='prodict-statas'><span>Quantity </span></div>
                                                                                 <div class='product-quantity'>
@@ -161,8 +161,7 @@
                                                                         </div>
                                                                         <ul class='pro__dtl__btn'>
                                                                             <li class='buy__now__btn'>
-                                                                                <button type='submit' name=add_to_cart>Add To Cart</button>
-                                                                                <a href='single-product.php?action=add&id=$row[product_id]'>Add To Cart</a>
+                                                                                <button type='submit' name=add_to_cart value='Add'>Add To Cart</button>
                                                                             </li>
                                                                         </ul>
                                                                     </form>
