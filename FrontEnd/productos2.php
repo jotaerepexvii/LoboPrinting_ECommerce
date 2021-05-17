@@ -161,13 +161,13 @@
                                         <div class="single__filter">
                                             <h2>Ordenar Por</h2>
                                             <ul class="filter__list">
-                                                <li><a href="productos1.php">Todo</a></li>
-                                                <li><a href="productos1.php?sort=alpha&ordr=asc">Alfabeto: A-Z</a></li>
-                                                <li><a href="productos1.php?sort=alpha&ordr=desc">Alfabeto: Z-A</a></li>
-                                                <li><a href="productos1.php?sort=price&ordr=asc">Precio: Menor a Mayor</a></li>
-                                                <li><a href="productos1.php?sort=price&ordr=desc">Precio: Mayor a Menor</a></li>
-                                                <li><a href="productos1.php?sort=time&ordr=new">Lo Más Reciente</a></li>
-                                                <li><a href="productos1.php?sort=time&ordr=old">Lo Más Antiguo</a></li>
+                                                <li><a href="productos.php">Todo</a></li>
+                                                <li><a href="productos.php?sort=alpha&ordr=asc">Alfabeto: A-Z</a></li>
+                                                <li><a href="productos.php?sort=alpha&ordr=desc">Alfabeto: Z-A</a></li>
+                                                <li><a href="productos.php?sort=price&ordr=asc">Precio: Menor a Mayor</a></li>
+                                                <li><a href="productos.php?sort=price&ordr=desc">Precio: Mayor a Menor</a></li>
+                                                <li><a href="productos.php?sort=time&ordr=new">Lo Más Reciente</a></li>
+                                                <li><a href="productos.php?sort=time&ordr=old">Lo Más Antiguo</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -188,18 +188,21 @@
                                 }
                                 elseif(isset($_POST['escolar']))
                                 {
+                                    echo "<script>location.href='productos1.php'</script>";
                                     $query = "SELECT *
                                                     FROM Product p, Category c
                                                     WHERE p.product_id = c.product_id AND category_id = 1";
                                 }
                                 elseif(isset($_POST['laboratorio']))
                                 {
+                                    echo "<script>location.href='productos2.php'</script>";
                                     $query = "SELECT *
                                                 FROM Product p, Category c
                                                 WHERE p.product_id = c.product_id AND category_id = 2";
                                 }
                                 elseif(isset($_POST['memorabilia']))
                                 {
+                                    echo "<script>location.href='productos3.php'</script>";
                                     $query = "SELECT *
                                                 FROM Product p, Category c
                                                 WHERE p.product_id = c.product_id AND category_id = 3";
