@@ -49,7 +49,6 @@
     function weekOfYearToJMY($week)
     {
         $year = date('Y');
-
         $dateTime = new DateTime();
         $dateTime->setISODate($year, $week);
         $result['start_date'] = $dateTime->format('d-M');

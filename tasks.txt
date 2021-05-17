@@ -19,12 +19,16 @@ FRONT END
 
     !!!>search in products
 
+    !!!> validar que el usuario tenga todos los datos antes de confirmar y pagar
+
     >> blog-details.php change name
 
 BACK END
     !> poder insertar los 0 del principio de un id de producto
 
-    !> añadir categoria al añadir producto nuevo
+    !> añadir categoria al añadir producto nuevo, como radio button
+
+    Productos Más Vendidos (cambiar por ultimos productos vendidos)
 
 
 

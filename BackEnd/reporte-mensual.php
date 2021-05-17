@@ -61,7 +61,9 @@
                         <div class="col">
                             <div class="card">
                                 <div class="card-header border-0">
-                                    <h3 class="card-title font-weight-bold">Seleccione Un Mes:</h3>
+                                    <h3 class="card-title font-weight-bold"><a href="reporte-mensual.php">Ver Todo&nbsp&nbsp</a></h3>
+                                    <h3 class="card-title font-weight-bold">|</h3>
+                                    <h3 class="card-title font-weight-bold">&nbsp&nbspSeleccione Un Mes:</h3>
                                     <div class="card-tools">
                                         <form action="reporte-mensual.php" method='post'>
                                             <div class="input-group input-group-sm">

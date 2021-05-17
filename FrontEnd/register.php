@@ -89,6 +89,7 @@
                             $cryptPass = encrypt($password);
                             $nombre = ucwords($nombre);
                             $apellidos = ucwords($apellidos);
+                            $email = strtolower($email);
                             $query_insert = mysqli_query($dbc, "INSERT INTO Users(user_id, name, lastname, email, password, phone, student)
                                         VALUES('$userID','$nombre','$apellidos','$email','$cryptPass', '$phone', '$student')");
                         }
@@ -177,11 +178,9 @@
                                                 <div class="tabs__checkbox">
                                                     <span class="forget__bold"><a><?php echo $register_err;?></a></span>
                                                 </div>
-                                                <!--
                                                 <div class="tabs__checkbox">
                                                     <div class="g-recaptcha" data-sitekey="6LfOd7YaAAAAAKDfXyWBTAbjZKPhhzXg-8jWqExB"></div>
                                                 </div>
-                                                -->
                                                 <div class="htc__login__btn"><button name="register">Registrarse</button></div>
                                             </form>
                                         </div>

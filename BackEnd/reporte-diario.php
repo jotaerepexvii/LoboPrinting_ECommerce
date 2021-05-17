@@ -61,7 +61,9 @@
                         <div class="col">
                             <div class="card">
                                 <div class="card-header border-0">
-                                    <h3 class="card-title font-weight-bold">Seleccione Un Dia:</h3>
+                                    <h3 class="card-title font-weight-bold"><a href="reporte-diario.php">Ver Todo&nbsp&nbsp</a></h3>
+                                    <h3 class="card-title font-weight-bold">|</h3>
+                                    <h3 class="card-title font-weight-bold">&nbsp&nbspSeleccione Un Dia:</h3>
                                     <div class="card-tools">
                                         <form action="reporte-diario.php" method='post'>
                                             <div class="input-group input-group-sm">
@@ -77,7 +79,8 @@
                                     <table id="example1" class="table table-striped">
                                         <thead>
                                             <tr>
-                                                <th class='text-center'>Mes</th>
+                                                <th class='text-center'></th>
+                                                <th class='text-center'>Dia</th>
                                                 <th class='text-center'>Órdenes</th>
                                                 <th class='text-center'>Producots</th>
                                                 <th class='text-center'>Ventas</th>
@@ -112,6 +115,7 @@
 
                                                         print "
                                                             <tr>
+                                                            <td class='text-center'>".$day."</td>
                                                                 <td class='text-center'>".dayOfYearToJMY($day)."</td>
                                                                 <td class='text-center'>$row_day[orders]</td>
                                                                 <td class='text-center'>$row_day[products]</td>
@@ -152,6 +156,7 @@
                                                             $row_day=mysqli_fetch_array($r_day);//Present Users
                                                             print "
                                                                 <tr>
+                                                                    <td class='text-center'>".$i."</td>
                                                                     <td class='text-center'>".dayOfYearToJMY($i)."</td>
                                                                     <td class='text-center'>$row_day[orders]</td>
                                                                     <td class='text-center'>$row_day[products]</td>

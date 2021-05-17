@@ -170,10 +170,6 @@
                                                 <li><a href="productos1.php?sort=time&ordr=new">Lo Más Reciente</a></li>
                                                 <li><a href="productos1.php?sort=time&ordr=old">Lo Más Antiguo</a></li>
                                             </ul>
-                                            <h2 style="margin-top: 30px;">Cantidad</h2>
-                                            <ul class="filter__list">
-                                                <li><a href="#a-z">Articulos Por Pagina</a></li>
-                                            </ul>
                                         </div>
                                     </div>
                                     <!-- End Single Content -->
