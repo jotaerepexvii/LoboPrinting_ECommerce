@@ -83,17 +83,17 @@
                         $register_err = 'El Correo Electronico ya está registrado';
                     }
                     else{
-                        //$response = recaptcha();
-                        //if ($response->success)
-                        //{
+                        $response = recaptcha();
+                        if ($response->success)
+                        {
                             $cryptPass = encrypt($password);
                             $nombre = ucwords($nombre);
                             $apellidos = ucwords($apellidos);
                             $query_insert = mysqli_query($dbc, "INSERT INTO Users(user_id, name, lastname, email, password, phone, student)
                                         VALUES('$userID','$nombre','$apellidos','$email','$cryptPass', '$phone', '$student')");
-                        //}
-                        //else
-                            //$register_err = 'reCAPTCHA fallido<br>Intente nuevamente';
+                        }
+                        else
+                            $register_err = 'reCAPTCHA fallido<br>Intente nuevamente';
 
                         if($query_insert)
                         {

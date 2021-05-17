@@ -65,7 +65,7 @@
                                     <div class="card-tools">
                                         <form action="reporte-diario.php" method='post'>
                                             <div class="input-group input-group-sm">
-                                                <input type="week" name="aday" class="form-control" min="2020-04-01">
+                                                <input type="date" name="aday" class="form-control" min="2020-04-01">
                                                 <span class="input-group-append">
                                                     <button type="submit" name="submit" class="btn btn-info btn-flat">Someter</button>
                                                 </span>

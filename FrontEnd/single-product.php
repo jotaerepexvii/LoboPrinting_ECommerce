@@ -130,11 +130,7 @@
                                                             <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
                                                                 <div class='htc__product__details__inner pt--100'>
                                                                     <div class='pro__detl__title'>
-                                                                        <h2>$row[name] $row[description]</h2>
-                                                                    </div>
-                                                                    <div class='pro__details'>
-                                                                        <p>Lorem ipsum dolor sit amet consectetu adipisicing elit sed do eiusmod tempor incididunt ut labore</p>
-                                                                        <p>Lorem ipsum dolor sit amet consectetu adipisicing elit sed do eiusmod tempor incididunt ut labore</p>
+                                                                        <h2>$row[name]<br>$row[description]</h2>
                                                                     </div>
                                                                 <div class='htc__product__details__inner'>    
                                                                     <ul class='pro__dtl__prize' >
