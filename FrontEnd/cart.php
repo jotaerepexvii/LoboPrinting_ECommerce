@@ -253,7 +253,7 @@
                                     //header("Location:loginRequired.php");
                                     //$total = '';
                                     //emptyCart();
-                                    echo "<script>location.href = 'loginRequired.php';</script>";
+                                    echo "<script>location.href = 'login-required.php';</script>";
                                 }
                                 //radio button post
                                 if($_POST['Actualizar'] == 'envio')

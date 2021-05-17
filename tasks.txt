@@ -23,12 +23,28 @@ FRONT END
 
     >> blog-details.php change name
 
+    >>!!! account
+        - dropdown states
+        - //validate month, year, etc...
+        - required en todos los campos
+        - phone mask in phone
+
+    >> checkout - borrar note
+        - disabled campos o label
+
+    -- zona horaria de insercion de ordenes
+
+    >>
+
+
 BACK END
     !> poder insertar los 0 del principio de un id de producto
 
     !> añadir categoria al añadir producto nuevo, como radio button
 
     Productos Más Vendidos (cambiar por ultimos productos vendidos)
+
+    
 
 
 

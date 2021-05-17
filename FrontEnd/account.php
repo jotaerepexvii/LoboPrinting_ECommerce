@@ -163,7 +163,6 @@
                                         if (mysqli_query($dbc, $query_editar))
                                         {
                                             //mysqli_close($dbc);
-                                            echo '<script>alert("ERROR:Entro ")</script>';
                                             echo("<script>location.href = 'account.php?user_id=$user_id';</script>");
                                         }
                                         else
@@ -176,7 +175,7 @@
                                 }
                             ?>
                             <form action="account.php" method="post">
-                                <h2>Address</h2>
+                                <h2>Dirección</h2>
                                 <div class='portfolio-info'>
                                     <div class='col-md-3'>
                                         <ul>
@@ -198,7 +197,7 @@
                                         <?php
                                             if($row1['user_id'] == NULL)
                                             {
-                                                print "<button type='submit' id='add_address' name='add_address'>Anadir</button>";
+                                                print "<button type='submit' id='add_address' name='add_address'>Añadir</button>";
                                             }
                                             else
                                                 print "<button type='submit' id='update_address' name='update_address'>Editar</button>";
@@ -236,7 +235,6 @@
                                         if (mysqli_query($dbc, $query_editar))
                                         {
                                             //mysqli_close($dbc);
-                                            echo '<script>alert("ERROR:Entro")</script>';
                                             echo("<script>location.href = 'account.php?user_id=$user_id';</script>");
                                         }
                                         else
@@ -276,7 +274,6 @@
                                         if(mysqli_affected_rows($dbc) == 1)
                                         {
                                             //mysqli_close($dbc);
-                                            echo '<script>alert("ERROR:Entro")</script>';
                                             echo("<script>location.href = 'account.php?user_id=$user_id';</script>");
                                         }
                                         else
@@ -289,7 +286,7 @@
                                 }
                             ?>
                             <form action="account.php" method="post">
-                                <h2>Payment Method</h2>
+                                <h2>Método de Pago</h2>
                                 <div class='portfolio-info'>
                                     <div class='col-md-3'>
                                         <ul>
@@ -305,10 +302,10 @@
                                             <li><span><input type='text' id="card_number" name="card_number" value='<?php echo $row2['card_number'] ?>'></span></li>
                                             <div class='col-md-12'>
                                                 <div class='col-md-2'>
-                                                    <li><span><input class='wide100' type='text' id="exp_month" name="exp_month" value='<?php echo $row2['exp_month'] ?>'></span></li>
+                                                    <li><span><input class='wide100' type='text' id="exp_month" name="exp_month" value='<?php echo $row2['exp_month'] ?>' placeholder="MM"></span></li>
                                                 </div>
                                                 <div class='col-md-2'>
-                                                    <li><span><input class='wide100' type='text' id="exp_year" name="exp_year" value='<?php echo $row2['exp_year'] ?>'></span></li>
+                                                    <li><span><input class='wide100' type='text' id="exp_year" name="exp_year" value='<?php echo $row2['exp_year'] ?>' placeholder="YY"></span></li>
                                                 </div>
                                             </div>
                                             <li><span><input type='text' id="ccv" name="ccv" value='<?php echo $row2['ccv'] ?>'></span></li>
@@ -316,7 +313,7 @@
                                         <?php
                                             if($row2['user_id'] == NULL)
                                             {
-                                                print "<button type='submit' id='add_payment' name='add_payment'>Anadir</button>";
+                                                print "<button type='submit' id='add_payment' name='add_payment'>Añadir</button>";
                                             }
                                             else
                                                 print "<button type='submit' id='update_payment' name='update_payment'>Editar</button>";
@@ -346,6 +343,8 @@
                                     if  (empty($ccv))
                                         array_push($errors, 'email is require!');
 
+                                        
+
                                     if(count($errors) == 0)
                                     {
                                         $query_editar = "UPDATE Payment_method SET user_id = '$user_id', card_name='$card_name', card_number='$card_number', exp_month='$exp_month',  exp_year='$exp_year', ccv='$ccv'
@@ -354,7 +353,6 @@
                                         if (mysqli_query($dbc, $query_editar))
                                         {
                                             //mysqli_close($dbc);
-                                            echo '<script>alert("ERROR:Entro")</script>';
                                             echo("<script>location.href = 'account.php?user_id=$user_id';</script>");
                                         }
                                         else
@@ -394,7 +392,6 @@
                                         if(mysqli_affected_rows($dbc) == 1)
                                         {
                                             //mysqli_close($dbc);
-                                            echo '<script>alert("ERROR:Entro")</script>';
                                             echo("<script>location.href = 'account.php?user_id=$user_id';</script>");
                                         }
                                         else
@@ -417,7 +414,7 @@
                                         <tr>
                                             <th class='product-thumbnail'>ID</th>
                                             <th class='product-name'>DATE</th>
-                                            <th class='product-price'></th>
+                                            <th class='product-price'>DETALLES</th>
                                         </tr>
                                     </thead>
                                     <tbody>

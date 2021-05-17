@@ -185,7 +185,7 @@
 
                                                     foreach($_SESSION['shopping_cart'] as $keys => $values)
                                                     {
-                                                        unset($_SESSION['shopping_cart'][$keys]);   //se remueve item
+                                                        //unset($_SESSION['shopping_cart'][$keys]);   //se remueve item
                                                         //echo "<script>location.href = 'cart.php';</script>";
                                                     }
 
