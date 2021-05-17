@@ -2,53 +2,52 @@
     session_start();
     include 'phpIncludes/connection.php';
 
+    $_GET['sort'] = '';
+    
     if($_GET['sort'] == 'alpha')
     {
-        if($_GET['ordr'] == 'asc')
-        {
+        if($_GET['ordr'] == 'asc'){
             $query = "SELECT *
                 FROM Product ORDER BY name ASC ";
         }
-        if($_GET['ordr'] == 'desc')
-        {
+        if($_GET['ordr'] == 'desc'){
             $query = "SELECT *
                 FROM Product ORDER BY name DESC ";
         }
     }
     else if($_GET['sort'] == 'price')
     {
-        if($_GET['ordr'] == 'asc')
-        {
+        if($_GET['ordr'] == 'asc'){
             $query = "SELECT *
-                FROM Product ORDER BY price ASC ";
+                FROM Product 
+                ORDER BY price ASC ";
         }
-        if($_GET['ordr'] == 'desc')
-        {
+        if($_GET['ordr'] == 'desc'){
             $query = "SELECT *
-                FROM Product ORDER BY price DESC ";
+                FROM Product 
+                ORDER BY price DESC ";
         }
     }
     else if ($_GET['sort'] == 'time')
     {
-        if($_GET['ordr'] == 'new')
-        {
+        if($_GET['ordr'] == 'new'){
             $query = "SELECT *
-                FROM Product ORDER BY date DESC ";
+                FROM Product 
+                ORDER BY date DESC ";
         }
-        if($_GET['ordr'] == 'old')
-        {
+        if($_GET['ordr'] == 'old'){
             $query = "SELECT *
-                FROM Product ORDER BY date ASC ";
+                FROM Product 
+                ORDER BY date ASC ";
         }
     }
     else
     {
-        $_GET['sort'] = '';
         $query = "SELECT *
-            FROM Product ORDER BY date DESC ";
+            FROM Product 
+            ORDER BY date DESC ";
     }
 
-    
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -132,8 +131,8 @@
                             <div class="filter__menu__container">
                                 <div class="product-tab-list2">
                                     <form action="productos.php" method="post" enctype="multipart/form-data">
-                                        <a href="productos1.php">Todo</a>
-                                        <a type="submit" name="escolar">Escolar</a>
+                                        <a href="productos.php">Todo</a>
+                                        <button type="submit" name="escolar">Escolar</button>
                                         <button type="submit" name="laboratorio">Laboratorio</button>
                                         <button type="submit" name="memorabilia">Memorabilia</button>
                                     </form>
@@ -170,10 +169,6 @@
                                                 <li><a href="productos1.php?sort=time&ordr=new">Lo Más Reciente</a></li>
                                                 <li><a href="productos1.php?sort=time&ordr=old">Lo Más Antiguo</a></li>
                                             </ul>
-                                            <h2 style="margin-top: 30px;">Cantidad</h2>
-                                            <ul class="filter__list">
-                                                <li><a href="#a-z">Articulos Por Pagina</a></li>
-                                            </ul>
                                         </div>
                                     </div>
                                     <!-- End Single Content -->
@@ -186,6 +181,35 @@
                     <div class="row">
                         <div class="product__list another-product-style">
                             <?php
+                                if(isset($_POST['todo']))
+                                {
+                                    $query = "SELECT *
+                                                FROM Product ORDER BY name";
+                                }
+                                elseif(isset($_POST['escolar']))
+                                {
+                                    $query = "SELECT *
+                                                    FROM Product p, Category c
+                                                    WHERE p.product_id = c.product_id AND category_id = 1";
+                                }
+                                elseif(isset($_POST['laboratorio']))
+                                {
+                                    $query = "SELECT *
+                                                FROM Product p, Category c
+                                                WHERE p.product_id = c.product_id AND category_id = 2";
+                                }
+                                elseif(isset($_POST['memorabilia']))
+                                {
+                                    $query = "SELECT *
+                                                FROM Product p, Category c
+                                                WHERE p.product_id = c.product_id AND category_id = 3";
+                                }
+                                else
+                                {
+                                    $query = "SELECT *
+                                                FROM Product";
+                                }
+
                                 if($r = mysqli_query($dbc, $query))//Save & Validate Query Result
                                 {
                                     while($row=mysqli_fetch_array($r))//Present Products

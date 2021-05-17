@@ -141,13 +141,10 @@
                         <div class="product__list another-product-style">
                             <?php
                                 $order = 'ASC';
-                                
-                                    
-
                                 if(isset($_POST['todo']))
                                 {
                                      $query = "SELECT *
-                                            FROM Product ORDER BY name ".$order." ";
+                                            FROM Product ORDER BY name";
                                 }
                                 elseif(isset($_POST['escolar']))
                                 {

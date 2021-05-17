@@ -716,3 +716,9 @@ $(".owl-carousel").owlCarousel({
   itemsMobile : [479,1]
 
 })
+
+/*
+$(":input").inputmask();
+
+$("#phone").inputmask({"mask": "(999) 999-9999"});
+*/

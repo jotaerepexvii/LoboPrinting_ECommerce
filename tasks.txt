@@ -8,9 +8,9 @@ FRONT END
 
     !!!> al menos poder subir archivos de servicio
 
-    !!!> filtros de productos - 
+    !!!> filtros de productos 
 
-    !!!> radio button envio ponerlo a funcionar <!!!
+    !!!> radio button de envio ponerlo a funcionar <!!!
 
     !!!>search in products
 
@@ -25,8 +25,6 @@ BACK END
     !> poder insertar los 0 del principio de un id de producto
 
     !> añadir categoria al añadir producto nuevo, como radio button
-
-    Productos Más Vendidos (cambiar por ultimos productos vendidos)
 
     
 OTHERS

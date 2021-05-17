@@ -302,13 +302,13 @@
                                             <li><span><input type='text' id="card_number" name="card_number" value='<?php echo $row2['card_number'] ?>'></span></li>
                                             <div class='col-md-12'>
                                                 <div class='col-md-2'>
-                                                    <li><span><input class='wide100' type='text' id="exp_month" name="exp_month" value='<?php echo $row2['exp_month'] ?>' placeholder="MM"></span></li>
+                                                    <li><span><input class='wide100' type='number' id="exp_month" name="exp_month" value='<?php echo $row2['exp_month'] ?>' placeholder="MM"></span></li>
                                                 </div>
                                                 <div class='col-md-2'>
-                                                    <li><span><input class='wide100' type='text' id="exp_year" name="exp_year" value='<?php echo $row2['exp_year'] ?>' placeholder="YY"></span></li>
+                                                    <li><span><input class='wide100' type='number' id="exp_year" name="exp_year" value='<?php echo $row2['exp_year'] ?>' placeholder="YY"></span></li>
                                                 </div>
                                             </div>
-                                            <li><span><input type='text' id="ccv" name="ccv" value='<?php echo $row2['ccv'] ?>'></span></li>
+                                            <li><span><input type='number' id="ccv" name="ccv" value='<?php echo $row2['ccv'] ?>'></span></li>
                                         </ul>
                                         <?php
                                             if($row2['user_id'] == NULL)
