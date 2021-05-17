@@ -51,21 +51,23 @@
             }
             else
             {
-                $userID = $_POST['user_id'];
+                if($_POST['user_id'] == '')
+                {
+                    $student = 0;
+                    $userID = rand(111111111,getrandmax());
+                }
+                else
+                {
+                    $student = 1;
+                    $userID = $_POST['user_id'];
+                }
+                   
                 $nombre = $_POST['name'];
                 $apellidos = $_POST['lastname'];
                 $password = $_POST['password'];
                 $password2 = $_POST['password2'];
                 $email = $_POST['email'];
                 $phone = '';
-                $student = '';
-                
-                if(!empty($userID)){
-                    $student = 1;
-                }
-                else{
-                    $student = 0;
-                }
 
                 if($password != $password2){
                     $register_err ='Las Contraseñas no coinciden';
@@ -92,20 +94,22 @@
                             $email = strtolower($email);
                             $query_insert = mysqli_query($dbc, "INSERT INTO Users(user_id, name, lastname, email, password, phone, student)
                                         VALUES('$userID','$nombre','$apellidos','$email','$cryptPass', '$phone', '$student')");
+                        
+                            if($query_insert)
+                            {
+                                $_SESSION['success'] = 'Usuario Registrado';
+                                login($email, $cryptPass);
+                                echo "<script>location.href='phpIncludes/success.php'</script>";
+                                $register_err = 'Usuario Registrado Satisfactoriamente';
+                            }
+                            else
+                            {
+                                $register_err ='Error al crear el usuario';
+                            }
                         }
                         else
                             $register_err = 'reCAPTCHA fallido<br>Intente nuevamente';
 
-                        if($query_insert)
-                        {
-                            header('success.php');
-                            $register_err = 'Usuario Registrado Satisfactoriamente';
-                            login($email, $cryptPass);
-                        }
-                        else
-                        {
-                            $register_err ='Error al crear el usuario';
-                        }
                     }
                 }
             }
@@ -173,8 +177,8 @@
                                                 <input name="lastname" type="text" placeholder="Apellidos*" oninvalid="this.setCustomValidity('Inserte Apellidos')" title="Inserte sus apellidos" required>
                                                 <input id="password" name="password" type="password" placeholder="Contraseña*" oninvalid="this.setCustomValidity('Inserte Contraseña')" title="La contraseña debe ser al menos de 8 caracteres" required>
                                                 <input name="password2" type="password" placeholder="Confirma contraseña*" oninvalid="this.setCustomValidity('Confirme Contraseña')" title="Inserte nuevamente la contraseña" required>
-                                                <input name="email" type="text" placeholder="Correo Electrónico*" oninvalid="this.setCustomValidity('Inserte Correo Electrónico')" title="Inserte correo electrónico" required>
-                                                <input name="user_id" type="text" placeholder="ID Estudiante" title="Si es estudiante, inserte su ID de estudiante">
+                                                <input name="email" type="email" placeholder="Correo Electrónico*" oninvalid="this.setCustomValidity('Inserte Correo Electrónico')" title="Inserte correo electrónico" required>
+                                                <input name="user_id" type="number" placeholder="ID Si Es Estudiante" title="Si es estudiante, inserte su ID de estudiante">
                                                 <div class="tabs__checkbox">
                                                     <span class="forget__bold"><a><?php echo $register_err;?></a></span>
                                                 </div>

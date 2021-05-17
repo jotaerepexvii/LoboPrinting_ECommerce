@@ -65,13 +65,13 @@
                 <div class="col-md-2 col-sm-4 col-xs-3"> 
                     <nav class="mainmenu__nav hidden-xs hidden-sm">
                         <ul class="main__menu"> 
-                            <li class="drop"><a href="#"><span class="ti-user"></span></a>
+                            <li class="drop"><a href="login-required.php"><span class="ti-user"></span></a>
                                 <ul class="dropdown">
                                     <?php
                                         if (!isset($_SESSION['login']))
                                         {
                                             print "
-                                            <li><a href='login.php'>Iniciar Sección</a></li>
+                                            <li><a href='login.php'>Iniciar Sesión</a></li>
                                             <li><a href='register.php'>Crear Una Cuenta</a></li>
                                             ";
                                         }
@@ -79,7 +79,7 @@
                                         {
                                             print "
                                             <li><a href='account.php'>Cuenta del Usuario</a></li>
-                                            <li><a href='phpIncludes/logout.php'>Cerrar Sección</a></li>
+                                            <li><a href='phpIncludes/logout.php'>Cerrar Sesión</a></li>
                                             ";
                                         }  
                                     ?>

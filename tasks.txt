@@ -1,11 +1,6 @@
 FRONT END
     >checkout.php
         - reCAPTCHA - REMEMBER TO MOVE LATER TO SESSION IN PHP
-        > validar que existan todos los datos de checkout (la direccion y etc) - BRYAN
-
-    !> account.php
-        - detalles del usuario que sean editables
-        - pensar que hacer con el id del usuario cuando no es student
 
     > sobre-nosotros.php
         - eliminar "sobre-nosotros.php' o cambiar el titulo de contactanos por sobre nosotros y añadir todo ahí
@@ -19,22 +14,11 @@ FRONT END
 
     !!!>search in products
 
-    !!!> validar que el usuario tenga todos los datos antes de confirmar y pagar
-
-    >> blog-details.php change name
-
     >>!!! account
         - dropdown states
         - //validate month, year, etc...
         - required en todos los campos
         - phone mask in phone
-
-    >> checkout - borrar note
-        - disabled campos o label
-
-    -- zona horaria de insercion de ordenes
-
-    >>
 
 
 BACK END
@@ -45,9 +29,6 @@ BACK END
     Productos Más Vendidos (cambiar por ultimos productos vendidos)
 
     
-
-
-
 OTHERS
     Links
         Upload file part 1: https://www.youtube.com/watch?v=JaRq73y5MJk&t=848s

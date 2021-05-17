@@ -102,7 +102,7 @@
                     </div>
                     <!-- /.card-body -->
                     <div class='card-footer'>
-                        <button type='submit' id='update' name='update' class='btn btn-success'><a href='../FrontEnd/login.php' style='color:inherit'>Editar [Front End]</a></button>
+                        <!-- <button type='submit' id='update' name='update' class='btn btn-success'><a href='../FrontEnd/login.php' style='color:inherit'>Editar [Front End]</a></button> -->
                         <button type='submit' id='update2' name='update2' class='btn btn-secondary'><a href='usuarios.php' style='color:inherit'>Todos los Usuarios</a></button>
                     </div>
                   </form>

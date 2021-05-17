@@ -26,8 +26,17 @@
         $row = mysqli_fetch_array($r);
 
         $_SESSION['login'] = $row['user_id'];
-        $_SESSION['cart_product'] = array();
-        $_SESSION['cart_quantity'] = array();
+        //$_SESSION['cart_product'] = array();
+        //$_SESSION['cart_quantity'] = array();
+    }
+
+    function addUSD($numberMoney)
+    {
+        if(empty($numberMoney))
+            $numberMoney2 = "$0.00";
+        else
+            $numberMoney2 = "$".number_format((float)$numberMoney, 2, '.', ',');
+        return $numberMoney2;
     }
 
     function logoutToIndex()

@@ -1,6 +1,7 @@
 <?php
     session_start();
     include 'phpIncludes/connection.php';
+    include 'phpIncludes/functions.php';
 
     if (isset($_GET['action']))
     {
@@ -181,9 +182,9 @@
                                             <tr>
                                                 <td class='product-thumbnail'><a href='single-product.php?product_id=$values[item_id]'><img src='images/lobo_products/$row[image]' alt='product img' /></a></td>
                                                 <td class='product-name'><a href='single-product.php?product_id=$values[item_id]'>$row[name] $row[description]</a></td>
-                                                <td class='product-price'><span class='amount'>$row[price]</span></td>
+                                                <td class='product-price'><span class='amount'>".addUSD($row['price'])."</span></td>
                                                 <td class='product-quantity'><input type='number' value='$values[item_quantity]'/></td>
-                                                <td class='product-subtotal'>$".number_format((float)$t, 2, '.', ',')."</td>
+                                                <td class='product-subtotal'>".addUSD($t)."</td>
                                                 <td class='product-subtotal'><a href='cart.php?action=delete&product_id=$values[item_id]'>X</a></td>
                                             </tr>
                                             ";
@@ -208,7 +209,7 @@
                                                                                 <tbody>
                                                                                     <tr class='cart-subtotal'>
                                                                                         <th>SUBTOTAL</th>
-                                                                                        <td><span class='amount'>$$total</span></td>
+                                                                                        <td><span class='amount'>".addUSD($total)."</span></td>
                                                                                     </tr>
                                                                                     <tr class='shipping'>
                                                                                         <th>Envío</th>
@@ -228,7 +229,7 @@
                                                                                     <tr class='order-total'>
                                                                                         <th>Total</th>
                                                                                         <td>
-                                                                                            <strong><span class='amount'>$$total</span></strong>
+                                                                                            <strong><span class='amount'>".addUSD($total)."</span></strong>
                                                                                         </td>
                                                                                     </tr>                                
                                                                                 </tbody>

@@ -27,7 +27,7 @@
         if(empty($numberMoney))
             $numberMoney2 = "$0.00";
         else
-            $numberMoney2 = "$".$numberMoney;
+            $numberMoney2 = "$".number_format((float)$numberMoney, 2, '.', ',');
         return $numberMoney2;
     }
 

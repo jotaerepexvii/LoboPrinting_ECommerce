@@ -1,6 +1,7 @@
 <?php
     session_start();
     include 'phpIncludes/connection.php';
+    include 'phpIncludes/functions.php';
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -137,20 +138,23 @@
                                     
                                     $order_id = rand(1111111111,getrandmax());
                                     $user_id = (int)$_POST['user_id'];
-                                    date_default_timezone_set('Atlantic/Bermuda');
+                                    date_default_timezone_set('America/Puerto_Rico');
                                     $my_date = date("Y-m-d H:i:s");
+                                    
                                     $address_id = (int)$_POST['address_id'];
                                     $payment_id = (int)$_POST['payment_id'];
                                     $track_num = rand(1111111111,getrandmax());
                                     $status_id = 1;
                                     $pickup = 0;
 
+                                    /*
                                     if($_POST['Actualizar'] == 'envio')
                                     {
                                         $pickup = 1;
                                         echo $pickup;
                                         $total = ($_GET['total']) + 5;
                                     }
+                                    */
 
                                     if(count($errors) == 0)
                                     {
@@ -159,42 +163,37 @@
                                         
                                         if(mysqli_query($dbc, $query_order))//Validate Insert
                                         {
-                                            //$max = sizeof($_SESSION['cart_product']);
                                             foreach($_SESSION["shopping_cart"] as $keys => $values)
-                                            //for($i=0; $i<$max; $i++)
                                             {
                                                 $p = $values['item_id'];
                                                 $q = $values['item_quantity'];
 
-                                                $query = "SELECT price, cost
-                                                        FROM Product 
+                                                $query = "SELECT * FROM Product 
                                                         WHERE product_id = $p";
 
                                                 $resultInsrt = mysqli_query($dbc, $query);//Save & Validate Query Result
-                                                $row = mysqli_fetch_array($resultInsrt);//Present Products
+                                                $rowPrdct = mysqli_fetch_array($resultInsrt);//Present Products
                                                 
-                                                $price = $row['price'];
-                                                $cost = $row['cost'];
+                                                $price = $rowPrdct['price'];
+                                                $cost = $rowPrdct['cost'];
                                                 
                                                 $query_contain = "INSERT INTO Contain(order_id, product_id, product_quantity, price, cost) 
                                                 VALUES('$order_id', '$p', '$q', '$price', '$cost')";
                                                 
-                                                if(mysqli_query($dbc,$query_contain))//Validate Insert
+                                                if(mysqli_query($dbc, $query_contain))//Validate Insert
                                                 {
-                                                    mysqli_close($dbc);
-
-                                                    foreach($_SESSION['shopping_cart'] as $keys => $values)
-                                                    {
-                                                        //unset($_SESSION['shopping_cart'][$keys]);   //se remueve item
-                                                        //echo "<script>location.href = 'cart.php';</script>";
-                                                    }
-
                                                     $_SESSION['success'] = 'Compra Realizada';
                                                     header('location:phpIncludes/success.php');
                                                 }
                                                 else
                                                     echo "Error: " . $query_contain . "<br>" . mysqli_error($dbc);
                                             }
+                                            foreach($_SESSION['shopping_cart'] as $keys => $values)
+                                            {
+                                                unset($_SESSION['shopping_cart'][$keys]);   //se remueve item
+                                            }
+                                            //mysqli_close($dbc);
+                                            echo "<script>location.href = 'index.php';</script>";
                                         }
                                         else
                                             echo "Error: " . $query_order . "<br>" . mysqli_error($dbc);
@@ -208,8 +207,15 @@
                                 $query = "SELECT *
                                             FROM Users
                                             WHERE user_id = {$_SESSION['login']}";
+
                                 $r = mysqli_query($dbc,$query);//Make the Query
                                 $row = mysqli_fetch_array($r);
+
+                                if (empty($row['name']) || empty($row['lastname']) || empty($row['email']) )
+                                {
+                                    echo '<script>alert("Debe llenar su información personal")</script>';
+                                    echo "<script>location.href='account.php'</script>";
+                                }
                             ?>
                                     <!-- Start Checkbox Area -->
                                     <div class='checkout-form'>
@@ -221,7 +227,7 @@
                                             </div>
                                             <div class='single-checkout-box'>
                                                 <input type='text' name='email' placeholder='Email' value='<?php echo $row['email'] ?>'>
-                                                <input type='text' name='phone' placeholder='Telefono' value='<?php echo $row['phone'] ?>'>
+                                                <input type='text' name='phone' placeholder='Telefono' value='<?php echo $row['phone'] ?>'disabled>
                                             </div>
 
                                         </div>
@@ -233,6 +239,12 @@
                                             WHERE user_id = {$_SESSION['login']}";
                                 $r1 = mysqli_query($dbc,$query1);//Make the Query
                                 $row1 = mysqli_fetch_array($r1);
+
+                                if (empty($row1['card_name']) || empty($row1['card_number']) || empty($row1['exp_month']) || empty($row1['exp_year']) || empty($row1['ccv']))
+                                {
+                                    echo '<script>alert("Debe llenar su información de pago")</script>';
+                                    echo "<script>location.href='account.php'</script>";
+                                }
                             ?>
                                     <!-- Start Payment Box -->
                                     <div class='payment-form'>
@@ -258,6 +270,14 @@
                                             WHERE user_id = {$_SESSION['login']}";
                                 $r2 = mysqli_query($dbc,$query2);//Make the Query
                                 $row2 = mysqli_fetch_array($r2);
+
+                                if (empty($row2['address_1']) || empty($row2['zip_code']) || empty($row2['city']) || empty($row2['state']))
+                                {
+                                    echo '<script>alert("Debe llenar su información de direccion")</script>';
+                                    echo "<script>location.href='account.php'</script>";
+                                }
+
+                                $totalUSD = $_GET['total'];
                             ?>
                                     <!-- Start Payment Box -->
                                     <div class='payment-form'>
@@ -290,9 +310,14 @@
                     </form>
                     <div class="col-md-4 col-lg-4">
                         <div class="checkout-right-sidebar">
+                            <div class="puick-contact-area mt--60">
+                                <h2 class="section-title-3">TOTAL DE COMPRA<br><?php echo addUSD($_GET['total']) ?></h2>
+                                <a href="cart.php">Envio Seleccionado</a>
+                            </div>
+                            <!-- 
                             <div class="our-important-note">
-                                <h2 class="section-title-3">Note : <?php echo $_GET['total'] ?></h2>
-                                <p class="note-desc">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eiusmod tempor incididunt ut laborekf et dolore magna aliqua.</p>
+                                <h2 class="section-title-3"></h2>
+                                <p class="note-desc"></p>
                                 <ul class="important-note">
                                     <li><a href="#"><i class="zmdi zmdi-caret-right-circle"></i>Lorem ipsum dolor sit amet, consectetur nipabali</a></li>
                                     <li><a href="#"><i class="zmdi zmdi-caret-right-circle"></i>Lorem ipsum dolor sit amet</a></li>
@@ -301,9 +326,10 @@
                                     <li><a href="#"><i class="zmdi zmdi-caret-right-circle"></i>Lorem ipsum dolor sit amet</a></li>
                                 </ul>
                             </div>
+                            -->
                             <div class="puick-contact-area mt--60">
-                                <h2 class="section-title-3">Quick Contract</h2>
-                                <a href="phone:+8801722889963">+012 345 678 102 </a>
+                                <h2 class="section-title-3">Lobo Printing</h2>
+                                <a href="phone:+17878515555">787 - 851 - 5555 Ext. </a>
                             </div>
                         </div>
                     </div>

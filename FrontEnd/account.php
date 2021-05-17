@@ -343,8 +343,6 @@
                                     if  (empty($ccv))
                                         array_push($errors, 'email is require!');
 
-                                        
-
                                     if(count($errors) == 0)
                                     {
                                         $query_editar = "UPDATE Payment_method SET user_id = '$user_id', card_name='$card_name', card_number='$card_number', exp_month='$exp_month',  exp_year='$exp_year', ccv='$ccv'

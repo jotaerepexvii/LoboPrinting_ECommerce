@@ -79,7 +79,7 @@
                                     <table id="example1" class="table table-striped">
                                         <thead>
                                             <tr>
-                                                <th class='text-center'>Mes</th>
+                                                <th class='text-center'>Semana</th>
                                                 <th class='text-center'>Órdenes</th>
                                                 <th class='text-center'>Producots</th>
                                                 <th class='text-center'>Ventas</th>
