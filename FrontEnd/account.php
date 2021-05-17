@@ -120,14 +120,14 @@
                                     </div>
                                     <div class='col-md-9'>
                                         <ul>
-                                            <li><span><input type='text' id="user_id" name="user_id" value='<?php echo $row[user_id] ?>' disabled></span></li>
-                                            <li><span><input type='text' id="name" name="name" value='<?php echo $row[name] ?>'></span></li>
-                                            <li><span><input type='text' id="lastname" name="lastname" value='<?php echo $row[lastname] ?>'></span></li>
-                                            <li><span class='lowercase'><input class='wide75' type='text' id="email" name="email" value='<?php echo $row[email] ?>'></span></li>
-                                            <li><span><input type='text' id="phone" name="phone" value='<?php echo $row[phone] ?>'></span></li>
-                                            <li><span><input type='text' id="student" name="student" value='<?php echo $row[student] ?>'></span></li>
+                                            <li><span><input type='text' id="user_id" name="user_id" value='<?php echo $row['user_id'] ?>' disabled></span></li>
+                                            <li><span><input type='text' id="name" name="name" value='<?php echo $row['name'] ?>'></span></li>
+                                            <li><span><input type='text' id="lastname" name="lastname" value='<?php echo $row['lastname'] ?>'></span></li>
+                                            <li><span class='lowercase'><input class='wide75' type='text' id="email" name="email" value='<?php echo $row['email'] ?>'></span></li>
+                                            <li><span><input type='text' id="phone" name="phone" value='<?php echo $row['phone'] ?>'></span></li>
+                                            <li><span><input type='text' id="student" name="student" value='<?php echo $row['student'] ?>'></span></li>
                                         </ul>
-                                        <input type='hidden' id="password" name="password" value='<?php echo $row[password] ?>'>
+                                        <input type='hidden' id="password" name="password" value='<?php echo $row['password'] ?>'>
                                         <button id="editar_usuario" name="editar_usuario">Editar</button>
                                     </div>
                                 </div>
@@ -189,14 +189,14 @@
                                     </div>
                                     <div class='col-md-9'>
                                         <ul>
-                                            <li><span class='capitalize'><input type='text' id="address_1" name="address_1" value='<?php echo $row1[address_1] ?>'></span></li>
-                                            <li><span><input type='text' id="address_2" name="address_2" value='<?php echo $row1[address_2] ?>'></span></li>
-                                            <li><span><input type='text' id="zip_code" name="zip_code" value='<?php echo $row1[zip_code] ?>'></span></li>
-                                            <li><span><input type='text' id="city" name="city" value='<?php echo $row1[city] ?>'></span></li>
-                                            <li><span><input type='text' id="state" name="state" value='<?php echo $row1[state] ?>'></span></li>
+                                            <li><span class='capitalize'><input type='text' id="address_1" name="address_1" value='<?php echo $row1['address_1'] ?>'></span></li>
+                                            <li><span><input type='text' id="address_2" name="address_2" value='<?php echo $row1['address_2'] ?>'></span></li>
+                                            <li><span><input type='text' id="zip_code" name="zip_code" value='<?php echo $row1['zip_code'] ?>'></span></li>
+                                            <li><span><input type='text' id="city" name="city" value='<?php echo $row1['city'] ?>'></span></li>
+                                            <li><span><input type='text' id="state" name="state" value='<?php echo $row1['state'] ?>'></span></li>
                                         </ul>
                                         <?php
-                                            if($row1[user_id] == NULL)
+                                            if($row1['user_id'] == NULL)
                                             {
                                                 print "<button type='submit' id='add_address' name='add_address'>Anadir</button>";
                                             }
@@ -301,20 +301,20 @@
                                     </div>
                                     <div class='col-md-9'>
                                         <ul>
-                                            <li><span class='uppercase'><input type='text' id="card_name" name="card_name" value='<?php echo $row2[card_name] ?>'></span></li>
-                                            <li><span><input type='text' id="card_number" name="card_number" value='<?php echo $row2[card_number] ?>'></span></li>
+                                            <li><span class='uppercase'><input type='text' id="card_name" name="card_name" value='<?php echo $row2['card_name'] ?>'></span></li>
+                                            <li><span><input type='text' id="card_number" name="card_number" value='<?php echo $row2['card_number'] ?>'></span></li>
                                             <div class='col-md-12'>
                                                 <div class='col-md-2'>
-                                                    <li><span><input class='wide100' type='text' id="exp_month" name="exp_month" value='<?php echo $row2[exp_month] ?>'></span></li>
+                                                    <li><span><input class='wide100' type='text' id="exp_month" name="exp_month" value='<?php echo $row2['exp_month'] ?>'></span></li>
                                                 </div>
                                                 <div class='col-md-2'>
-                                                    <li><span><input class='wide100' type='text' id="exp_year" name="exp_year" value='<?php echo $row2[exp_year] ?>'></span></li>
+                                                    <li><span><input class='wide100' type='text' id="exp_year" name="exp_year" value='<?php echo $row2['exp_year'] ?>'></span></li>
                                                 </div>
                                             </div>
-                                            <li><span><input type='text' id="ccv" name="ccv" value='<?php echo $row2[ccv] ?>'></span></li>
+                                            <li><span><input type='text' id="ccv" name="ccv" value='<?php echo $row2['ccv'] ?>'></span></li>
                                         </ul>
                                         <?php
-                                            if($row2[user_id] == NULL)
+                                            if($row2['user_id'] == NULL)
                                             {
                                                 print "<button type='submit' id='add_payment' name='add_payment'>Anadir</button>";
                                             }
