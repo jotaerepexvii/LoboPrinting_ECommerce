@@ -1,4 +1,11 @@
 <?php
+
+
+    //---
+    header('location:phpIncludes/coming-soon.php');
+    //---
+
+
   session_start();
   include 'phpIncludes/connection.php';
   if (!isset($_SESSION['login'])) {
