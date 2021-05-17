@@ -40,3 +40,19 @@ OTHERS
 PRESENTACION
     chart de percentaje de uso de los distintos lenguajes usados en el ecommerce (dejarse llevar por github)
     los querys son en mysqli procedural
+
+
+
+
+
+    
+
+https://github.com/Zillinium/Simple-visitor-counter
+
+https://codepen.io/Sohail05/pen/yOpeBm
+
+https://getbootstrap.com/
+
+https://github.com/ColorlibHQ/AdminLTE/releases
+
+http://136.145.29.193~brytacmo/
