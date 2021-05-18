@@ -77,7 +77,7 @@
                                 <span>|</span>
                                 <a>Enviar</a>
                                 <hr>
-                                <canvas></canvas>
+                                <canvas id="canvas" style="height:100%; width: 100%; border:1px solid #666; color:#666;">Escoje Un Archivo</canvas>
                             </div>
                         </div>
                         

@@ -245,7 +245,7 @@
                 <div class="row">
                     <div class="blog__wrap clearfix mt--60 xmt-30">
                         <!-- Start Single Blog -->
-                        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12 col-lg-offset-2">
                             <div class="blog foo">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
@@ -299,31 +299,6 @@
                         </div>
                         <!-- End Single Blog -->
                         <!-- Start Single Blog -->
-                        <div class="col-md-4 col-lg-4 hidden-sm col-xs-12">
-                            <div class="blog foo">
-                                <div class="blog__inner">
-                                    <div class="blog__thumb">
-                                        <a href="blog-details.php">
-                                            <img src="images/blog/blog-img/1.jpg" alt="blog images">
-                                        </a>
-                                        <div class="blog__post__time">
-                                            <div class="post__time--inner">
-                                                <span class="date">14</span>
-                                                <span class="month">sep</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="blog__hover__info">
-                                        <div class="blog__hover__action">
-                                            <p class="blog__des">Lorem ipsum dolor sit consectetu.</p>
-                                            <div class="blog__btn">
-                                                <a class="read__more__btn" href="blog-details.php">read more</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <!-- End Single Blog -->
                     </div>
                 </div>

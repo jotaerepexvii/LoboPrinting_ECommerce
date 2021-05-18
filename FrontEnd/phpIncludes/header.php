@@ -54,6 +54,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="productos.php">Productos</a></li>
+                                <li><a href="sobre-nosotros.php">Sobre Nosotros</a></li>
                                 <li><a href="contactanos.php">Contáctanos</a></li>
                             </ul>
                         </nav>
