@@ -55,3 +55,5 @@ https://github.com/ColorlibHQ/AdminLTE/releases
 
 https://codepen.io/Shiyou/pen/JNLwVO?html-preprocessor=pug
 
+custom upload http://jsfiddle.net/4cwpLvae/
+
