@@ -81,7 +81,7 @@
                                             <tr>
                                                 <th class='text-center'>Semana</th>
                                                 <th class='text-center'>Órdenes</th>
-                                                <th class='text-center'>Producots</th>
+                                                <th class='text-center'>Productos</th>
                                                 <th class='text-center'>Ventas</th>
                                                 <th class='text-center'>Costos</th>
                                                 <th class='text-center'>Ganancia</th>
