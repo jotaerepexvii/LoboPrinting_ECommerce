@@ -8,9 +8,9 @@
 
   session_start();
   include 'phpIncludes/connection.php';
-  if (!isset($_SESSION['login'])) {
+  /*if (!isset($_SESSION['login'])) {
     header('location:login-required.php');
-  }
+  }*/
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
