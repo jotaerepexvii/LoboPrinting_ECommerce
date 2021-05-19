@@ -20,11 +20,13 @@ FRONT END
         - required en todos los campos
         - phone mask in phone
 
+    >> hora de ordenes pasarla a formato 12 horas, solo para el usuario
+
 
 BACK END
     !> poder insertar los 0 del principio de un id de producto
 
-    !> añadir categoria al añadir producto nuevo, como radio button
+    !> añadir categoria al añadir producto nuevo, como checkbox para añadir mas de uno
 
     
 OTHERS
@@ -56,4 +58,18 @@ https://github.com/ColorlibHQ/AdminLTE/releases
 https://codepen.io/Shiyou/pen/JNLwVO?html-preprocessor=pug
 
 custom upload http://jsfiddle.net/4cwpLvae/
+
+https://stackoverflow.com/questions/17098158/how-do-i-convert-date-time-from-24-hour-format-to-12-hour-am-pm/51515814
+
+https://stackoverflow.com/questions/10281962/is-there-a-minlength-validation-attribute-in-html5
+
+https://gist.github.com/jefferyrdavis/5992282
+
+https://www.webpagetest.org/
+
+
+
+https://stackoverflow.com/questions/34274393/determine-if-city-in-input-is-valid
+https://medium.com/hootsuite-engineering/a-comprehensive-guide-to-validating-and-formatting-credit-cards-b9fa63ec7863#:~:text=The%20card%20verification%20value%20(CVV,a%20CVV%20of%204%20digits.
+
 

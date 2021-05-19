@@ -563,7 +563,7 @@
     display: none;
 }
 .product-tab-list2 hr { /*botones de productos y etc*/
-    border:  1px solid #666666;
+    border-top: 2px solid #666666;
     width: 1190px;
 }
 .product-slider-active .col-lg-4,

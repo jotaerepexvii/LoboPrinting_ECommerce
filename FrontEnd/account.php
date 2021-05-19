@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include 'phpIncludes/functions.php';
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -10,31 +11,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <!-- Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/lobo.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    
-
-    <!-- All css files are included here. -->
-    <!-- Bootstrap fremwork main css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Owl Carousel main css -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <!-- This core.css file contents all plugings css file. -->
-    <link rel="stylesheet" href="css/core.css">
-    <!-- Theme shortcodes/elements style -->
-    <link rel="stylesheet" href="css/shortcode/shortcodes.css">
-    <!-- Theme main style -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Responsive css -->
-    <link rel="stylesheet" href="css/responsive.css">
-    <!-- User style -->
-    <link rel="stylesheet" href="css/custom.css">
-
-
-    <!-- Modernizr JS -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <?php
+        include 'phpIncludes/stylesheets.php';
+    ?>
 </head>
 
 <body>
@@ -144,16 +123,16 @@
                                     $phone = filter_input(INPUT_POST, 'phone');
                                     $student = filter_input(INPUT_POST, 'student');
 
-                                    if  (empty($name))
-                                        array_push($errors, 'name is require!');
+                                    if  (empty($name) || ctype_alpha($name))
+                                        array_push($errors, ' Verifique su nombre');
                                     if  (empty($lastname))
-                                        array_push($errors, 'lastname is require!');
+                                        array_push($errors, ' Verifique los apellidos');
                                     if  (empty($email))
-                                        array_push($errors, 'email is require!');
+                                        array_push($errors, ' Verifique su email');
                                     if  (empty($phone))
-                                        array_push($errors, 'email is require!');
+                                        array_push($errors, ' Verifique su número telefónico');
                                     if  (empty($student))
-                                        array_push($errors, 'email is require!');
+                                        array_push($errors, ' Verifique su email');
 
                                     if(count($errors) == 0)
                                     {
@@ -171,7 +150,7 @@
                                         }
                                     }
                                     else	  
-                                        echo '<script>alert("ERROR:Variables")</script>';
+                                        echo "<script>alert('ERROR:".end($errors)."')</script>";
                                 }
                             ?>
                             <form action="account.php" method="post">
@@ -217,15 +196,15 @@
                                     $state = filter_input(INPUT_POST, 'state');
 
                                     if  (empty($address_1))
-                                        array_push($errors, 'name is require!');
+                                        array_push($errors, ' Verifique su dirección');
                                     if  (empty($address_2))
-                                        $address_2 = '';
-                                    if  (empty($zip_code))
-                                        array_push($errors, 'lastname is require!');
+                                        $address_2 = ' ';
+                                    if  (empty($zip_code) || validateZipCode($zip_code))
+                                        array_push($errors, ' Verifique su zip code');
                                     if  (empty($city))
-                                        array_push($errors, 'email is require!');
+                                        array_push($errors, ' Verifique su ciudad');
                                     if  (empty($state))
-                                        array_push($errors, 'email is require!');
+                                        array_push($errors, ' Verifique su estado');
 
                                     if(count($errors) == 0)
                                     {
@@ -243,7 +222,7 @@
                                         }
                                     }
                                     else	  
-                                        echo '<script>alert("ERROR:Variables")</script>';
+                                        echo "<script>alert('ERROR:".end($errors)."')</script>";
                                 }
                                 if(isset($_POST['add_address']))
                                 {
@@ -256,15 +235,15 @@
                                     $state = filter_input(INPUT_POST, 'state');
 
                                     if  (empty($address_1))
-                                        array_push($errors, 'name is require!');
+                                        array_push($errors, ' Verifique su dirección');
                                     if  (empty($address_2))
                                         $address_2 = ' ';
-                                    if  (empty($zip_code))
-                                        array_push($errors, 'lastname is require!');
+                                    if  (empty($zip_code) || validateZipCode($zip_code))
+                                        array_push($errors, ' Verifique su zip code');
                                     if  (empty($city))
-                                        array_push($errors, 'email is require!');
+                                        array_push($errors, ' Verifique su ciudad');
                                     if  (empty($state))
-                                        array_push($errors, 'email is require!');
+                                        array_push($errors, ' Verifique su estado');
 
                                     if(count($errors) == 0)
                                     {
@@ -282,7 +261,7 @@
                                         }
                                     }
                                     else	  
-                                        echo '<script>alert("ERROR:Variables")</script>';
+                                        echo "<script>alert('ERROR:".end($errors)."')</script>";
                                 }
                             ?>
                             <form action="account.php" method="post">
@@ -292,22 +271,17 @@
                                         <ul>
                                             <li><span class='bld'>CARD NAME</span></li>
                                             <li><span class='bld'>NUMBER</span></li>
-                                            <li><span class='bld'>EXP DATE</span></li>
+                                            <li><span class='bld'>EXP Month</span></li>
+                                            <li><span class='bld'>EXP Year</span></li>
                                             <li><span class='bld'>CCV</span></li>
                                         </ul>
                                     </div>
                                     <div class='col-md-9'>
                                         <ul>
                                             <li><span class='uppercase'><input type='text' id="card_name" name="card_name" value='<?php echo $row2['card_name'] ?>'></span></li>
-                                            <li><span><input type='text' id="card_number" name="card_number" value='<?php echo $row2['card_number'] ?>'></span></li>
-                                            <div class='col-md-12'>
-                                                <div class='col-md-2'>
-                                                    <li><span><input class='wide100' type='number' id="exp_month" name="exp_month" value='<?php echo $row2['exp_month'] ?>' placeholder="MM"></span></li>
-                                                </div>
-                                                <div class='col-md-2'>
-                                                    <li><span><input class='wide100' type='number' id="exp_year" name="exp_year" value='<?php echo $row2['exp_year'] ?>' placeholder="YY"></span></li>
-                                                </div>
-                                            </div>
+                                            <li><span class='uppercase'><input type='text' id="card_number" name="card_number" value='<?php echo $row2['card_number'] ?>'></span></li>
+                                            <li><span><input type='number' id="exp_month" name="exp_month" value='<?php echo $row2['exp_month'] ?>' placeholder="MM" pattern=".{0}|.{1,2}"></span></li>
+                                            <li><span><input type='number' id="exp_year" name="exp_year" value='<?php echo $row2['exp_year'] ?>' placeholder="YY" pattern=".{0}|.{2,2}"></span></li>
                                             <li><span><input type='number' id="ccv" name="ccv" value='<?php echo $row2['ccv'] ?>'></span></li>
                                         </ul>
                                         <?php
@@ -333,15 +307,15 @@
                                     $ccv = filter_input(INPUT_POST, 'ccv');
 
                                     if  (empty($card_name))
-                                        array_push($errors, 'name is require!');
-                                    if  (empty($card_number))
-                                        array_push($errors, 'lastname is require!');
-                                    if  (empty($exp_month))
-                                        array_push($errors, 'email is require!');
-                                    if  (empty($exp_year))
-                                        array_push($errors, 'email is require!');
-                                    if  (empty($ccv))
-                                        array_push($errors, 'email is require!');
+                                        array_push($errors, ' Nombre de la tarjeta es requerido');
+                                    if  (empty($card_number) || strlen($card_number) != 16)
+                                        array_push($errors, ' Verifique su número de tarjeta');
+                                    if  (empty($exp_year) || ($exp_year < date('Y')) || ($exp_year > 99) )
+                                        array_push($errors, ' Verifique su año de expiración');
+                                    if  (empty($exp_month) || (($exp_month < 1) && ($exp_month > 12)))
+                                        array_push($errors, ' Verifique su mes de expiración');
+                                    if  (empty($ccv) || strlen($ccv) > 4 || strlen($ccv) < 3)
+                                        array_push($errors, ' Verifique su CVV');
 
                                     if(count($errors) == 0)
                                     {
@@ -359,7 +333,7 @@
                                         }
                                     }
                                     else	  
-                                        echo '<script>alert("ERROR:Variables")</script>';
+                                        echo "<script>alert('ERROR:".end($errors)."')</script>";
                                 }
                                 if(isset($_POST['add_payment']))
                                 {
@@ -372,15 +346,15 @@
                                     $ccv = filter_input(INPUT_POST, 'ccv');
 
                                     if  (empty($card_name))
-                                        array_push($errors, 'name is require!');
-                                    if  (empty($card_number))
-                                        array_push($errors, 'lastname is require!');
-                                    if  (empty($exp_month))
-                                        array_push($errors, 'email is require!');
-                                    if  (empty($exp_year))
-                                        array_push($errors, 'email is require!');
-                                    if  (empty($ccv))
-                                        array_push($errors, 'email is require!');
+                                        array_push($errors, ' Nombre de la tarjeta es requerido');
+                                    if  (empty($card_number) || strlen($card_number) > 16)
+                                        array_push($errors, ' Verifique su número de tarjeta');
+                                    if  (empty($exp_year) || ($exp_year < date('Y')) || ($exp_year > 99) )
+                                        array_push($errors, ' Verifique su año de expiración');
+                                    if  (empty($exp_month) || (($exp_month < 1) && ($exp_month > 12)))
+                                        array_push($errors, ' Verifique su mes de expiración');
+                                    if  (empty($ccv) || strlen($ccv) > 4 || strlen($ccv) < 3)
+                                        array_push($errors, ' Verifique su CVV');
                                     
                                     if(count($errors) == 0)
                                     {
@@ -398,7 +372,7 @@
                                         }
                                     }
                                     else	  
-                                        echo '<script>alert("ERROR:Variables")</script>';
+                                        echo "<script>alert('ERROR:".end($errors)."')</script>";
                                 }
                             ?>
                         </div>
@@ -428,7 +402,7 @@
                                                     print "
                                                         <tr>
                                                             <td class='product-subtotal'>$row3[order_id]</td>
-                                                            <td class='product-remove'>$row3[order_date]</td>
+                                                            <td class='product-remove'>".his24togis12($row3['order_date'])."</td>
                                                             <td class='product-name'><a href='single-order.php?order_id=$row3[order_id]'>Detalles</a></td>
                                                         </tr>
                                                     ";

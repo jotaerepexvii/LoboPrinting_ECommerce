@@ -7,20 +7,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link rel="shortcut icon" type="image/x-icon" href="images/lobo.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-    <!--css files included here. -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/core.css">
-    <link rel="stylesheet" href="css/shortcode/shortcodes.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/custom.css">
-
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <?php
+        include 'phpIncludes/stylesheets.php';
+    ?>
 </head>
 <body class="success" >
     <section class='htc__choose__us__ares pt--80 pb--60'>
